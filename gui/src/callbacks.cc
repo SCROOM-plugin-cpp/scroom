@@ -256,6 +256,10 @@ void on_scroom_bootstrap (const std::list<std::string>& newFilenames)
   
   startPluginManager(devMode);
 
+#if defined(WIN32)
+  gchar *installDir = g_win32_get_package_installation_directory_of_module(NULL);
+  xmlFileName = std::string(installDir) + "\\bin\\scroom.glade";
+#else    
   if(devMode)
   { 
     xmlFileName = TOP_SRCDIR "/gui/scroom.glade";
@@ -264,7 +268,7 @@ void on_scroom_bootstrap (const std::list<std::string>& newFilenames)
   {
     xmlFileName = PACKAGE_DATA_DIR "/scroom.glade";
   }
-  
+#endif  
   aboutDialogXml = glade_xml_new(xmlFileName.c_str(), "aboutDialog", NULL);
   if(aboutDialogXml!=NULL)
   {
