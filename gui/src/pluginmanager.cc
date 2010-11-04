@@ -47,7 +47,7 @@ bool PluginManager::doWork()
       printf("%s=%s\n", SCROOM_PLUGIN_DIRS.c_str(), path);
       for(i=path; *i!=0; i++)
       {
-        if(*i==':')
+        if(*i==G_SEARCHPATH_SEPARATOR)
         {
           *i=0;
           dirs.push_back(path);
