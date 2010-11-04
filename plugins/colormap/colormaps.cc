@@ -1,5 +1,9 @@
 #include "colormaps.hh"
 
+#ifdef HAVE_CONFIG_H
+# include <config.h>
+#endif
+
 #include <sys/types.h>
 #if !defined(HAVE_DIRENT_DTYPE)
 #include <sys/stat.h>
