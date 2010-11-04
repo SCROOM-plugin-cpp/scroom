@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <dirent.h>
+#if !defined(HAVE_DIRENT_DTYPE)
+#include <sys/stat.h>
+#endif
 
 #include <string>
 
@@ -71,9 +74,20 @@ bool PluginManager::doWork()
       {
         while( (content=readdir(dir)))
         {
+#if defined(HAVE_DIRENT_DTYPE)
           if(content->d_type==DT_REG ||
              content->d_type==DT_LNK ||
              content->d_type==DT_UNKNOWN)
+#else
+      struct stat statbuf;
+      if (stat(g_build_path(G_DIR_SEPARATOR_S, currentDir->c_str(), content->d_name, NULL), &statbuf) == 0 &&
+          ( S_ISREG(statbuf.st_mode)
+#if defined (HAVE_S_ISLNK)           
+            || S_ISLNK(statbuf.st_mode)
+#endif            
+            ))
+#endif        
+          
           {
             files.push_back(g_build_path(G_DIR_SEPARATOR_S, currentDir->c_str(), content->d_name, NULL));
           }

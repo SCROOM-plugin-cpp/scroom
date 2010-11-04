@@ -1,6 +1,9 @@
 #include "colormaps.hh"
 
 #include <sys/types.h>
+#if !defined(HAVE_DIRENT_DTYPE)
+#include <sys/stat.h>
+#endif
 #include <dirent.h>
 #include <errno.h>
 #include <string.h>
@@ -49,7 +52,13 @@ Colormaps::Colormaps()
   {
     for(struct dirent* d=readdir(colormapDir); d; d=readdir(colormapDir))
     {
+#if defined(HAVE_DIRENT_DTYPE)
       if(d->d_type==DT_REG)
+#else
+      struct stat statbuf;
+
+      if (stat(g_build_path(G_DIR_SEPARATOR_S, colormapDirPath, d->d_name, NULL), &statbuf) == 0 && S_ISREG(statbuf.st_mode))
+#endif        
       {
         char* name = d->d_name;
         int len = strlen(name);

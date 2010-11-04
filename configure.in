@@ -50,6 +50,15 @@ AC_SUBST(PACKAGE_LIBS)
 # Checks for header files.
 AC_CHECK_HEADERS([stdlib.h string.h])
 
+AC_CHECK_MEMBER(dirent.d_type,AC_DEFINE(HAVE_DIRENT_DTYPE,,[Does struct dirent have d_type]),, [#include <dirent.h>])
+
+AC_MSG_CHECKING(if S_ISLNK is defined)
+AC_TRY_COMPILE([#include <sys/stat.h.h>], 
+        [ S_ISLNK(0777); ],
+        [AC_DEFINE(HAVE_S_ISLNK, 1, "is S_ISLNK defined in sys/stat.h")
+         AC_MSG_RESULT(yes)],
+         AC_MSG_RESULT(no))
+
 # Checks for typedefs, structures, and compiler characteristics.
 AC_HEADER_STDBOOL
 AC_C_INLINE
