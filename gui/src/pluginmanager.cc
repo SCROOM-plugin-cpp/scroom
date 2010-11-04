@@ -96,7 +96,8 @@ bool PluginManager::doWork()
     setStatusBarMessage("Loading Plugins");
     if(currentFile!=files.end())
     {
-      if(!currentFile->compare(currentFile->size()-3, 3, ".so"))
+      if(!currentFile->compare(currentFile->size()-3, 3, ".so") ||
+         !currentFile->compare(currentFile->size()-4, 4, ".dll"))
       {
         printf("Reading file: %s\n", currentFile->c_str());
         plugin = g_module_open(currentFile->c_str(), (GModuleFlags)0);
