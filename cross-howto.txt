@@ -1,0 +1,20 @@
+Boost:
+ http://www.vle-project.org/wiki/Cross_compilation_Win32
+
+libglade
+ http://ftp.gnome.org/pub/gnome/binaries/win32/libglade/2.6/
+
+libxml2
+ http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/
+
+libjpeg
+ cp libjpeg-7.dll libjpeg-uchar-boolean-8.dll
+
+pkg-config
+ ~/src/workrave/build/win32/crossbuilder/build-packages
+   - en dan alleen de fix_pkgconfig() functie
+ 
+Configure
+ . ~/src/tinderbox/bin/mingw32
+ ../configure --host=i586-mingw32msvc --build=i386-linux
+
