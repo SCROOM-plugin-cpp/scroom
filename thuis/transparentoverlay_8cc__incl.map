@@ -1,0 +1,22 @@
+<map id="plugins/transparent&#45;overlay/src/transparentoverlay.cc" name="plugins/transparent&#45;overlay/src/transparentoverlay.cc">
+<area shape="rect" id="node2" href="$transparentoverlay_8hh.html" title="transparentoverlay.hh" alt="" coords="917,96,1064,123"/>
+<area shape="rect" id="node34" href="$transparentoverlaypresentation_8hh.html" title="transparentoverlaypresentation.hh" alt="" coords="1336,96,1555,123"/>
+<area shape="rect" id="node4" href="$plugininformationinterface_8hh.html" title="scroom/plugininformationinterface.hh" alt="" coords="719,171,952,197"/>
+<area shape="rect" id="node9" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="1328,320,1536,347"/>
+<area shape="rect" id="node19" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="2508,544,2636,571"/>
+<area shape="rect" id="node5" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="773,245,952,272"/>
+<area shape="rect" id="node14" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="1006,395,1169,421"/>
+<area shape="rect" id="node21" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="1787,469,1945,496"/>
+<area shape="rect" id="node16" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="2022,395,2172,421"/>
+<area shape="rect" id="node26" href="$rectangle_8hh.html" title="scroom/rectangle.hh" alt="" coords="471,395,611,421"/>
+<area shape="rect" id="node15" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="1187,469,1373,496"/>
+<area shape="rect" id="node23" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1914,544,2027,571"/>
+<area shape="rect" id="node24" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="1345,544,1556,571"/>
+<area shape="rect" id="node29" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="627,469,777,496"/>
+<area shape="rect" id="node31" href="$linearsegment_8hh.html" title="scroom/linearsegment.hh" alt="" coords="245,469,413,496"/>
+<area shape="rect" id="node33" href="$point_8hh.html" title="scroom/point.hh" alt="" coords="437,469,552,496"/>
+<area shape="rect" id="node35" href="$transparentoverlayviewinfo_8hh.html" title="transparentoverlayviewinfo.hh" alt="" coords="1605,171,1800,197"/>
+<area shape="rect" id="node38" href="$sizedeterminer_8hh.html" title="sizedeterminer.hh" alt="" coords="1720,245,1845,272"/>
+<area shape="rect" id="node37" href="$progressinterfacehelpers_8hh.html" title="scroom/progressinterfacehelpers.hh" alt="" coords="2096,320,2325,347"/>
+<area shape="rect" id="node39" href="$resizablepresentationinterface_8hh.html" title="scroom/resizablepresentationinterface.hh" alt="" coords="1711,320,1971,347"/>
+</map>

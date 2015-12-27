@@ -1,0 +1,18 @@
+<map id="inc/scroom/gmock/presentationinterface.hh" name="inc/scroom/gmock/presentationinterface.hh">
+<area shape="rect" id="node3" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="661,229,869,256"/>
+<area shape="rect" id="node32" href="$gmock_2colormappable_8hh.html" title="scroom/gmock/colormappable.hh" alt="" coords="1017,80,1231,107"/>
+<area shape="rect" id="node9" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="966,379,1129,405"/>
+<area shape="rect" id="node13" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="1371,304,1521,331"/>
+<area shape="rect" id="node24" href="$rectangle_8hh.html" title="scroom/rectangle.hh" alt="" coords="265,304,404,331"/>
+<area shape="rect" id="node12" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="879,453,1065,480"/>
+<area shape="rect" id="node17" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="2251,453,2379,480"/>
+<area shape="rect" id="node19" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="1573,379,1732,405"/>
+<area shape="rect" id="node21" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1597,453,1709,480"/>
+<area shape="rect" id="node22" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="1965,453,2176,480"/>
+<area shape="rect" id="node27" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="5,379,155,405"/>
+<area shape="rect" id="node29" href="$linearsegment_8hh.html" title="scroom/linearsegment.hh" alt="" coords="420,379,588,405"/>
+<area shape="rect" id="node31" href="$point_8hh.html" title="scroom/point.hh" alt="" coords="231,379,345,405"/>
+<area shape="rect" id="node33" href="$colormappable_8hh.html" title="scroom/colormappable.hh" alt="" coords="1184,155,1355,181"/>
+<area shape="rect" id="node35" href="$color_8hh.html" title="scroom/color.hh" alt="" coords="947,229,1061,256"/>
+<area shape="rect" id="node37" href="$assertions_8hh.html" title="scroom/assertions.hh" alt="" coords="2453,229,2600,256"/>
+</map>

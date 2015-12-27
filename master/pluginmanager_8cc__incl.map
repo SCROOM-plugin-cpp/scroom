@@ -1,0 +1,19 @@
+<map id="gui/src/pluginmanager.cc" name="gui/src/pluginmanager.cc">
+<area shape="rect" id="node2" href="$pluginmanager_8hh.html" title="pluginmanager.hh" alt="" coords="2111,80,2235,107"/>
+<area shape="rect" id="node28" href="$plugininformationinterface_8hh.html" title="scroom/plugininformationinterface.hh" alt="" coords="744,155,977,181"/>
+<area shape="rect" id="node39" href="$callbacks_8hh.html" title="callbacks.hh" alt="" coords="1430,80,1524,107"/>
+<area shape="rect" id="node7" href="$scroomplugin_8hh.html" title="scroom/scroomplugin.hh" alt="" coords="2457,155,2620,181"/>
+<area shape="rect" id="node10" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="1054,229,1233,256"/>
+<area shape="rect" id="node20" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="1613,528,1741,555"/>
+<area shape="rect" id="node29" href="$workinterface_8hh.html" title="workinterface.hh" alt="" coords="2262,155,2380,181"/>
+<area shape="rect" id="node30" href="$view_8hh.html" title="view.hh" alt="" coords="1621,155,1688,181"/>
+<area shape="rect" id="node11" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="1032,304,1240,331"/>
+<area shape="rect" id="node16" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="1462,379,1625,405"/>
+<area shape="rect" id="node22" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="539,453,697,480"/>
+<area shape="rect" id="node18" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="881,379,1031,405"/>
+<area shape="rect" id="node17" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="1563,453,1749,480"/>
+<area shape="rect" id="node24" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="745,528,857,555"/>
+<area shape="rect" id="node25" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="25,528,236,555"/>
+<area shape="rect" id="node34" href="$sidebarmanager_8hh.html" title="sidebarmanager.hh" alt="" coords="1905,379,2036,405"/>
+<area shape="rect" id="node35" href="$progressbarmanager_8hh.html" title="progressbarmanager.hh" alt="" coords="1665,304,1823,331"/>
+</map>

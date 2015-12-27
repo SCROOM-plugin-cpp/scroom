@@ -1,0 +1,12 @@
+<map id="inc/scroom/tiledbitmaplayer.hh" name="inc/scroom/tiledbitmaplayer.hh">
+<area shape="rect" id="node2" href="$compressedtile_8cc.html" title="libs/tiled&#45;bitmap/src\l/compressedtile.cc" alt="" coords="5,171,139,213"/>
+<area shape="rect" id="node3" href="$tileviewstate_8hh.html" title="libs/tiled&#45;bitmap/src\l/tileviewstate.hh" alt="" coords="227,81,361,122"/>
+<area shape="rect" id="node7" href="$layer_8cc.html" title="libs/tiled&#45;bitmap/src\l/layer.cc" alt="" coords="781,81,915,122"/>
+<area shape="rect" id="node8" href="$layercoordinator_8hh.html" title="libs/tiled&#45;bitmap/src\l/layercoordinator.hh" alt="" coords="620,81,755,122"/>
+<area shape="rect" id="node10" href="$tiled-bitmap_8hh.html" title="libs/tiled&#45;bitmap/src\l/tiled&#45;bitmap.hh" alt="" coords="557,171,691,213"/>
+<area shape="rect" id="node11" href="$tiledbitmapviewdata_8hh.html" title="libs/tiled&#45;bitmap/src\l/tiledbitmapviewdata.hh" alt="" coords="386,81,544,122"/>
+<area shape="rect" id="node4" href="$tiled-bitmap_8cc.html" title="libs/tiled&#45;bitmap/src\l/tiled&#45;bitmap.cc" alt="" coords="333,262,467,303"/>
+<area shape="rect" id="node5" href="$tiledbitmapviewdata_8cc.html" title="libs/tiled&#45;bitmap/src\l/tiledbitmapviewdata.cc" alt="" coords="215,171,373,213"/>
+<area shape="rect" id="node6" href="$tileviewstate_8cc.html" title="libs/tiled&#45;bitmap/src\l/tileviewstate.cc" alt="" coords="398,171,532,213"/>
+<area shape="rect" id="node9" href="$layercoordinator_8cc.html" title="libs/tiled&#45;bitmap/src\l/layercoordinator.cc" alt="" coords="716,171,851,213"/>
+</map>

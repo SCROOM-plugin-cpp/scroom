@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classColor.html" title="Represent a (ARGB) color. " alt="" coords="209,56,263,83"/>
+<area shape="rect" id="node3" href="$classPoint.html" title="Point\&lt; T \&gt;" alt="" coords="194,107,278,133"/>
+<area shape="rect" id="node4" href="$classPoint.html" title="Point\&lt; double \&gt;" alt="" coords="179,157,293,184"/>
+<area shape="rect" id="node6" href="$classRectangle.html" title="Rectangle\&lt; T \&gt;" alt="" coords="179,208,293,235"/>
+<area shape="rect" id="node7" href="$classSegment.html" title="Segment\&lt; T \&gt;" alt="" coords="183,259,289,285"/>
+<area shape="rect" id="node8" href="$classSegment.html" title="Segment\&lt; value_type \&gt;" alt="" coords="155,309,317,336"/>
+</map>

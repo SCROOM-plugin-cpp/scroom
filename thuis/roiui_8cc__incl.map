@@ -1,0 +1,17 @@
+<map id="plugins/roi/src/roiui.cc" name="plugins/roi/src/roiui.cc">
+<area shape="rect" id="node2" href="$roiui_8hh.html" title="roiui.hh" alt="" coords="1221,88,1285,115"/>
+<area shape="rect" id="node4" href="$roi_8hh.html" title="scroom/roi.hh" alt="" coords="453,171,554,197"/>
+<area shape="rect" id="node20" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="2209,560,2337,587"/>
+<area shape="rect" id="node7" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="510,253,689,280"/>
+<area shape="rect" id="node11" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="496,336,704,363"/>
+<area shape="rect" id="node15" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="230,485,393,512"/>
+<area shape="rect" id="node22" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="1418,485,1577,512"/>
+<area shape="rect" id="node17" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="1275,411,1425,437"/>
+<area shape="rect" id="node27" href="$rectangle_8hh.html" title="scroom/rectangle.hh" alt="" coords="583,411,722,437"/>
+<area shape="rect" id="node16" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="225,560,412,587"/>
+<area shape="rect" id="node24" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1634,560,1746,587"/>
+<area shape="rect" id="node25" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="1771,560,1982,587"/>
+<area shape="rect" id="node30" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="470,485,620,512"/>
+<area shape="rect" id="node32" href="$linearsegment_8hh.html" title="scroom/linearsegment.hh" alt="" coords="797,485,965,512"/>
+<area shape="rect" id="node34" href="$point_8hh.html" title="scroom/point.hh" alt="" coords="989,485,1104,512"/>
+</map>

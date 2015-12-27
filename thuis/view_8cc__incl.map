@@ -1,0 +1,23 @@
+<map id="gui/src/view.cc" name="gui/src/view.cc">
+<area shape="rect" id="node2" href="$view_8hh.html" title="view.hh" alt="" coords="719,155,785,181"/>
+<area shape="rect" id="node40" href="$pluginmanager_8hh.html" title="pluginmanager.hh" alt="" coords="761,80,884,107"/>
+<area shape="rect" id="node45" href="$callbacks_8hh.html" title="callbacks.hh" alt="" coords="1849,80,1943,107"/>
+<area shape="rect" id="node11" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="942,229,1121,256"/>
+<area shape="rect" id="node14" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="941,304,1149,331"/>
+<area shape="rect" id="node17" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="669,379,832,405"/>
+<area shape="rect" id="node21" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="2523,528,2651,555"/>
+<area shape="rect" id="node35" href="$sidebarmanager_8hh.html" title="sidebarmanager.hh" alt="" coords="1225,379,1356,405"/>
+<area shape="rect" id="node36" href="$progressbarmanager_8hh.html" title="progressbarmanager.hh" alt="" coords="454,304,612,331"/>
+<area shape="rect" id="node23" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="2212,453,2371,480"/>
+<area shape="rect" id="node19" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="2010,379,2160,405"/>
+<area shape="rect" id="node28" href="$rectangle_8hh.html" title="scroom/rectangle.hh" alt="" coords="1743,379,1883,405"/>
+<area shape="rect" id="node18" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="656,453,843,480"/>
+<area shape="rect" id="node25" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1918,528,2031,555"/>
+<area shape="rect" id="node26" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="2055,528,2267,555"/>
+<area shape="rect" id="node31" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="1199,453,1349,480"/>
+<area shape="rect" id="node33" href="$linearsegment_8hh.html" title="scroom/linearsegment.hh" alt="" coords="1375,453,1543,480"/>
+<area shape="rect" id="node34" href="$point_8hh.html" title="scroom/point.hh" alt="" coords="1668,453,1783,480"/>
+<area shape="rect" id="node41" href="$scroomplugin_8hh.html" title="scroom/scroomplugin.hh" alt="" coords="49,155,212,181"/>
+<area shape="rect" id="node43" href="$plugininformationinterface_8hh.html" title="scroom/plugininformationinterface.hh" alt="" coords="379,155,612,181"/>
+<area shape="rect" id="node44" href="$workinterface_8hh.html" title="workinterface.hh" alt="" coords="237,155,355,181"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="gui/src/progressbarmanager.cc" name="gui/src/progressbarmanager.cc">
+<area shape="rect" id="node2" href="$progressbarmanager_8hh.html" title="progressbarmanager.hh" alt="" coords="246,304,404,331"/>
+<area shape="rect" id="node11" href="$assertions_8hh.html" title="scroom/assertions.hh" alt="" coords="2169,80,2316,107"/>
+<area shape="rect" id="node13" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="1994,80,2144,107"/>
+<area shape="rect" id="node16" href="$workinterface_8hh.html" title="workinterface.hh" alt="" coords="2341,80,2459,107"/>
+<area shape="rect" id="node17" href="$callbacks_8hh.html" title="callbacks.hh" alt="" coords="1205,80,1299,107"/>
+<area shape="rect" id="node4" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="657,379,820,405"/>
+<area shape="rect" id="node8" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="1000,453,1187,480"/>
+<area shape="rect" id="node20" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="1078,229,1257,256"/>
+<area shape="rect" id="node21" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="1067,304,1275,331"/>
+<area shape="rect" id="node33" href="$view_8hh.html" title="view.hh" alt="" coords="716,155,783,181"/>
+<area shape="rect" id="node28" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="1476,453,1635,480"/>
+<area shape="rect" id="node25" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="1149,379,1299,405"/>
+<area shape="rect" id="node26" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="632,528,760,555"/>
+<area shape="rect" id="node30" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1290,528,1403,555"/>
+<area shape="rect" id="node31" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="1963,528,2175,555"/>
+<area shape="rect" id="node37" href="$sidebarmanager_8hh.html" title="sidebarmanager.hh" alt="" coords="398,379,529,405"/>
+</map>

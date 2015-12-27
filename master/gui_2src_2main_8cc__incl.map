@@ -1,0 +1,17 @@
+<map id="gui/src/main.cc" name="gui/src/main.cc">
+<area shape="rect" id="node7" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="97,80,247,107"/>
+<area shape="rect" id="node10" href="$callbacks_8hh.html" title="callbacks.hh" alt="" coords="1133,80,1227,107"/>
+<area shape="rect" id="node36" href="$loader_8hh.html" title="loader.hh" alt="" coords="1941,155,2015,181"/>
+<area shape="rect" id="node12" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="1554,229,1733,256"/>
+<area shape="rect" id="node14" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="909,304,1117,331"/>
+<area shape="rect" id="node31" href="$view_8hh.html" title="view.hh" alt="" coords="1147,155,1213,181"/>
+<area shape="rect" id="node19" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="1306,379,1469,405"/>
+<area shape="rect" id="node25" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="1428,453,1587,480"/>
+<area shape="rect" id="node21" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="775,379,925,405"/>
+<area shape="rect" id="node20" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="1167,453,1353,480"/>
+<area shape="rect" id="node23" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="685,528,813,555"/>
+<area shape="rect" id="node27" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1525,528,1637,555"/>
+<area shape="rect" id="node28" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="1713,528,1924,555"/>
+<area shape="rect" id="node34" href="$sidebarmanager_8hh.html" title="sidebarmanager.hh" alt="" coords="517,379,648,405"/>
+<area shape="rect" id="node35" href="$progressbarmanager_8hh.html" title="progressbarmanager.hh" alt="" coords="1427,304,1585,331"/>
+</map>

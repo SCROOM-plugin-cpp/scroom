@@ -1,0 +1,25 @@
+<map id="inc/scroom/tiledbitmaplayer.hh" name="inc/scroom/tiledbitmaplayer.hh">
+<area shape="rect" id="node8" href="$memoryblobs_8hh.html" title="scroom/memoryblobs.hh" alt="" coords="2033,379,2197,405"/>
+<area shape="rect" id="node13" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="1718,304,1868,331"/>
+<area shape="rect" id="node16" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1411,453,1524,480"/>
+<area shape="rect" id="node19" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="2633,229,2841,256"/>
+<area shape="rect" id="node27" href="$rectangle_8hh.html" title="scroom/rectangle.hh" alt="" coords="3286,304,3425,331"/>
+<area shape="rect" id="node37" href="$threadpool_8hh.html" title="scroom/threadpool.hh" alt="" coords="363,379,509,405"/>
+<area shape="rect" id="node42" href="$tile_8hh.html" title="scroom/tile.hh" alt="" coords="2988,304,3092,331"/>
+<area shape="rect" id="node44" href="$tiledbitmapinterface_8hh.html" title="scroom/tiledbitmapinterface.hh" alt="" coords="2325,80,2524,107"/>
+<area shape="rect" id="node11" href="$blockallocator_8hh.html" title="scroom/blockallocator.hh" alt="" coords="2309,453,2475,480"/>
+<area shape="rect" id="node12" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="1903,453,2031,480"/>
+<area shape="rect" id="node14" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="1596,379,1755,405"/>
+<area shape="rect" id="node17" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="1125,453,1336,480"/>
+<area shape="rect" id="node23" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="2343,304,2507,331"/>
+<area shape="rect" id="node26" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="2223,379,2409,405"/>
+<area shape="rect" id="node30" href="$assertions_8hh.html" title="scroom/assertions.hh" alt="" coords="3775,379,3921,405"/>
+<area shape="rect" id="node32" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="3167,379,3317,405"/>
+<area shape="rect" id="node34" href="$linearsegment_8hh.html" title="scroom/linearsegment.hh" alt="" coords="3532,379,3700,405"/>
+<area shape="rect" id="node36" href="$point_8hh.html" title="scroom/point.hh" alt="" coords="3393,379,3508,405"/>
+<area shape="rect" id="node39" href="$semaphore_8hh.html" title="scroom/semaphore.hh" alt="" coords="5,453,155,480"/>
+<area shape="rect" id="node41" href="$threadpoolimpl_8hh.html" title="scroom/impl/threadpoolimpl.hh" alt="" coords="261,453,459,480"/>
+<area shape="rect" id="node43" href="$global_8hh.html" title="scroom/global.hh" alt="" coords="2919,379,3040,405"/>
+<area shape="rect" id="node45" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="2335,155,2515,181"/>
+<area shape="rect" id="node46" href="$unused_8hh.html" title="scroom/unused.hh" alt="" coords="2123,155,2252,181"/>
+</map>

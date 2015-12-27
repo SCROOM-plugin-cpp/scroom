@@ -1,0 +1,18 @@
+<map id="plugins/roi/src/roiui.cc" name="plugins/roi/src/roiui.cc">
+<area shape="rect" id="node2" href="$roiui_8hh.html" title="roiui.hh" alt="" coords="1375,88,1439,115"/>
+<area shape="rect" id="node4" href="$roi_8hh.html" title="scroom/roi.hh" alt="" coords="425,171,527,197"/>
+<area shape="rect" id="node20" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="2344,560,2472,587"/>
+<area shape="rect" id="node7" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="482,253,661,280"/>
+<area shape="rect" id="node11" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="368,336,576,363"/>
+<area shape="rect" id="node15" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="241,485,404,512"/>
+<area shape="rect" id="node22" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="1709,485,1868,512"/>
+<area shape="rect" id="node17" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="1519,411,1669,437"/>
+<area shape="rect" id="node27" href="$rectangle_8hh.html" title="scroom/rectangle.hh" alt="" coords="887,411,1027,437"/>
+<area shape="rect" id="node16" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="173,560,360,587"/>
+<area shape="rect" id="node24" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1537,560,1649,587"/>
+<area shape="rect" id="node25" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="2007,560,2219,587"/>
+<area shape="rect" id="node30" href="$assertions_8hh.html" title="scroom/assertions.hh" alt="" coords="773,485,920,512"/>
+<area shape="rect" id="node32" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="598,485,748,512"/>
+<area shape="rect" id="node34" href="$linearsegment_8hh.html" title="scroom/linearsegment.hh" alt="" coords="1133,485,1301,512"/>
+<area shape="rect" id="node36" href="$point_8hh.html" title="scroom/point.hh" alt="" coords="995,485,1109,512"/>
+</map>

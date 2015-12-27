@@ -1,0 +1,3 @@
+<map id="TiledBitmapInterface" name="TiledBitmapInterface">
+<area shape="rect" id="node2" href="$classViewable.html" title="Implement Viewable if you want to be able to receive events when a View is created and/or deleted..." alt="" coords="39,5,141,112"/>
+</map>

@@ -1,0 +1,26 @@
+<map id="libs/tiled&#45;bitmap/src/tiled&#45;bitmap.cc" name="libs/tiled&#45;bitmap/src/tiled&#45;bitmap.cc">
+<area shape="rect" id="node2" href="$tiled-bitmap_8hh.html" title="tiled&#45;bitmap.hh" alt="" coords="895,96,1001,123"/>
+<area shape="rect" id="node34" href="$unused_8hh.html" title="scroom/unused.hh" alt="" coords="3197,395,3325,421"/>
+<area shape="rect" id="node39" href="$semaphore_8hh.html" title="scroom/semaphore.hh" alt="" coords="1151,395,1301,421"/>
+<area shape="rect" id="node47" href="$tileviewstate_8hh.html" title="tileviewstate.hh" alt="" coords="2223,171,2336,197"/>
+<area shape="rect" id="node8" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="2789,395,2968,421"/>
+<area shape="rect" id="node27" href="$tiledbitmapinterface_8hh.html" title="scroom/tiledbitmapinterface.hh" alt="" coords="2564,320,2763,347"/>
+<area shape="rect" id="node35" href="$tiledbitmaplayer_8hh.html" title="scroom/tiledbitmaplayer.hh" alt="" coords="1539,245,1717,272"/>
+<area shape="rect" id="node36" href="$threadpool_8hh.html" title="scroom/threadpool.hh" alt="" coords="1555,320,1701,347"/>
+<area shape="rect" id="node42" href="$progressinterfacehelpers_8hh.html" title="scroom/progressinterfacehelpers.hh" alt="" coords="1703,635,1932,661"/>
+<area shape="rect" id="node43" href="$layercoordinator_8hh.html" title="layercoordinator.hh" alt="" coords="463,171,595,197"/>
+<area shape="rect" id="node45" href="$tiledbitmapviewdata_8hh.html" title="tiledbitmapviewdata.hh" alt="" coords="2375,171,2528,197"/>
+<area shape="rect" id="node11" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="2524,477,2732,504"/>
+<area shape="rect" id="node16" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="2917,560,3080,587"/>
+<area shape="rect" id="node21" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="1519,635,1677,661"/>
+<area shape="rect" id="node18" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="823,560,973,587"/>
+<area shape="rect" id="node17" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="2743,709,2929,736"/>
+<area shape="rect" id="node20" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="919,709,1047,736"/>
+<area shape="rect" id="node23" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="2002,709,2115,736"/>
+<area shape="rect" id="node24" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="2406,709,2617,736"/>
+<area shape="rect" id="node29" href="$tile_8hh.html" title="scroom/tile.hh" alt="" coords="2193,560,2297,587"/>
+<area shape="rect" id="node30" href="$global_8hh.html" title="scroom/global.hh" alt="" coords="2159,635,2280,661"/>
+<area shape="rect" id="node31" href="$memoryblobs_8hh.html" title="scroom/memoryblobs.hh" alt="" coords="1204,635,1368,661"/>
+<area shape="rect" id="node33" href="$blockallocator_8hh.html" title="scroom/blockallocator.hh" alt="" coords="1325,709,1491,736"/>
+<area shape="rect" id="node41" href="$threadpoolimpl_8hh.html" title="scroom/impl/threadpoolimpl.hh" alt="" coords="1377,395,1575,421"/>
+</map>

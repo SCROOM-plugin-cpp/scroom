@@ -1,0 +1,5 @@
+<map id="TiledBitmapViewData" name="TiledBitmapViewData">
+<area shape="rect" id="node2" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="7,161,149,268"/>
+<area shape="rect" id="node4" href="$classTileLoadingObserver.html" title="Events related to swapping tiles in/out. " alt="" coords="174,169,343,261"/>
+<area shape="rect" id="node5" href="$classProgressInterface.html" title="Interface used for reporting progress information. " alt="" coords="367,147,520,283"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="TileViewState" name="TileViewState">
+<area shape="rect" id="node2" href="$classScroom_1_1Utils_1_1Observable.html" title="{Scroom::Utils::Observable\l\&lt; TileLoadingObserver \&gt;\n||+ Observable()\l+ ~Observable()\l+ registerStrongObserver()\l+ registerObserver()\l# getObservers()\l# observerAdded()\l&#45; unregisterObserver()\l}" alt="" coords="153,1707,329,1887"/>
+<area shape="rect" id="node7" href="$classScroom_1_1Bookkeeping_1_1MapBase.html" title="{Scroom::Bookkeeping\l::MapBase\&lt; ObserverWeak,\l typename Scroom::Utils\l::Detail::Registration::Ptr \&gt;\n|&#45; mut\l|+ reserve()\l+ reReserve()\l+ remove()\l+ remove()\l+ at()\l+ set()\l+ get()\l+ keys()\l+ values()\l}" alt="" coords="121,958,308,1197"/>
+<area shape="rect" id="node12" href="$classScroom_1_1Bookkeeping_1_1MapBase.html" title="{Scroom::Bookkeeping\l::MapBase\&lt; K, V \&gt;\n|&#45; mut\l|+ reserve()\l+ reReserve()\l+ remove()\l+ remove()\l+ at()\l+ set()\l+ get()\l+ keys()\l+ values()\l}" alt="" coords="145,654,295,863"/>
+<area shape="rect" id="node15" href="$classScroom_1_1Utils_1_1Observable.html" title="Base class for something that accepts observers. " alt="" coords="277,1477,485,1643"/>
+<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="450,347,592,453"/>
+<area shape="rect" id="node6" href="$classScroom_1_1Bookkeeping_1_1Map.html" title="{Scroom::Bookkeeping\l::Map\&lt; ObserverWeak,\l typename Scroom::Utils\l::Detail::Registration::Ptr \&gt;\n||+ create()\l}" alt="" coords="167,1291,345,1413"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="224,155,347,232"/>
+<area shape="rect" id="node14" href="$classScroom_1_1Bookkeeping_1_1Map.html" title="{Scroom::Bookkeeping\l::Map\&lt; K, V \&gt;\n||+ create()\l}" alt="" coords="333,1031,483,1123"/>
+<area shape="rect" id="node16" href="$classTileLoadingObserver.html" title="Events related to swapping tiles in/out. " alt="" coords="354,1751,523,1843"/>
+</map>

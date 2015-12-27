@@ -1,0 +1,9 @@
+<map id="CommonOperations" name="CommonOperations">
+<area shape="rect" id="node3" href="$classOperations.html" title="{Operations\n|# colormapProvider\l# bpp\l# pixelsPerByte\l# pixelOffset\l# pixelMask\l|+ Operations()\l+ ~Operations()\l+ getBpp()\l+ cache()\l+ reduce()\l+ draw()\l+ create()\l}" alt="" coords="33,477,167,701"/>
+<area shape="rect" id="node5" href="$classOperations1bpp.html" title="{Operations1bpp\n|&#45; colormapProvider\l|+ Operations1bpp()\l+ ~Operations1bpp()\l+ getBpp()\l+ cache()\l+ reduce()\l+ draw()\l+ create()\l}" alt="" coords="192,507,332,672"/>
+<area shape="rect" id="node6" href="$classOperations1bppClipped.html" title="{Operations1bppClipped\n|&#45; colormapProvider\l|+ Operations1bppClipped()\l+ ~Operations1bppClipped()\l+ getBpp()\l+ cacheZoom()\l+ reduce()\l+ create()\l}" alt="" coords="358,514,543,665"/>
+<area shape="rect" id="node7" href="$classOperations24bpp.html" title="{Operations24bpp\n||+ Operations24bpp()\l+ ~Operations24bpp()\l+ getBpp()\l+ cache()\l+ reduce()\l+ create()\l}" alt="" coords="567,514,715,665"/>
+<area shape="rect" id="node8" href="$classOperations8bpp.html" title="{Operations8bpp\n|&#45; colormapProvider\l|+ Operations8bpp()\l+ ~Operations8bpp()\l+ getBpp()\l+ cache()\l+ reduce()\l+ draw()\l+ create()\l}" alt="" coords="739,507,879,672"/>
+<area shape="rect" id="node2" href="$classLayerOperations.html" title="Operations on a layer in the TiledBitmap. " alt="" coords="378,6,523,186"/>
+<area shape="rect" id="node4" href="$classOperationsColormapped.html" title="{OperationsColormapped\n||+ OperationsColormapped()\l+ ~OperationsColormapped()\l+ getBpp()\l+ cache()\l+ reduce()\l+ create()\l}" alt="" coords="5,750,195,901"/>
+</map>

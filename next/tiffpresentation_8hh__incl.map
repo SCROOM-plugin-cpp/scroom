@@ -1,0 +1,18 @@
+<map id="plugins/tiff/src/tiffpresentation.hh" name="plugins/tiff/src/tiffpresentation.hh">
+<area shape="rect" id="node6" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="518,155,697,181"/>
+<area shape="rect" id="node9" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="1016,229,1224,256"/>
+<area shape="rect" id="node15" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="1358,304,1508,331"/>
+<area shape="rect" id="node25" href="$tiledbitmapinterface_8hh.html" title="scroom/tiledbitmapinterface.hh" alt="" coords="981,80,1180,107"/>
+<area shape="rect" id="node33" href="$colormappable_8hh.html" title="scroom/colormappable.hh" alt="" coords="1545,155,1716,181"/>
+<area shape="rect" id="node13" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="763,304,927,331"/>
+<area shape="rect" id="node19" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="772,379,931,405"/>
+<area shape="rect" id="node14" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="1015,379,1201,405"/>
+<area shape="rect" id="node17" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="1549,453,1677,480"/>
+<area shape="rect" id="node21" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1006,453,1119,480"/>
+<area shape="rect" id="node22" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="5,453,216,480"/>
+<area shape="rect" id="node27" href="$tile_8hh.html" title="scroom/tile.hh" alt="" coords="1784,304,1888,331"/>
+<area shape="rect" id="node32" href="$unused_8hh.html" title="scroom/unused.hh" alt="" coords="1102,155,1231,181"/>
+<area shape="rect" id="node28" href="$global_8hh.html" title="scroom/global.hh" alt="" coords="2102,379,2223,405"/>
+<area shape="rect" id="node29" href="$memoryblobs_8hh.html" title="scroom/memoryblobs.hh" alt="" coords="1753,379,1917,405"/>
+<area shape="rect" id="node31" href="$blockallocator_8hh.html" title="scroom/blockallocator.hh" alt="" coords="1753,453,1919,480"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="inc/scroom/layeroperations.hh" name="inc/scroom/layeroperations.hh">
+<area shape="rect" id="node2" href="$tiledbitmapinterface_8hh.html" title="scroom/tiledbitmapinterface.hh" alt="" coords="1093,80,1292,107"/>
+<area shape="rect" id="node33" href="$colormappable_8hh.html" title="scroom/colormappable.hh" alt="" coords="1535,155,1705,181"/>
+<area shape="rect" id="node8" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="679,155,859,181"/>
+<area shape="rect" id="node11" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="996,229,1204,256"/>
+<area shape="rect" id="node14" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="542,304,705,331"/>
+<area shape="rect" id="node23" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1158,453,1271,480"/>
+<area shape="rect" id="node27" href="$tile_8hh.html" title="scroom/tile.hh" alt="" coords="1736,304,1840,331"/>
+<area shape="rect" id="node32" href="$unused_8hh.html" title="scroom/unused.hh" alt="" coords="1381,155,1509,181"/>
+<area shape="rect" id="node21" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="1040,379,1199,405"/>
+<area shape="rect" id="node16" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="1458,304,1608,331"/>
+<area shape="rect" id="node15" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="491,379,677,405"/>
+<area shape="rect" id="node19" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="2016,453,2144,480"/>
+<area shape="rect" id="node24" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="5,453,216,480"/>
+<area shape="rect" id="node28" href="$global_8hh.html" title="scroom/global.hh" alt="" coords="1727,379,1848,405"/>
+<area shape="rect" id="node29" href="$memoryblobs_8hh.html" title="scroom/memoryblobs.hh" alt="" coords="1875,379,2039,405"/>
+<area shape="rect" id="node31" href="$blockallocator_8hh.html" title="scroom/blockallocator.hh" alt="" coords="1774,453,1940,480"/>
+</map>

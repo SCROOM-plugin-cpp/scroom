@@ -1,0 +1,5 @@
+<map id="OperationsColormapped" name="OperationsColormapped">
+<area shape="rect" id="node2" href="$classOperations.html" title="{Operations\n|# colormapProvider\l# bpp\l# pixelsPerByte\l# pixelOffset\l# pixelMask\l|+ Operations()\l+ ~Operations()\l+ getBpp()\l+ cache()\l+ reduce()\l+ draw()\l+ create()\l}" alt="" coords="33,477,167,701"/>
+<area shape="rect" id="node3" href="$classCommonOperations.html" title="{CommonOperations\n||+ ~CommonOperations()\l+ setClip()\l+ setClip()\l+ drawPixelValue()\l+ drawPixelValue()\l+ initializeCairo()\l+ drawState()\l+ cacheZoom()\l+ draw()\l}" alt="" coords="17,235,183,429"/>
+<area shape="rect" id="node4" href="$classLayerOperations.html" title="Operations on a layer in the TiledBitmap. " alt="" coords="27,6,172,186"/>
+</map>

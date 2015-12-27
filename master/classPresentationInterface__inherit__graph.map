@@ -1,0 +1,8 @@
+<map id="PresentationInterface" name="PresentationInterface">
+<area shape="rect" id="node7" href="$classPresentationBase.html" title="{PresentationBase\n||+ open()\l+ close()\l# observerAdded()\l# viewAdded()\l# viewRemoved()\l# getViews()\l}" alt="" coords="152,715,280,866"/>
+<area shape="rect" id="node2" href="$classViewable.html" title="Implement Viewable if you want to be able to receive events when a View is created and/or deleted..." alt="" coords="83,331,185,437"/>
+<area shape="rect" id="node3" href="$classScroom_1_1Utils_1_1Observable.html" title="Base class for something that accepts observers. " alt="" coords="211,301,387,467"/>
+<area shape="rect" id="node5" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="298,147,440,253"/>
+<area shape="rect" id="node8" href="$classTiffPresentationWrapper.html" title="{TiffPresentationWrapper\n|&#45; presentation\l|+ ~TiffPresentationWrapper()\l+ load()\l+ getRect()\l+ redraw()\l+ getProperty()\l+ isPropertyDefined()\l+ getTitle()\l+ viewAdded()\l+ viewRemoved()\l+ getViews()\land 8 more...\l+ create()\l&#45; TiffPresentationWrapper()\l}" alt="" coords="5,923,195,1176"/>
+<area shape="rect" id="node9" href="$classTransparentOverlayPresentation.html" title="{TransparentOverlayPresentation\n|&#45; children\l&#45; sizeDeterminer\l&#45; viewData\l|+ getRect()\l+ redraw()\l+ getProperty()\l+ isPropertyDefined()\l+ getTitle()\l+ viewAdded()\l+ viewRemoved()\l+ getViews()\l+ addPresentation()\l+ create()\l&#45; TransparentOverlayPresentation()\l&#45; setOptimalColor()\l}" alt="" coords="219,915,444,1183"/>
+</map>

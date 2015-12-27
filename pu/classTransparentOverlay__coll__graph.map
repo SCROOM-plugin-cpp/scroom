@@ -1,0 +1,5 @@
+<map id="TransparentOverlay" name="TransparentOverlay">
+<area shape="rect" id="node2" href="$classPluginInformationInterface.html" title="{PluginInformationInterface\n|+ pluginApiVersion\l|+ PluginInformationInterface()\l+ ~PluginInformationInterface()\l+ getPluginName()\l+ getPluginVersion()\l+ registerCapabilities()\l}" alt="" coords="5,147,208,283"/>
+<area shape="rect" id="node3" href="$classNewAggregateInterface.html" title="{NewAggregateInterface\n||+ ~NewAggregateInterface()\l+ createNew()\l}" alt="" coords="232,169,419,261"/>
+<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="443,161,585,268"/>
+</map>

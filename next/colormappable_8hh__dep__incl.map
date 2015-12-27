@@ -1,0 +1,10 @@
+<map id="inc/scroom/colormappable.hh" name="inc/scroom/colormappable.hh">
+<area shape="rect" id="node2" href="$layeroperations_8hh.html" title="inc/scroom/layeroperations.hh" alt="" coords="5,88,200,115"/>
+<area shape="rect" id="node5" href="$colormap-helpers_8cc.html" title="libs/scroom/src/colormap\l&#45;helpers.cc" alt="" coords="225,81,393,122"/>
+<area shape="rect" id="node6" href="$tiffpresentation_8hh.html" title="plugins/tiff/src/tiffpresentation.hh" alt="" coords="418,88,629,115"/>
+<area shape="rect" id="node8" href="$transparentoverlaypresentation_8cc.html" title="plugins/transparent\l&#45;overlay/src/transparentoverlaypresentation.cc" alt="" coords="655,81,945,122"/>
+<area shape="rect" id="node9" href="$transparentoverlayviewinfo_8cc.html" title="plugins/transparent\l&#45;overlay/src/transparentoverlayviewinfo.cc" alt="" coords="969,81,1236,122"/>
+<area shape="rect" id="node3" href="$layeroperations_8cc.html" title="libs/tiled&#45;bitmap/src\l/layeroperations.cc" alt="" coords="35,171,169,213"/>
+<area shape="rect" id="node4" href="$tiffpresentation_8cc.html" title="plugins/tiff/src/tiffpresentation.cc" alt="" coords="206,179,417,205"/>
+<area shape="rect" id="node7" href="$tiff_8cc.html" title="plugins/tiff/src/tiff.cc" alt="" coords="453,179,593,205"/>
+</map>

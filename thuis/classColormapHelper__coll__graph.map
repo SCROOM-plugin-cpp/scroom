@@ -1,0 +1,5 @@
+<map id="ColormapHelper" name="ColormapHelper">
+<area shape="rect" id="node2" href="$classColormapHelperBase.html" title="{ColormapHelperBase\n|+ colormap\l+ originalColormap\l|+ ColormapHelperBase()\l+ setColormap()\l+ getOriginalColormap()\l+ getNumberOfColors()\l+ getMonochromeColor()\l+ setMonochromeColor()\l+ setTransparentBackground()\l+ disableTransparentBackground()\l+ getTransparentBackground()\l+ getColormap()\l+ setOriginalColormap()\l&#45; OperationNotSupported()\l}" alt="" coords="77,323,299,576"/>
+<area shape="rect" id="node3" href="$classColormapProvider.html" title="{ColormapProvider\n||+ getColormap()\l+ ~ColormapProvider()\l}" alt="" coords="5,94,159,186"/>
+<area shape="rect" id="node4" href="$classColormappable.html" title="Interface for Colormappable presentations. " alt="" coords="184,6,405,274"/>
+</map>

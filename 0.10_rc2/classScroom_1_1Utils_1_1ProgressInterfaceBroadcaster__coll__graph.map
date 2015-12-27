@@ -1,0 +1,5 @@
+<map id="Scroom::Utils::ProgressInterfaceBroadcaster" name="Scroom::Utils::ProgressInterfaceBroadcaster">
+<area shape="rect" id="node2" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="7,332,149,439"/>
+<area shape="rect" id="node4" href="$classProgressInterface.html" title="Interface used for reporting progress information. " alt="" coords="174,317,327,453"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="393,155,492,232"/>
+</map>

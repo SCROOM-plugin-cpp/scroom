@@ -1,0 +1,7 @@
+<map id="View" name="View">
+<area shape="rect" id="node2" href="$classViewInterface.html" title="Interface provided to something Viewable. " alt="" coords="5,563,168,728"/>
+<area shape="rect" id="node3" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="193,592,335,699"/>
+<area shape="rect" id="node5" href="$classSidebarManager.html" title="{SidebarManager\n|&#45; panelWindow\l&#45; panel\l|+ SidebarManager()\l+ setWidgets()\l+ addSideWidget()\l+ removeSideWidget()\l}" alt="" coords="360,577,512,713"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="467,147,589,224"/>
+<area shape="rect" id="node10" href="$structMeasurement.html" title="{Measurement\n|+ start\l+ end\l|+ Measurement()\l+ Measurement()\l+ endsAt()\l+ width()\l+ height()\l+ length()\l}" alt="" coords="671,563,792,728"/>
+</map>

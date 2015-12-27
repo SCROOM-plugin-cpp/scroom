@@ -1,0 +1,9 @@
+<map id="inc/scroom/presentationinterface.hh" name="inc/scroom/presentationinterface.hh">
+<area shape="rect" id="node7" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="139,155,302,181"/>
+<area shape="rect" id="node11" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="772,80,922,107"/>
+<area shape="rect" id="node10" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="205,229,392,256"/>
+<area shape="rect" id="node15" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="1497,229,1625,256"/>
+<area shape="rect" id="node17" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="972,155,1130,181"/>
+<area shape="rect" id="node19" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="900,229,1013,256"/>
+<area shape="rect" id="node20" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="1088,229,1300,256"/>
+</map>

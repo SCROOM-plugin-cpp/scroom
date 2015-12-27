@@ -1,0 +1,19 @@
+<map id="gui/src/callbacks.hh" name="gui/src/callbacks.hh">
+<area shape="rect" id="node6" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="1621,155,1800,181"/>
+<area shape="rect" id="node8" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="1236,229,1444,256"/>
+<area shape="rect" id="node34" href="$view_8hh.html" title="view.hh" alt="" coords="1859,80,1925,107"/>
+<area shape="rect" id="node13" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="1831,304,1995,331"/>
+<area shape="rect" id="node19" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="1419,379,1577,405"/>
+<area shape="rect" id="node15" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="1109,304,1259,331"/>
+<area shape="rect" id="node24" href="$rectangle_8hh.html" title="scroom/rectangle.hh" alt="" coords="418,304,557,331"/>
+<area shape="rect" id="node14" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="1856,379,2043,405"/>
+<area shape="rect" id="node17" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="771,453,899,480"/>
+<area shape="rect" id="node21" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1158,453,1271,480"/>
+<area shape="rect" id="node22" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="1346,453,1557,480"/>
+<area shape="rect" id="node27" href="$assertions_8hh.html" title="scroom/assertions.hh" alt="" coords="701,379,848,405"/>
+<area shape="rect" id="node29" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="526,379,676,405"/>
+<area shape="rect" id="node31" href="$linearsegment_8hh.html" title="scroom/linearsegment.hh" alt="" coords="283,379,451,405"/>
+<area shape="rect" id="node33" href="$point_8hh.html" title="scroom/point.hh" alt="" coords="144,379,259,405"/>
+<area shape="rect" id="node37" href="$sidebarmanager_8hh.html" title="sidebarmanager.hh" alt="" coords="2122,304,2253,331"/>
+<area shape="rect" id="node38" href="$progressbarmanager_8hh.html" title="progressbarmanager.hh" alt="" coords="2187,229,2345,256"/>
+</map>
