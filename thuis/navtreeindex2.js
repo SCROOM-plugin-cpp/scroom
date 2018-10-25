@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classPluginManager.html":[1,0,51],
 "classPluginManager.html#a00d50bf53b315ad09323e100a831dfc3":[1,0,51,15],
 "classPluginManager.html#a096467c81f951782e079674caabe5e64":[1,0,51,3],
 "classPluginManager.html#a15f829b11a018ca1baff4f688365750e":[1,0,51,23],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "classScroom_1_1Detail_1_1ThreadPool_1_1FunctionAdditor.html#a76d5a1dfe6ad1a84c61e54b6ecf831c1":[1,0,11,2,0,0,3],
 "classScroom_1_1Detail_1_1ThreadPool_1_1FunctionAdditor.html#a97d46fb8faadc4f22d9555a13b969d11":[1,0,11,2,0,0,1],
 "classScroom_1_1Detail_1_1ThreadPool_1_1FunctionAdditor.html#aafbc6ad7c86ff4a23e824d7a4f7b9f38":[1,0,11,2,0,0,0],
-"classScroom_1_1Detail_1_1ThreadPool_1_1FunctionAdditor.html#ad59cbb88962a66ec496f1c423d2ee979":[1,0,11,2,0,0,5]
+"classScroom_1_1Detail_1_1ThreadPool_1_1FunctionAdditor.html#ad59cbb88962a66ec496f1c423d2ee979":[1,0,11,2,0,0,5],
+"classScroom_1_1Detail_1_1ThreadPool_1_1FunctionMultiplier.html":[1,0,11,2,0,1]
 };

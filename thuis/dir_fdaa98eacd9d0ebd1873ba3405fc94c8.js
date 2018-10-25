@@ -13,6 +13,7 @@ var dir_fdaa98eacd9d0ebd1873ba3405fc94c8 =
     [ "cairo-helpers.hh", "cairo-helpers_8hh.html", "cairo-helpers_8hh" ],
     [ "color.hh", "color_8hh.html", "color_8hh" ],
     [ "colormappable.hh", "colormappable_8hh.html", "colormappable_8hh" ],
+    [ "compiler.hh", "compiler_8hh.html", "compiler_8hh" ],
     [ "dont-delete.hh", "dont-delete_8hh.html", [
       [ "DontDelete", "classDontDelete.html", "classDontDelete" ]
     ] ],

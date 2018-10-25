@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Scroom
-   &#160;<span id="projectnumber">0.10_rc2-1-g1ae2fab</span>
+   &#160;<span id="projectnumber">0.10_rc2-4-g7a72516</span>
    </div>
   </td>
  </tr>
@@ -111,6 +111,7 @@ $(document).ready(function(){initNavTree('tiled-bitmap_8cc.html','');});
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="tiled-bitmap_8hh_source.html">tiled-bitmap.hh</a>&quot;</code><br/>
 <code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;cmath&gt;</code><br/>
 <code>#include &lt;boost/thread/mutex.hpp&gt;</code><br/>
 <code>#include &lt;<a class="el" href="assertions_8hh_source.html">scroom/assertions.hh</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="cairo-helpers_8hh_source.html">scroom/cairo-helpers.hh</a>&gt;</code><br/>
@@ -122,7 +123,7 @@ Include dependency graph for tiled-bitmap.cc:</div>
 <div class="dyncontent">
 <div class="center"><img src="tiled-bitmap_8cc__incl.png" border="0" usemap="#libs_2tiled-bitmap_2src_2tiled-bitmap_8cc" alt=""/></div>
 <map name="libs_2tiled-bitmap_2src_2tiled-bitmap_8cc" id="libs_2tiled-bitmap_2src_2tiled-bitmap_8cc">
-<area shape="rect" id="node2" href="tiled-bitmap_8hh.html" title="tiled&#45;bitmap.hh" alt="" coords="1765,96,1872,123"/><area shape="rect" id="node32" href="unused_8hh.html" title="scroom/unused.hh" alt="" coords="3006,395,3135,421"/><area shape="rect" id="node36" href="semaphore_8hh.html" title="scroom/semaphore.hh" alt="" coords="221,395,371,421"/><area shape="rect" id="node44" href="assertions_8hh.html" title="scroom/assertions.hh" alt="" coords="3605,96,3752,123"/><area shape="rect" id="node46" href="cairo-helpers_8hh.html" title="scroom/cairo&#45;helpers.hh" alt="" coords="3159,395,3320,421"/><area shape="rect" id="node50" href="tileviewstate_8hh.html" title="tileviewstate.hh" alt="" coords="1663,171,1776,197"/><area shape="rect" id="node8" href="scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="2446,395,2625,421"/><area shape="rect" id="node28" href="tiledbitmapinterface_8hh.html" title="scroom/tiledbitmapinterface.hh" alt="" coords="2308,320,2507,347"/><area shape="rect" id="node33" href="tiledbitmaplayer_8hh.html" title="scroom/tiledbitmaplayer.hh" alt="" coords="1192,245,1371,272"/><area shape="rect" id="node34" href="threadpool_8hh.html" title="scroom/threadpool.hh" alt="" coords="1044,320,1191,347"/><area shape="rect" id="node39" href="progressinterfacehelpers_8hh.html" title="scroom/progressinterfacehelpers.hh" alt="" coords="1808,635,2037,661"/><area shape="rect" id="node40" href="layercoordinator_8hh.html" title="layercoordinator.hh" alt="" coords="379,171,511,197"/><area shape="rect" id="node42" href="tiledbitmapviewdata_8hh.html" title="tiledbitmapviewdata.hh" alt="" coords="1859,171,2012,197"/><area shape="rect" id="node11" href="presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="2163,477,2371,504"/><area shape="rect" id="node16" href="viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="2326,560,2489,587"/><area shape="rect" id="node21" href="bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="1523,635,1681,661"/><area shape="rect" id="node18" href="observable_8hh.html" title="scroom/observable.hh" alt="" coords="1309,560,1459,587"/><area shape="rect" id="node23" href="rectangle_8hh.html" title="scroom/rectangle.hh" alt="" coords="2819,560,2959,587"/><area shape="rect" id="node17" href="progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="2104,709,2291,736"/><area shape="rect" id="node20" href="utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="917,709,1045,736"/><area shape="rect" id="node22" href="stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1750,709,1863,736"/><area shape="rect" id="node26" href="gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="2902,635,3052,661"/><area shape="rect" id="node30" href="tile_8hh.html" title="scroom/tile.hh" alt="" coords="756,560,860,587"/><area shape="rect" id="node31" href="memoryblobs_8hh.html" title="scroom/memoryblobs.hh" alt="" coords="725,635,889,661"/><area shape="rect" id="node38" href="threadpoolimpl_8hh.html" title="scroom/impl/threadpoolimpl.hh" alt="" coords="863,395,1061,421"/><area shape="rect" id="node47" href="color_8hh.html" title="scroom/color.hh" alt="" coords="3181,477,3296,504"/></map>
+<area shape="rect" id="node2" href="tiled-bitmap_8hh.html" title="tiled&#45;bitmap.hh" alt="" coords="843,96,949,123"/><area shape="rect" id="node32" href="unused_8hh.html" title="scroom/unused.hh" alt="" coords="3403,395,3532,421"/><area shape="rect" id="node36" href="semaphore_8hh.html" title="scroom/semaphore.hh" alt="" coords="221,395,371,421"/><area shape="rect" id="node45" href="assertions_8hh.html" title="scroom/assertions.hh" alt="" coords="3284,96,3431,123"/><area shape="rect" id="node47" href="cairo-helpers_8hh.html" title="scroom/cairo&#45;helpers.hh" alt="" coords="3115,395,3276,421"/><area shape="rect" id="node50" href="tileviewstate_8hh.html" title="tileviewstate.hh" alt="" coords="1935,171,2048,197"/><area shape="rect" id="node8" href="scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="2182,395,2361,421"/><area shape="rect" id="node28" href="tiledbitmapinterface_8hh.html" title="scroom/tiledbitmapinterface.hh" alt="" coords="2563,320,2761,347"/><area shape="rect" id="node33" href="tiledbitmaplayer_8hh.html" title="scroom/tiledbitmaplayer.hh" alt="" coords="1521,245,1700,272"/><area shape="rect" id="node34" href="threadpool_8hh.html" title="scroom/threadpool.hh" alt="" coords="1376,320,1523,347"/><area shape="rect" id="node39" href="progressinterfacehelpers_8hh.html" title="scroom/progressinterfacehelpers.hh" alt="" coords="1663,635,1892,661"/><area shape="rect" id="node40" href="layercoordinator_8hh.html" title="layercoordinator.hh" alt="" coords="373,171,504,197"/><area shape="rect" id="node42" href="tiledbitmapviewdata_8hh.html" title="tiledbitmapviewdata.hh" alt="" coords="933,171,1087,197"/><area shape="rect" id="node11" href="presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="2715,477,2923,504"/><area shape="rect" id="node16" href="viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="2310,560,2473,587"/><area shape="rect" id="node21" href="bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="985,635,1144,661"/><area shape="rect" id="node18" href="observable_8hh.html" title="scroom/observable.hh" alt="" coords="973,560,1123,587"/><area shape="rect" id="node23" href="rectangle_8hh.html" title="scroom/rectangle.hh" alt="" coords="2962,560,3101,587"/><area shape="rect" id="node17" href="progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="2153,709,2340,736"/><area shape="rect" id="node20" href="utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="884,709,1012,736"/><area shape="rect" id="node22" href="stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="1718,709,1831,736"/><area shape="rect" id="node26" href="gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="2959,635,3109,661"/><area shape="rect" id="node30" href="tile_8hh.html" title="scroom/tile.hh" alt="" coords="1979,560,2083,587"/><area shape="rect" id="node31" href="memoryblobs_8hh.html" title="scroom/memoryblobs.hh" alt="" coords="1220,635,1384,661"/><area shape="rect" id="node38" href="threadpoolimpl_8hh.html" title="scroom/impl/threadpoolimpl.hh" alt="" coords="1338,395,1536,421"/><area shape="rect" id="node48" href="color_8hh.html" title="scroom/color.hh" alt="" coords="3352,477,3467,504"/></map>
 </div>
 </div>
 <p><a href="tiled-bitmap_8cc_source.html">Go to the source code of this file.</a></p>
@@ -140,330 +141,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a84bb171aac649efd1dab4f77373d08a4"><td class="memItemLeft" align="right" valign="top">static <br class="typebreak"/>
 <a class="el" href="classScroom_1_1MemoryBlobs_1_1PageProvider.html#a4fb870b6934b76259ab87c66b8f189d1">Scroom::MemoryBlobs::PageProvider::Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tiled-bitmap_8cc.html#a84bb171aac649efd1dab4f77373d08a4">createProvider</a> (double width, double height, int bpp)</td></tr>
 <tr class="separator:a84bb171aac649efd1dab4f77373d08a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fde59c3530bd9ad27f64dd1df996307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tiled-bitmap_8cc.html#a8fde59c3530bd9ad27f64dd1df996307">computeAreasBeginningZoomingIn</a> (int presentationBegin, int tileOffset, int pixelSize, int &amp;tileBegin, int &amp;viewBegin)</td></tr>
-<tr class="separator:a8fde59c3530bd9ad27f64dd1df996307"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cae08aa33b1e9810fefb75952a456f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tiled-bitmap_8cc.html#a9cae08aa33b1e9810fefb75952a456f0">computeAreasEndZoomingIn</a> (int presentationBegin, int presentationSize, int tileOffset, int pixelSize, int tileBegin, int &amp;tileSize, int viewBegin, int &amp;viewSize)</td></tr>
-<tr class="separator:a9cae08aa33b1e9810fefb75952a456f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a51164375db0eee3f658b15f1d54fa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tiled-bitmap_8cc.html#a0a51164375db0eee3f658b15f1d54fa5">computeAreasBeginningZoomingOut</a> (int presentationBegin, int tileOffset, int pixelSize, int &amp;tileBegin, int &amp;viewBegin)</td></tr>
-<tr class="separator:a0a51164375db0eee3f658b15f1d54fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae409233302b896deba4567cba6895418"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tiled-bitmap_8cc.html#ae409233302b896deba4567cba6895418">computeAreasEndZoomingOut</a> (int presentationBegin, int presentationSize, int tileOffset, int pixelSize, int tileBegin, int &amp;tileSize, int viewBegin, int &amp;viewSize)</td></tr>
-<tr class="separator:ae409233302b896deba4567cba6895418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e35e4080b41bdb0e0c0e4798a8295be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScroom_1_1Utils_1_1Rectangle.html">Scroom::Utils::Rectangle</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tiled-bitmap_8cc.html#a1e35e4080b41bdb0e0c0e4798a8295be">TileAreaForIndex</a> (<a class="el" href="classScroom_1_1Utils_1_1Point.html">Scroom::Utils::Point</a>&lt; int &gt; tileIndex)</td></tr>
+<tr class="separator:a1e35e4080b41bdb0e0c0e4798a8295be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a8fde59c3530bd9ad27f64dd1df996307"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void computeAreasBeginningZoomingIn </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>presentationBegin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>tileOffset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pixelSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>tileBegin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>viewBegin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="tiled-bitmap_8cc_source.html#l00239">239</a> of file <a class="el" href="tiled-bitmap_8cc_source.html">tiled-bitmap.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="tiled-bitmap_8cc_source.html#l00323">TiledBitmap::redrawZoomingIn()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keywordflow">if</span>(tileOffset &gt;= presentationBegin)</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    tileBegin = 0;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    viewBegin = (tileOffset-presentationBegin)*pixelSize;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    tileBegin = presentationBegin-tileOffset;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    viewBegin = 0;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a0a51164375db0eee3f658b15f1d54fa5"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void computeAreasBeginningZoomingOut </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>presentationBegin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>tileOffset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pixelSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>tileBegin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>viewBegin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="tiled-bitmap_8cc_source.html#l00272">272</a> of file <a class="el" href="tiled-bitmap_8cc_source.html">tiled-bitmap.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="tiled-bitmap_8cc_source.html#l00389">TiledBitmap::redrawZoomingOut()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="keywordflow">if</span>(tileOffset &gt;= presentationBegin)</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    tileBegin = 0;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    viewBegin = (tileOffset-presentationBegin)/pixelSize;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  }</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    tileBegin = presentationBegin-tileOffset;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    viewBegin = 0;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a9cae08aa33b1e9810fefb75952a456f0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void computeAreasEndZoomingIn </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>presentationBegin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>presentationSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>tileOffset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pixelSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>tileBegin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>tileSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>viewBegin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>viewSize</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="tiled-bitmap_8cc_source.html#l00254">254</a> of file <a class="el" href="tiled-bitmap_8cc_source.html">tiled-bitmap.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="tiled-bitmap_8cc_source.html#l00323">TiledBitmap::redrawZoomingIn()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;{</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <a class="code" href="unused_8hh.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(viewBegin);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordflow">if</span>(tileOffset + <a class="code" href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a> &lt;= presentationBegin + presentationSize)</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  {</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    tileSize = <a class="code" href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a> - tileBegin;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    tileSize = presentationBegin + presentationSize - tileOffset - tileBegin;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  }</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  viewSize = tileSize*pixelSize;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;}</div>
-<div class="ttc" id="tiledbitmaplayer_8hh_html_a07ae61ed7dc31e9cddbdf9da244567c7"><div class="ttname"><a href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a></div><div class="ttdeci">#define TILESIZE</div><div class="ttdef"><b>Definition:</b> <a href="tiledbitmaplayer_8hh_source.html#l00027">tiledbitmaplayer.hh:27</a></div></div>
-<div class="ttc" id="unused_8hh_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="unused_8hh.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="unused_8hh_source.html#l00010">unused.hh:10</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ae409233302b896deba4567cba6895418"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void computeAreasEndZoomingOut </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>presentationBegin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>presentationSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>tileOffset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pixelSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>tileBegin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>tileSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>viewBegin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>viewSize</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="tiled-bitmap_8cc_source.html#l00287">287</a> of file <a class="el" href="tiled-bitmap_8cc_source.html">tiled-bitmap.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="tiled-bitmap_8cc_source.html#l00389">TiledBitmap::redrawZoomingOut()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;{</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <a class="code" href="unused_8hh.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(viewBegin);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="keywordflow">if</span>(tileOffset + <a class="code" href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a> &lt;= presentationBegin + presentationSize)</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  {</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    tileSize = <a class="code" href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a> - tileBegin;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  }</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    tileSize = presentationBegin + presentationSize - tileOffset - tileBegin;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  }</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  viewSize = tileSize/pixelSize;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
-<div class="ttc" id="tiledbitmaplayer_8hh_html_a07ae61ed7dc31e9cddbdf9da244567c7"><div class="ttname"><a href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a></div><div class="ttdeci">#define TILESIZE</div><div class="ttdef"><b>Definition:</b> <a href="tiledbitmaplayer_8hh_source.html#l00027">tiledbitmaplayer.hh:27</a></div></div>
-<div class="ttc" id="unused_8hh_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="unused_8hh.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="unused_8hh_source.html#l00010">unused.hh:10</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
 <a class="anchor" id="a84bb171aac649efd1dab4f77373d08a4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -502,23 +183,23 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="tiled-bitmap_8cc_source.html#l00031">31</a> of file <a class="el" href="tiled-bitmap_8cc_source.html">tiled-bitmap.cc</a>.</p>
+<p>Definition at line <a class="el" href="tiled-bitmap_8cc_source.html#l00033">33</a> of file <a class="el" href="tiled-bitmap_8cc_source.html">tiled-bitmap.cc</a>.</p>
 
-<p>Referenced by <a class="el" href="tiled-bitmap_8cc_source.html#l00139">TiledBitmap::initialize()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">double</span> tileCount = (width*height) / (<a class="code" href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a> * <a class="code" href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">double</span> tileSize = (bpp / 8.0) * TILESIZE * <a class="code" href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">double</span> guessedTileSizeAfterCompression = tileSize / 100;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> pagesize = 4096;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">int</span> pagesPerBlock = std::max(<span class="keywordtype">int</span>(ceil(guessedTileSizeAfterCompression / 10 / pagesize)),1);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">int</span> blockSize = pagesPerBlock*pagesize;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">int</span> blockCount = std::max(<span class="keywordtype">int</span>(ceil(tileCount / 10)), 64);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  printf(<span class="stringliteral">&quot;Creating a PageProvider providing %d blocks of %d bytes\n&quot;</span>, blockCount, blockSize);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classScroom_1_1MemoryBlobs_1_1PageProvider.html#a1b4d5f7c0692f14a3a9062cc24034dd4">Scroom::MemoryBlobs::PageProvider::create</a>(blockCount, blockSize);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<p>Referenced by <a class="el" href="tiled-bitmap_8cc_source.html#l00148">TiledBitmap::initialize()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">double</span> tileCount = (width*height) / (<a class="code" href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a> * <a class="code" href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">double</span> tileSize = (bpp / 8.0) * TILESIZE * <a class="code" href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">double</span> guessedTileSizeAfterCompression = tileSize / 100;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> pagesize = 4096;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">int</span> pagesPerBlock = std::max(<span class="keywordtype">int</span>(ceil(guessedTileSizeAfterCompression / 10 / pagesize)),1);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">int</span> blockSize = pagesPerBlock*pagesize;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">int</span> blockCount = std::max(<span class="keywordtype">int</span>(ceil(tileCount / 10)), 64);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  printf(<span class="stringliteral">&quot;Creating a PageProvider providing %d blocks of %d bytes\n&quot;</span>, blockCount, blockSize);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classScroom_1_1MemoryBlobs_1_1PageProvider.html#a1b4d5f7c0692f14a3a9062cc24034dd4">Scroom::MemoryBlobs::PageProvider::create</a>(blockCount, blockSize);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="ttc" id="tiledbitmaplayer_8hh_html_a07ae61ed7dc31e9cddbdf9da244567c7"><div class="ttname"><a href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a></div><div class="ttdeci">#define TILESIZE</div><div class="ttdef"><b>Definition:</b> <a href="tiledbitmaplayer_8hh_source.html#l00027">tiledbitmaplayer.hh:27</a></div></div>
 <div class="ttc" id="classScroom_1_1MemoryBlobs_1_1PageProvider_html_a1b4d5f7c0692f14a3a9062cc24034dd4"><div class="ttname"><a href="classScroom_1_1MemoryBlobs_1_1PageProvider.html#a1b4d5f7c0692f14a3a9062cc24034dd4">Scroom::MemoryBlobs::PageProvider::create</a></div><div class="ttdeci">static Ptr create(size_t blockCount, size_t blockSize)</div><div class="ttdef"><b>Definition:</b> <a href="memoryblobs_8cc_source.html#l00028">memoryblobs.cc:28</a></div></div>
 </div><!-- fragment -->
@@ -570,13 +251,46 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to a newly created <a class="el" href="classTiledBitmapInterface.html" title="Interact with your TiledBitmap. ">TiledBitmapInterface</a>. You can use this pointer to manipulate your bitmap. </dd></dl>
 
-<p>Definition at line <a class="el" href="tiled-bitmap_8cc_source.html#l00025">25</a> of file <a class="el" href="tiled-bitmap_8cc_source.html">tiled-bitmap.cc</a>.</p>
+<p>Definition at line <a class="el" href="tiled-bitmap_8cc_source.html#l00027">27</a> of file <a class="el" href="tiled-bitmap_8cc_source.html">tiled-bitmap.cc</a>.</p>
 
 <p>Referenced by <a class="el" href="tiffpresentation_8cc_source.html#l00050">TiffPresentation::load()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classTiledBitmap.html#aac0fd55f26ab59b362f0c64d27a9e139">TiledBitmap::create</a>(bitmapWidth, bitmapHeight, ls);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="ttc" id="classTiledBitmap_html_aac0fd55f26ab59b362f0c64d27a9e139"><div class="ttname"><a href="classTiledBitmap.html#aac0fd55f26ab59b362f0c64d27a9e139">TiledBitmap::create</a></div><div class="ttdeci">static Ptr create(int bitmapWidth, int bitmapHeight, LayerSpec const &amp;ls)</div><div class="ttdef"><b>Definition:</b> <a href="tiled-bitmap_8cc_source.html#l00126">tiled-bitmap.cc:126</a></div></div>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classTiledBitmap.html#aac0fd55f26ab59b362f0c64d27a9e139">TiledBitmap::create</a>(bitmapWidth, bitmapHeight, ls);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="ttc" id="classTiledBitmap_html_aac0fd55f26ab59b362f0c64d27a9e139"><div class="ttname"><a href="classTiledBitmap.html#aac0fd55f26ab59b362f0c64d27a9e139">TiledBitmap::create</a></div><div class="ttdeci">static Ptr create(int bitmapWidth, int bitmapHeight, LayerSpec const &amp;ls)</div><div class="ttdef"><b>Definition:</b> <a href="tiled-bitmap_8cc_source.html#l00135">tiled-bitmap.cc:135</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1e35e4080b41bdb0e0c0e4798a8295be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classScroom_1_1Utils_1_1Rectangle.html">Scroom::Utils::Rectangle</a>&lt;int&gt; TileAreaForIndex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classScroom_1_1Utils_1_1Point.html">Scroom::Utils::Point</a>&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>tileIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tiled-bitmap_8cc_source.html#l00051">51</a> of file <a class="el" href="tiled-bitmap_8cc_source.html">tiled-bitmap.cc</a>.</p>
+
+<p>Referenced by <a class="el" href="tiled-bitmap_8cc_source.html#l00266">TiledBitmap::redraw()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="classScroom_1_1Utils_1_1Rectangle.html">Scroom::Utils::Rectangle&lt;int&gt;</a>(0,0,1,1) + tileIndex) * <a class="code" href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Rectangle_html"><div class="ttname"><a href="classScroom_1_1Utils_1_1Rectangle.html">Scroom::Utils::Rectangle</a></div><div class="ttdef"><b>Definition:</b> <a href="rectangle_8hh_source.html#l00024">rectangle.hh:24</a></div></div>
+<div class="ttc" id="tiledbitmaplayer_8hh_html_a07ae61ed7dc31e9cddbdf9da244567c7"><div class="ttname"><a href="tiledbitmaplayer_8hh.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a></div><div class="ttdeci">#define TILESIZE</div><div class="ttdef"><b>Definition:</b> <a href="tiledbitmaplayer_8hh_source.html#l00027">tiledbitmaplayer.hh:27</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -586,7 +300,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html">libs</a></li><li class="navelem"><a class="el" href="dir_34499b84b85e584e38a8425c472b2a40.html">tiled-bitmap</a></li><li class="navelem"><a class="el" href="dir_6cf97d29360585fa7f1004e648779306.html">src</a></li><li class="navelem"><a class="el" href="tiled-bitmap_8cc.html">tiled-bitmap.cc</a></li>
-    <li class="footer">Generated on Tue Sep 4 2018 18:30:02 for Scroom by
+    <li class="footer">Generated on Thu Oct 25 2018 11:11:40 for Scroom by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

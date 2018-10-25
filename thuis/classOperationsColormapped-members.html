@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Scroom
-   &#160;<span id="projectnumber">0.10_rc2-1-g1ae2fab</span>
+   &#160;<span id="projectnumber">0.10_rc2-4-g7a72516</span>
    </div>
   </td>
  </tr>
@@ -116,10 +116,10 @@ $(document).ready(function(){initNavTree('classOperationsColormapped.html','');}
   <tr class="even"><td class="entry"><a class="el" href="classCommonOperations.html#a0637477c281ebfaed924796b031ffebf">cacheZoom</a>(const ConstTile::Ptr tile, int zoom, Scroom::Utils::Stuff cache)</td><td class="entry"><a class="el" href="classCommonOperations.html">CommonOperations</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classOperations.html#a1ffd2f17ff874be97ba19210bd181ce0">colormapProvider</a></td><td class="entry"><a class="el" href="classOperations.html">Operations</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classOperationsColormapped.html#a0b0991af5a7714e81ac4ea1845dc3910">create</a>(ColormapProvider::Ptr colormapProvider, int bpp)</td><td class="entry"><a class="el" href="classOperationsColormapped.html">OperationsColormapped</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classOperations.html#af5e1df41110434b7c16ccf492780074b">draw</a>(cairo_t *cr, const ConstTile::Ptr tile, GdkRectangle tileArea, GdkRectangle viewArea, int zoom, Scroom::Utils::Stuff cache)</td><td class="entry"><a class="el" href="classOperations.html">Operations</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classOperations.html#a50a470b55a747238017726623131ac23">draw</a>(cairo_t *cr, const ConstTile::Ptr tile, Scroom::Utils::Rectangle&lt; double &gt; tileArea, Scroom::Utils::Rectangle&lt; double &gt; viewArea, int zoom, Scroom::Utils::Stuff cache)</td><td class="entry"><a class="el" href="classOperations.html">Operations</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classCommonOperations.html#a2cc20679d9f562a298746ad0715ac494">drawPixelValue</a>(cairo_t *cr, int x, int y, int size, int value)</td><td class="entry"><a class="el" href="classCommonOperations.html">CommonOperations</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classCommonOperations.html#a626615dd4e89c057cc19e51a9773ab85">drawPixelValue</a>(cairo_t *cr, int x, int y, int size, int value, Color const &amp;bgColor)</td><td class="entry"><a class="el" href="classCommonOperations.html">CommonOperations</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classCommonOperations.html#a6a276399fc246b9e0599303975605544">drawState</a>(cairo_t *cr, TileState s, GdkRectangle viewArea)</td><td class="entry"><a class="el" href="classCommonOperations.html">CommonOperations</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classCommonOperations.html#afcf1631cd4a708982665145a9e5eb54b">drawState</a>(cairo_t *cr, TileState s, Scroom::Utils::Rectangle&lt; double &gt; viewArea)</td><td class="entry"><a class="el" href="classCommonOperations.html">CommonOperations</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classOperationsColormapped.html#a4e698735956f96103137bd39561d56c1">getBpp</a>()</td><td class="entry"><a class="el" href="classOperationsColormapped.html">OperationsColormapped</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classCommonOperations.html#acea1743f3ae3c6a5425f0cb927c23462">initializeCairo</a>(cairo_t *cr)</td><td class="entry"><a class="el" href="classCommonOperations.html">CommonOperations</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classOperations.html#a00588e0f6844ee39e3123548103cc70f">Operations</a>(ColormapProvider::Ptr colormapProvider, int bpp)</td><td class="entry"><a class="el" href="classOperations.html">Operations</a></td><td class="entry"></td></tr>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('classOperationsColormapped.html','');}
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 4 2018 18:30:02 for Scroom by
+    <li class="footer">Generated on Thu Oct 25 2018 11:11:40 for Scroom by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

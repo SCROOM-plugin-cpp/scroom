@@ -10,7 +10,7 @@ var searchData=
   ['plugininformation',['PluginInformation',['../structPluginInformation.html#abf0c2f7ec30419b33bcf38452c72fb62',1,'PluginInformation']]],
   ['plugininformationinterface',['PluginInformationInterface',['../classPluginInformationInterface.html#aced25f580444e92771f5b1721f3a3a9e',1,'PluginInformationInterface']]],
   ['pluginmanager',['PluginManager',['../classPluginManager.html#a25f1e568d8d923e4d2a4f777516b4be5',1,'PluginManager']]],
-  ['point',['Point',['../classScroom_1_1Utils_1_1Point.html#aa24ca216325375a64ab787578b08b5ac',1,'Scroom::Utils::Point']]],
+  ['point',['Point',['../classScroom_1_1Utils_1_1Point.html#aa24ca216325375a64ab787578b08b5ac',1,'Scroom::Utils::Point::Point(value_type x, value_type y)'],['../classScroom_1_1Utils_1_1Point.html#a2875e9cb8b19a3cf92ec9d76b21c6471',1,'Scroom::Utils::Point::Point(Point&lt; U &gt; other)']]],
   ['presentationadded',['presentationAdded',['../classPresentationObserver.html#a2c8ab2b2ac2d09cb32f5dbc8e336b49b',1,'PresentationObserver']]],
   ['presentationdata',['PresentationData',['../classSizeDeterminer_1_1PresentationData.html#a2fb410405a6b4a50ca23f406c1ddfd59',1,'SizeDeterminer::PresentationData::PresentationData()'],['../classSizeDeterminer_1_1PresentationData.html#ab5cfd36a7477a32250ccee8c49e9e624',1,'SizeDeterminer::PresentationData::PresentationData(ResizablePresentationInterface::Ptr const &amp;resizablePresentationInterface)']]],
   ['presentationdeleted',['presentationDeleted',['../classPresentationObserver.html#a271bf1d898ed04da85ea0022ec341b2b',1,'PresentationObserver']]],

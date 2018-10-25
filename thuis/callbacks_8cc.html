@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Scroom
-   &#160;<span id="projectnumber">0.10_rc2-1-g1ae2fab</span>
+   &#160;<span id="projectnumber">0.10_rc2-4-g7a72516</span>
    </div>
   </td>
  </tr>
@@ -326,7 +326,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;}</div>
 <div class="ttc" id="callbacks_8cc_html_a42fddb88db6e7c73e37aa07d1cf0de57"><div class="ttname"><a href="callbacks_8cc.html#a42fddb88db6e7c73e37aa07d1cf0de57">on_fullscreen_activate</a></div><div class="ttdeci">void on_fullscreen_activate(GtkMenuItem *item, gpointer user_data)</div><div class="ttdef"><b>Definition:</b> <a href="callbacks_8cc_source.html#l00164">callbacks.cc:164</a></div></div>
 <div class="ttc" id="callbacks_8cc_html_a65f18cf64a4bafed7b32ded3cc902668"><div class="ttname"><a href="callbacks_8cc.html#a65f18cf64a4bafed7b32ded3cc902668">on_scroom_hide</a></div><div class="ttdeci">void on_scroom_hide(GtkWidget *, gpointer user_data)</div><div class="ttdef"><b>Definition:</b> <a href="callbacks_8cc_source.html#l00046">callbacks.cc:46</a></div></div>
-<div class="ttc" id="classView_html_acb2612da09c7f5632d10ed4818d51a83"><div class="ttname"><a href="classView.html#acb2612da09c7f5632d10ed4818d51a83">View::create</a></div><div class="ttdeci">static Ptr create(GladeXML *scroomXml, PresentationInterface::Ptr presentation)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00146">view.cc:146</a></div></div>
+<div class="ttc" id="classView_html_acb2612da09c7f5632d10ed4818d51a83"><div class="ttname"><a href="classView.html#acb2612da09c7f5632d10ed4818d51a83">View::create</a></div><div class="ttdeci">static Ptr create(GladeXML *scroomXml, PresentationInterface::Ptr presentation)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00145">view.cc:145</a></div></div>
 <div class="ttc" id="callbacks_8cc_html_a23f3558fd7063da6c4f453eecfd85c70"><div class="ttname"><a href="callbacks_8cc.html#a23f3558fd7063da6c4f453eecfd85c70">on_scroll_event</a></div><div class="ttdeci">gboolean on_scroll_event(GtkWidget *, GdkEventScroll *event, gpointer user_data)</div><div class="ttdef"><b>Definition:</b> <a href="callbacks_8cc_source.html#l00342">callbacks.cc:342</a></div></div>
 <div class="ttc" id="callbacks_8cc_html_ae774492ed1bbe65c2041bf593ef6bb8f"><div class="ttname"><a href="callbacks_8cc.html#ae774492ed1bbe65c2041bf593ef6bb8f">on_drawingarea_expose_event</a></div><div class="ttdeci">gboolean on_drawingarea_expose_event(GtkWidget *widget, GdkEventExpose *, gpointer user_data)</div><div class="ttdef"><b>Definition:</b> <a href="callbacks_8cc_source.html#l00192">callbacks.cc:192</a></div></div>
 <div class="ttc" id="callbacks_8cc_html_a30b2ed4bb389a1225baaa7ab3c8d9d88"><div class="ttname"><a href="callbacks_8cc.html#a30b2ed4bb389a1225baaa7ab3c8d9d88">on_button_press_event</a></div><div class="ttdeci">gboolean on_button_press_event(GtkWidget *, GdkEventButton *event, gpointer user_data)</div><div class="ttdef"><b>Definition:</b> <a href="callbacks_8cc_source.html#l00321">callbacks.cc:321</a></div></div>
@@ -362,7 +362,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="callbacks_8cc_source.html#l00397">397</a> of file <a class="el" href="callbacks_8cc_source.html">callbacks.cc</a>.</p>
 
-<p>Referenced by <a class="el" href="loader_8cc_source.html#l00163">create()</a>, <a class="el" href="loader_8cc_source.html#l00226">load()</a>, <a class="el" href="callbacks_8cc_source.html#l00224">on_done_loading_plugins()</a>, <a class="el" href="view_8cc_source.html#l00081">on_newWindow_activate()</a>, and <a class="el" href="loader_8cc_source.html#l00341">ScroomInterfaceImpl::showPresentation()</a>.</p>
+<p>Referenced by <a class="el" href="loader_8cc_source.html#l00163">create()</a>, <a class="el" href="loader_8cc_source.html#l00226">load()</a>, <a class="el" href="callbacks_8cc_source.html#l00224">on_done_loading_plugins()</a>, <a class="el" href="view_8cc_source.html#l00080">on_newWindow_activate()</a>, and <a class="el" href="loader_8cc_source.html#l00341">ScroomInterfaceImpl::showPresentation()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;{</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  <span class="keywordflow">for</span>(<span class="keyword">const</span> Views::value_type&amp; p: <a class="code" href="callbacks_8cc.html#ad49710e0e7bbdfa292b7ac886a56a9fe">views</a>)</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  {</div>
@@ -457,7 +457,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  view-&gt;<a class="code" href="classView.html#a2418b690f9ce26fe94d8398b2f409d51">on_buttonPress</a>(event);</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;}</div>
-<div class="ttc" id="classView_html_a2418b690f9ce26fe94d8398b2f409d51"><div class="ttname"><a href="classView.html#a2418b690f9ce26fe94d8398b2f409d51">View::on_buttonPress</a></div><div class="ttdeci">void on_buttonPress(GdkEventButton *event)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00623">view.cc:623</a></div></div>
+<div class="ttc" id="classView_html_a2418b690f9ce26fe94d8398b2f409d51"><div class="ttname"><a href="classView.html#a2418b690f9ce26fe94d8398b2f409d51">View::on_buttonPress</a></div><div class="ttdeci">void on_buttonPress(GdkEventButton *event)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00626">view.cc:626</a></div></div>
 <div class="ttc" id="classView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00046">view.hh:46</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -501,7 +501,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div>
 <div class="ttc" id="classView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00046">view.hh:46</a></div></div>
-<div class="ttc" id="classView_html_a058c1d7efe7c7d68cbe9cefeb0601bfa"><div class="ttname"><a href="classView.html#a058c1d7efe7c7d68cbe9cefeb0601bfa">View::on_buttonRelease</a></div><div class="ttdeci">void on_buttonRelease(GdkEventButton *event)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00644">view.cc:644</a></div></div>
+<div class="ttc" id="classView_html_a058c1d7efe7c7d68cbe9cefeb0601bfa"><div class="ttname"><a href="classView.html#a058c1d7efe7c7d68cbe9cefeb0601bfa">View::on_buttonRelease</a></div><div class="ttdeci">void on_buttonRelease(GdkEventButton *event)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00647">view.cc:647</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -538,7 +538,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  view-&gt;<a class="code" href="classView.html#adcf1d13f04a74c014c0779fcbeedd751">hide</a>();</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
 <div class="ttc" id="classView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00046">view.hh:46</a></div></div>
-<div class="ttc" id="classView_html_adcf1d13f04a74c014c0779fcbeedd751"><div class="ttname"><a href="classView.html#adcf1d13f04a74c014c0779fcbeedd751">View::hide</a></div><div class="ttdeci">void hide()</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00215">view.cc:215</a></div></div>
+<div class="ttc" id="classView_html_adcf1d13f04a74c014c0779fcbeedd751"><div class="ttname"><a href="classView.html#adcf1d13f04a74c014c0779fcbeedd751">View::hide</a></div><div class="ttdeci">void hide()</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00218">view.cc:218</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -785,7 +785,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  view-&gt;<a class="code" href="classView.html#a577e40ee81a286eb3297ee8f42594440">on_configure</a>();</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordflow">return</span> FALSE;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
-<div class="ttc" id="classView_html_a577e40ee81a286eb3297ee8f42594440"><div class="ttname"><a href="classView.html#a577e40ee81a286eb3297ee8f42594440">View::on_configure</a></div><div class="ttdeci">void on_configure()</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00449">view.cc:449</a></div></div>
+<div class="ttc" id="classView_html_a577e40ee81a286eb3297ee8f42594440"><div class="ttname"><a href="classView.html#a577e40ee81a286eb3297ee8f42594440">View::on_configure</a></div><div class="ttdeci">void on_configure()</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00452">view.cc:452</a></div></div>
 <div class="ttc" id="classView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00046">view.hh:46</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -834,7 +834,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keywordflow">return</span> FALSE;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
 <div class="ttc" id="classView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00046">view.hh:46</a></div></div>
-<div class="ttc" id="classView_html_a7a4cd04a39fff643d73565bfeaa058c2"><div class="ttname"><a href="classView.html#a7a4cd04a39fff643d73565bfeaa058c2">View::redraw</a></div><div class="ttdeci">void redraw(cairo_t *cr)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00165">view.cc:165</a></div></div>
+<div class="ttc" id="classView_html_a7a4cd04a39fff643d73565bfeaa058c2"><div class="ttname"><a href="classView.html#a7a4cd04a39fff643d73565bfeaa058c2">View::redraw</a></div><div class="ttdeci">void redraw(cairo_t *cr)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00164">view.cc:164</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -875,8 +875,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    view-&gt;<a class="code" href="classView.html#a5cb2ee2c3a800872fdeeac11b835db94">unsetFullScreen</a>();</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
-<div class="ttc" id="classView_html_a5cb2ee2c3a800872fdeeac11b835db94"><div class="ttname"><a href="classView.html#a5cb2ee2c3a800872fdeeac11b835db94">View::unsetFullScreen</a></div><div class="ttdeci">void unsetFullScreen()</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00725">view.cc:725</a></div></div>
-<div class="ttc" id="classView_html_a0c5a8a1687c24f152d6966c9cf8eb7f8"><div class="ttname"><a href="classView.html#a0c5a8a1687c24f152d6966c9cf8eb7f8">View::setFullScreen</a></div><div class="ttdeci">void setFullScreen()</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00718">view.cc:718</a></div></div>
+<div class="ttc" id="classView_html_a5cb2ee2c3a800872fdeeac11b835db94"><div class="ttname"><a href="classView.html#a5cb2ee2c3a800872fdeeac11b835db94">View::unsetFullScreen</a></div><div class="ttdeci">void unsetFullScreen()</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00728">view.cc:728</a></div></div>
+<div class="ttc" id="classView_html_a0c5a8a1687c24f152d6966c9cf8eb7f8"><div class="ttname"><a href="classView.html#a0c5a8a1687c24f152d6966c9cf8eb7f8">View::setFullScreen</a></div><div class="ttdeci">void setFullScreen()</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00721">view.cc:721</a></div></div>
 <div class="ttc" id="classView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00046">view.hh:46</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -951,7 +951,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
 <div class="ttc" id="classView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00046">view.hh:46</a></div></div>
-<div class="ttc" id="classView_html_ae89d93ace9995157e33f464b31a04799"><div class="ttname"><a href="classView.html#ae89d93ace9995157e33f464b31a04799">View::on_motion_notify</a></div><div class="ttdeci">void on_motion_notify(GdkEventMotion *event)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00666">view.cc:666</a></div></div>
+<div class="ttc" id="classView_html_ae89d93ace9995157e33f464b31a04799"><div class="ttname"><a href="classView.html#ae89d93ace9995157e33f464b31a04799">View::on_motion_notify</a></div><div class="ttdeci">void on_motion_notify(GdkEventMotion *event)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00669">view.cc:669</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -981,7 +981,7 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="callbacks_8cc_source.html#l00055">55</a> of file <a class="el" href="callbacks_8cc_source.html">callbacks.cc</a>.</p>
 
-<p>Referenced by <a class="el" href="view_8cc_source.html#l00409">View::on_newPresentationInterfaces_update()</a>.</p>
+<p>Referenced by <a class="el" href="view_8cc_source.html#l00412">View::on_newPresentationInterfaces_update()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="classNewPresentationInterface.html">NewPresentationInterface</a>* newPresentationInterface = <span class="keyword">static_cast&lt;</span><a class="code" href="classNewPresentationInterface.html">NewPresentationInterface</a>*<span class="keyword">&gt;</span>(user_data);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="loader_8cc.html#aa16c64386dde90b66ae796ec3183dcef">create</a>(newPresentationInterface);</div>
@@ -1430,7 +1430,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  view-&gt;<a class="code" href="classView.html#a6bcc1a3b04dc24ad14be19e19fd1ff7e">on_scrollwheel</a>(event);</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
-<div class="ttc" id="classView_html_a6bcc1a3b04dc24ad14be19e19fd1ff7e"><div class="ttname"><a href="classView.html#a6bcc1a3b04dc24ad14be19e19fd1ff7e">View::on_scrollwheel</a></div><div class="ttdeci">void on_scrollwheel(GdkEventScroll *event)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00487">view.cc:487</a></div></div>
+<div class="ttc" id="classView_html_a6bcc1a3b04dc24ad14be19e19fd1ff7e"><div class="ttname"><a href="classView.html#a6bcc1a3b04dc24ad14be19e19fd1ff7e">View::on_scrollwheel</a></div><div class="ttdeci">void on_scrollwheel(GdkEventScroll *event)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00490">view.cc:490</a></div></div>
 <div class="ttc" id="classView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00046">view.hh:46</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1466,7 +1466,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  <a class="code" href="classView.html">View</a>* view = <span class="keyword">static_cast&lt;</span><a class="code" href="classView.html">View</a>*<span class="keyword">&gt;</span>(user_data);</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  view-&gt;<a class="code" href="classView.html#adb5274f859519e6baa9b759005170509">on_scrollbar_value_changed</a>(adjustment);</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;}</div>
-<div class="ttc" id="classView_html_adb5274f859519e6baa9b759005170509"><div class="ttname"><a href="classView.html#adb5274f859519e6baa9b759005170509">View::on_scrollbar_value_changed</a></div><div class="ttdeci">void on_scrollbar_value_changed(GtkAdjustment *adjustment)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00606">view.cc:606</a></div></div>
+<div class="ttc" id="classView_html_adb5274f859519e6baa9b759005170509"><div class="ttname"><a href="classView.html#adb5274f859519e6baa9b759005170509">View::on_scrollbar_value_changed</a></div><div class="ttdeci">void on_scrollbar_value_changed(GtkAdjustment *adjustment)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00609">view.cc:609</a></div></div>
 <div class="ttc" id="classView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00046">view.hh:46</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1617,7 +1617,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  <a class="code" href="classView.html">View</a>* view = <span class="keyword">static_cast&lt;</span><a class="code" href="classView.html">View</a>*<span class="keyword">&gt;</span>(user_data);</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  view-&gt;<a class="code" href="classView.html#ac89d07654772c2f745eb07bb4702cbd0">on_textbox_value_changed</a>(editable);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
-<div class="ttc" id="classView_html_ac89d07654772c2f745eb07bb4702cbd0"><div class="ttname"><a href="classView.html#ac89d07654772c2f745eb07bb4702cbd0">View::on_textbox_value_changed</a></div><div class="ttdeci">void on_textbox_value_changed(GtkEditable *editable)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00565">view.cc:565</a></div></div>
+<div class="ttc" id="classView_html_ac89d07654772c2f745eb07bb4702cbd0"><div class="ttname"><a href="classView.html#ac89d07654772c2f745eb07bb4702cbd0">View::on_textbox_value_changed</a></div><div class="ttdeci">void on_textbox_value_changed(GtkEditable *editable)</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00568">view.cc:568</a></div></div>
 <div class="ttc" id="classView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00046">view.hh:46</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1700,7 +1700,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="classScroom_1_1Utils_1_1Base_html_a47d10b0709de4fd393084e19192b073c"><div class="ttname"><a href="classScroom_1_1Utils_1_1Base.html#a47d10b0709de4fd393084e19192b073c">Scroom::Utils::Base::shared_from_this</a></div><div class="ttdeci">boost::shared_ptr&lt; R &gt; shared_from_this()</div><div class="ttdoc">Calls shared_from_this() with a built-in dynamic cast, to make it usable in subclasses. </div><div class="ttdef"><b>Definition:</b> <a href="utilities_8hh_source.html#l00053">utilities.hh:53</a></div></div>
 <div class="ttc" id="classView_html_a63d528cdbcf090a937dd363b9837df75"><div class="ttname"><a href="classView.html#a63d528cdbcf090a937dd363b9837df75">View::Ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; View &gt; Ptr</div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00049">view.hh:49</a></div></div>
 <div class="ttc" id="callbacks_8cc_html_ad49710e0e7bbdfa292b7ac886a56a9fe"><div class="ttname"><a href="callbacks_8cc.html#ad49710e0e7bbdfa292b7ac886a56a9fe">views</a></div><div class="ttdeci">static Views views</div><div class="ttdef"><b>Definition:</b> <a href="callbacks_8cc_source.html#l00041">callbacks.cc:41</a></div></div>
-<div class="ttc" id="classView_html_a0a70183afc50428b82187b478b48ccf4"><div class="ttname"><a href="classView.html#a0a70183afc50428b82187b478b48ccf4">View::clearPresentation</a></div><div class="ttdeci">void clearPresentation()</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00225">view.cc:225</a></div></div>
+<div class="ttc" id="classView_html_a0a70183afc50428b82187b478b48ccf4"><div class="ttname"><a href="classView.html#a0a70183afc50428b82187b478b48ccf4">View::clearPresentation</a></div><div class="ttdeci">void clearPresentation()</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00228">view.cc:228</a></div></div>
 <div class="ttc" id="classView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00046">view.hh:46</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1736,7 +1736,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <a class="code" href="classView.html">View</a>* view = <span class="keyword">static_cast&lt;</span><a class="code" href="classView.html">View</a>*<span class="keyword">&gt;</span>(user_data);</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  view-&gt;<a class="code" href="classView.html#aa0987727d135b9f133c51bf2f45d7ab2">on_zoombox_changed</a>();</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;}</div>
-<div class="ttc" id="classView_html_aa0987727d135b9f133c51bf2f45d7ab2"><div class="ttname"><a href="classView.html#aa0987727d135b9f133c51bf2f45d7ab2">View::on_zoombox_changed</a></div><div class="ttdeci">void on_zoombox_changed()</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00514">view.cc:514</a></div></div>
+<div class="ttc" id="classView_html_aa0987727d135b9f133c51bf2f45d7ab2"><div class="ttname"><a href="classView.html#aa0987727d135b9f133c51bf2f45d7ab2">View::on_zoombox_changed</a></div><div class="ttdeci">void on_zoombox_changed()</div><div class="ttdef"><b>Definition:</b> <a href="view_8cc_source.html#l00517">view.cc:517</a></div></div>
 <div class="ttc" id="classView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="view_8hh_source.html#l00046">view.hh:46</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1956,7 +1956,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_11bc0974ce736ce9a6fadebbeb7a8314.html">gui</a></li><li class="navelem"><a class="el" href="dir_a051efa06104b2c378e6b4d01090bb62.html">src</a></li><li class="navelem"><a class="el" href="callbacks_8cc.html">callbacks.cc</a></li>
-    <li class="footer">Generated on Tue Sep 4 2018 18:30:02 for Scroom by
+    <li class="footer">Generated on Thu Oct 25 2018 11:11:40 for Scroom by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

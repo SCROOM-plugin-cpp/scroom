@@ -52,7 +52,7 @@ var searchData=
   ['getrect',['getRect',['../classPresentationInterface.html#a4ff8352b5804eb4518099016face846b',1,'PresentationInterface::getRect()'],['../classLayer.html#a089cad953ab1e8ce3ccc69893fa7fe61',1,'Layer::getRect()'],['../classTransformPresentation.html#ac6d70ec0e60da0355604d5078f1446ab',1,'TransformPresentation::getRect()'],['../classTiffPresentation.html#a678358ea33a3a78f7226b6f948942ed0',1,'TiffPresentation::getRect()'],['../classTiffPresentationWrapper.html#a8774b6d92f949c538c741dc6adc1d416',1,'TiffPresentationWrapper::getRect()'],['../classSizeDeterminer.html#ae7243840137fb9d25f6570b4cd409421',1,'SizeDeterminer::getRect()'],['../classTransparentOverlayPresentation.html#a251ea960b853aff8de3f262d5fe7de61',1,'TransparentOverlayPresentation::getRect()']]],
   ['getrgb24',['getRGB24',['../classColor.html#a2efb68dd6344aaa8b61bdcdce214c0b7',1,'Color']]],
   ['getright',['getRight',['../classScroom_1_1Utils_1_1Rectangle.html#a271e041e65b2c66cbc356bb7b5c4ad54',1,'Scroom::Utils::Rectangle']]],
-  ['getsize',['getSize',['../classScroom_1_1Utils_1_1Segment.html#ae4f5b9fe5d47666215a489e39e4172d5',1,'Scroom::Utils::Segment']]],
+  ['getsize',['getSize',['../classScroom_1_1Utils_1_1Segment.html#ae4f5b9fe5d47666215a489e39e4172d5',1,'Scroom::Utils::Segment::getSize()'],['../classScroom_1_1Utils_1_1Rectangle.html#aed3285fe8b409820f884ebcf5b2acec8',1,'Scroom::Utils::Rectangle::getSize()']]],
   ['getstart',['getStart',['../classScroom_1_1Utils_1_1Segment.html#a3301e33620f226a8b94375910c8a00ea',1,'Scroom::Utils::Segment']]],
   ['getstate',['getState',['../classCompressedTile.html#a037333498f97a4c29f0c24b88a483aff',1,'CompressedTile']]],
   ['gettile',['getTile',['../classLayer.html#a7428a55d293b5d3a0c3a1da17bbb19c4',1,'Layer']]],

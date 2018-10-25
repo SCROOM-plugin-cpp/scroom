@@ -10,8 +10,6 @@ var searchData=
   ['red',['red',['../classColor.html#a2337ea72bc849039f73077d00ab42bbb',1,'Color']]],
   ['redraw',['redraw',['../classPresentationInterface.html#a60bc0b48811cb281c9e8da99805b6b66',1,'PresentationInterface::redraw()'],['../classTiledBitmapInterface.html#a24dd76d8800fb60b066e28a3bdb57888',1,'TiledBitmapInterface::redraw()'],['../classTransformPresentation.html#aaf6ebf778f5c9ec4096c0769a92080a7',1,'TransformPresentation::redraw()'],['../classTiffPresentation.html#a025d2f4f54c87bbf18e30217735a48cc',1,'TiffPresentation::redraw()'],['../classTiffPresentationWrapper.html#aefc1c2bcd2d1eb449d291bf1c4e2686f',1,'TiffPresentationWrapper::redraw()'],['../classTransparentOverlayPresentation.html#ae56362540fdd7092c181434379b17ea0',1,'TransparentOverlayPresentation::redraw()'],['../classTransparentOverlayViewInfo.html#add1ffd6ec625dfd9633fd5dad6ad2b3f',1,'TransparentOverlayViewInfo::redraw()'],['../classView.html#a7a4cd04a39fff643d73565bfeaa058c2',1,'View::redraw()'],['../classTiledBitmap.html#a64d8309e2884436afead2b1978922ab0',1,'TiledBitmap::redraw()']]],
   ['redrawpending',['redrawPending',['../classTiledBitmapViewData.html#a3304b2a780bd0a23d4cdd974e842f5d5',1,'TiledBitmapViewData']]],
-  ['redrawzoomingin',['redrawZoomingIn',['../classTiledBitmap.html#aa1ecf940eaf50007789943389701a9f3',1,'TiledBitmap']]],
-  ['redrawzoomingout',['redrawZoomingOut',['../classTiledBitmap.html#a83a4f07f89c17e081efa68a1d2ec4d23',1,'TiledBitmap']]],
   ['reduce',['reduce',['../classOperations1bpp.html#a2209e35fb0d69ebcb52791fa4ca570f6',1,'Operations1bpp::reduce()'],['../classOperations8bpp.html#abd3273a47fc1ea9168224c36cbd40273',1,'Operations8bpp::reduce()'],['../classOperations24bpp.html#a575208bfbbf48676a858a9a28090e9f3',1,'Operations24bpp::reduce()'],['../classOperations.html#a23562eb3526ce1fd5ef743c438867b00',1,'Operations::reduce()'],['../classOperationsColormapped.html#ad89502c50d1e687873938fe307fba41d',1,'OperationsColormapped::reduce()'],['../classOperations1bppClipped.html#a1402f3cf2b989c01efc7bee4a8b9e47a',1,'Operations1bppClipped::reduce()'],['../classLayerOperations.html#a6e2f563faba4cb6435d393435d0b975b',1,'LayerOperations::reduce()']]],
   ['reduce_5fprio',['REDUCE_PRIO',['../local_8hh.html#a0a865049f169efddb5dcb94b4b6f2e6b',1,'local.hh']]],
   ['reducesizetomultipleof',['reduceSizeToMultipleOf',['../classScroom_1_1Utils_1_1Segment.html#af4df6c3f7b52137f6f46fa9e71f9d738',1,'Scroom::Utils::Segment::reduceSizeToMultipleOf()'],['../classScroom_1_1Utils_1_1Rectangle.html#af2878f439507d917170ed14d7843405e',1,'Scroom::Utils::Rectangle::reduceSizeToMultipleOf()']]],
@@ -62,5 +60,6 @@ var searchData=
   ['rois',['rois',['../structDetail_1_1My__parser.html#ae46dd0e7c19be72471e92707181b7b53',1,'Detail::My_parser']]],
   ['roiui',['RoiUi',['../classRoiUi.html',1,'RoiUi'],['../classRoiUi.html#a2b500361f287ad9332078f88f5c7cf7b',1,'RoiUi::RoiUi()']]],
   ['roiui_2ecc',['roiui.cc',['../roiui_8cc.html',1,'']]],
-  ['roiui_2ehh',['roiui.hh',['../roiui_8hh.html',1,'']]]
+  ['roiui_2ehh',['roiui.hh',['../roiui_8hh.html',1,'']]],
+  ['roundoutward',['roundOutward',['../namespaceScroom_1_1Utils.html#a93a5e37a0f4affbe05b5a1de2c51a900',1,'Scroom::Utils']]]
 ];

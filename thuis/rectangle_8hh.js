@@ -6,6 +6,8 @@ var rectangle_8hh =
     [ "operator*", "rectangle_8hh.html#a18cb856f53d0ac3cd6fe7c5218f62fff", null ],
     [ "operator*", "rectangle_8hh.html#a38ffb74e86cb55bdb5498edef9d2a16c", null ],
     [ "operator*", "rectangle_8hh.html#a9df47017973171a01a78960de1413e15", null ],
+    [ "operator-", "rectangle_8hh.html#a619fd9029e37cd0748f98048bf90fb47", null ],
     [ "operator<<", "rectangle_8hh.html#aeaa94ffe898673912f62fc4371a750df", null ],
-    [ "operator<<", "rectangle_8hh.html#a2c695f3288765fc14e3144b575d107eb", null ]
+    [ "operator<<", "rectangle_8hh.html#a2c695f3288765fc14e3144b575d107eb", null ],
+    [ "roundOutward", "rectangle_8hh.html#a93a5e37a0f4affbe05b5a1de2c51a900", null ]
 ];

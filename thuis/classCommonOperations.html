@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Scroom
-   &#160;<span id="projectnumber">0.10_rc2-1-g1ae2fab</span>
+   &#160;<span id="projectnumber">0.10_rc2-4-g7a72516</span>
    </div>
   </td>
  </tr>
@@ -139,15 +139,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acea1743f3ae3c6a5425f0cb927c23462"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommonOperations.html#acea1743f3ae3c6a5425f0cb927c23462">initializeCairo</a> (cairo_t *cr)</td></tr>
 <tr class="memdesc:acea1743f3ae3c6a5425f0cb927c23462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the canvas for drawing the bitmap.  <a href="#acea1743f3ae3c6a5425f0cb927c23462">More...</a><br/></td></tr>
 <tr class="separator:acea1743f3ae3c6a5425f0cb927c23462"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a276399fc246b9e0599303975605544"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommonOperations.html#a6a276399fc246b9e0599303975605544">drawState</a> (cairo_t *cr, <a class="el" href="tiledbitmapinterface_8hh.html#ac84d9b534c1947f639684269d09f7921">TileState</a> s, GdkRectangle viewArea)</td></tr>
-<tr class="memdesc:a6a276399fc246b9e0599303975605544"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the given state into the given viewArea.  <a href="#a6a276399fc246b9e0599303975605544">More...</a><br/></td></tr>
-<tr class="separator:a6a276399fc246b9e0599303975605544"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcf1631cd4a708982665145a9e5eb54b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommonOperations.html#afcf1631cd4a708982665145a9e5eb54b">drawState</a> (cairo_t *cr, <a class="el" href="tiledbitmapinterface_8hh.html#ac84d9b534c1947f639684269d09f7921">TileState</a> s, <a class="el" href="classScroom_1_1Utils_1_1Rectangle.html">Scroom::Utils::Rectangle</a>&lt; double &gt; viewArea)</td></tr>
+<tr class="memdesc:afcf1631cd4a708982665145a9e5eb54b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the given state into the given viewArea.  <a href="#afcf1631cd4a708982665145a9e5eb54b">More...</a><br/></td></tr>
+<tr class="separator:afcf1631cd4a708982665145a9e5eb54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0637477c281ebfaed924796b031ffebf"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceScroom_1_1Utils.html#aaa042b9004a74d5ed2695a85ddd7c63a">Scroom::Utils::Stuff</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommonOperations.html#a0637477c281ebfaed924796b031ffebf">cacheZoom</a> (const <a class="el" href="classConstTile.html#a81a28d4a0497d21235f38c35462a000c">ConstTile::Ptr</a> tile, int zoom, <a class="el" href="namespaceScroom_1_1Utils.html#aaa042b9004a74d5ed2695a85ddd7c63a">Scroom::Utils::Stuff</a> <a class="el" href="classLayerOperations.html#a6b39508e9c2583588ae2fff7f3889e28">cache</a>)</td></tr>
-<tr class="memdesc:a0637477c281ebfaed924796b031ffebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cache data for use during later <a class="el" href="classCommonOperations.html#a88649fad48a6478429bf93ca7f7ff110" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> calls.  <a href="#a0637477c281ebfaed924796b031ffebf">More...</a><br/></td></tr>
+<tr class="memdesc:a0637477c281ebfaed924796b031ffebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cache data for use during later <a class="el" href="classCommonOperations.html#a70af867dadd9f93328c39804b5aa8c9d" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> calls.  <a href="#a0637477c281ebfaed924796b031ffebf">More...</a><br/></td></tr>
 <tr class="separator:a0637477c281ebfaed924796b031ffebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88649fad48a6478429bf93ca7f7ff110"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommonOperations.html#a88649fad48a6478429bf93ca7f7ff110">draw</a> (cairo_t *cr, const <a class="el" href="classConstTile.html#a81a28d4a0497d21235f38c35462a000c">ConstTile::Ptr</a> tile, GdkRectangle tileArea, GdkRectangle viewArea, int zoom, <a class="el" href="namespaceScroom_1_1Utils.html#aaa042b9004a74d5ed2695a85ddd7c63a">Scroom::Utils::Stuff</a> <a class="el" href="classLayerOperations.html#a6b39508e9c2583588ae2fff7f3889e28">cache</a>)</td></tr>
-<tr class="memdesc:a88649fad48a6478429bf93ca7f7ff110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the given tileArea into the given viewArea at the requested zoom level.  <a href="#a88649fad48a6478429bf93ca7f7ff110">More...</a><br/></td></tr>
-<tr class="separator:a88649fad48a6478429bf93ca7f7ff110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70af867dadd9f93328c39804b5aa8c9d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommonOperations.html#a70af867dadd9f93328c39804b5aa8c9d">draw</a> (cairo_t *cr, const <a class="el" href="classConstTile.html#a81a28d4a0497d21235f38c35462a000c">ConstTile::Ptr</a> tile, <a class="el" href="classScroom_1_1Utils_1_1Rectangle.html">Scroom::Utils::Rectangle</a>&lt; double &gt; tileArea, <a class="el" href="classScroom_1_1Utils_1_1Rectangle.html">Scroom::Utils::Rectangle</a>&lt; double &gt; viewArea, int zoom, <a class="el" href="namespaceScroom_1_1Utils.html#aaa042b9004a74d5ed2695a85ddd7c63a">Scroom::Utils::Stuff</a> <a class="el" href="classLayerOperations.html#a6b39508e9c2583588ae2fff7f3889e28">cache</a>)</td></tr>
+<tr class="memdesc:a70af867dadd9f93328c39804b5aa8c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the given tileArea into the given viewArea at the requested zoom level.  <a href="#a70af867dadd9f93328c39804b5aa8c9d">More...</a><br/></td></tr>
+<tr class="separator:a70af867dadd9f93328c39804b5aa8c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classLayerOperations"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classLayerOperations')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classLayerOperations.html">LayerOperations</a></td></tr>
 <tr class="memitem:aa121258f83e2efcdf98d15f51c8dcbc5 inherit pub_methods_classLayerOperations"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLayerOperations.html#aa121258f83e2efcdf98d15f51c8dcbc5">~LayerOperations</a> ()</td></tr>
 <tr class="separator:aa121258f83e2efcdf98d15f51c8dcbc5 inherit pub_methods_classLayerOperations"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -237,9 +237,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Cache data for use during later <a class="el" href="classCommonOperations.html#a88649fad48a6478429bf93ca7f7ff110" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> calls. </p>
-<p>This function is called for a given tile and zoom level, and then the results are passed to the <a class="el" href="classCommonOperations.html#a88649fad48a6478429bf93ca7f7ff110" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> function. Because <a class="el" href="classCommonOperations.html#a88649fad48a6478429bf93ca7f7ff110" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> is called relatively frequently (i.e. when scrolling), it is recommended to do cpu-intensive work in the <a class="el" href="classLayerOperations.html#a6b39508e9c2583588ae2fff7f3889e28" title="Cache data for use during later cacheZoom() calls. ">cache()</a> and <a class="el" href="classCommonOperations.html#a0637477c281ebfaed924796b031ffebf" title="Cache data for use during later draw() calls. ">cacheZoom()</a> functions, and then re-use the data to make the <a class="el" href="classCommonOperations.html#a88649fad48a6478429bf93ca7f7ff110" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> faster.</p>
-<p>The default implementation returns an empty reference, meaning nothing is cached. As a result, the <a class="el" href="classCommonOperations.html#a88649fad48a6478429bf93ca7f7ff110" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> function will receive an empty reference.</p>
+<p>Cache data for use during later <a class="el" href="classCommonOperations.html#a70af867dadd9f93328c39804b5aa8c9d" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> calls. </p>
+<p>This function is called for a given tile and zoom level, and then the results are passed to the <a class="el" href="classCommonOperations.html#a70af867dadd9f93328c39804b5aa8c9d" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> function. Because <a class="el" href="classCommonOperations.html#a70af867dadd9f93328c39804b5aa8c9d" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> is called relatively frequently (i.e. when scrolling), it is recommended to do cpu-intensive work in the <a class="el" href="classLayerOperations.html#a6b39508e9c2583588ae2fff7f3889e28" title="Cache data for use during later cacheZoom() calls. ">cache()</a> and <a class="el" href="classCommonOperations.html#a0637477c281ebfaed924796b031ffebf" title="Cache data for use during later draw() calls. ">cacheZoom()</a> functions, and then re-use the data to make the <a class="el" href="classCommonOperations.html#a70af867dadd9f93328c39804b5aa8c9d" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> faster.</p>
+<p>The default implementation returns an empty reference, meaning nothing is cached. As a result, the <a class="el" href="classCommonOperations.html#a70af867dadd9f93328c39804b5aa8c9d" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> function will receive an empty reference.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tile</td><td>the <a class="el" href="classTile.html">Tile</a> for which caching is requested </td></tr>
@@ -296,7 +296,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a88649fad48a6478429bf93ca7f7ff110"></a>
+<a class="anchor" id="a70af867dadd9f93328c39804b5aa8c9d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -318,13 +318,13 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">GdkRectangle&#160;</td>
+          <td class="paramtype"><a class="el" href="classScroom_1_1Utils_1_1Rectangle.html">Scroom::Utils::Rectangle</a>&lt; double &gt;&#160;</td>
           <td class="paramname"><em>tileArea</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">GdkRectangle&#160;</td>
+          <td class="paramtype"><a class="el" href="classScroom_1_1Utils_1_1Rectangle.html">Scroom::Utils::Rectangle</a>&lt; double &gt;&#160;</td>
           <td class="paramname"><em>viewArea</em>, </td>
         </tr>
         <tr>
@@ -365,13 +365,13 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classLayerOperations.html#a3439700bb4a3adf00dcec49cae9b7c22">LayerOperations</a>.</p>
+<p>Implements <a class="el" href="classLayerOperations.html#a18dbbea49215d7af4e6127109a3b9b5a">LayerOperations</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classOperations.html#af5e1df41110434b7c16ccf492780074b">Operations</a>, <a class="el" href="classOperations8bpp.html#ab658a03e6c4a4bd24f54479add5206cd">Operations8bpp</a>, and <a class="el" href="classOperations1bpp.html#a852925af3fd173578cb35a5296498121">Operations1bpp</a>.</p>
+<p>Reimplemented in <a class="el" href="classOperations.html#a50a470b55a747238017726623131ac23">Operations</a>, <a class="el" href="classOperations8bpp.html#a52a5122ef13751d23465d178752df0a4">Operations8bpp</a>, and <a class="el" href="classOperations1bpp.html#abc56377474fb0d6a142c2cf416c0d2b5">Operations1bpp</a>.</p>
 
 <p>Definition at line <a class="el" href="layeroperations_8cc_source.html#l00171">171</a> of file <a class="el" href="layeroperations_8cc_source.html">layeroperations.cc</a>.</p>
 
-<p>Referenced by <a class="el" href="layeroperations_8cc_source.html#l00291">Operations1bpp::draw()</a>, <a class="el" href="layeroperations_8cc_source.html#l00411">Operations8bpp::draw()</a>, and <a class="el" href="layeroperations_8cc_source.html#l00637">Operations::draw()</a>.</p>
+<p>Referenced by <a class="el" href="layeroperations_8cc_source.html#l00290">Operations1bpp::draw()</a>, <a class="el" href="layeroperations_8cc_source.html#l00414">Operations8bpp::draw()</a>, and <a class="el" href="layeroperations_8cc_source.html#l00644">Operations::draw()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="comment">// In: Cairo surface at requested zoom level</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="comment">// Out: given surface rendered to the canvas</span></div>
@@ -381,7 +381,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="classLayerOperations.html#a6b39508e9c2583588ae2fff7f3889e28">cache</a>)</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="classCommonOperations.html#a6a276399fc246b9e0599303975605544">drawState</a>(cr, <a class="code" href="tiledbitmapinterface_8hh.html#ac84d9b534c1947f639684269d09f7921a2b0ca8c75e0afe97b00e5180a0db7898">TILE_UNLOADED</a>, viewArea);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="classCommonOperations.html#afcf1631cd4a708982665145a9e5eb54b">drawState</a>(cr, <a class="code" href="tiledbitmapinterface_8hh.html#ac84d9b534c1947f639684269d09f7921a2b0ca8c75e0afe97b00e5180a0db7898">TILE_UNLOADED</a>, viewArea);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  }</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  {</div>
@@ -391,31 +391,31 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    {</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      <span class="comment">// Ask Cairo to zoom in for us</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      <span class="keywordtype">int</span> multiplier = 1&lt;&lt;zoom;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordtype">int</span> x = viewArea.x / multiplier - tileArea.x;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      <span class="keywordtype">int</span> y = viewArea.y / multiplier - tileArea.y;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      cairo_scale(cr, multiplier, multiplier);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      cairo_set_source_surface(cr, source-&gt;get(), x, y);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      cairo_pattern_set_filter (cairo_get_source (cr), CAIRO_FILTER_NEAREST);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      cairo_paint(cr);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      <span class="comment">// Cached bitmap is to scale</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      <span class="keywordtype">int</span> divider = 1&lt;&lt;-zoom;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      <span class="keywordtype">int</span> x = viewArea.x - tileArea.x / divider;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      <span class="keywordtype">int</span> y = viewArea.y - tileArea.y / divider;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      cairo_set_source_surface(cr, source-&gt;get(), x, y);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      cairo_paint(cr);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keyword">auto</span> origin = viewArea.<a class="code" href="classScroom_1_1Utils_1_1Rectangle.html#a3f3055c9a7e169c003be6a1066b0d088">getTopLeft</a>() / multiplier - tileArea.<a class="code" href="classScroom_1_1Utils_1_1Rectangle.html#a3f3055c9a7e169c003be6a1066b0d088">getTopLeft</a>();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      cairo_scale(cr, multiplier, multiplier);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      cairo_set_source_surface(cr, source-&gt;get(), origin.x, origin.y);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      cairo_pattern_set_filter (cairo_get_source (cr), CAIRO_FILTER_NEAREST);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      cairo_paint(cr);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <span class="comment">// Cached bitmap is to scale</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      <span class="keywordtype">int</span> divider = 1&lt;&lt;-zoom;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      <span class="keyword">auto</span> origin = viewArea.<a class="code" href="classScroom_1_1Utils_1_1Rectangle.html#a3f3055c9a7e169c003be6a1066b0d088">getTopLeft</a>() - tileArea.<a class="code" href="classScroom_1_1Utils_1_1Rectangle.html#a3f3055c9a7e169c003be6a1066b0d088">getTopLeft</a>() / divider;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      cairo_set_source_surface(cr, source-&gt;get(), origin.x, origin.y);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      cairo_paint(cr);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Rectangle_html_a3f3055c9a7e169c003be6a1066b0d088"><div class="ttname"><a href="classScroom_1_1Utils_1_1Rectangle.html#a3f3055c9a7e169c003be6a1066b0d088">Scroom::Utils::Rectangle::getTopLeft</a></div><div class="ttdeci">Point&lt; value_type &gt; getTopLeft() const </div><div class="ttdef"><b>Definition:</b> <a href="rectangle_8hh_source.html#l00164">rectangle.hh:164</a></div></div>
 <div class="ttc" id="classLayerOperations_html_a6b39508e9c2583588ae2fff7f3889e28"><div class="ttname"><a href="classLayerOperations.html#a6b39508e9c2583588ae2fff7f3889e28">LayerOperations::cache</a></div><div class="ttdeci">virtual Scroom::Utils::Stuff cache(const ConstTile::Ptr tile)</div><div class="ttdoc">Cache data for use during later cacheZoom() calls. </div><div class="ttdef"><b>Definition:</b> <a href="tiledbitmapinterface_8hh_source.html#l00126">tiledbitmapinterface.hh:126</a></div></div>
+<div class="ttc" id="classCommonOperations_html_afcf1631cd4a708982665145a9e5eb54b"><div class="ttname"><a href="classCommonOperations.html#afcf1631cd4a708982665145a9e5eb54b">CommonOperations::drawState</a></div><div class="ttdeci">virtual void drawState(cairo_t *cr, TileState s, Scroom::Utils::Rectangle&lt; double &gt; viewArea)</div><div class="ttdoc">Draw the given state into the given viewArea. </div><div class="ttdef"><b>Definition:</b> <a href="layeroperations_8cc_source.html#l00080">layeroperations.cc:80</a></div></div>
 <div class="ttc" id="classScroom_1_1Bitmap_1_1BitmapSurface_html_a97a7b86e574d893fc68c1f7145d46773"><div class="ttname"><a href="classScroom_1_1Bitmap_1_1BitmapSurface.html#a97a7b86e574d893fc68c1f7145d46773">Scroom::Bitmap::BitmapSurface::Ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; BitmapSurface &gt; Ptr</div><div class="ttdef"><b>Definition:</b> <a href="bitmap-helpers_8hh_source.html#l00024">bitmap-helpers.hh:24</a></div></div>
 <div class="ttc" id="tiledbitmapinterface_8hh_html_ac84d9b534c1947f639684269d09f7921a2b0ca8c75e0afe97b00e5180a0db7898"><div class="ttname"><a href="tiledbitmapinterface_8hh.html#ac84d9b534c1947f639684269d09f7921a2b0ca8c75e0afe97b00e5180a0db7898">TILE_UNLOADED</a></div><div class="ttdoc">Tile does contain data, but has been swapped out. </div><div class="ttdef"><b>Definition:</b> <a href="tiledbitmapinterface_8hh_source.html#l00033">tiledbitmapinterface.hh:33</a></div></div>
 <div class="ttc" id="cairo-helpers_8hh_html_a7eaa96a970e5ff603afbea0a3a0bf761"><div class="ttname"><a href="cairo-helpers_8hh.html#a7eaa96a970e5ff603afbea0a3a0bf761">setClip</a></div><div class="ttdeci">void setClip(cairo_t *cr, double x, double y, double width, double height)</div><div class="ttdef"><b>Definition:</b> <a href="cairo-helpers_8cc_source.html#l00047">cairo-helpers.cc:47</a></div></div>
 <div class="ttc" id="classScroom_1_1Bitmap_1_1BitmapSurface_html"><div class="ttname"><a href="classScroom_1_1Bitmap_1_1BitmapSurface.html">Scroom::Bitmap::BitmapSurface</a></div><div class="ttdef"><b>Definition:</b> <a href="bitmap-helpers_8hh_source.html#l00021">bitmap-helpers.hh:21</a></div></div>
-<div class="ttc" id="classCommonOperations_html_a6a276399fc246b9e0599303975605544"><div class="ttname"><a href="classCommonOperations.html#a6a276399fc246b9e0599303975605544">CommonOperations::drawState</a></div><div class="ttdeci">virtual void drawState(cairo_t *cr, TileState s, GdkRectangle viewArea)</div><div class="ttdoc">Draw the given state into the given viewArea. </div><div class="ttdef"><b>Definition:</b> <a href="layeroperations_8cc_source.html#l00080">layeroperations.cc:80</a></div></div>
 <div class="ttc" id="unused_8hh_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="unused_8hh.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="unused_8hh_source.html#l00010">unused.hh:10</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -464,7 +464,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="layeroperations_8cc_source.html#l00104">104</a> of file <a class="el" href="layeroperations_8cc_source.html">layeroperations.cc</a>.</p>
 
-<p>Referenced by <a class="el" href="layeroperations_8cc_source.html#l00291">Operations1bpp::draw()</a>, <a class="el" href="layeroperations_8cc_source.html#l00411">Operations8bpp::draw()</a>, and <a class="el" href="layeroperations_8cc_source.html#l00637">Operations::draw()</a>.</p>
+<p>Referenced by <a class="el" href="layeroperations_8cc_source.html#l00290">Operations1bpp::draw()</a>, <a class="el" href="layeroperations_8cc_source.html#l00414">Operations8bpp::draw()</a>, and <a class="el" href="layeroperations_8cc_source.html#l00644">Operations::draw()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  std::ostringstream s;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  s &lt;&lt; value;</div>
@@ -548,7 +548,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a6a276399fc246b9e0599303975605544"></a>
+<a class="anchor" id="afcf1631cd4a708982665145a9e5eb54b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -570,7 +570,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">GdkRectangle&#160;</td>
+          <td class="paramtype"><a class="el" href="classScroom_1_1Utils_1_1Rectangle.html">Scroom::Utils::Rectangle</a>&lt; double &gt;&#160;</td>
           <td class="paramname"><em>viewArea</em>&#160;</td>
         </tr>
         <tr>
@@ -590,7 +590,7 @@ Additional Inherited Members</h2></td></tr>
 <p>The associated tile is likely not loaded or not initialized or in whatever other TileState that doesn't allow its contents to be drawn.</p>
 <p>Something needs to be drawn in the given <code>viewArea</code> anyway. Implementors might want to just draw an empty rectangle, maybe color-coded to reflect the state of the tile. </p>
 
-<p>Implements <a class="el" href="classLayerOperations.html#ad0c578e40d16a2f77633a1e83b9512a8">LayerOperations</a>.</p>
+<p>Implements <a class="el" href="classLayerOperations.html#ab0ea05d6bd0fb7aecd041c17ad0b6862">LayerOperations</a>.</p>
 
 <p>Definition at line <a class="el" href="layeroperations_8cc_source.html#l00080">80</a> of file <a class="el" href="layeroperations_8cc_source.html">layeroperations.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
@@ -648,7 +648,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialize the canvas for drawing the bitmap. </p>
-<p>When <a class="el" href="classTiledBitmapInterface.html#a24dd76d8800fb60b066e28a3bdb57888" title="Redraw a portion of the bitmap. ">TiledBitmapInterface::redraw()</a> is called, (a portion of) the <a class="el" href="classLayer.html">Layer</a> needs to be redrawn. <a class="el" href="classTiledBitmap.html">TiledBitmap</a> will compute which tiles are involved in the redraw, and call <a class="el" href="classCommonOperations.html#a88649fad48a6478429bf93ca7f7ff110" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> or <a class="el" href="classCommonOperations.html#a6a276399fc246b9e0599303975605544" title="Draw the given state into the given viewArea. ">drawState()</a> for each of them, as appropriate. However, before doing so, it will first call <a class="el" href="classCommonOperations.html#acea1743f3ae3c6a5425f0cb927c23462" title="Initialize the canvas for drawing the bitmap. ">initializeCairo()</a>. You can take this opportunity to set various properties that are needed in all subsequent calls to <a class="el" href="classCommonOperations.html#a88649fad48a6478429bf93ca7f7ff110" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> and <a class="el" href="classCommonOperations.html#a6a276399fc246b9e0599303975605544" title="Draw the given state into the given viewArea. ">drawState()</a>, such as anti-aliasing and line caps. </p>
+<p>When <a class="el" href="classTiledBitmapInterface.html#a24dd76d8800fb60b066e28a3bdb57888" title="Redraw a portion of the bitmap. ">TiledBitmapInterface::redraw()</a> is called, (a portion of) the <a class="el" href="classLayer.html">Layer</a> needs to be redrawn. <a class="el" href="classTiledBitmap.html">TiledBitmap</a> will compute which tiles are involved in the redraw, and call <a class="el" href="classCommonOperations.html#a70af867dadd9f93328c39804b5aa8c9d" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> or <a class="el" href="classCommonOperations.html#afcf1631cd4a708982665145a9e5eb54b" title="Draw the given state into the given viewArea. ">drawState()</a> for each of them, as appropriate. However, before doing so, it will first call <a class="el" href="classCommonOperations.html#acea1743f3ae3c6a5425f0cb927c23462" title="Initialize the canvas for drawing the bitmap. ">initializeCairo()</a>. You can take this opportunity to set various properties that are needed in all subsequent calls to <a class="el" href="classCommonOperations.html#a70af867dadd9f93328c39804b5aa8c9d" title="Draw the given tileArea into the given viewArea at the requested zoom level. ">draw()</a> and <a class="el" href="classCommonOperations.html#afcf1631cd4a708982665145a9e5eb54b" title="Draw the given state into the given viewArea. ">drawState()</a>, such as anti-aliasing and line caps. </p>
 
 <p>Implements <a class="el" href="classLayerOperations.html#a464745addca585c466e4ff3ec871ad51">LayerOperations</a>.</p>
 
@@ -670,7 +670,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classCommonOperations.html">CommonOperations</a></li>
-    <li class="footer">Generated on Tue Sep 4 2018 18:30:02 for Scroom by
+    <li class="footer">Generated on Thu Oct 25 2018 11:11:40 for Scroom by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

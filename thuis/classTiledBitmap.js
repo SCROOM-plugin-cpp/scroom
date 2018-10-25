@@ -14,8 +14,6 @@ var classTiledBitmap =
     [ "initialize", "classTiledBitmap.html#a0cc535a9c8809caf8c108663a62594f5", null ],
     [ "open", "classTiledBitmap.html#ae9452530d1be1c4d8e1bb69047e6dd72", null ],
     [ "redraw", "classTiledBitmap.html#a64d8309e2884436afead2b1978922ab0", null ],
-    [ "redrawZoomingIn", "classTiledBitmap.html#aa1ecf940eaf50007789943389701a9f3", null ],
-    [ "redrawZoomingOut", "classTiledBitmap.html#a83a4f07f89c17e081efa68a1d2ec4d23", null ],
     [ "setSource", "classTiledBitmap.html#a225c76fcdf69f2568ce5df663190e2a2", null ],
     [ "tileCreated", "classTiledBitmap.html#af92b69aca031f6e9ffeec29e28f11049", null ],
     [ "tileFinished", "classTiledBitmap.html#acca259ee00daa3eba156fab746c73c42", null ],

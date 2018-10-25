@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Scroom
-   &#160;<span id="projectnumber">0.10_rc2-1-g1ae2fab</span>
+   &#160;<span id="projectnumber">0.10_rc2-4-g7a72516</span>
    </div>
   </td>
  </tr>
@@ -120,7 +120,7 @@ Inheritance diagram for Scroom::Utils::Point&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classScroom_1_1Utils_1_1Point__inherit__graph.png" border="0" usemap="#Scroom_1_1Utils_1_1Point_3_01T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="Scroom_1_1Utils_1_1Point_3_01T_01_4_inherit__map" id="Scroom_1_1Utils_1_1Point_3_01T_01_4_inherit__map">
-<area shape="rect" id="node6" href="classScroom_1_1Utils_1_1Point.html" title="{Scroom::Utils::Point\l\&lt; double \&gt;\n|+ x\l+ y\l|+ Point()\l+ operator==()\l+ operator+=()\l+ operator&#45;=()\l+ operator*=()\l+ operator/=()\l+ operator&#45;()\l+ magnitude()\l}" alt="" coords="254,409,393,618"/></map>
+<area shape="rect" id="node6" href="classScroom_1_1Utils_1_1Point.html" title="{Scroom::Utils::Point\l\&lt; double \&gt;\n|+ x\l+ y\l|+ Point()\l+ Point()\l+ operator==()\l+ operator+=()\l+ operator&#45;=()\l+ operator*=()\l+ operator/=()\l+ operator&#45;()\l+ magnitude()\l}" alt="" coords="254,424,393,648"/></map>
 </div>
 <div class="dynheader">
 Collaboration diagram for Scroom::Utils::Point&lt; T &gt;:</div>
@@ -139,6 +139,9 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa24ca216325375a64ab787578b08b5ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScroom_1_1Utils_1_1Point.html#aa24ca216325375a64ab787578b08b5ac">Point</a> (<a class="el" href="classScroom_1_1Utils_1_1Point.html#a928db7158000cbe261cca5ac58869b57">value_type</a> <a class="el" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a>, <a class="el" href="classScroom_1_1Utils_1_1Point.html#a928db7158000cbe261cca5ac58869b57">value_type</a> <a class="el" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a>)</td></tr>
 <tr class="separator:aa24ca216325375a64ab787578b08b5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2875e9cb8b19a3cf92ec9d76b21c6471"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a2875e9cb8b19a3cf92ec9d76b21c6471"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classScroom_1_1Utils_1_1Point.html#a2875e9cb8b19a3cf92ec9d76b21c6471">Point</a> (<a class="el" href="classScroom_1_1Utils_1_1Point.html">Point</a>&lt; U &gt; other)</td></tr>
+<tr class="separator:a2875e9cb8b19a3cf92ec9d76b21c6471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbe5819ee62743355943df3f5df658d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScroom_1_1Utils_1_1Point.html#acbe5819ee62743355943df3f5df658d8">operator==</a> (const <a class="el" href="classScroom_1_1Utils_1_1Point.html">Point</a>&lt; <a class="el" href="classScroom_1_1Utils_1_1Point.html#a928db7158000cbe261cca5ac58869b57">value_type</a> &gt; &amp;other) const </td></tr>
 <tr class="separator:acbe5819ee62743355943df3f5df658d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6cf589a1b25ad62c17ac9c753124f1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScroom_1_1Utils_1_1Point.html">Point</a>&lt; <a class="el" href="classScroom_1_1Utils_1_1Point.html#a928db7158000cbe261cca5ac58869b57">value_type</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScroom_1_1Utils_1_1Point.html#ac6cf589a1b25ad62c17ac9c753124f1f">operator+=</a> (const <a class="el" href="classScroom_1_1Utils_1_1Point.html">Point</a>&lt; <a class="el" href="classScroom_1_1Utils_1_1Point.html#a928db7158000cbe261cca5ac58869b57">value_type</a> &gt; &amp;other)</td></tr>
@@ -222,8 +225,42 @@ template&lt;typename T&gt; </div>
 <p>Definition at line <a class="el" href="point_8hh_source.html#l00028">28</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
 <div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        : <a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a>(<a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a>), <a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a>(<a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a>)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      {}</div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00074">point.hh:74</a></div></div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00075">point.hh:75</a></div></div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00079">point.hh:79</a></div></div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00080">point.hh:80</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a2875e9cb8b19a3cf92ec9d76b21c6471"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classScroom_1_1Utils_1_1Point.html">Scroom::Utils::Point</a>&lt; T &gt;::<a class="el" href="classScroom_1_1Utils_1_1Point.html">Point</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classScroom_1_1Utils_1_1Point.html">Point</a>&lt; U &gt;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="point_8hh_source.html#l00033">33</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        : <a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a>(other.x), <a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a>(other.y)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      {}</div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00079">point.hh:79</a></div></div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00080">point.hh:80</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -251,12 +288,12 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="point_8hh_source.html#l00068">68</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> sqrt(<a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a>*<a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a>+<a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a>*<a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      }</div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00074">point.hh:74</a></div></div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00075">point.hh:75</a></div></div>
+<p>Definition at line <a class="el" href="point_8hh_source.html#l00073">73</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> sqrt(<a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a>*<a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a>+<a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a>*<a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      }</div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00079">point.hh:79</a></div></div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00080">point.hh:80</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -284,14 +321,14 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="point_8hh_source.html#l00049">49</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a> *= other;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a> *= other;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      }</div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00074">point.hh:74</a></div></div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00075">point.hh:75</a></div></div>
+<p>Definition at line <a class="el" href="point_8hh_source.html#l00054">54</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a> *= other;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a> *= other;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      }</div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00079">point.hh:79</a></div></div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00080">point.hh:80</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -319,14 +356,14 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="point_8hh_source.html#l00037">37</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a> += other.x;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a> += other.y;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      }</div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00074">point.hh:74</a></div></div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00075">point.hh:75</a></div></div>
+<p>Definition at line <a class="el" href="point_8hh_source.html#l00042">42</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a> += other.x;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a> += other.y;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      }</div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00079">point.hh:79</a></div></div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00080">point.hh:80</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -353,12 +390,12 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="point_8hh_source.html#l00063">63</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> Point&lt;value_type&gt;(-<a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a>, -<a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      }</div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00074">point.hh:74</a></div></div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00075">point.hh:75</a></div></div>
+<p>Definition at line <a class="el" href="point_8hh_source.html#l00068">68</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> Point&lt;value_type&gt;(-<a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a>, -<a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      }</div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00079">point.hh:79</a></div></div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00080">point.hh:80</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -386,10 +423,10 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="point_8hh_source.html#l00044">44</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span> += -other;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      }</div>
+<p>Definition at line <a class="el" href="point_8hh_source.html#l00049">49</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span> += -other;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -417,14 +454,14 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="point_8hh_source.html#l00056">56</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a> /= other;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a> /= other;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      }</div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00074">point.hh:74</a></div></div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00075">point.hh:75</a></div></div>
+<p>Definition at line <a class="el" href="point_8hh_source.html#l00061">61</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a> /= other;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a> /= other;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      }</div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00079">point.hh:79</a></div></div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00080">point.hh:80</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -452,12 +489,12 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="point_8hh_source.html#l00032">32</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a> == other.x &amp;&amp; <a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a> == other.y;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      }</div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00074">point.hh:74</a></div></div>
-<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00075">point.hh:75</a></div></div>
+<p>Definition at line <a class="el" href="point_8hh_source.html#l00037">37</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">x</a> == other.x &amp;&amp; <a class="code" href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">y</a> == other.y;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      }</div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_aef05138a3536382db393d698c80a48ca"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#aef05138a3536382db393d698c80a48ca">Scroom::Utils::Point::x</a></div><div class="ttdeci">value_type x</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00079">point.hh:79</a></div></div>
+<div class="ttc" id="classScroom_1_1Utils_1_1Point_html_a8f69c38e2593833b1901ef73e935d820"><div class="ttname"><a href="classScroom_1_1Utils_1_1Point.html#a8f69c38e2593833b1901ef73e935d820">Scroom::Utils::Point::y</a></div><div class="ttdeci">value_type y</div><div class="ttdef"><b>Definition:</b> <a href="point_8hh_source.html#l00080">point.hh:80</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -474,9 +511,9 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="point_8hh_source.html#l00074">74</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
+<p>Definition at line <a class="el" href="point_8hh_source.html#l00079">79</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
 
-<p>Referenced by <a class="el" href="rectangle_8hh_source.html#l00073">Scroom::Utils::Rectangle&lt; double &gt;::contains()</a>, <a class="el" href="point_8hh_source.html#l00068">Scroom::Utils::Point&lt; double &gt;::magnitude()</a>, <a class="el" href="rectangle_8hh_source.html#l00063">Scroom::Utils::Rectangle&lt; double &gt;::moveTo()</a>, <a class="el" href="point_8hh_source.html#l00049">Scroom::Utils::Point&lt; double &gt;::operator*=()</a>, <a class="el" href="rectangle_8hh_source.html#l00271">Scroom::Utils::Rectangle&lt; double &gt;::operator*=()</a>, <a class="el" href="point_8hh_source.html#l00037">Scroom::Utils::Point&lt; double &gt;::operator+=()</a>, <a class="el" href="rectangle_8hh_source.html#l00252">Scroom::Utils::Rectangle&lt; double &gt;::operator+=()</a>, <a class="el" href="point_8hh_source.html#l00063">Scroom::Utils::Point&lt; double &gt;::operator-()</a>, <a class="el" href="point_8hh_source.html#l00056">Scroom::Utils::Point&lt; double &gt;::operator/=()</a>, <a class="el" href="rectangle_8hh_source.html#l00285">Scroom::Utils::Rectangle&lt; double &gt;::operator/=()</a>, <a class="el" href="point_8hh_source.html#l00085">Scroom::Utils::operator&lt;&lt;()</a>, <a class="el" href="point_8hh_source.html#l00032">Scroom::Utils::Point&lt; double &gt;::operator==()</a>, <a class="el" href="transformpresentation_8cc_source.html#l00051">TransformPresentation::redraw()</a>, and <a class="el" href="rectangle_8hh_source.html#l00302">Scroom::Utils::Rectangle&lt; double &gt;::setSize()</a>.</p>
+<p>Referenced by <a class="el" href="rectangle_8hh_source.html#l00073">Scroom::Utils::Rectangle&lt; double &gt;::contains()</a>, <a class="el" href="point_8hh_source.html#l00073">Scroom::Utils::Point&lt; double &gt;::magnitude()</a>, <a class="el" href="rectangle_8hh_source.html#l00063">Scroom::Utils::Rectangle&lt; double &gt;::moveTo()</a>, <a class="el" href="point_8hh_source.html#l00054">Scroom::Utils::Point&lt; double &gt;::operator*=()</a>, <a class="el" href="rectangle_8hh_source.html#l00279">Scroom::Utils::Rectangle&lt; double &gt;::operator*=()</a>, <a class="el" href="point_8hh_source.html#l00042">Scroom::Utils::Point&lt; double &gt;::operator+=()</a>, <a class="el" href="rectangle_8hh_source.html#l00260">Scroom::Utils::Rectangle&lt; double &gt;::operator+=()</a>, <a class="el" href="point_8hh_source.html#l00068">Scroom::Utils::Point&lt; double &gt;::operator-()</a>, <a class="el" href="point_8hh_source.html#l00061">Scroom::Utils::Point&lt; double &gt;::operator/=()</a>, <a class="el" href="rectangle_8hh_source.html#l00293">Scroom::Utils::Rectangle&lt; double &gt;::operator/=()</a>, <a class="el" href="point_8hh_source.html#l00090">Scroom::Utils::operator&lt;&lt;()</a>, <a class="el" href="point_8hh_source.html#l00037">Scroom::Utils::Point&lt; double &gt;::operator==()</a>, <a class="el" href="transformpresentation_8cc_source.html#l00051">TransformPresentation::redraw()</a>, and <a class="el" href="rectangle_8hh_source.html#l00310">Scroom::Utils::Rectangle&lt; double &gt;::setSize()</a>.</p>
 
 </div>
 </div>
@@ -492,9 +529,9 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="point_8hh_source.html#l00075">75</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
+<p>Definition at line <a class="el" href="point_8hh_source.html#l00080">80</a> of file <a class="el" href="point_8hh_source.html">point.hh</a>.</p>
 
-<p>Referenced by <a class="el" href="rectangle_8hh_source.html#l00073">Scroom::Utils::Rectangle&lt; double &gt;::contains()</a>, <a class="el" href="point_8hh_source.html#l00068">Scroom::Utils::Point&lt; double &gt;::magnitude()</a>, <a class="el" href="rectangle_8hh_source.html#l00063">Scroom::Utils::Rectangle&lt; double &gt;::moveTo()</a>, <a class="el" href="point_8hh_source.html#l00049">Scroom::Utils::Point&lt; double &gt;::operator*=()</a>, <a class="el" href="rectangle_8hh_source.html#l00271">Scroom::Utils::Rectangle&lt; double &gt;::operator*=()</a>, <a class="el" href="point_8hh_source.html#l00037">Scroom::Utils::Point&lt; double &gt;::operator+=()</a>, <a class="el" href="rectangle_8hh_source.html#l00252">Scroom::Utils::Rectangle&lt; double &gt;::operator+=()</a>, <a class="el" href="point_8hh_source.html#l00063">Scroom::Utils::Point&lt; double &gt;::operator-()</a>, <a class="el" href="point_8hh_source.html#l00056">Scroom::Utils::Point&lt; double &gt;::operator/=()</a>, <a class="el" href="rectangle_8hh_source.html#l00285">Scroom::Utils::Rectangle&lt; double &gt;::operator/=()</a>, <a class="el" href="point_8hh_source.html#l00032">Scroom::Utils::Point&lt; double &gt;::operator==()</a>, <a class="el" href="transformpresentation_8cc_source.html#l00051">TransformPresentation::redraw()</a>, and <a class="el" href="rectangle_8hh_source.html#l00302">Scroom::Utils::Rectangle&lt; double &gt;::setSize()</a>.</p>
+<p>Referenced by <a class="el" href="rectangle_8hh_source.html#l00073">Scroom::Utils::Rectangle&lt; double &gt;::contains()</a>, <a class="el" href="point_8hh_source.html#l00073">Scroom::Utils::Point&lt; double &gt;::magnitude()</a>, <a class="el" href="rectangle_8hh_source.html#l00063">Scroom::Utils::Rectangle&lt; double &gt;::moveTo()</a>, <a class="el" href="point_8hh_source.html#l00054">Scroom::Utils::Point&lt; double &gt;::operator*=()</a>, <a class="el" href="rectangle_8hh_source.html#l00279">Scroom::Utils::Rectangle&lt; double &gt;::operator*=()</a>, <a class="el" href="point_8hh_source.html#l00042">Scroom::Utils::Point&lt; double &gt;::operator+=()</a>, <a class="el" href="rectangle_8hh_source.html#l00260">Scroom::Utils::Rectangle&lt; double &gt;::operator+=()</a>, <a class="el" href="point_8hh_source.html#l00068">Scroom::Utils::Point&lt; double &gt;::operator-()</a>, <a class="el" href="point_8hh_source.html#l00061">Scroom::Utils::Point&lt; double &gt;::operator/=()</a>, <a class="el" href="rectangle_8hh_source.html#l00293">Scroom::Utils::Rectangle&lt; double &gt;::operator/=()</a>, <a class="el" href="point_8hh_source.html#l00037">Scroom::Utils::Point&lt; double &gt;::operator==()</a>, <a class="el" href="transformpresentation_8cc_source.html#l00051">TransformPresentation::redraw()</a>, and <a class="el" href="rectangle_8hh_source.html#l00310">Scroom::Utils::Rectangle&lt; double &gt;::setSize()</a>.</p>
 
 </div>
 </div>
@@ -507,7 +544,7 @@ template&lt;typename T&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceScroom.html">Scroom</a></li><li class="navelem"><a class="el" href="namespaceScroom_1_1Utils.html">Utils</a></li><li class="navelem"><a class="el" href="classScroom_1_1Utils_1_1Point.html">Point</a></li>
-    <li class="footer">Generated on Tue Sep 4 2018 18:30:03 for Scroom by
+    <li class="footer">Generated on Thu Oct 25 2018 11:11:41 for Scroom by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@ var classOperations =
     [ "~Operations", "classOperations.html#a523549d97aabc298558d3c60836e1cbc", null ],
     [ "cache", "classOperations.html#ab938c3da9ec8de6c4b03c932a98fa796", null ],
     [ "create", "classOperations.html#a59ca763acb5f4fc36330ad8add4f55ff", null ],
-    [ "draw", "classOperations.html#af5e1df41110434b7c16ccf492780074b", null ],
+    [ "draw", "classOperations.html#a50a470b55a747238017726623131ac23", null ],
     [ "getBpp", "classOperations.html#a7e27858b123519249f2408ea75581bca", null ],
     [ "reduce", "classOperations.html#a23562eb3526ce1fd5ef743c438867b00", null ],
     [ "bpp", "classOperations.html#a18069b958a4e6e23bb9f0784f4ee3f90", null ],
