@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Scroom
-   &#160;<span id="projectnumber">0.10_rc2-4-g7a72516</span>
+   &#160;<span id="projectnumber">0.10_rc2-5-g2f0f3b2</span>
    </div>
   </td>
  </tr>
@@ -139,23 +139,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="transparentoverlayviewinfo_8cc_source.html#l00024">24</a> of file <a class="el" href="transparentoverlayviewinfo_8cc_source.html">transparentoverlayviewinfo.cc</a>.</p>
+<p>Definition at line <a class="el" href="transparentoverlayviewinfo_8cc_source.html#l00025">25</a> of file <a class="el" href="transparentoverlayviewinfo_8cc_source.html">transparentoverlayviewinfo.cc</a>.</p>
 
-<p>Referenced by <a class="el" href="transparentoverlayviewinfo_8cc_source.html#l00091">TransparentOverlayViewInfo::createToggleToolButton()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classColormappable.html#a4c1b71a942d06c46de4d958f3f03be67">Colormappable::Ptr</a> c = boost::dynamic_pointer_cast&lt;<a class="code" href="classColormappable.html">Colormappable</a>&gt;(p);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span>(c &amp;&amp; p-&gt;isPropertyDefined(<a class="code" href="colormappable_8hh.html#ad2d2917d25ae2de5baa91f92dafb3cae">MONOCHROME_COLORMAPPABLE_PROPERTY_NAME</a>))</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <a class="code" href="classColor.html">Color</a> col = c-&gt;getMonochromeColor();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      GdkColor bgCol = col.<a class="code" href="classColor.html#ae003778118b4fc9fca9b6c751a78c82f">getGdkColor</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      gtk_widget_modify_bg(w, GTK_STATE_ACTIVE, &amp;bgCol);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      GdkColor fgCol = col.<a class="code" href="classColor.html#a3c269385c18cd426bc04aeded0f3e857">getContrastingBlackOrWhite</a>().<a class="code" href="classColor.html#ae003778118b4fc9fca9b6c751a78c82f">getGdkColor</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      GtkWidget* label = gtk_bin_get_child(GTK_BIN(w));</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      gtk_widget_modify_fg(label, GTK_STATE_ACTIVE, &amp;fgCol);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
+<p>Referenced by <a class="el" href="transparentoverlayviewinfo_8cc_source.html#l00092">TransparentOverlayViewInfo::createToggleToolButton()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classColormappable.html#a4c1b71a942d06c46de4d958f3f03be67">Colormappable::Ptr</a> c = boost::dynamic_pointer_cast&lt;<a class="code" href="classColormappable.html">Colormappable</a>&gt;(p);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span>(c &amp;&amp; p-&gt;isPropertyDefined(<a class="code" href="colormappable_8hh.html#ad2d2917d25ae2de5baa91f92dafb3cae">MONOCHROME_COLORMAPPABLE_PROPERTY_NAME</a>))</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      <a class="code" href="classColor.html">Color</a> col = c-&gt;getMonochromeColor();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      GdkColor bgCol = col.<a class="code" href="classColor.html#ae003778118b4fc9fca9b6c751a78c82f">getGdkColor</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      gtk_widget_modify_bg(w, GTK_STATE_ACTIVE, &amp;bgCol);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      GdkColor fgCol = col.<a class="code" href="classColor.html#a3c269385c18cd426bc04aeded0f3e857">getContrastingBlackOrWhite</a>().<a class="code" href="classColor.html#ae003778118b4fc9fca9b6c751a78c82f">getGdkColor</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      GtkWidget* label = gtk_bin_get_child(GTK_BIN(w));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      gtk_widget_modify_fg(label, GTK_STATE_ACTIVE, &amp;fgCol);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
 <div class="ttc" id="colormappable_8hh_html_ad2d2917d25ae2de5baa91f92dafb3cae"><div class="ttname"><a href="colormappable_8hh.html#ad2d2917d25ae2de5baa91f92dafb3cae">MONOCHROME_COLORMAPPABLE_PROPERTY_NAME</a></div><div class="ttdeci">const std::string MONOCHROME_COLORMAPPABLE_PROPERTY_NAME</div><div class="ttdef"><b>Definition:</b> <a href="colormappable_8hh_source.html#l00022">colormappable.hh:22</a></div></div>
 <div class="ttc" id="classColor_html_ae003778118b4fc9fca9b6c751a78c82f"><div class="ttname"><a href="classColor.html#ae003778118b4fc9fca9b6c751a78c82f">Color::getGdkColor</a></div><div class="ttdeci">GdkColor getGdkColor() const </div><div class="ttdef"><b>Definition:</b> <a href="color_8hh_source.html#l00077">color.hh:77</a></div></div>
 <div class="ttc" id="classColormappable_html_a4c1b71a942d06c46de4d958f3f03be67"><div class="ttname"><a href="classColormappable.html#a4c1b71a942d06c46de4d958f3f03be67">Colormappable::Ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; Colormappable &gt; Ptr</div><div class="ttdef"><b>Definition:</b> <a href="colormappable_8hh_source.html#l00115">colormappable.hh:115</a></div></div>
@@ -171,7 +171,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02transparentoverlayviewinfo_8cc_03.html">anonymous_namespace{transparentoverlayviewinfo.cc}</a></li>
-    <li class="footer">Generated on Wed Oct 3 2018 18:20:36 for Scroom by
+    <li class="footer">Generated on Thu Jul 25 2019 09:33:55 for Scroom by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
