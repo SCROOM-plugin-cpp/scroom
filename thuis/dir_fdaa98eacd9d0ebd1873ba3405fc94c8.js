@@ -59,7 +59,6 @@ var dir_fdaa98eacd9d0ebd1873ba3405fc94c8 =
     [ "resizablepresentationinterface.hh", "resizablepresentationinterface_8hh.html", [
       [ "ResizablePresentationInterface", "classResizablePresentationInterface.html", "classResizablePresentationInterface" ]
     ] ],
-    [ "roi.hh", "roi_8hh.html", "roi_8hh" ],
     [ "scroominterface.hh", "scroominterface_8hh.html", [
       [ "ScroomInterface", "classScroomInterface.html", "classScroomInterface" ],
       [ "NewPresentationInterface", "classNewPresentationInterface.html", "classNewPresentationInterface" ],

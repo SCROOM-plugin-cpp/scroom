@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classScroom_1_1MemoryBlobs_1_1Blob_1_1UnloadData.html" title="Scroom::MemoryBlobs\l::Blob::UnloadData" alt="" coords="5,5,160,46"/>
+<area shape="rect" id="node1" href="$classScroom_1_1MemoryBlocks_1_1BlockFactoryInterface.html" title="Scroom::MemoryBlocks\l::BlockFactoryInterface" alt="" coords="5,13,180,54"/>
+<area shape="rect" id="node2" href="$classScroom_1_1MemoryBlocks_1_1Detail_1_1SwapBasedBlockAllocatorFactory.html" title="Scroom::MemoryBlocks\l::Detail::SwapBasedBlockAllocator\lFactory" alt="" coords="228,5,475,61"/>
 </map>

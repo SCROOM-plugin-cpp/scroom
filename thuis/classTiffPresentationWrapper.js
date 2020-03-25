@@ -11,7 +11,7 @@ var classTiffPresentationWrapper =
     [ "getProperty", "classTiffPresentationWrapper.html#a307f84ce0e20dbe38d4d0686b1b2b513", null ],
     [ "getRect", "classTiffPresentationWrapper.html#a8774b6d92f949c538c741dc6adc1d416", null ],
     [ "getTitle", "classTiffPresentationWrapper.html#a8475149fa69459a2af46229fdab864ae", null ],
-    [ "getTransformationData", "classTiffPresentationWrapper.html#a675c0d45ebabde280122a7313acf9dbb", null ],
+    [ "getTransformationData", "classTiffPresentationWrapper.html#a3fc7e574ed3889e979e544a49f83664a", null ],
     [ "getTransparentBackground", "classTiffPresentationWrapper.html#a039514b3e39826fc956c9503bf8d7a97", null ],
     [ "getViews", "classTiffPresentationWrapper.html#a2d4ab2145dee5e2cff7fe2b997a5ca4d", null ],
     [ "isPropertyDefined", "classTiffPresentationWrapper.html#aa88a248a7eb183b4dab3da04bab1ce89", null ],

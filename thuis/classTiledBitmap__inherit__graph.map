@@ -1,6 +1,6 @@
 <map id="TiledBitmap" name="TiledBitmap">
-<area shape="rect" id="node2" href="$classTiledBitmapInterface.html" title="Interact with your TiledBitmap. " alt="" coords="5,160,176,296"/>
-<area shape="rect" id="node3" href="$classViewable.html" title="Implement Viewable if you want to be able to receive events when a View is created and/or deleted..." alt="" coords="39,5,141,112"/>
-<area shape="rect" id="node4" href="$classTileInitialisationObserver.html" title="Events related to filling a tile with data. " alt="" coords="201,175,393,281"/>
-<area shape="rect" id="node5" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="418,175,560,281"/>
+<area shape="rect" id="node2" href="$classTiledBitmapInterface.html" title="Interact with your TiledBitmap. " alt="" coords="5,160,200,296"/>
+<area shape="rect" id="node3" href="$classViewable.html" title="Implement Viewable if you want to be able to receive events when a View is created and/or deleted..." alt="" coords="43,5,162,112"/>
+<area shape="rect" id="node4" href="$classTileInitialisationObserver.html" title="Events related to filling a tile with data. " alt="" coords="225,175,447,281"/>
+<area shape="rect" id="node5" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="471,175,631,281"/>
 </map>

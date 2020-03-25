@@ -1,7 +1,7 @@
 <map id="TiledBitmapViewData" name="TiledBitmapViewData">
-<area shape="rect" id="node2" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="7,371,149,477"/>
-<area shape="rect" id="node4" href="$classTileLoadingObserver.html" title="Events related to swapping tiles in/out. " alt="" coords="174,378,343,470"/>
-<area shape="rect" id="node5" href="$classProgressInterface.html" title="Interface used for reporting progress information. " alt="" coords="367,356,520,492"/>
-<area shape="rect" id="node8" title="STL class. " alt="" coords="562,155,659,232"/>
-<area shape="rect" id="node10" href="$classScroom_1_1Bookkeeping_1_1Token.html" title="{Scroom::Bookkeeping\l::Token\n||+ Token()\l+ Token()\l+ Token()\l+ Token()\l+ Token()\l+ add()\l+ add()\l+ merge()\l+ merge()\l+ operator+()\l+ operator+=()\l}" alt="" coords="686,305,836,543"/>
+<area shape="rect" id="node2" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="6,366,166,473"/>
+<area shape="rect" id="node4" href="$classTileLoadingObserver.html" title="Events related to swapping tiles in/out. " alt="" coords="190,373,382,465"/>
+<area shape="rect" id="node5" href="$classProgressInterface.html" title="Interface used for reporting progress information. " alt="" coords="407,351,579,487"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="623,153,731,230"/>
+<area shape="rect" id="node10" href="$classScroom_1_1Bookkeeping_1_1Token.html" title="{Scroom::Bookkeeping\l::Token\n||+ Token()\l+ Token()\l+ Token()\l+ Token()\l+ Token()\l+ add()\l+ add()\l+ merge()\l+ merge()\l+ operator+()\l+ operator+=()\l}" alt="" coords="759,300,923,539"/>
 </map>

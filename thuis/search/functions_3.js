@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['datafetcher',['DataFetcher',['../classDataFetcher.html#a4cee0330c4b953fcc3c609b867fc2e66',1,'DataFetcher']]],
+  ['datafetcher',['DataFetcher',['../classDataFetcher.html#a6c372d1f9e8c14f8837d277782dca62c',1,'DataFetcher']]],
   ['dec',['dec',['../classScroom_1_1Utils_1_1Count.html#a4a079db4ca94588183b9ed1f3ed930ff',1,'Scroom::Utils::Count']]],
   ['decompressblob',['decompressBlob',['../namespaceScroom_1_1MemoryBlobs_1_1Detail.html#a3435b06f8f48799a361e7ff452a9bee2',1,'Scroom::MemoryBlobs::Detail']]],
   ['defaultqueue',['defaultQueue',['../classThreadPool.html#a7d435b8c6eff3ffcf5b9043bd50048c2',1,'ThreadPool']]],
   ['deletingqueue',['deletingQueue',['../classScroom_1_1Detail_1_1ThreadPool_1_1QueueImpl.html#a0ba3013ca14c6fbf310043ca25257be0',1,'Scroom::Detail::ThreadPool::QueueImpl']]],
   ['destroy',['destroy',['../classTiffPresentation.html#a2fe3563f6f47156ad931e3640da41b63',1,'TiffPresentation']]],
-  ['destroygtkfilefilterlist',['destroyGtkFileFilterList',['../loader_8cc.html#a47dec8cb3f03de25ed596fb0defa91f6',1,'destroyGtkFileFilterList(std::list&lt; GtkFileFilter * &gt; &amp;l):&#160;loader.cc'],['../loader_8hh.html#a47dec8cb3f03de25ed596fb0defa91f6',1,'destroyGtkFileFilterList(std::list&lt; GtkFileFilter * &gt; &amp;l):&#160;loader.cc']]],
+  ['destroygtkfilefilterlist',['destroyGtkFileFilterList',['../loader_8cc.html#a3e025cc422a49d3cbb3aa8551ea40d82',1,'destroyGtkFileFilterList(std::list&lt; GtkFileFilter *&gt; &amp;l):&#160;loader.cc'],['../loader_8hh.html#a3e025cc422a49d3cbb3aa8551ea40d82',1,'destroyGtkFileFilterList(std::list&lt; GtkFileFilter *&gt; &amp;l):&#160;loader.cc']]],
   ['determinesize',['DetermineSize',['../namespaceanonymous__namespace_02sizedeterminer_8cc_03.html#ae9f664d7640561d409d8cec497ef29e7',1,'anonymous_namespace{sizedeterminer.cc}']]],
   ['disabletransparentbackground',['disableTransparentBackground',['../classColormappable.html#a65f7747cb8c21704aed2bcbb05401f8b',1,'Colormappable::disableTransparentBackground()'],['../classColormapHelperBase.html#ab4c56e04665ee69571021659b8b645b9',1,'ColormapHelperBase::disableTransparentBackground()'],['../classMonochromeColormapHelper.html#af1fb2c5354868ede10d981b214a32252',1,'MonochromeColormapHelper::disableTransparentBackground()'],['../classTransformPresentation.html#aad45df75870c8f294b5b9333f5b592a0',1,'TransformPresentation::disableTransparentBackground()'],['../classTiffPresentation.html#acb5e72bdaf524ca35f0820d6571ce7f7',1,'TiffPresentation::disableTransparentBackground()'],['../classTiffPresentationWrapper.html#ad642340ef6c06ed477463d31afdb3205',1,'TiffPresentationWrapper::disableTransparentBackground()']]],
   ['displaymeasurement',['displayMeasurement',['../classView.html#ab3b5f2eb1f7ccc2e85b788710b1e6249',1,'View']]],

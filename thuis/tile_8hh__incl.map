@@ -1,6 +1,6 @@
 <map id="inc/scroom/tile.hh" name="inc/scroom/tile.hh">
-<area shape="rect" id="node4" href="$global_8hh.html" title="scroom/global.hh" alt="" coords="454,80,575,107"/>
-<area shape="rect" id="node5" href="$memoryblobs_8hh.html" title="scroom/memoryblobs.hh" alt="" coords="264,80,428,107"/>
-<area shape="rect" id="node9" href="$blockallocator_8hh.html" title="scroom/blockallocator.hh" alt="" coords="263,155,429,181"/>
-<area shape="rect" id="node10" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="607,155,735,181"/>
+<area shape="rect" id="node4" href="$global_8hh.html" title="scroom/global.hh" alt="" coords="483,80,617,107"/>
+<area shape="rect" id="node5" href="$memoryblobs_8hh.html" title="scroom/memoryblobs.hh" alt="" coords="274,80,458,107"/>
+<area shape="rect" id="node9" href="$blockallocator_8hh.html" title="scroom/blockallocator.hh" alt="" coords="273,155,459,181"/>
+<area shape="rect" id="node10" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="636,155,779,181"/>
 </map>

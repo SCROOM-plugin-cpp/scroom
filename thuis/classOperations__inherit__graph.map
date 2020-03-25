@@ -1,5 +1,5 @@
 <map id="Operations" name="Operations">
-<area shape="rect" id="node4" href="$classOperationsColormapped.html" title="{OperationsColormapped\n||+ OperationsColormapped()\l+ ~OperationsColormapped()\l+ getBpp()\l+ cache()\l+ reduce()\l+ create()\l}" alt="" coords="5,721,195,871"/>
-<area shape="rect" id="node2" href="$classCommonOperations.html" title="{CommonOperations\n||+ ~CommonOperations()\l+ drawPixelValue()\l+ drawPixelValue()\l+ initializeCairo()\l+ drawState()\l+ cacheZoom()\l+ draw()\l}" alt="" coords="17,235,183,400"/>
-<area shape="rect" id="node3" href="$classLayerOperations.html" title="Operations on a layer in the TiledBitmap. " alt="" coords="27,6,172,186"/>
+<area shape="rect" id="node4" href="$classOperationsColormapped.html" title="{OperationsColormapped\n||+ OperationsColormapped()\l+ ~OperationsColormapped()\l+ getBpp()\l+ cache()\l+ reduce()\l+ create()\l}" alt="" coords="5,719,221,869"/>
+<area shape="rect" id="node2" href="$classCommonOperations.html" title="{CommonOperations\n||+ ~CommonOperations()\l+ drawPixelValue()\l+ drawPixelValue()\l+ initializeCairo()\l+ drawState()\l+ cacheZoom()\l+ draw()\l}" alt="" coords="19,233,207,399"/>
+<area shape="rect" id="node3" href="$classLayerOperations.html" title="Operations on a layer in the TiledBitmap. " alt="" coords="31,5,196,185"/>
 </map>

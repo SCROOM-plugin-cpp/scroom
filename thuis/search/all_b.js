@@ -12,14 +12,11 @@ var searchData=
   ['layeroperations_2ehh',['layeroperations.hh',['../layeroperations_8hh.html',1,'']]],
   ['layers',['layers',['../classTiledBitmap.html#a4651ffc5e76d85693c07468ec5e19682',1,'TiledBitmap']]],
   ['layerspec',['LayerSpec',['../tiledbitmapinterface_8hh.html#a39407a87d1a6de61ef7d8f645eaf460b',1,'tiledbitmapinterface.hh']]],
-  ['left',['left',['../structScroom_1_1Roi_1_1Rect.html#a86d65e168ced63549a3aefe6411c6b9e',1,'Scroom::Roi::Rect']]],
-  ['leftof',['leftOf',['../classScroom_1_1Utils_1_1Rectangle.html#aa798d41677fdbddaed08805c3a54e773',1,'Scroom::Utils::Rectangle::leftOf(value_type v) const '],['../classScroom_1_1Utils_1_1Rectangle.html#a258ef032e804165f228b72710c804767',1,'Scroom::Utils::Rectangle::leftOf(Rectangle&lt; value_type &gt; const &amp;r) const ']]],
+  ['leftof',['leftOf',['../classScroom_1_1Utils_1_1Rectangle.html#adf62135f8fc93f9269d33baf77f0a083',1,'Scroom::Utils::Rectangle::leftOf(value_type v) const'],['../classScroom_1_1Utils_1_1Rectangle.html#af376cd57a92a47d4f2f2fa751e71abee',1,'Scroom::Utils::Rectangle::leftOf(Rectangle&lt; value_type &gt; const &amp;r) const']]],
   ['length',['length',['../structMeasurement.html#a41f8cd8c79ab3a429cee2334dfcfb170',1,'Measurement']]],
   ['lifetimemanager',['lifeTimeManager',['../classTileViewState.html#a4c83ba16f6f5a0b3df38a39ecb95e449',1,'TileViewState']]],
   ['linearsegment_2ehh',['linearsegment.hh',['../linearsegment_8hh.html',1,'']]],
   ['lineoutofbounds',['lineOutOfBounds',['../classLayer.html#a293b3e4be5e6edc8c3b83718f8c7ee33',1,'Layer']]],
-  ['list',['List',['../classScroom_1_1Roi_1_1List.html',1,'Scroom::Roi']]],
-  ['list',['list',['../classRoiUi.html#a5c5c4366e44961644eb06ce7fbc1e059',1,'RoiUi::list()'],['../classScroom_1_1Roi_1_1List.html#aa758919cb496ee2fe30e62662ccb3e37',1,'Scroom::Roi::List::List()']]],
   ['lo',['lo',['../classLayerCoordinator.html#a448c520cd5af1ff7a9544fa1d1e763e8',1,'LayerCoordinator::lo()'],['../classTileViewState.html#aebe3c10c40e343a2df076a126626a464',1,'TileViewState::lo()']]],
   ['load',['load',['../classScroom_1_1MemoryBlobs_1_1Blob.html#a775037c70c28e8e06cd2731a6968a410',1,'Scroom::MemoryBlobs::Blob::load()'],['../classTiffPresentation.html#a840d81d6d2b83e050d7eac951d8d349e',1,'TiffPresentation::load()'],['../classTiffPresentationWrapper.html#a4c17fe0918c7adb7b599bad4926f2892',1,'TiffPresentationWrapper::load()'],['../loader_8cc.html#a6caa967df34751dfd7c06745d1df4a1e',1,'load(GtkFileFilterInfo const &amp;info):&#160;loader.cc'],['../loader_8cc.html#a2e71046ecf769af62aff87af7b051df6',1,'load(GtkFileFilterInfoPtr const &amp;info):&#160;loader.cc'],['../loader_8cc.html#a6c21edd9d285c925527e3209fca54b01',1,'load(const std::string &amp;filename):&#160;loader.cc'],['../loader_8hh.html#a6b10f1e940c5aed1e9cdfa35396c46c2',1,'load(const GtkFileFilterInfo &amp;info):&#160;loader.cc'],['../loader_8hh.html#a6c21edd9d285c925527e3209fca54b01',1,'load(const std::string &amp;filename):&#160;loader.cc']]],
   ['load_5fprio',['LOAD_PRIO',['../local_8hh.html#aaa596031f81e74e8c57c9af7778907b7',1,'local.hh']]],
@@ -35,6 +32,5 @@ var searchData=
   ['lookup',['lookup',['../classBitCountLut.html#a9894e0293a024d63740b7c15cf53bff0',1,'BitCountLut']]],
   ['ls',['ls',['../classTiledBitmap.html#ac35944ff618bf8e40335fa112598ad36',1,'TiledBitmap']]],
   ['lut',['lut',['../classBitCountLut.html#a98992a69cd80f781325f971ee1048e58',1,'BitCountLut']]],
-  ['lvalue',['LValue',['../classScroom_1_1Bookkeeping_1_1Detail_1_1LValue.html',1,'Scroom::Bookkeeping::Detail']]],
-  ['lvalue',['LValue',['../classScroom_1_1Bookkeeping_1_1Detail_1_1LValue.html#a5917108a31506635a201b26c1c4f2dac',1,'Scroom::Bookkeeping::Detail::LValue']]]
+  ['lvalue',['LValue',['../classScroom_1_1Bookkeeping_1_1Detail_1_1LValue.html',1,'Scroom::Bookkeeping::Detail::LValue&lt; V &gt;'],['../classScroom_1_1Bookkeeping_1_1Detail_1_1LValue.html#a5917108a31506635a201b26c1c4f2dac',1,'Scroom::Bookkeeping::Detail::LValue::LValue()']]]
 ];

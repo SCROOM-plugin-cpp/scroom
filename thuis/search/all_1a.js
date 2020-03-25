@@ -38,8 +38,6 @@ var searchData=
   ['_7equeuelock',['~QueueLock',['../classScroom_1_1Detail_1_1ThreadPool_1_1QueueLock.html#a168151543f6766a8ce874377f3d4408e',1,'Scroom::Detail::ThreadPool::QueueLock']]],
   ['_7eregistration',['~Registration',['../classScroom_1_1Utils_1_1Detail_1_1Registration.html#ab431b1155ffff2b0038d5bbd9a4c6211',1,'Scroom::Utils::Detail::Registration']]],
   ['_7eresizablepresentationinterface',['~ResizablePresentationInterface',['../classResizablePresentationInterface.html#a81ec2a64d36b91079f17f9fb670f2ae2',1,'ResizablePresentationInterface']]],
-  ['_7eroibase',['~RoiBase',['../structScroom_1_1Roi_1_1RoiBase.html#a6c909bbef4435c5cc86eabc830c77c0e',1,'Scroom::Roi::RoiBase']]],
-  ['_7eroiui',['~RoiUi',['../classRoiUi.html#a2560b614dd18e1c4b6c9052dc56db3a0',1,'RoiUi']]],
   ['_7escroominterface',['~ScroomInterface',['../classScroomInterface.html#a32ccf5d32521b307cd47c4b96f75ec87',1,'ScroomInterface']]],
   ['_7escroomplugininterface',['~ScroomPluginInterface',['../classScroomPluginInterface.html#acf2d8354543723b83993a50d2474704c',1,'ScroomPluginInterface']]],
   ['_7esourcepresentation',['~SourcePresentation',['../classSourcePresentation.html#a45d8798978b60b0d493414e7a1fde1b2',1,'SourcePresentation']]],
