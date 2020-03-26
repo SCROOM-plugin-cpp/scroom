@@ -3,7 +3,7 @@ var classScroom_1_1Utils_1_1Segment =
     [ "value_type", "classScroom_1_1Utils_1_1Segment.html#adf1bd8bc9a4afe8a280378adef823cfc", null ],
     [ "Segment", "classScroom_1_1Utils_1_1Segment.html#a72105b3913b1afea17fa50fb7ddaeb3b", null ],
     [ "Segment", "classScroom_1_1Utils_1_1Segment.html#a9c50a43e72c7ecd4ea28afd45db639d4", null ],
-    [ "Segment", "classScroom_1_1Utils_1_1Segment.html#a6d1be51ffd98726dd6968845bac2a096", null ],
+    [ "Segment", "classScroom_1_1Utils_1_1Segment.html#a64763d7821ae68ca11bccd717c8c53c9", null ],
     [ "after", "classScroom_1_1Utils_1_1Segment.html#a9adfac9c1672135c816b5ec3349c7e16", null ],
     [ "before", "classScroom_1_1Utils_1_1Segment.html#ade8df3359fab72e4ccb28f022e361a2e", null ],
     [ "contains", "classScroom_1_1Utils_1_1Segment.html#a812be475d7510f283272c03349002473", null ],
