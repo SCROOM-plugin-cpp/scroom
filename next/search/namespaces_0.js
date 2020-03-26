@@ -1,7 +1,7 @@
 var searchData=
 [
   ['anonymous_5fnamespace_7basync_2ddeleter_2ehh_7d',['anonymous_namespace{async-deleter.hh}',['../namespaceanonymous__namespace_02async-deleter_8hh_03.html',1,'']]],
-  ['anonymous_5fnamespace_7bcolormappable_2ehh_7d',['anonymous_namespace{colormappable.hh}',['../namespaceanonymous__namespace_02colormappable_8hh_03.html',1,'']]],
+  ['anonymous_5fnamespace_7bcolor_2ehh_7d',['anonymous_namespace{color.hh}',['../namespaceanonymous__namespace_02color_8hh_03.html',1,'']]],
   ['anonymous_5fnamespace_7blayeroperations_2ecc_7d',['anonymous_namespace{layeroperations.cc}',['../namespaceanonymous__namespace_02layeroperations_8cc_03.html',1,'']]],
   ['anonymous_5fnamespace_7bprogressbarmanager_2ecc_7d',['anonymous_namespace{progressbarmanager.cc}',['../namespaceanonymous__namespace_02progressbarmanager_8cc_03.html',1,'']]],
   ['anonymous_5fnamespace_7bsizedeterminer_2ecc_7d',['anonymous_namespace{sizedeterminer.cc}',['../namespaceanonymous__namespace_02sizedeterminer_8cc_03.html',1,'']]],

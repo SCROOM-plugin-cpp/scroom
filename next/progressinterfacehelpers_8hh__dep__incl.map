@@ -1,11 +1,11 @@
 <map id="inc/scroom/progressinterfacehelpers.hh" name="inc/scroom/progressinterfacehelpers.hh">
-<area shape="rect" id="node2" href="$tiled-bitmap_8hh.html" title="libs/tiled&#45;bitmap/src\l/tiled&#45;bitmap.hh" alt="" coords="5,81,139,122"/>
-<area shape="rect" id="node4" href="$tiledbitmapviewdata_8cc.html" title="libs/tiled&#45;bitmap/src\l/tiledbitmapviewdata.cc" alt="" coords="163,81,321,122"/>
-<area shape="rect" id="node5" href="$progressinterfacehelpers_8cc.html" title="libs/util/src/progressinterfacehelpers.cc" alt="" coords="346,88,595,115"/>
-<area shape="rect" id="node6" href="$transparentoverlayviewinfo_8hh.html" title="plugins/transparent\l&#45;overlay/src/transparentoverlayviewinfo.hh" alt="" coords="620,81,887,122"/>
-<area shape="rect" id="node3" href="$tiled-bitmap_8cc.html" title="libs/tiled&#45;bitmap/src\l/tiled&#45;bitmap.cc" alt="" coords="5,171,139,213"/>
-<area shape="rect" id="node7" href="$transparentoverlaypresentation_8hh.html" title="plugins/transparent\l&#45;overlay/src/transparentoverlaypresentation.hh" alt="" coords="456,171,747,213"/>
-<area shape="rect" id="node10" href="$transparentoverlayviewinfo_8cc.html" title="plugins/transparent\l&#45;overlay/src/transparentoverlayviewinfo.cc" alt="" coords="771,171,1037,213"/>
-<area shape="rect" id="node8" href="$transparentoverlay_8cc.html" title="plugins/transparent\l&#45;overlay/src/transparentoverlay.cc" alt="" coords="353,262,572,303"/>
-<area shape="rect" id="node9" href="$transparentoverlaypresentation_8cc.html" title="plugins/transparent\l&#45;overlay/src/transparentoverlaypresentation.cc" alt="" coords="596,262,887,303"/>
+<area shape="rect" id="node2" href="$tiled-bitmap_8hh.html" title="libs/tiled&#45;bitmap/src\l/tiled&#45;bitmap.hh" alt="" coords="5,80,157,121"/>
+<area shape="rect" id="node4" href="$tiledbitmapviewdata_8cc.html" title="libs/tiled&#45;bitmap/src\l/tiledbitmapviewdata.cc" alt="" coords="181,80,360,121"/>
+<area shape="rect" id="node5" href="$progressinterfacehelpers_8cc.html" title="libs/util/src/progressinterfacehelpers.cc" alt="" coords="384,87,661,114"/>
+<area shape="rect" id="node6" href="$transparentoverlayviewinfo_8hh.html" title="plugins/transparent\l&#45;overlay/src/transparentoverlayviewinfo.hh" alt="" coords="686,80,989,121"/>
+<area shape="rect" id="node3" href="$tiled-bitmap_8cc.html" title="libs/tiled&#45;bitmap/src\l/tiled&#45;bitmap.cc" alt="" coords="5,169,157,211"/>
+<area shape="rect" id="node7" href="$transparentoverlaypresentation_8hh.html" title="plugins/transparent\l&#45;overlay/src/transparentoverlaypresentation.hh" alt="" coords="502,169,831,211"/>
+<area shape="rect" id="node10" href="$transparentoverlayviewinfo_8cc.html" title="plugins/transparent\l&#45;overlay/src/transparentoverlayviewinfo.cc" alt="" coords="856,169,1157,211"/>
+<area shape="rect" id="node8" href="$transparentoverlay_8cc.html" title="plugins/transparent\l&#45;overlay/src/transparentoverlay.cc" alt="" coords="391,259,633,300"/>
+<area shape="rect" id="node9" href="$transparentoverlaypresentation_8cc.html" title="plugins/transparent\l&#45;overlay/src/transparentoverlaypresentation.cc" alt="" coords="658,259,985,300"/>
 </map>

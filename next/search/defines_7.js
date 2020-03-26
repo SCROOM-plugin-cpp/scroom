@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['plugin_5fapi_5fversion',['PLUGIN_API_VERSION',['../plugininformationinterface_8hh.html#ac3bcb9217a74830c51b6c46c9b5f997f',1,'plugininformationinterface.hh']]]
+  ['reduce_5fprio',['REDUCE_PRIO',['../local_8hh.html#a0a865049f169efddb5dcb94b4b6f2e6b',1,'local.hh']]],
+  ['require',['require',['../assertions_8hh.html#ae925d7587e34145cd52f674b2012539a',1,'assertions.hh']]]
 ];

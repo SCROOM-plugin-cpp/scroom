@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['layer',['Layer',['../classLayer.html',1,'']]],
-  ['layercoordinator',['LayerCoordinator',['../classLayerCoordinator.html',1,'']]],
-  ['layeroperations',['LayerOperations',['../classLayerOperations.html',1,'']]],
-  ['list',['List',['../classScroom_1_1Roi_1_1List.html',1,'Scroom::Roi']]],
-  ['loadoperation',['LoadOperation',['../classLoadOperation.html',1,'']]],
-  ['lvalue',['LValue',['../classScroom_1_1Bookkeeping_1_1Detail_1_1LValue.html',1,'Scroom::Bookkeeping::Detail']]]
+  ['map',['Map',['../classScroom_1_1Bookkeeping_1_1Map.html',1,'Scroom::Bookkeeping']]],
+  ['map_3c_20observerweak_2c_20typename_20registration_3a_3aptr_20_3e',['Map&lt; ObserverWeak, typename Registration::Ptr &gt;',['../classScroom_1_1Bookkeeping_1_1Map.html',1,'Scroom::Bookkeeping']]],
+  ['mapbase',['MapBase',['../classScroom_1_1Bookkeeping_1_1MapBase.html',1,'Scroom::Bookkeeping']]],
+  ['mapbase_3c_20observerweak_2c_20typename_20registration_3a_3aptr_20_3e',['MapBase&lt; ObserverWeak, typename Registration::Ptr &gt;',['../classScroom_1_1Bookkeeping_1_1MapBase.html',1,'Scroom::Bookkeeping']]],
+  ['maptokenimpl',['MapTokenImpl',['../classScroom_1_1Bookkeeping_1_1Detail_1_1MapTokenImpl.html',1,'Scroom::Bookkeeping::Detail']]],
+  ['markpagefree',['MarkPageFree',['../classScroom_1_1MemoryBlobs_1_1PageProvider_1_1MarkPageFree.html',1,'Scroom::MemoryBlobs::PageProvider']]],
+  ['measurement',['Measurement',['../structMeasurement.html',1,'']]],
+  ['monochromecolormaphelper',['MonochromeColormapHelper',['../classMonochromeColormapHelper.html',1,'']]]
 ];

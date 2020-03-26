@@ -11,7 +11,7 @@ var searchData=
   ['updatenewwindowmenu',['updateNewWindowMenu',['../classView.html#ad8081ad7f68e284ce29961be7a6126d3',1,'View']]],
   ['updateprogressstate',['updateProgressState',['../classScroom_1_1Utils_1_1ProgressInterfaceMultiplexer.html#a2c403c381ff811e48d747e288722b093',1,'Scroom::Utils::ProgressInterfaceMultiplexer']]],
   ['updaterulers',['updateRulers',['../classView.html#ad01af006c74438002516f9697fffc7e3',1,'View']]],
-  ['updatescrollbar',['updateScrollbar',['../classView.html#afa90cc38856f1e71ea4d6a37e08207c5',1,'View']]],
+  ['updatescrollbar',['updateScrollbar',['../classView.html#a95a1bbd56174466f67f67c6d4c39551b',1,'View']]],
   ['updatescrollbars',['updateScrollbars',['../classView.html#a1c6bafe5c25990c0733f6d2b28df717f',1,'View']]],
   ['updatetextbox',['updateTextbox',['../classView.html#a53280aa4b3288d4f81d4a840f98e5eb9',1,'View']]],
   ['updatexy',['updateXY',['../classView.html#a59f68bb3f77221dac47e3d25dde1aea9',1,'View']]],

@@ -1,5 +1,5 @@
 <map id="Scroom::Utils::ProgressInterfaceMultiplexer::Child" name="Scroom::Utils::ProgressInterfaceMultiplexer::Child">
-<area shape="rect" id="node2" href="$classScroom_1_1Utils_1_1ProgressInterfaceFromProgressStateInterface.html" title="{Scroom::Utils::ProgressInterface\lFromProgressStateInterface\n||+ setIdle()\l+ setWaiting()\l+ setWorking()\l+ setFinished()\l}" alt="" coords="73,189,287,325"/>
-<area shape="rect" id="node3" href="$classProgressInterface.html" title="Interface used for reporting progress information. " alt="" coords="5,5,157,141"/>
-<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1ProgressStateInterface.html" title="Alternative interface used for reporting progress information. " alt="" coords="182,20,375,127"/>
+<area shape="rect" id="node2" href="$classScroom_1_1Utils_1_1ProgressInterfaceFromProgressStateInterface.html" title="{Scroom::Utils::ProgressInterface\lFromProgressStateInterface\n||+ setIdle()\l+ setWaiting()\l+ setWorking()\l+ setFinished()\l}" alt="" coords="83,189,313,325"/>
+<area shape="rect" id="node3" href="$classProgressInterface.html" title="Interface used for reporting progress information. " alt="" coords="5,5,177,141"/>
+<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1ProgressStateInterface.html" title="Alternative interface used for reporting progress information. " alt="" coords="201,20,408,127"/>
 </map>

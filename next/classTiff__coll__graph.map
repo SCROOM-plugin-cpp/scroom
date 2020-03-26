@@ -1,5 +1,5 @@
 <map id="Tiff" name="Tiff">
-<area shape="rect" id="node2" href="$classPluginInformationInterface.html" title="{PluginInformationInterface\n|+ pluginApiVersion\l|+ PluginInformationInterface()\l+ ~PluginInformationInterface()\l+ getPluginName()\l+ getPluginVersion()\l+ registerCapabilities()\l}" alt="" coords="5,147,208,283"/>
-<area shape="rect" id="node3" href="$classOpenPresentationInterface.html" title="{OpenPresentationInterface\n||+ ~OpenPresentationInterface()\l+ getFilters()\l+ open()\l}" alt="" coords="232,161,437,268"/>
-<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="462,161,604,268"/>
+<area shape="rect" id="node2" href="$classPluginInformationInterface.html" title="{PluginInformationInterface\n|+ pluginApiVersion\l|+ PluginInformationInterface()\l+ ~PluginInformationInterface()\l+ getPluginName()\l+ getPluginVersion()\l+ registerCapabilities()\l}" alt="" coords="5,145,237,281"/>
+<area shape="rect" id="node3" href="$classOpenPresentationInterface.html" title="{OpenPresentationInterface\n||+ ~OpenPresentationInterface()\l+ getFilters()\l+ open()\l}" alt="" coords="261,160,493,267"/>
+<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="517,160,677,267"/>
 </map>

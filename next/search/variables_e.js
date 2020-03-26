@@ -6,5 +6,6 @@ var searchData=
   ['openinterfaces',['openInterfaces',['../classPluginManager.html#af66c76d2960a85eef1a317ffbab3e362',1,'PluginManager']]],
   ['openpresentationinterfaces',['openPresentationInterfaces',['../classPluginManager.html#a75128e3a71a506eecd513589d7c64f39',1,'PluginManager']]],
   ['originalcolormap',['originalColormap',['../classColormapHelperBase.html#a554722edde464a6024011ddc9a2df8ce',1,'ColormapHelperBase']]],
+  ['out_5fof_5fbounds',['OUT_OF_BOUNDS',['../namespaceColors.html#a2229f384a154a2dedc09dc7b2b7896dc',1,'Colors']]],
   ['outofbounds',['outOfBounds',['../classLayer.html#a6276fa23dbc72e1813dea0ce909fbc51',1,'Layer']]]
 ];

@@ -1,8 +1,6 @@
 var searchData=
 [
   ['clean',['CLEAN',['../classScroom_1_1MemoryBlobs_1_1Blob.html#a50973e173ac55206712bce2ecfe361cea7d62e6518e0d6f756da029ca3d455baf',1,'Scroom::MemoryBlobs::Blob']]],
-  ['col_5fname',['COL_NAME',['../roiui_8cc.html#a99fb83031ce9923c84392b4e92f956b5a621a0fec1bcdb27626ca53cd7e8b8f24',1,'roiui.cc']]],
-  ['col_5fpointer',['COL_POINTER',['../roiui_8cc.html#a99fb83031ce9923c84392b4e92f956b5a702ea92fdb212f0dd83d36ac525614a2',1,'roiui.cc']]],
   ['column_5ftext',['COLUMN_TEXT',['../view_8cc.html#adf764cbdea00d65edcd07bb9953ad2b7ad5db438c58c4839d1e9bb25dc55a4130',1,'view.cc']]],
   ['column_5fzoom',['COLUMN_ZOOM',['../view_8cc.html#adf764cbdea00d65edcd07bb9953ad2b7ac8558f41e7d91c7bb57659a23f80542c',1,'view.cc']]],
   ['compressing',['COMPRESSING',['../classScroom_1_1MemoryBlobs_1_1Blob.html#a50973e173ac55206712bce2ecfe361cea79f7443f9062063b8cac1e41d3fa1fff',1,'Scroom::MemoryBlobs::Blob']]],

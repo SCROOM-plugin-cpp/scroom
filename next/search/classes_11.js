@@ -1,24 +1,5 @@
 var searchData=
 [
-  ['takegdklock',['TakeGdkLock',['../classScroom_1_1GtkHelpers_1_1TakeGdkLock.html',1,'Scroom::GtkHelpers']]],
-  ['threadlist',['ThreadList',['../classanonymous__namespace_02threadpoolimpl_8cc_03_1_1ThreadList.html',1,'anonymous_namespace{threadpoolimpl.cc}']]],
-  ['threadpool',['ThreadPool',['../classThreadPool.html',1,'']]],
-  ['threadwaiter',['ThreadWaiter',['../classanonymous__namespace_02threadpoolimpl_8cc_03_1_1ThreadWaiter.html',1,'anonymous_namespace{threadpoolimpl.cc}']]],
-  ['tiff',['Tiff',['../classTiff.html',1,'']]],
-  ['tiffpresentation',['TiffPresentation',['../classTiffPresentation.html',1,'']]],
-  ['tiffpresentationwrapper',['TiffPresentationWrapper',['../classTiffPresentationWrapper.html',1,'']]],
-  ['tile',['Tile',['../classTile.html',1,'']]],
-  ['tiledbitmap',['TiledBitmap',['../classTiledBitmap.html',1,'']]],
-  ['tiledbitmapinterface',['TiledBitmapInterface',['../classTiledBitmapInterface.html',1,'']]],
-  ['tiledbitmapviewdata',['TiledBitmapViewData',['../classTiledBitmapViewData.html',1,'']]],
-  ['tileinitialisationobserver',['TileInitialisationObserver',['../classTileInitialisationObserver.html',1,'']]],
-  ['tileloadingobserver',['TileLoadingObserver',['../classTileLoadingObserver.html',1,'']]],
-  ['tileviewstate',['TileViewState',['../classTileViewState.html',1,'']]],
-  ['timer',['Timer',['../classScroom_1_1Utils_1_1Timer.html',1,'Scroom::Utils']]],
-  ['token',['Token',['../classScroom_1_1Bookkeeping_1_1Token.html',1,'Scroom::Bookkeeping']]],
-  ['tokenaddition',['TokenAddition',['../classScroom_1_1Bookkeeping_1_1Detail_1_1TokenAddition.html',1,'Scroom::Bookkeeping::Detail']]],
-  ['tokenimpl',['TokenImpl',['../classScroom_1_1Bookkeeping_1_1Detail_1_1TokenImpl.html',1,'Scroom::Bookkeeping::Detail']]],
-  ['transparentoverlay',['TransparentOverlay',['../classTransparentOverlay.html',1,'']]],
-  ['transparentoverlaypresentation',['TransparentOverlayPresentation',['../classTransparentOverlayPresentation.html',1,'']]],
-  ['transparentoverlayviewinfo',['TransparentOverlayViewInfo',['../classTransparentOverlayViewInfo.html',1,'']]]
+  ['unloaddata',['UnloadData',['../classScroom_1_1MemoryBlobs_1_1Blob_1_1UnloadData.html',1,'Scroom::MemoryBlobs::Blob']]],
+  ['unsubscriber',['Unsubscriber',['../classScroom_1_1Utils_1_1ProgressInterfaceBroadcaster_1_1Unsubscriber.html',1,'Scroom::Utils::ProgressInterfaceBroadcaster']]]
 ];

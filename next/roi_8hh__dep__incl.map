@@ -1,7 +1,0 @@
-<map id="inc/scroom/roi.hh" name="inc/scroom/roi.hh">
-<area shape="rect" id="node2" href="$roi-parser_8cc.html" title="libs/scroom/src/roi\l&#45;parser.cc" alt="" coords="5,81,133,122"/>
-<area shape="rect" id="node3" href="$roi_8cc.html" title="libs/scroom/src/roi.cc" alt="" coords="159,88,305,115"/>
-<area shape="rect" id="node4" href="$roiplugin_8cc.html" title="plugins/roi/src/roiplugin.cc" alt="" coords="256,171,429,197"/>
-<area shape="rect" id="node5" href="$roiui_8hh.html" title="plugins/roi/src/roiui.hh" alt="" coords="380,88,528,115"/>
-<area shape="rect" id="node6" href="$roiui_8cc.html" title="plugins/roi/src/roiui.cc" alt="" coords="453,171,601,197"/>
-</map>

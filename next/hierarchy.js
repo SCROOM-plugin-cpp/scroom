@@ -1,12 +1,23 @@
 var hierarchy =
 [
     [ "addable", null, [
-      [ "Color", "classColor.html", null ]
+      [ "Color", "classColor.html", null ],
+      [ "Scroom::Utils::Point< double >", "classScroom_1_1Utils_1_1Point.html", null ],
+      [ "Scroom::Utils::Point< T >", "classScroom_1_1Utils_1_1Point.html", null ]
+    ] ],
+    [ "addable2", null, [
+      [ "Scroom::Utils::Rectangle< double >", "classScroom_1_1Utils_1_1Rectangle.html", null ],
+      [ "Scroom::Utils::Rectangle< T >", "classScroom_1_1Utils_1_1Rectangle.html", null ],
+      [ "Scroom::Utils::Segment< T >", "classScroom_1_1Utils_1_1Segment.html", null ],
+      [ "Scroom::Utils::Segment< value_type >", "classScroom_1_1Utils_1_1Segment.html", null ]
     ] ],
     [ "Aggregate", "classAggregate.html", [
       [ "TransparentOverlayPresentation", "classTransparentOverlayPresentation.html", null ]
     ] ],
-    [ "Scroom::Roi::Detail::Aggregate", "structScroom_1_1Roi_1_1Detail_1_1Aggregate.html", null ],
+    [ "andable", null, [
+      [ "Scroom::Utils::Segment< T >", "classScroom_1_1Utils_1_1Segment.html", null ],
+      [ "Scroom::Utils::Segment< value_type >", "classScroom_1_1Utils_1_1Segment.html", null ]
+    ] ],
     [ "AsyncDeleter< T >", "classAsyncDeleter.html", null ],
     [ "BitCountLut", "classBitCountLut.html", null ],
     [ "Scroom::MemoryBlocks::BlockFactoryInterface", "classScroom_1_1MemoryBlocks_1_1BlockFactoryInterface.html", [
@@ -22,7 +33,11 @@ var hierarchy =
         [ "ColormapHelper", "classColormapHelper.html", null ],
         [ "MonochromeColormapHelper", "classMonochromeColormapHelper.html", null ]
       ] ],
-      [ "TiffPresentationWrapper", "classTiffPresentationWrapper.html", null ]
+      [ "ColormappableMock", "classColormappableMock.html", [
+        [ "ColormappablePresentationMock", "classColormappablePresentationMock.html", null ]
+      ] ],
+      [ "TiffPresentationWrapper", "classTiffPresentationWrapper.html", null ],
+      [ "TransformPresentation", "classTransformPresentation.html", null ]
     ] ],
     [ "ColormapProvider", "classColormapProvider.html", [
       [ "ColormapHelperBase", "classColormapHelperBase.html", null ]
@@ -32,14 +47,25 @@ var hierarchy =
     [ "Scroom::Utils::Counted< C >", "classScroom_1_1Utils_1_1Counted.html", null ],
     [ "Scroom::Utils::Counter", "classScroom_1_1Utils_1_1Counter.html", null ],
     [ "DataFetcher", "classDataFetcher.html", null ],
+    [ "dividable2", null, [
+      [ "Scroom::Utils::Point< double >", "classScroom_1_1Utils_1_1Point.html", null ],
+      [ "Scroom::Utils::Rectangle< double >", "classScroom_1_1Utils_1_1Rectangle.html", null ],
+      [ "Scroom::Utils::Rectangle< double >", "classScroom_1_1Utils_1_1Rectangle.html", null ],
+      [ "Scroom::Utils::Point< T >", "classScroom_1_1Utils_1_1Point.html", null ],
+      [ "Scroom::Utils::Rectangle< T >", "classScroom_1_1Utils_1_1Rectangle.html", null ],
+      [ "Scroom::Utils::Rectangle< T >", "classScroom_1_1Utils_1_1Rectangle.html", null ],
+      [ "Scroom::Utils::Segment< T >", "classScroom_1_1Utils_1_1Segment.html", null ],
+      [ "Scroom::Utils::Segment< value_type >", "classScroom_1_1Utils_1_1Segment.html", null ]
+    ] ],
+    [ "DontDelete< T >", "classDontDelete.html", null ],
     [ "Scroom::MemoryBlocks::Detail::anonymous_namespace{swapbasedblockallocator.cc}::DontDelete< T >", "classScroom_1_1MemoryBlocks_1_1Detail_1_1anonymous__namespace_02swapbasedblockallocator_8cc_03_1_1DontDelete.html", null ],
     [ "enable_shared_from_this", null, [
       [ "Scroom::Utils::Base", "classScroom_1_1Utils_1_1Base.html", [
         [ "ChildView", "classChildView.html", null ],
         [ "Layer", "classLayer.html", null ],
         [ "LayerCoordinator", "classLayerCoordinator.html", null ],
-        [ "Scroom::Bookkeeping::MapBase< ObserverWeak, typename Scroom::Utils::Detail::Registration::Ptr >", "classScroom_1_1Bookkeeping_1_1MapBase.html", [
-          [ "Scroom::Bookkeeping::Map< ObserverWeak, typename Scroom::Utils::Detail::Registration::Ptr >", "classScroom_1_1Bookkeeping_1_1Map.html", null ]
+        [ "Scroom::Bookkeeping::MapBase< ObserverWeak, typename Registration::Ptr >", "classScroom_1_1Bookkeeping_1_1MapBase.html", [
+          [ "Scroom::Bookkeeping::Map< ObserverWeak, typename Registration::Ptr >", "classScroom_1_1Bookkeeping_1_1Map.html", null ]
         ] ],
         [ "Scroom::Utils::Observable< TileInitialisationObserver >", "classScroom_1_1Utils_1_1Observable.html", [
           [ "CompressedTile", "classCompressedTile.html", null ]
@@ -49,8 +75,6 @@ var hierarchy =
           [ "TileViewState", "classTileViewState.html", null ]
         ] ],
         [ "PluginManager", "classPluginManager.html", null ],
-        [ "RoiPlugin", "classRoiPlugin.html", null ],
-        [ "RoiUi", "classRoiUi.html", null ],
         [ "Scroom::Bookkeeping::MapBase< K, V >", "classScroom_1_1Bookkeeping_1_1MapBase.html", [
           [ "Scroom::Bookkeeping::Map< K, V >", "classScroom_1_1Bookkeeping_1_1Map.html", null ]
         ] ],
@@ -62,7 +86,11 @@ var hierarchy =
             [ "PresentationBase", "classPresentationBase.html", [
               [ "TiffPresentationWrapper", "classTiffPresentationWrapper.html", null ],
               [ "TransparentOverlayPresentation", "classTransparentOverlayPresentation.html", null ]
-            ] ]
+            ] ],
+            [ "PresentationMock", "classPresentationMock.html", [
+              [ "ColormappablePresentationMock", "classColormappablePresentationMock.html", null ]
+            ] ],
+            [ "TransformPresentation", "classTransformPresentation.html", null ]
           ] ]
         ] ],
         [ "Scroom::Utils::ProgressInterfaceBroadcaster", "classScroom_1_1Utils_1_1ProgressInterfaceBroadcaster.html", null ],
@@ -77,17 +105,12 @@ var hierarchy =
       ] ]
     ] ],
     [ "Scroom::Utils::Detail::ErrorSignalHandler", "classScroom_1_1Utils_1_1Detail_1_1ErrorSignalHandler.html", null ],
-    [ "Scroom::Roi::Detail::File", "structScroom_1_1Roi_1_1Detail_1_1File.html", null ],
     [ "FileOperation", "classFileOperation.html", [
       [ "LoadOperation", "classLoadOperation.html", null ]
     ] ],
     [ "Scroom::Detail::ThreadPool::FunctionAdditor", "classScroom_1_1Detail_1_1ThreadPool_1_1FunctionAdditor.html", null ],
     [ "Scroom::Detail::ThreadPool::FunctionMultiplier", "classScroom_1_1Detail_1_1ThreadPool_1_1FunctionMultiplier.html", null ],
     [ "GObjectUnref< T >", "classGObjectUnref.html", null ],
-    [ "grammar", null, [
-      [ "Detail::My_parser< Iterator >", "structDetail_1_1My__parser.html", null ],
-      [ "Detail::My_skipper< Iterator >", "structDetail_1_1My__skipper.html", null ]
-    ] ],
     [ "GtkFileFilterInfoDeleter", "classGtkFileFilterInfoDeleter.html", null ],
     [ "GtkFileFilterListDestroyer", "classGtkFileFilterListDestroyer.html", null ],
     [ "ThreadPool::Job", "structThreadPool_1_1Job.html", null ],
@@ -102,10 +125,19 @@ var hierarchy =
         [ "Operations8bpp", "classOperations8bpp.html", null ]
       ] ]
     ] ],
-    [ "Scroom::Roi::List", "classScroom_1_1Roi_1_1List.html", null ],
     [ "Scroom::Bookkeeping::Detail::LValue< V >", "classScroom_1_1Bookkeeping_1_1Detail_1_1LValue.html", null ],
     [ "Scroom::MemoryBlobs::PageProvider::MarkPageFree", "classScroom_1_1MemoryBlobs_1_1PageProvider_1_1MarkPageFree.html", null ],
     [ "Measurement", "structMeasurement.html", null ],
+    [ "multipliable2", null, [
+      [ "Scroom::Utils::Point< double >", "classScroom_1_1Utils_1_1Point.html", null ],
+      [ "Scroom::Utils::Rectangle< double >", "classScroom_1_1Utils_1_1Rectangle.html", null ],
+      [ "Scroom::Utils::Rectangle< double >", "classScroom_1_1Utils_1_1Rectangle.html", null ],
+      [ "Scroom::Utils::Point< T >", "classScroom_1_1Utils_1_1Point.html", null ],
+      [ "Scroom::Utils::Rectangle< T >", "classScroom_1_1Utils_1_1Rectangle.html", null ],
+      [ "Scroom::Utils::Rectangle< T >", "classScroom_1_1Utils_1_1Rectangle.html", null ],
+      [ "Scroom::Utils::Segment< T >", "classScroom_1_1Utils_1_1Segment.html", null ],
+      [ "Scroom::Utils::Segment< value_type >", "classScroom_1_1Utils_1_1Segment.html", null ]
+    ] ],
     [ "multiplicative", null, [
       [ "Color", "classColor.html", null ]
     ] ],
@@ -114,7 +146,7 @@ var hierarchy =
     ] ],
     [ "NewPresentationInterface", "classNewPresentationInterface.html", null ],
     [ "noncopyable", null, [
-      [ "Scroom::Bookkeeping::MapBase< ObserverWeak, typename Scroom::Utils::Detail::Registration::Ptr >", "classScroom_1_1Bookkeeping_1_1MapBase.html", null ],
+      [ "Scroom::Bookkeeping::MapBase< ObserverWeak, typename Registration::Ptr >", "classScroom_1_1Bookkeeping_1_1MapBase.html", null ],
       [ "Scroom::Utils::Observable< TileInitialisationObserver >", "classScroom_1_1Utils_1_1Observable.html", null ],
       [ "Scroom::Utils::Observable< TileLoadingObserver >", "classScroom_1_1Utils_1_1Observable.html", null ],
       [ "Scroom::Bitmap::BitmapSurface", "classScroom_1_1Bitmap_1_1BitmapSurface.html", null ],
@@ -122,9 +154,7 @@ var hierarchy =
       [ "Scroom::Utils::Observable< T >", "classScroom_1_1Utils_1_1Observable.html", null ]
     ] ],
     [ "anonymous_namespace{threadpoolimpl.cc}::NotifyThreadList< T >", "classanonymous__namespace_02threadpoolimpl_8cc_03_1_1NotifyThreadList.html", null ],
-    [ "OpenInterface", "classOpenInterface.html", [
-      [ "RoiPlugin", "classRoiPlugin.html", null ]
-    ] ],
+    [ "OpenInterface", "classOpenInterface.html", null ],
     [ "OpenPresentationInterface", "classOpenPresentationInterface.html", [
       [ "Tiff", "classTiff.html", null ]
     ] ],
@@ -132,7 +162,6 @@ var hierarchy =
     [ "Scroom::Bitmap::PixelIterator< Base >", "classScroom_1_1Bitmap_1_1PixelIterator.html", null ],
     [ "PluginInformation", "structPluginInformation.html", null ],
     [ "PluginInformationInterface", "classPluginInformationInterface.html", [
-      [ "RoiPlugin", "classRoiPlugin.html", null ],
       [ "Tiff", "classTiff.html", null ],
       [ "TransparentOverlay", "classTransparentOverlay.html", null ]
     ] ],
@@ -163,9 +192,6 @@ var hierarchy =
     [ "Scroom::Detail::ThreadPool::QueueLock", "classScroom_1_1Detail_1_1ThreadPool_1_1QueueLock.html", null ],
     [ "Scroom::Utils::Detail::Registration< T >", "classScroom_1_1Utils_1_1Detail_1_1Registration.html", null ],
     [ "ResizablePresentationInterface", "classResizablePresentationInterface.html", null ],
-    [ "Scroom::Roi::RoiBase", "structScroom_1_1Roi_1_1RoiBase.html", [
-      [ "Scroom::Roi::Rect", "structScroom_1_1Roi_1_1Rect.html", null ]
-    ] ],
     [ "ScroomInterface", "classScroomInterface.html", [
       [ "ScroomInterfaceImpl", "classScroomInterfaceImpl.html", null ]
     ] ],
@@ -183,12 +209,15 @@ var hierarchy =
     [ "SourcePresentation", "classSourcePresentation.html", [
       [ "TiffPresentation", "classTiffPresentation.html", null ]
     ] ],
-    [ "static_visitor", null, [
-      [ "Detail::ReturnBase", "classDetail_1_1ReturnBase.html", null ],
-      [ "Scroom::Roi::Detail::Instantiate", "classScroom_1_1Roi_1_1Detail_1_1Instantiate.html", null ]
+    [ "subtractable", null, [
+      [ "Scroom::Utils::Point< double >", "classScroom_1_1Utils_1_1Point.html", null ],
+      [ "Scroom::Utils::Point< T >", "classScroom_1_1Utils_1_1Point.html", null ]
     ] ],
-    [ "symbols", null, [
-      [ "Detail::escaped_char_", "structDetail_1_1escaped__char__.html", null ]
+    [ "subtractable2", null, [
+      [ "Scroom::Utils::Rectangle< double >", "classScroom_1_1Utils_1_1Rectangle.html", null ],
+      [ "Scroom::Utils::Rectangle< T >", "classScroom_1_1Utils_1_1Rectangle.html", null ],
+      [ "Scroom::Utils::Segment< T >", "classScroom_1_1Utils_1_1Segment.html", null ],
+      [ "Scroom::Utils::Segment< value_type >", "classScroom_1_1Utils_1_1Segment.html", null ]
     ] ],
     [ "Scroom::GtkHelpers::TakeGdkLock", "classScroom_1_1GtkHelpers_1_1TakeGdkLock.html", null ],
     [ "anonymous_namespace{threadpoolimpl.cc}::ThreadList", "classanonymous__namespace_02threadpoolimpl_8cc_03_1_1ThreadList.html", null ],
@@ -207,6 +236,7 @@ var hierarchy =
     [ "Scroom::Bookkeeping::Detail::TokenImpl", "classScroom_1_1Bookkeeping_1_1Detail_1_1TokenImpl.html", [
       [ "Scroom::Bookkeeping::Detail::MapTokenImpl< K, V >", "classScroom_1_1Bookkeeping_1_1Detail_1_1MapTokenImpl.html", null ]
     ] ],
+    [ "TransformationData", "classTransformationData.html", null ],
     [ "Scroom::MemoryBlobs::Blob::UnloadData", "classScroom_1_1MemoryBlobs_1_1Blob_1_1UnloadData.html", null ],
     [ "Scroom::Utils::ProgressInterfaceBroadcaster::Unsubscriber", "classScroom_1_1Utils_1_1ProgressInterfaceBroadcaster_1_1Unsubscriber.html", null ],
     [ "Scroom::Bookkeeping::Detail::ValueType< V >", "classScroom_1_1Bookkeeping_1_1Detail_1_1ValueType.html", null ],
@@ -214,7 +244,6 @@ var hierarchy =
       [ "CompressedTile", "classCompressedTile.html", null ],
       [ "Layer", "classLayer.html", null ],
       [ "PresentationInterface", "classPresentationInterface.html", null ],
-      [ "RoiUi", "classRoiUi.html", null ],
       [ "TiledBitmapInterface", "classTiledBitmapInterface.html", [
         [ "TiledBitmap", "classTiledBitmap.html", null ]
       ] ]
