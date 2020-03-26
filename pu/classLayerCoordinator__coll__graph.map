@@ -1,6 +1,6 @@
 <map id="LayerCoordinator" name="LayerCoordinator">
-<area shape="rect" id="node2" href="$classTileInitialisationObserver.html" title="Events related to filling a tile with data. " alt="" coords="5,325,197,432"/>
-<area shape="rect" id="node3" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="222,325,364,432"/>
-<area shape="rect" id="node6" title="STL class. " alt="" coords="417,155,540,232"/>
-<area shape="rect" id="node11" title="STL class. " alt="" coords="595,155,692,232"/>
+<area shape="rect" id="node2" href="$classTileInitialisationObserver.html" title="Events related to filling a tile with data. " alt="" coords="5,322,228,429"/>
+<area shape="rect" id="node3" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="251,322,411,429"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="468,153,603,230"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="667,153,775,230"/>
 </map>

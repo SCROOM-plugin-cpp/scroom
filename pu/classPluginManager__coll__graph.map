@@ -1,10 +1,10 @@
 <map id="PluginManager" name="PluginManager">
-<area shape="rect" id="node2" href="$classWorkInterface.html" title="{WorkInterface\n||+ ~WorkInterface()\l+ doWork()\l}" alt="" coords="5,378,136,470"/>
-<area shape="rect" id="node3" href="$classScroomPluginInterface.html" title="{ScroomPluginInterface\n||+ ~ScroomPluginInterface()\l+ registerNewPresentationInterface()\l+ registerNewAggregateInterface()\l+ registerOpenPresentation\lInterface()\l+ registerOpenInterface()\l+ registerViewObserver()\l+ registerPresentationObserver()\l}" alt="" coords="161,334,396,514"/>
-<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="421,371,563,477"/>
-<area shape="rect" id="node7" title="STL class. " alt="" coords="1439,171,1517,248"/>
-<area shape="rect" id="node8" title="STL class. " alt="" coords="1415,6,1541,98"/>
-<area shape="rect" id="node9" title="STL class. " alt="" coords="945,171,1068,248"/>
-<area shape="rect" id="node15" title="STL class. " alt="" coords="2069,171,2165,248"/>
-<area shape="rect" id="node14" href="$structPluginInformation.html" title="{PluginInformation\n|+ plugin\l+ pluginInformation\l|+ PluginInformation()\l}" alt="" coords="1854,163,1996,255"/>
+<area shape="rect" id="node2" href="$classWorkInterface.html" title="{WorkInterface\n||+ ~WorkInterface()\l+ doWork()\l}" alt="" coords="5,373,155,465"/>
+<area shape="rect" id="node3" href="$classScroomPluginInterface.html" title="{ScroomPluginInterface\n||+ ~ScroomPluginInterface()\l+ registerNewPresentationInterface()\l+ registerNewAggregateInterface()\l+ registerOpenPresentation\lInterface()\l+ registerOpenInterface()\l+ registerViewObserver()\l+ registerPresentationObserver()\l}" alt="" coords="179,329,445,509"/>
+<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="469,366,629,473"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="1594,167,1681,245"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="1568,5,1707,97"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="1046,167,1181,245"/>
+<area shape="rect" id="node15" title="STL class. " alt="" coords="2295,167,2403,245"/>
+<area shape="rect" id="node14" href="$structPluginInformation.html" title="{PluginInformation\n|+ plugin\l+ pluginInformation\l|+ PluginInformation()\l}" alt="" coords="2052,160,2215,252"/>
 </map>

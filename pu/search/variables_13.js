@@ -22,7 +22,6 @@ var searchData=
   ['toolbararea',['toolbarArea',['../classView.html#a765b3cec440263a901ef7570629641d9',1,'View']]],
   ['toolbarcount',['toolBarCount',['../classView.html#a71ff40556a2a42e00a7ccfb76b005c5d',1,'View']]],
   ['toolbarseparator',['toolBarSeparator',['../classView.html#ab832ddee7f1270101c05330c4a69f649',1,'View']]],
-  ['top',['top',['../structScroom_1_1Roi_1_1Rect.html#a925ef38b43c0c33dc9cc8b1821cd3e49',1,'Scroom::Roi::Rect']]],
   ['transformationdata',['transformationData',['../classTransformPresentation.html#ad5804a0827bf975f5dd39061f7a5060a',1,'TransformPresentation::transformationData()'],['../classTiffPresentation.html#a2352068d634d34fe9e16d02f768a1067',1,'TiffPresentation::transformationData()']]],
   ['transparent_5fbackground_5fproperty_5fname',['TRANSPARENT_BACKGROUND_PROPERTY_NAME',['../colormappable_8hh.html#aa9ccccaacd6a2d008759fcaac53b9bf2',1,'colormappable.hh']]],
   ['transparentbackground',['transparentBackground',['../classMonochromeColormapHelper.html#aa54b09eb5b74f13bb333f5211893240e',1,'MonochromeColormapHelper']]]

@@ -1,5 +1,0 @@
-<map id="RoiUi" name="RoiUi">
-<area shape="rect" id="node2" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="7,304,149,411"/>
-<area shape="rect" id="node4" href="$classViewable.html" title="Implement Viewable if you want to be able to receive events when a View is created and/or deleted..." alt="" coords="174,304,276,411"/>
-<area shape="rect" id="node7" title="STL class. " alt="" coords="361,155,457,232"/>
-</map>

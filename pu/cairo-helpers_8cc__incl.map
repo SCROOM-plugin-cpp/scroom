@@ -1,8 +1,8 @@
 <map id="libs/scroom/src/cairo&#45;helpers.cc" name="libs/scroom/src/cairo&#45;helpers.cc">
-<area shape="rect" id="node2" href="$cairo-helpers_8hh.html" title="scroom/cairo&#45;helpers.hh" alt="" coords="51,96,212,123"/>
-<area shape="rect" id="node6" href="$color_8hh.html" title="scroom/color.hh" alt="" coords="169,171,284,197"/>
-<area shape="rect" id="node10" href="$rectangle_8hh.html" title="scroom/rectangle.hh" alt="" coords="569,171,708,197"/>
-<area shape="rect" id="node12" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="819,245,969,272"/>
-<area shape="rect" id="node15" href="$linearsegment_8hh.html" title="scroom/linearsegment.hh" alt="" coords="387,245,555,272"/>
-<area shape="rect" id="node16" href="$point_8hh.html" title="scroom/point.hh" alt="" coords="629,245,744,272"/>
+<area shape="rect" id="node2" href="$cairo-helpers_8hh.html" title="scroom/cairo&#45;helpers.hh" alt="" coords="55,95,234,121"/>
+<area shape="rect" id="node6" href="$color_8hh.html" title="scroom/color.hh" alt="" coords="182,169,307,196"/>
+<area shape="rect" id="node10" href="$rectangle_8hh.html" title="scroom/rectangle.hh" alt="" coords="558,169,713,196"/>
+<area shape="rect" id="node12" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="865,244,1033,271"/>
+<area shape="rect" id="node15" href="$linearsegment_8hh.html" title="scroom/linearsegment.hh" alt="" coords="451,244,639,271"/>
+<area shape="rect" id="node17" href="$point_8hh.html" title="scroom/point.hh" alt="" coords="663,244,789,271"/>
 </map>
