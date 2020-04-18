@@ -1,0 +1,11 @@
+<map id="PresentationMock" name="PresentationMock">
+<area shape="rect" id="node2" href="$classPresentationInterface.html" title="Represent some 2D content. " alt="" coords="78,1607,241,1743"/>
+<area shape="rect" id="node3" href="$classViewable.html" title="Implement Viewable if you want to be able to receive events when a View is created and/or deleted..." alt="" coords="84,1421,203,1528"/>
+<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1Observable.html" title="Base class for something that accepts observers. " alt="" coords="227,1392,425,1557"/>
+<area shape="rect" id="node9" href="$classScroom_1_1Bookkeeping_1_1MapBase.html" title="{Scroom::Bookkeeping\l::MapBase\&lt; ObserverWeak,\l typename Registration::Ptr \&gt;\n|&#45; mut\l|+ reserve()\l+ reReserve()\l+ remove()\l+ remove()\l+ at()\l+ set()\l+ get()\l+ keys()\l+ values()\l}" alt="" coords="156,907,371,1131"/>
+<area shape="rect" id="node14" href="$classScroom_1_1Bookkeeping_1_1MapBase.html" title="{Scroom::Bookkeeping\l::MapBase\&lt; K, V \&gt;\n|&#45; mut\l|+ reserve()\l+ reReserve()\l+ remove()\l+ remove()\l+ at()\l+ set()\l+ get()\l+ keys()\l+ values()\l}" alt="" coords="332,620,496,829"/>
+<area shape="rect" id="node6" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="517,329,677,436"/>
+<area shape="rect" id="node8" href="$classScroom_1_1Bookkeeping_1_1Map.html" title="{Scroom::Bookkeeping\l::Map\&lt; ObserverWeak,\l typename Registration\l::Ptr \&gt;\n||+ create()\l}" alt="" coords="239,1208,413,1329"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="340,153,475,230"/>
+<area shape="rect" id="node16" href="$classScroom_1_1Bookkeeping_1_1Map.html" title="{Scroom::Bookkeeping\l::Map\&lt; K, V \&gt;\n||+ create()\l}" alt="" coords="395,973,559,1065"/>
+</map>

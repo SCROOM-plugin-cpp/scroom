@@ -1,0 +1,6 @@
+<map id="MonochromeColormapHelper" name="MonochromeColormapHelper">
+<area shape="rect" id="node2" href="$classColormapHelperBase.html" title="{ColormapHelperBase\n|+ colormap\l+ originalColormap\l|+ ColormapHelperBase()\l+ setColormap()\l+ getOriginalColormap()\l+ getNumberOfColors()\l+ getMonochromeColor()\l+ setMonochromeColor()\l+ setTransparentBackground()\l+ disableTransparentBackground()\l+ getTransparentBackground()\l+ getColormap()\l+ setOriginalColormap()\l&#45; OperationNotSupported()\l}" alt="" coords="197,345,444,598"/>
+<area shape="rect" id="node3" href="$classColormapProvider.html" title="{ColormapProvider\n||+ getColormap()\l+ ~ColormapProvider()\l}" alt="" coords="5,93,180,185"/>
+<area shape="rect" id="node4" href="$classColormappable.html" title="Interface for Colormappable presentations. " alt="" coords="204,5,451,273"/>
+<area shape="rect" id="node5" href="$classColor.html" title="Represent a (ARGB) color. " alt="" coords="469,323,701,620"/>
+</map>

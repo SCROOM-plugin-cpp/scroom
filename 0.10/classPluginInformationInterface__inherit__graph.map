@@ -1,0 +1,4 @@
+<map id="PluginInformationInterface" name="PluginInformationInterface">
+<area shape="rect" id="node2" href="$classTiff.html" title="{Tiff\n||+ getPluginName()\l+ getPluginVersion()\l+ registerCapabilities()\l+ getFilters()\l+ open()\l+ ~Tiff()\l+ create()\l&#45; Tiff()\l}" alt="" coords="5,189,180,369"/>
+<area shape="rect" id="node3" href="$classTransparentOverlay.html" title="{TransparentOverlay\n||+ getPluginName()\l+ getPluginVersion()\l+ registerCapabilities()\l+ createNew()\l+ create()\l&#45; TransparentOverlay()\l}" alt="" coords="204,204,379,355"/>
+</map>

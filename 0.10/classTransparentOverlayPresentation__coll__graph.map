@@ -1,0 +1,14 @@
+<map id="TransparentOverlayPresentation" name="TransparentOverlayPresentation">
+<area shape="rect" id="node2" href="$classPresentationBase.html" title="{PresentationBase\n||+ open()\l+ close()\l# observerAdded()\l# viewAdded()\l# viewRemoved()\l# getViews()\l}" alt="" coords="570,1960,715,2111"/>
+<area shape="rect" id="node3" href="$classPresentationInterface.html" title="Represent some 2D content. " alt="" coords="561,1775,724,1911"/>
+<area shape="rect" id="node4" href="$classViewable.html" title="Implement Viewable if you want to be able to receive events when a View is created and/or deleted..." alt="" coords="487,1576,606,1683"/>
+<area shape="rect" id="node5" href="$classScroom_1_1Utils_1_1Observable.html" title="Base class for something that accepts observers. " alt="" coords="630,1547,828,1712"/>
+<area shape="rect" id="node10" href="$classScroom_1_1Bookkeeping_1_1MapBase.html" title="{Scroom::Bookkeeping\l::MapBase\&lt; ObserverWeak,\l typename Registration::Ptr \&gt;\n|&#45; mut\l|+ reserve()\l+ reReserve()\l+ remove()\l+ remove()\l+ at()\l+ set()\l+ get()\l+ keys()\l+ values()\l}" alt="" coords="639,999,854,1223"/>
+<area shape="rect" id="node15" href="$classScroom_1_1Bookkeeping_1_1MapBase.html" title="{Scroom::Bookkeeping\l::MapBase\&lt; K, V \&gt;\n|&#45; mut\l|+ reserve()\l+ reReserve()\l+ remove()\l+ remove()\l+ at()\l+ set()\l+ get()\l+ keys()\l+ values()\l}" alt="" coords="451,620,615,829"/>
+<area shape="rect" id="node7" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="862,329,1022,436"/>
+<area shape="rect" id="node9" href="$classScroom_1_1Bookkeeping_1_1Map.html" title="{Scroom::Bookkeeping\l::Map\&lt; ObserverWeak,\l typename Registration\l::Ptr \&gt;\n||+ create()\l}" alt="" coords="642,1363,816,1484"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="482,153,616,230"/>
+<area shape="rect" id="node21" title="STL class. " alt="" coords="1059,153,1167,230"/>
+<area shape="rect" id="node17" href="$classScroom_1_1Bookkeeping_1_1Map.html" title="{Scroom::Bookkeeping\l::Map\&lt; K, V \&gt;\n||+ create()\l}" alt="" coords="451,1065,615,1157"/>
+<area shape="rect" id="node18" href="$classAggregate.html" title="Base class for something that composes several presentations. " alt="" coords="392,1989,546,2081"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="TiledBitmap" name="TiledBitmap">
+<area shape="rect" id="node2" href="$classTiledBitmapInterface.html" title="Interact with your TiledBitmap. " alt="" coords="5,329,200,465"/>
+<area shape="rect" id="node3" href="$classViewable.html" title="Implement Viewable if you want to be able to receive events when a View is created and/or deleted..." alt="" coords="43,145,162,252"/>
+<area shape="rect" id="node4" href="$classTileInitialisationObserver.html" title="Events related to filling a tile with data. " alt="" coords="225,344,447,451"/>
+<area shape="rect" id="node5" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="471,344,631,451"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="735,160,843,237"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="949,160,1078,237"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="1266,160,1401,237"/>
+</map>

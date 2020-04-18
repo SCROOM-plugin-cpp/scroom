@@ -1,0 +1,3 @@
+<map id="LoadOperation" name="LoadOperation">
+<area shape="rect" id="node2" href="$classFileOperation.html" title="{FileOperation\n|&#45; progress\l&#45; waitingMutex\l&#45; waiting\l|+ ~FileOperation()\l+ doneWaiting()\l+ finished()\l+ operator()()\l+ abort()\l# FileOperation()\l}" alt="" coords="10,5,154,185"/>
+</map>

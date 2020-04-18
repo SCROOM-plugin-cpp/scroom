@@ -1,0 +1,18 @@
+<map id="gui/src/callbacks.hh" name="gui/src/callbacks.hh">
+<area shape="rect" id="node6" href="$scroominterface_8hh.html" title="scroom/scroominterface.hh" alt="" coords="692,155,892,181"/>
+<area shape="rect" id="node8" href="$presentationinterface_8hh.html" title="scroom/presentationinterface.hh" alt="" coords="1237,229,1472,256"/>
+<area shape="rect" id="node33" href="$view_8hh.html" title="view.hh" alt="" coords="877,80,949,107"/>
+<area shape="rect" id="node13" href="$viewinterface_8hh.html" title="scroom/viewinterface.hh" alt="" coords="613,304,795,331"/>
+<area shape="rect" id="node19" href="$bookkeeping_8hh.html" title="scroom/bookkeeping.hh" alt="" coords="2061,379,2240,405"/>
+<area shape="rect" id="node15" href="$observable_8hh.html" title="scroom/observable.hh" alt="" coords="1910,304,2077,331"/>
+<area shape="rect" id="node24" href="$rectangle_8hh.html" title="scroom/rectangle.hh" alt="" coords="1392,304,1547,331"/>
+<area shape="rect" id="node14" href="$progressinterface_8hh.html" title="scroom/progressinterface.hh" alt="" coords="563,379,771,405"/>
+<area shape="rect" id="node17" href="$utilities_8hh.html" title="scroom/utilities.hh" alt="" coords="2643,453,2786,480"/>
+<area shape="rect" id="node21" href="$stuff_8hh.html" title="scroom/stuff.hh" alt="" coords="2035,453,2157,480"/>
+<area shape="rect" id="node22" href="$bookkeepingimpl_8hh.html" title="scroom/impl/bookkeepingimpl.hh" alt="" coords="2379,453,2619,480"/>
+<area shape="rect" id="node27" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="896,379,1064,405"/>
+<area shape="rect" id="node29" href="$linearsegment_8hh.html" title="scroom/linearsegment.hh" alt="" coords="1190,379,1378,405"/>
+<area shape="rect" id="node32" href="$point_8hh.html" title="scroom/point.hh" alt="" coords="1454,379,1581,405"/>
+<area shape="rect" id="node36" href="$sidebarmanager_8hh.html" title="sidebarmanager.hh" alt="" coords="441,304,588,331"/>
+<area shape="rect" id="node37" href="$progressbarmanager_8hh.html" title="progressbarmanager.hh" alt="" coords="144,229,320,256"/>
+</map>
