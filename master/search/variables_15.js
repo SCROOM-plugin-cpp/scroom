@@ -2,9 +2,9 @@ var searchData=
 [
   ['valid',['valid',['../classScroom_1_1Utils_1_1Timer.html#ae7a6f8f38141171cb4b6ba82a3cf0d77',1,'Scroom::Utils::Timer']]],
   ['value',['value',['../classScroom_1_1Bookkeeping_1_1Detail_1_1ValueType.html#a88c2086f4865aa04f1d987e47ae6cdf6',1,'Scroom::Bookkeeping::Detail::ValueType']]],
-  ['vertically',['vertically',['../classRectangle.html#abb36c3887df7e3362d14dd68243f670f',1,'Rectangle']]],
+  ['vertically',['vertically',['../classScroom_1_1Utils_1_1Rectangle.html#a35c6f8b7d9d5f4ca27de0949da1493d6',1,'Scroom::Utils::Rectangle']]],
   ['vertilecount',['verTileCount',['../classLayer.html#a8f270463756cb7dc9897564b3bff23d4',1,'Layer::verTileCount()'],['../classDataFetcher.html#aaee3d602d5bfec28badc8c178041105c',1,'DataFetcher::verTileCount()']]],
-  ['viewdata',['viewData',['../classTransparentOverlayPresentation.html#ae63daebb37c7a16d847fad3c16482d50',1,'TransparentOverlayPresentation::viewData()'],['../classTiledBitmap.html#a1321844337a934109e3552959a7347db',1,'TiledBitmap::viewData()']]],
+  ['viewdata',['viewData',['../classTiledBitmap.html#a1321844337a934109e3552959a7347db',1,'TiledBitmap::viewData()'],['../classTransparentOverlayPresentation.html#ae63daebb37c7a16d847fad3c16482d50',1,'TransparentOverlayPresentation::viewData()']]],
   ['viewdatamutex',['viewDataMutex',['../classTiledBitmap.html#a8c2fe90358c2d097dd6212d0ba8b9081',1,'TiledBitmap']]],
   ['viewinterface',['viewInterface',['../classTiledBitmapViewData.html#a664ac60117059d72da12a5931df4890a',1,'TiledBitmapViewData']]],
   ['viewobservers',['viewObservers',['../classPluginManager.html#a443a0a386e81233a7501b08d438a3ef6',1,'PluginManager']]],

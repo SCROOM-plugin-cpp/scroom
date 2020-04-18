@@ -5,7 +5,6 @@ var searchData=
   ['defaultqueue',['defaultQueue',['../classThreadPool_1_1PrivateData.html#a68e087d3440145b266445230d0d3246a',1,'ThreadPool::PrivateData']]],
   ['deleter',['deleter',['../classAsyncDeleter.html#af6749fac2a5a1157e422bfe25a4d97f5',1,'AsyncDeleter']]],
   ['depth',['depth',['../classCompressedTile.html#a37619bba68261a7c82f6e78691f3c8fa',1,'CompressedTile::depth()'],['../classLayer.html#a1f53ce854eed0215bbe94d3b23e6bc25',1,'Layer::depth()']]],
-  ['description',['description',['../structScroom_1_1Roi_1_1RoiBase.html#ad030917f7b2b200c3cacb3a170c1074e',1,'Scroom::Roi::RoiBase::description()'],['../structDetail_1_1My__parser.html#a41f185ccf4c80ffa101018272fa2ca49',1,'Detail::My_parser::description()']]],
   ['desiredstate',['desiredState',['../classTileViewState.html#a29b0becb1c1c438a908679ce9258db48',1,'TileViewState']]],
   ['devmode',['devMode',['../classPluginManager.html#a3087e1afe6a7075bc0a3a14da3acf602',1,'PluginManager']]],
   ['dirs',['dirs',['../classPluginManager.html#a15f829b11a018ca1baff4f688365750e',1,'PluginManager']]],

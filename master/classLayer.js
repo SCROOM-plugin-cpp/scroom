@@ -8,7 +8,7 @@ var classLayer =
     [ "getDepth", "classLayer.html#a72c5400a904c8d8e0bb78ac522a60460", null ],
     [ "getHeight", "classLayer.html#a974c0866509db4c131f8f38d281fbcd1", null ],
     [ "getHorTileCount", "classLayer.html#a06c476f570760876f20ca9ddc70be6c5", null ],
-    [ "getRect", "classLayer.html#ad6d18d94f91008b9b0ee278315aab1c1", null ],
+    [ "getRect", "classLayer.html#a089cad953ab1e8ce3ccc69893fa7fe61", null ],
     [ "getTile", "classLayer.html#a7428a55d293b5d3a0c3a1da17bbb19c4", null ],
     [ "getTileLine", "classLayer.html#af90b35813138ca6b6881f78ab67cea33", null ],
     [ "getVerTileCount", "classLayer.html#a3b0a9e864d755c8743448e65cb7b3dc7", null ],

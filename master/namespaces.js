@@ -10,6 +10,5 @@ var namespaces =
     [ "anonymous_namespace{transparentoverlaypresentation.cc}", "namespaceanonymous__namespace_02transparentoverlaypresentation_8cc_03.html", null ],
     [ "anonymous_namespace{transparentoverlayviewinfo.cc}", "namespaceanonymous__namespace_02transparentoverlayviewinfo_8cc_03.html", null ],
     [ "Colors", "namespaceColors.html", null ],
-    [ "Detail", "namespaceDetail.html", null ],
     [ "Scroom", "namespaceScroom.html", "namespaceScroom" ]
 ];

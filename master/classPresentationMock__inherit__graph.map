@@ -1,0 +1,7 @@
+<map id="PresentationMock" name="PresentationMock">
+<area shape="rect" id="node8" href="$classColormappablePresentationMock.html" title="{ColormappablePresentationMock\n||+ create()\l}" alt="" coords="37,925,274,1003"/>
+<area shape="rect" id="node2" href="$classPresentationInterface.html" title="Represent some 2D content. " alt="" coords="74,513,237,649"/>
+<area shape="rect" id="node3" href="$classViewable.html" title="Implement Viewable if you want to be able to receive events when a View is created and/or deleted..." alt="" coords="5,329,124,436"/>
+<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1Observable.html" title="Base class for something that accepts observers. " alt="" coords="148,300,347,465"/>
+<area shape="rect" id="node6" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="246,145,406,252"/>
+</map>

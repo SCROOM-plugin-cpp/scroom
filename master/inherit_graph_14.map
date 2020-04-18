@@ -1,3 +1,10 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classGtkFileFilterInfoDeleter.html" title="GtkFileFilterInfoDeleter" alt="" coords="5,5,163,32"/>
+<area shape="rect" id="node1" href="$classLayerOperations.html" title="Operations on a layer in the TiledBitmap. " alt="" coords="5,107,135,133"/>
+<area shape="rect" id="node2" href="$classCommonOperations.html" title="CommonOperations" alt="" coords="183,107,335,133"/>
+<area shape="rect" id="node3" href="$classOperations.html" title="Operations" alt="" coords="423,5,517,32"/>
+<area shape="rect" id="node5" href="$classOperations1bpp.html" title="Operations1bpp" alt="" coords="407,56,533,83"/>
+<area shape="rect" id="node6" href="$classOperations1bppClipped.html" title="Operations1bppClipped" alt="" coords="383,107,557,133"/>
+<area shape="rect" id="node7" href="$classOperations24bpp.html" title="Operations24bpp" alt="" coords="403,157,537,184"/>
+<area shape="rect" id="node8" href="$classOperations8bpp.html" title="Operations8bpp" alt="" coords="407,208,533,235"/>
+<area shape="rect" id="node4" href="$classOperationsColormapped.html" title="OperationsColormapped" alt="" coords="605,5,785,32"/>
 </map>

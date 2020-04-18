@@ -1,5 +1,5 @@
 <map id="PluginManager" name="PluginManager">
-<area shape="rect" id="node2" href="$classWorkInterface.html" title="{WorkInterface\n||+ ~WorkInterface()\l+ doWork()\l}" alt="" coords="5,191,136,283"/>
-<area shape="rect" id="node3" href="$classScroomPluginInterface.html" title="{ScroomPluginInterface\n||+ ~ScroomPluginInterface()\l+ registerNewPresentationInterface()\l+ registerNewAggregateInterface()\l+ registerOpenPresentation\lInterface()\l+ registerOpenInterface()\l+ registerViewObserver()\l+ registerPresentationObserver()\l}" alt="" coords="161,147,396,327"/>
-<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="421,184,563,291"/>
+<area shape="rect" id="node2" href="$classWorkInterface.html" title="{WorkInterface\n||+ ~WorkInterface()\l+ doWork()\l}" alt="" coords="5,189,155,281"/>
+<area shape="rect" id="node3" href="$classScroomPluginInterface.html" title="{ScroomPluginInterface\n||+ ~ScroomPluginInterface()\l+ registerNewPresentationInterface()\l+ registerNewAggregateInterface()\l+ registerOpenPresentation\lInterface()\l+ registerOpenInterface()\l+ registerViewObserver()\l+ registerPresentationObserver()\l}" alt="" coords="179,145,445,325"/>
+<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="469,182,629,289"/>
 </map>

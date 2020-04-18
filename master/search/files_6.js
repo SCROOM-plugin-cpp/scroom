@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['main_2ecc',['main.cc',['../plugins_2roi_2src_2main_8cc.html',1,'']]],
-  ['main_2ecc',['main.cc',['../plugins_2tiff_2src_2main_8cc.html',1,'']]],
-  ['main_2ecc',['main.cc',['../plugins_2transparent-overlay_2src_2main_8cc.html',1,'']]],
-  ['main_2ecc',['main.cc',['../gui_2src_2main_8cc.html',1,'']]],
-  ['memoryblobs_2ecc',['memoryblobs.cc',['../memoryblobs_8cc.html',1,'']]],
-  ['memoryblobs_2ehh',['memoryblobs.hh',['../memoryblobs_8hh.html',1,'']]]
+  ['layer_2ecc',['layer.cc',['../layer_8cc.html',1,'']]],
+  ['layercoordinator_2ecc',['layercoordinator.cc',['../layercoordinator_8cc.html',1,'']]],
+  ['layercoordinator_2ehh',['layercoordinator.hh',['../layercoordinator_8hh.html',1,'']]],
+  ['layeroperations_2ecc',['layeroperations.cc',['../layeroperations_8cc.html',1,'']]],
+  ['layeroperations_2ehh',['layeroperations.hh',['../layeroperations_8hh.html',1,'']]],
+  ['linearsegment_2ehh',['linearsegment.hh',['../linearsegment_8hh.html',1,'']]],
+  ['loader_2ecc',['loader.cc',['../loader_8cc.html',1,'']]],
+  ['loader_2ehh',['loader.hh',['../loader_8hh.html',1,'']]],
+  ['local_2ehh',['local.hh',['../local_8hh.html',1,'']]]
 ];

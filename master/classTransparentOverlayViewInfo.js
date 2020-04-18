@@ -10,7 +10,7 @@ var classTransparentOverlayViewInfo =
     [ "createToggleToolButton", "classTransparentOverlayViewInfo.html#abbac8c446a049dad72a7d7b98c9b3af3", null ],
     [ "getProgressInterface", "classTransparentOverlayViewInfo.html#a1fdb43c917f2ca65ee6e92dc6ff4adf1", null ],
     [ "invalidate", "classTransparentOverlayViewInfo.html#ac68f53e66aa850baa7dfd3b9ed938581", null ],
-    [ "redraw", "classTransparentOverlayViewInfo.html#a57977e1db497ea8a0aca0c678a3dc0f5", null ],
+    [ "redraw", "classTransparentOverlayViewInfo.html#add1ffd6ec625dfd9633fd5dad6ad2b3f", null ],
     [ "toggled", "classTransparentOverlayViewInfo.html#aaf1b7ae3806c6a68a0423dc7750b8a14", null ],
     [ "buttons", "classTransparentOverlayViewInfo.html#ab7afe5e192137e8f3cf1b5bc4243e82e", null ],
     [ "children", "classTransparentOverlayViewInfo.html#a78248316bbc35e0984b5a338ec3a4a3e", null ],

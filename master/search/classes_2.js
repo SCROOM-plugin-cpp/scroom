@@ -9,6 +9,8 @@ var searchData=
   ['colormaphelper',['ColormapHelper',['../classColormapHelper.html',1,'']]],
   ['colormaphelperbase',['ColormapHelperBase',['../classColormapHelperBase.html',1,'']]],
   ['colormappable',['Colormappable',['../classColormappable.html',1,'']]],
+  ['colormappablemock',['ColormappableMock',['../classColormappableMock.html',1,'']]],
+  ['colormappablepresentationmock',['ColormappablePresentationMock',['../classColormappablePresentationMock.html',1,'']]],
   ['colormapprovider',['ColormapProvider',['../classColormapProvider.html',1,'']]],
   ['commonoperations',['CommonOperations',['../classCommonOperations.html',1,'']]],
   ['compressedtile',['CompressedTile',['../classCompressedTile.html',1,'']]],

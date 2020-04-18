@@ -1,4 +1,5 @@
 <map id="inc/scroom/rectangle.hh" name="inc/scroom/rectangle.hh">
-<area shape="rect" id="node5" href="$linearsegment_8hh.html" title="scroom/linearsegment.hh" alt="" coords="76,80,244,107"/>
-<area shape="rect" id="node8" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="455,80,605,107"/>
+<area shape="rect" id="node4" href="$gtk-helpers_8hh.html" title="scroom/gtk&#45;helpers.hh" alt="" coords="84,80,252,107"/>
+<area shape="rect" id="node7" href="$linearsegment_8hh.html" title="scroom/linearsegment.hh" alt="" coords="530,80,718,107"/>
+<area shape="rect" id="node10" href="$point_8hh.html" title="scroom/point.hh" alt="" coords="327,80,454,107"/>
 </map>

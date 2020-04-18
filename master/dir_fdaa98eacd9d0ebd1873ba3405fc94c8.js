@@ -1,5 +1,6 @@
 var dir_fdaa98eacd9d0ebd1873ba3405fc94c8 =
 [
+    [ "gmock", "dir_a44ed82971f8cd96de92cc361f4fac01.html", "dir_a44ed82971f8cd96de92cc361f4fac01" ],
     [ "impl", "dir_cb0d4ec2f8aa276998dad59bad572903.html", "dir_cb0d4ec2f8aa276998dad59bad572903" ],
     [ "assertions.hh", "assertions_8hh.html", "assertions_8hh" ],
     [ "async-deleter.hh", "async-deleter_8hh.html", "async-deleter_8hh" ],
@@ -12,6 +13,10 @@ var dir_fdaa98eacd9d0ebd1873ba3405fc94c8 =
     [ "cairo-helpers.hh", "cairo-helpers_8hh.html", "cairo-helpers_8hh" ],
     [ "color.hh", "color_8hh.html", "color_8hh" ],
     [ "colormappable.hh", "colormappable_8hh.html", "colormappable_8hh" ],
+    [ "compiler.hh", "compiler_8hh.html", "compiler_8hh" ],
+    [ "dont-delete.hh", "dont-delete_8hh.html", [
+      [ "DontDelete", "classDontDelete.html", "classDontDelete" ]
+    ] ],
     [ "function-additor.hh", "function-additor_8hh.html", "function-additor_8hh" ],
     [ "global.hh", "global_8hh.html", "global_8hh" ],
     [ "gtk-helpers.hh", "gtk-helpers_8hh.html", "gtk-helpers_8hh" ],
@@ -32,6 +37,7 @@ var dir_fdaa98eacd9d0ebd1873ba3405fc94c8 =
       [ "Observable", "classScroom_1_1Utils_1_1Observable.html", "classScroom_1_1Utils_1_1Observable" ]
     ] ],
     [ "plugininformationinterface.hh", "plugininformationinterface_8hh.html", "plugininformationinterface_8hh" ],
+    [ "point.hh", "point_8hh.html", "point_8hh" ],
     [ "presentationinterface.hh", "presentationinterface_8hh.html", "presentationinterface_8hh" ],
     [ "progressinterface.hh", "progressinterface_8hh.html", [
       [ "ProgressInterface", "classProgressInterface.html", "classProgressInterface" ]
@@ -53,7 +59,6 @@ var dir_fdaa98eacd9d0ebd1873ba3405fc94c8 =
     [ "resizablepresentationinterface.hh", "resizablepresentationinterface_8hh.html", [
       [ "ResizablePresentationInterface", "classResizablePresentationInterface.html", "classResizablePresentationInterface" ]
     ] ],
-    [ "roi.hh", "roi_8hh.html", "roi_8hh" ],
     [ "scroominterface.hh", "scroominterface_8hh.html", [
       [ "ScroomInterface", "classScroomInterface.html", "classScroomInterface" ],
       [ "NewPresentationInterface", "classNewPresentationInterface.html", "classNewPresentationInterface" ],
@@ -78,6 +83,10 @@ var dir_fdaa98eacd9d0ebd1873ba3405fc94c8 =
     [ "tiledbitmaplayer.hh", "tiledbitmaplayer_8hh.html", "tiledbitmaplayer_8hh" ],
     [ "timer.hh", "timer_8hh.html", [
       [ "Timer", "classScroom_1_1Utils_1_1Timer.html", "classScroom_1_1Utils_1_1Timer" ]
+    ] ],
+    [ "transformpresentation.hh", "transformpresentation_8hh.html", [
+      [ "TransformationData", "classTransformationData.html", "classTransformationData" ],
+      [ "TransformPresentation", "classTransformPresentation.html", "classTransformPresentation" ]
     ] ],
     [ "unused.hh", "unused_8hh.html", "unused_8hh" ],
     [ "utilities.hh", "utilities_8hh.html", "utilities_8hh" ],

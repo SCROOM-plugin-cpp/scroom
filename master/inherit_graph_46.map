@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classScroom_1_1Utils_1_1Count.html" title="Scroom::Utils::Count" alt="" coords="6,5,151,32"/>
+<area shape="rect" id="node2" href="$classColor.html" title="Represent a (ARGB) color. " alt="" coords="247,7,303,33"/>
+<area shape="rect" id="node3" href="$classScroom_1_1Utils_1_1Point.html" title="Scroom::Utils::Point\l\&lt; double \&gt;" alt="" coords="199,110,350,151"/>
+<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1Point.html" title="Scroom::Utils::Point\&lt; T \&gt;" alt="" coords="181,59,369,85"/>
+<area shape="rect" id="node6" href="$classScroom_1_1Utils_1_1Rectangle.html" title="Scroom::Utils::Rectangle\l\&lt; double \&gt;" alt="" coords="184,227,365,269"/>
+<area shape="rect" id="node7" href="$classScroom_1_1Utils_1_1Rectangle.html" title="Scroom::Utils::Rectangle\&lt; T \&gt;" alt="" coords="165,176,384,203"/>
+<area shape="rect" id="node8" href="$classScroom_1_1Utils_1_1Segment.html" title="Scroom::Utils::Segment\&lt; T \&gt;" alt="" coords="168,359,381,385"/>
+<area shape="rect" id="node9" href="$classScroom_1_1Utils_1_1Segment.html" title="Scroom::Utils::Segment\l\&lt; value_type \&gt;" alt="" coords="187,293,362,334"/>
 </map>
