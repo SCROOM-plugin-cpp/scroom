@@ -12,6 +12,7 @@
 #include <scroom/unused.hh>
 #include <scroom/bitmap-helpers.hh>
 #include <scroom/colormappable.hh>
+#include <scroom/cairo-helpers.hh>
 
 #ifdef HAVE_CONFIG_H
 # include <config.h>
@@ -148,6 +149,8 @@ void TransparentOverlayViewInfo::redraw(cairo_t* cr, Scroom::Utils::Rectangle<do
 
   GdkRectangle presentationArea = pa.toGdkRectangle();
 
+  Scroom::Utils::Rectangle<double> va = (pa - pa.getTopLeft()) * pixelSizeFromZoom(zoom);
+  
   GdkRectangle viewArea;
   viewArea.x=0;
   viewArea.y=0;
@@ -164,6 +167,8 @@ void TransparentOverlayViewInfo::redraw(cairo_t* cr, Scroom::Utils::Rectangle<do
     viewArea.width = presentationArea.width/pixelSize;
     viewArea.height = presentationArea.height/pixelSize;
   }
+
+  verify(va.toGdkRectangle() == viewArea);
 
   BitmapSurface::Ptr s = BitmapSurface::create(viewArea.width, viewArea.height, CAIRO_FORMAT_ARGB32);
   cairo_surface_t* surface = s->get();
