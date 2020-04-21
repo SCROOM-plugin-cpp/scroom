@@ -1,0 +1,12 @@
+<map id="gui/src/sidebarmanager.hh" name="gui/src/sidebarmanager.hh">
+<area shape="rect" id="node2" href="$view_8hh.html" title="gui/src/view.hh" alt="" coords="271,80,381,107"/>
+<area shape="rect" id="node11" href="$sidebarmanager_8cc.html" title="gui/src/sidebarmanager.cc" alt="" coords="406,80,580,107"/>
+<area shape="rect" id="node3" href="$callbacks_8hh.html" title="gui/src/callbacks.hh" alt="" coords="347,155,485,181"/>
+<area shape="rect" id="node4" href="$callbacks_8cc.html" title="gui/src/callbacks.cc" alt="" coords="5,229,144,256"/>
+<area shape="rect" id="node9" href="$view_8cc.html" title="gui/src/view.cc" alt="" coords="502,229,612,256"/>
+<area shape="rect" id="node10" href="$pluginmanager_8hh.html" title="gui/src/pluginmanager.hh" alt="" coords="155,155,321,181"/>
+<area shape="rect" id="node5" href="$loader_8cc.html" title="gui/src/loader.cc" alt="" coords="169,229,287,256"/>
+<area shape="rect" id="node6" href="$gui_2src_2main_8cc.html" title="gui/src/main.cc" alt="" coords="637,229,747,256"/>
+<area shape="rect" id="node7" href="$pluginmanager_8cc.html" title="gui/src/pluginmanager.cc" alt="" coords="311,229,477,256"/>
+<area shape="rect" id="node8" href="$progressbarmanager_8cc.html" title="gui/src/progressbarmanager.cc" alt="" coords="771,229,972,256"/>
+</map>

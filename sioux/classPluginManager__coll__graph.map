@@ -1,0 +1,10 @@
+<map id="PluginManager" name="PluginManager">
+<area shape="rect" id="node2" href="$classWorkInterface.html" title="{WorkInterface\n||+ ~WorkInterface()\l+ doWork()\l}" alt="" coords="5,378,136,470"/>
+<area shape="rect" id="node3" href="$classScroomPluginInterface.html" title="{ScroomPluginInterface\n||+ ~ScroomPluginInterface()\l+ registerNewPresentationInterface()\l+ registerNewAggregateInterface()\l+ registerOpenPresentation\lInterface()\l+ registerOpenInterface()\l+ registerViewObserver()\l+ registerPresentationObserver()\l}" alt="" coords="161,334,396,514"/>
+<area shape="rect" id="node4" href="$classScroom_1_1Utils_1_1Base.html" title="Base class that inherits from boost::enable_shared_from_this. " alt="" coords="421,371,563,477"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="1439,171,1517,248"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="1415,6,1541,98"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="945,171,1068,248"/>
+<area shape="rect" id="node15" title="STL class. " alt="" coords="2069,171,2165,248"/>
+<area shape="rect" id="node14" href="$structPluginInformation.html" title="{PluginInformation\n|+ plugin\l+ pluginInformation\l|+ PluginInformation()\l}" alt="" coords="1854,163,1996,255"/>
+</map>
