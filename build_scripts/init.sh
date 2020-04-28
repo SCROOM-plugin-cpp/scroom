@@ -1,11 +1,12 @@
 # First get the scroom repository
 if [ ! -d "scroom" ]; then
   # Fetch all required packages on clone too
-  sudo apt update
-  sudo apt upgrade
-  sudo apt install git gawk libboost-test-dev libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev libgtest-dev google-mock libcairo2-dev libglade2-dev libglib2.0-dev libgtk2.0-dev libtiff5-dev pkg-config doxygen graphviz ccache libc6-dev
+  apt update
+  apt upgrade
+  apt install git gawk libboost-test-dev libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev libgtest-dev google-mock libcairo2-dev libglade2-dev libglib2.0-dev libgtk2.0-dev libtiff5-dev pkg-config doxygen graphviz ccache libc6-dev
 
   # git clone --depth 200 https://github.com/kees-jan/scroom.git
+  ls
   cd scroom
   autoreconf -i
   cd ..
