@@ -6,6 +6,6 @@ build:
   script:
     - dir
     - autoreconf  -i
-    - sh -lc ./configure
+    - sh -lc %cd%/configure
     - make
     - make install
