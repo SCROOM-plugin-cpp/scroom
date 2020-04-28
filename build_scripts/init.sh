@@ -1,5 +1,5 @@
 # First get the scroom repository
-if [ ! -d "scroom" ]; then
+if [ "1" == "1" ]; then
   # Fetch all required packages on clone too
   apt update
   apt upgrade
@@ -16,7 +16,7 @@ fi
 
 # Then maybe configure it
 path=$(pwd)/scroom-install
-if [ ! -d "./scroom/scroom-build" ] && [ ! -d "scroom-install" ]; then
+if [ "1" == "1" ]; then
   mkdir scroom-install
   cd scroom
   mkdir scroom-build
