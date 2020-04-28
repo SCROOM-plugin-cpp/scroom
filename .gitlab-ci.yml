@@ -4,5 +4,6 @@ build:
   stage: build
   script:
     - cp ./build_scripts/init.sh ../init.sh
+    - chmod 755 ../init.sh
     - ../init.sh
 
