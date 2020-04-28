@@ -3,6 +3,7 @@ image: gcc
 build:
   stage: build
   script:
+    - echo $PWD
     - cp ./build_scripts/init.sh ../init.sh
     - chmod 755 ../init.sh
     - ../init.sh
