@@ -5,7 +5,7 @@ if [ ! -d "scroom" ]; then
   sudo apt upgrade
   sudo apt install git gawk libboost-test-dev libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev libgtest-dev google-mock libcairo2-dev libglade2-dev libglib2.0-dev libgtk2.0-dev libtiff5-dev pkg-config doxygen graphviz ccache libc6-dev
 
-  git clone --depth 200 https://github.com/kees-jan/scroom.git
+  # git clone --depth 200 https://github.com/kees-jan/scroom.git
   cd scroom
   autoreconf -i
   cd ..
