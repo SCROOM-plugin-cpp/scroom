@@ -35,7 +35,7 @@ fi
 # Then maybe build it
 if [ $build -eq 1 ]; then
   cd ./scroom/scroom-build
-  make -k -j install
+  make -k -j1 install
   cd ../..
 else
   echo "Skipping scroom build..."
