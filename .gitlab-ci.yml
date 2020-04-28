@@ -5,8 +5,7 @@ build:
     - Windows
   script:
     - dir
-    - sh
     - autoreconf  -i
-    - ./configure
+    - sh -lc ./configure
     - make
     - make install
