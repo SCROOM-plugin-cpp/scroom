@@ -3,6 +3,6 @@ image: gcc
 build:
   stage: build
   script:
-    - cp ./build_scripts/travis/init.sh ../init.sh
+    - cp ./build_scripts/init.sh ../init.sh
     - ../init.sh
 
