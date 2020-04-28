@@ -50,7 +50,7 @@ else
 fi
 
 # Then get our plugin
-if [ ! -d "SCROOM-plugin-cpp" ]; then
+if [ "1" == "2" ]; then
   # HTTPS
   git clone https://github.com/SCROOM-plugin-cpp/SCROOM-plugin-cpp.git
   # SSH:
@@ -63,7 +63,7 @@ else
 fi
 
 # Then maybe configure our plugin
-if [ ! -d "./SCROOM-plugin-cpp/plugin-build" ]; then
+if [ "1" == "2" ]; then
   cd ./SCROOM-plugin-cpp
   mkdir plugin-build
   cd plugin-build
@@ -74,7 +74,7 @@ else
 fi
 
 # Then maybe make a plugin build script
-if [ ! -f "build-plugin.sh" ]; then
+if [ "1" == "2" ]; then
   echo "cd ./SCROOM-plugin-cpp/plugin-build" >> build-plugin.sh
   echo "make -k -j" >> build-plugin.sh
   echo "cd ../.." >> build-plugin.sh
