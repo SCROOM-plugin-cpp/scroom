@@ -9,3 +9,6 @@ build:
     - C:/msys64/usr/bin/bash -c "./configure"
     - C:/msys64/usr/bin/bash -c "sed -i 's/none\ required//g' Makefile"
     - C:/msys64/usr/bin/bash -c "make"
+  artifacts:
+    paths:
+      - "gui/src/scroom.exe"
