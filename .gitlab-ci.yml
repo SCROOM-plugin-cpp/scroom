@@ -7,5 +7,5 @@ build:
     - dir
     - C:/msys64/usr/bin/bash -c "autoreconf -i"
     - C:/msys64/usr/bin/bash -c "./configure"
-    - C:/msys64/usr/bin/bash -c "cat Makefile | sed \"s/none\ required//g\" > Makefile"
+    - C:/msys64/usr/bin/bash -c "cat Makefile | sed 's/none\ required//g' > Makefile"
     - C:/msys64/usr/bin/bash -c "make"
