@@ -1,11 +1,13 @@
-image: 192.168.2.19:4567/roan/scroom-ci:msys2
+image: 192.168.2.19:4567/roan/scroom-ci:test3
 
 build:
   tags:
     - Windows
   script:
     - dir
-    - autoreconf  -i
-    - sh -lc %cd%/configure
-    - make
-    - make install
+    - C:/msys64/usr/bin/bash -c "pwd"
+    - C:/msys64/usr/bin/bash -c "autoreconf -i"
+    - dir
+    - C:/msys64/usr/bin/bash -c "./configure"
+    - C:/msys64/usr/bin/bash -c "make"
+    - C:/msys64/usr/bin/bash -c "make install"
