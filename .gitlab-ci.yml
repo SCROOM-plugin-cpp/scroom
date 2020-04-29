@@ -6,7 +6,5 @@ build:
     - cp ./build_scripts/init.sh ../init.sh
     - chmod 755 ../init.sh
     - cd .. && ./init.sh
-    artifacts:
-        paths: scroom/build-scroom/
 
 
