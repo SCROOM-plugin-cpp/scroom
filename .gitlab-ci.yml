@@ -6,7 +6,7 @@ build:
   script:
     - dir
     - cd ..
-    - autoreconf  -i
+    - autoreconff  -i
     - dir
     - ./configure
     - make
