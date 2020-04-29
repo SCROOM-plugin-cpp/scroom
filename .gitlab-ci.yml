@@ -6,7 +6,8 @@ build:
   script:
     - cmake
     - dir
-    - autoreconf --version
+    - autoreconf --version > out.txt
+    - cat out.txt
     - dir
     - ./configure
     - make
