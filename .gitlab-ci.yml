@@ -6,6 +6,7 @@ build:
   script:
     - dir
     - autoreconf  -i
+    - bash --login -i
     - .\configure
     - make
     - make install
