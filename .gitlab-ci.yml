@@ -1,10 +1,10 @@
-image: 192.168.2.19:4567/roan/scroom-ci:latest
+image: 192.168.2.19:4567/roan/scroom-ci:test
 
 build:
   tags:
     - Windows
   script:
-    - ls -l
+    - dir
     - autoreconf  -i
     - ./configure
     - make
