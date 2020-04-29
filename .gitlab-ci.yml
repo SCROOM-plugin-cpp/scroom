@@ -4,6 +4,7 @@ build:
   tags:
     - Windows
   script:
+    - cmake
     - dir
     - autoreconf  -i
     - dir
