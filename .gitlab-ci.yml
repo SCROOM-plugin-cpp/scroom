@@ -6,6 +6,7 @@ build:
   script:
     - dir
     - autoreconf  -i
+    - dir
     - bash -l -c "C:\\builds\\roan\\scroom\\configure"
     - make
     - make install
