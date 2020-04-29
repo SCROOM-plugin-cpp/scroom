@@ -5,8 +5,9 @@ build:
     - Windows
   script:
     - dir
-    - autoreconf -i
+    - "C:/msys64/usr/bin/bash" -c "pwd"
+    - "C:/msys64/usr/bin/bash" -c "autoreconf -i"
     - dir
-    - ./configure
-    - make
-    - make install
+    - "C:/msys64/usr/bin/bash" -c "./configure"
+    - "C:/msys64/usr/bin/bash" -c "make"
+    - "C:/msys64/usr/bin/bash" -c "make install"
