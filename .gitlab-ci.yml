@@ -12,5 +12,5 @@ build:
     - cd .. && ./init.sh
   artifacts:
       paths:
-        - ./
+        - ./scroom/scroom-build
 
