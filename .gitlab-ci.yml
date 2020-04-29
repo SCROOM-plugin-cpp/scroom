@@ -4,11 +4,8 @@ build:
   tags:
     - Windows
   script:
-    - cmake
     - dir
-    - autoreconf --version > out.txt
-    - cat out.txt
-    - dir
+    - autoreconf -i
     - ./configure
     - make
     - make install
