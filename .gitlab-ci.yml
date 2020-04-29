@@ -1,4 +1,4 @@
-image: 192.168.2.19:4567/roan/scroom-ci:test
+image: 192.168.2.19:4567/roan/scroom-ci:test2
 
 build:
   tags:
