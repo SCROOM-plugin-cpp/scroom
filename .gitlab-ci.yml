@@ -5,9 +5,6 @@ build:
     - Windows
   script:
     - dir
-    - C:/msys64/usr/bin/bash -c "pwd"
     - C:/msys64/usr/bin/bash -c "autoreconf -i"
-    - dir
     - C:/msys64/usr/bin/bash -c "./configure"
-    - C:/msys64/usr/bin/bash -c "make"
-    - C:/msys64/usr/bin/bash -c "make install"
+    - C:/msys64/usr/bin/bash -c "PATH=$PATH:C\:\\msys64\\usr\\bin:C\:\\msys64\\mingw64\\bin && make"
