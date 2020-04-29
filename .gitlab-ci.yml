@@ -1,5 +1,9 @@
 image: gcc
 
+stages:
+    - build
+    - test
+
 build:
   stage: build
   script:
