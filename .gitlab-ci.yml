@@ -14,3 +14,7 @@ build:
       paths:
         - ./scroom/scroom-build
 
+test:
+  stage: test
+  script:
+    - echo "Test"
