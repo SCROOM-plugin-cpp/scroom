@@ -11,5 +11,6 @@ build:
     - chmod 755 ../init.sh
     - cd .. && ./init.sh
   artifacts:
-    paths: ./
+      paths:
+        - ./
 
