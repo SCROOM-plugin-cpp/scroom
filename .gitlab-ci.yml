@@ -6,7 +6,7 @@ build:
   script:
     - cmake
     - dir
-    - autoreconf -i --verbose --version
+    - autoreconf --version
     - dir
     - ./configure
     - make
