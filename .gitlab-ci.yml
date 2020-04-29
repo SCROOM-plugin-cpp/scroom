@@ -1,14 +1,13 @@
-image: 192.168.2.19:4567/roan/scroom-ci:test2
+image: 192.168.2.19:4567/roan/scroom-ci:msys2
 
 build:
   tags:
     - Windows
   script:
     - dir
-    - pacman-key --init
-    - pacman -Syu
-    - pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-boost mingw-w64-x86_64-gtk2 mingw-w64-x86_64-glade mingw-w64-x86_64-libglade mingw-w64-x86_64-gtest libtool pkg-config mingw-w64-x86_64-dlfcn automake autoconf doxygen make ccache git
+    - cd ..
     - autoreconf  -i
+    - dir
     - ./configure
     - make
     - make install
