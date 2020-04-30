@@ -1,7 +1,7 @@
 $minggw_path = "C:\msys64\mingw64\bin"
 $glade_file = ".\gui\scroom.glade"
-$glade_dest = "C:\msys64\usr\share\scroom\"
-$scroom_dir = "C:\msys64\usr\lib\scroom"
+$glade_dest = "C:\msys64\mingw64\share\scroom\"
+$scroom_dir = "C:\msys64\mingw64\lib\scroom"
 $scroom_exe = ".\gui\src\scroom.exe"
 
 # First add mingWG64 to the path
@@ -25,4 +25,3 @@ New-Item -Type dir $scroom_dir -ErrorAction 'silentlycontinue'
 
 # Launch scroom
 cmd /c $scroom_exe
-
