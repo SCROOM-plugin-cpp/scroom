@@ -16,12 +16,12 @@ if ($env:PATH -like "*$minggw_path*") {
 }
 
 # Next install the glade file
-New-Item -Type dir $glade_dest
+New-Item -Type dir $glade_dest -ErrorAction 'silentlycontinue'
 cp $glade_file $glade_dest\scroom.glade
 
 
 # Ensure the scroom dir exists
-New-Item -Type dir $scroom_dir
+New-Item -Type dir $scroom_dir -ErrorAction 'silentlycontinue'
 
 # Launch scroom
 $scroom_exe
