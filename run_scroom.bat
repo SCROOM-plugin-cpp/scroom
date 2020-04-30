@@ -1,4 +1,6 @@
 @echo off
+@cd /d "%~dp0"
+
 :: Powershell doesn't have a nice way to run as admin, which we need to
 :: add to the systems path. So this bat file is just here to:
 ::   * Set the execution policy
