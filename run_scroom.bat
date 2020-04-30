@@ -4,4 +4,4 @@
 ::   * Set the execution policy
 ::   * Allow you to run it using right click > Run as Admin
 
-powershell –ExecutionPolicy Bypass -File setup\prep_windows.ps1
+powershell -ExecutionPolicy Bypass -File setup\prep_windows.ps1
