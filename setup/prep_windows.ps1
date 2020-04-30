@@ -1,8 +1,8 @@
 $minggw_path = "C:\msys64\mingw64\bin"
 $glade_file = ".\gui\scroom.glade"
-$glade_dest = "C:\msys64\usr\share\scroom\
+$glade_dest = "C:\msys64\usr\share\scroom\"
 $scroom_dir = "C:\msys64\usr\lib\scroom"
-$scroom_exe = ".\gui\scroom.exe"
+$scroom_exe = ".\gui\src\scroom.exe"
 
 # First add mingWG64 to the path
 
@@ -17,12 +17,12 @@ if ($env:PATH -like "*$minggw_path*") {
 
 # Next install the glade file
 New-Item -Type dir $glade_dest -ErrorAction 'silentlycontinue'
-cp $glade_file $glade_dest\scroom.glade
-
+cp $glade_file $glade_dest\scroom.glade -Force
+Write-Host "Copied the glade file"
 
 # Ensure the scroom dir exists
 New-Item -Type dir $scroom_dir -ErrorAction 'silentlycontinue'
 
 # Launch scroom
-$scroom_exe
+cmd /c $scroom_exe
 
