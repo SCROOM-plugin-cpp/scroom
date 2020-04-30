@@ -12,3 +12,6 @@ build:
   artifacts:
     paths:
       - "gui/src/scroom.exe"
+      - "gui/scroom.glade"
+      - "setup/prep_windows.ps1"
+      - "run_scroom.bat"
