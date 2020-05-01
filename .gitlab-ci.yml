@@ -11,7 +11,7 @@ build:
     - C:/msys64/usr/bin/bash -c "autoreconf -i"
     - C:/msys64/usr/bin/bash -c "./configure"
  #   - C:/msys64/usr/bin/bash -c "sed -i 's/none\ required//g' Makefile"
-    - C:/msys64/usr/bin/bash -c "make"
+    - C:/msys64/usr/bin/bash -c "make check"
   artifacts:
     paths:
       - "gui/"
