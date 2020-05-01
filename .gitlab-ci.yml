@@ -1,6 +1,9 @@
-image: 192.168.2.19:4567/roan/scroom-ci:latest
+stages:
+  - build
 
 build:
+  stage: build
+  image: 192.168.2.19:4567/roan/scroom-ci:latest
   tags:
     - Windows
   script:
@@ -14,3 +17,14 @@ build:
       - "gui/"
       - "setup/prep_windows.ps1"
       - "run_scroom.bat"
+
+build-linux:
+  image: gcc
+  stage: build
+  script:
+    - cp ./build_scripts/init.sh ../init.sh
+    - chmod 755 ../init.sh
+    - cd .. && ./init.sh
+  artifacts:
+      paths:
+        - scroom-build/
