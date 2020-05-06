@@ -14,7 +14,7 @@ build:
     - C:/msys64/usr/bin/bash -c "make install"
   artifacts:
     paths:
-      - "C:\scroom_portable"
+      - "C:\\scroom_portable"
 
 build-linux:
   image: gcc
