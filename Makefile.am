@@ -151,6 +151,8 @@ libs_util_src_libsutil_la_SOURCES = \
 
 libs_util_src_libsutil_la_LIBADD = @UTILS_LIBS@ @BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@
 
+libs_util_src_libsutil_la_LDFLAGS = $(loadflag)
+
 if BOOST_UNITTESTS
 
 libs_util_test_utils_tests_CPPFLAGS = @UTILS_CFLAGS@ -I $(top_srcdir)/inc
@@ -193,6 +195,8 @@ libs_threadpool_src_libsthreadpool_la_SOURCES = \
 	libs/threadpool/src/queue.hh \
 	libs/threadpool/src/async-deleter.cc
 libs_threadpool_src_libsthreadpool_la_LIBADD = @BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@
+
+libs_threadpool_src_libsthreadpool_la_LDFLAGS = $(loadflag)
 
 if BOOST_UNITTESTS
 
@@ -240,6 +244,8 @@ libs_memory_manager_src_libsmemman_la_LIBADD = \
 	libs/threadpool/src/libsthreadpool.la \
 	@BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@ \
 	@ZLIB@
+	
+libs_memory_manager_src_libsmemman_la_LDFLAGS = $(loadflag)	
 
 if BOOST_UNITTESTS
 
@@ -264,6 +270,7 @@ libs_memory_manager_test_memory_manager_tests_LDADD = \
 
 memory_manager_tests = \
 	libs/memory-manager/test/memory-manager-tests
+	
 
 endif BOOST_UNITTESTS
 
@@ -286,6 +293,8 @@ libs_scroom_src_libsscroom_la_SOURCES = \
 libs_scroom_src_libsscroom_la_LIBADD = \
 	@SCROOMLIB_LIBS@ $(util_libs) \
 	@BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@
+
+libs_scroom_src_libsscroom_la_LDFLAGS = $(loadflag)
 
 if BOOST_UNITTESTS
 
@@ -357,6 +366,8 @@ libs_tiled_bitmap_src_libstiledbitmap_la_LIBADD = \
 	libs/memory-manager/src/libsmemman.la \
 	libs/scroom/src/libsscroom.la \
 	@BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@
+	
+libs_tiled_bitmap_src_libstiledbitmap_la_LDFLAGS = $(loadflag)
 
 if BOOST_UNITTESTS
 
@@ -421,6 +432,7 @@ libs_tiled_bitmap_tools_measure_load_performance_LDADD = \
 	libs/tiled-bitmap/src/libstiledbitmap.la \
 	libs/util/src/libsutil.la \
 	libs/scroom/src/libsscroom.la
+	
 
 ########################################################################
 ### plugins/example
@@ -440,6 +452,8 @@ plugins_example_libspexample_la_SOURCES = \
 
 plugins_example_libspexample_la_LIBADD = -lm @EXAMPLEPLUGIN_LIBS@ @BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@ \
 	libs/scroom/src/libsscroom.la
+	
+plugins_example_libspexample_la_LDFLAGS = $(loadflag)
 
 ########################################################################
 ### plugins/transparentoverlay
@@ -465,6 +479,8 @@ plugins_transparent_overlay_src_libsptransparentoverlay_la_SOURCES = \
 plugins_transparent_overlay_src_libsptransparentoverlay_la_LIBADD = -lm @TRANSPARENTOVERLAYPLUGIN_LIBS@ @BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@ \
 	libs/util/src/libsutil.la \
 	libs/scroom/src/libsscroom.la
+
+plugins_transparent_overlay_src_libsptransparentoverlay_la_LDFLAGS = $(loadflag)
 
 if BOOST_UNITTESTS
 
@@ -507,6 +523,8 @@ plugins_tiff_src_libsptiff_la_SOURCES = \
 
 plugins_tiff_src_libsptiff_la_LIBADD = @TIFFPLUGIN_LIBS@ -ltiff @BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@ \
 	libs/tiled-bitmap/src/libstiledbitmap.la libs/scroom/src/libsscroom.la
+	
+plugins_tiff_src_libsptiff_la_LDFLAGS = $(loadflag)
 
 ########################################################################
 ### plugins/colormap
@@ -527,6 +545,8 @@ plugins_colormap_libspcolormap_la_SOURCES = \
 	plugins/colormap/main.cc
 
 plugins_colormap_libspcolormap_la_LIBADD = @COLORMAPPLUGIN_LIBS@ @BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@
+
+plugins_colormap_libspcolormap_la_LDFLAGS = $(loadflag)
 
 ########################################################################
 ### gui
@@ -640,3 +660,19 @@ checkPROGRAMS: all-am $(check_PROGRAMS)
 
 silent-doxygen:
 	@$(MAKE) doxygen-doc > doxygen.log 2>&1
+
+# The stuff below is executed after 'make install'
+# Its purpose is to do a cleanup for the build on windows, rearranging files to make everything executable right away
+install-data-hook:
+	if [ "$(OS)" = "Windows_NT" ]; then\
+		mkdir $(prefix)/libs; \
+		mv $(prefix)/bin/scroom.exe $(prefix)/scroom.exe; \
+		mv $(prefix)/bin/* $(prefix); \
+		mv $(prefix)/share/scroom/scroom.glade $(prefix)/scroom.glade; \
+		mkdir $(prefix)/plugins; \
+		mv $(prefix)/lib/bin/* $(prefix)/plugins; \
+		rm -r $(prefix)/bin; \
+		rm -r $(prefix)/lib; \
+		rm -r $(prefix)/include; \
+		rm -r $(prefix)/share; \
+	fi

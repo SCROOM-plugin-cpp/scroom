@@ -22,7 +22,7 @@ case "${host_os}" in
         AC_MSG_NOTICE([detected windows environment])
         ;;
     *)
-        AC_MSG_ERROR(["OS $host_os is not supported. Or maybe the check in configure.ac is just broken."])
+        AC_MSG_ERROR(["OS $host_os is not supported."])
         ;;
 esac
 AM_CONDITIONAL([LINUX], [test "$build_linux" = "yes"])
@@ -38,8 +38,9 @@ AM_INIT_AUTOMAKE([-Wall -Werror foreign silent-rules subdir-objects])
 AM_SILENT_RULES([yes])
 AM_PROG_AR
 LT_PREREQ([2.2])
-# LT_INIT([dlopen])
-LT_INIT([win32-dll])
+
+# Properly create shared libraries on both Linux and Windows
+LT_INIT([dlopen win32-dll])
 
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([inc/scroom/presentationinterface.hh])
@@ -56,35 +57,40 @@ AC_CHECK_PROG([CMAKE], [cmake], [yes], [no])
 AC_LANG([C++])
 SCROOM_COMPILE_STDCXX_0X
 SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wall])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-W])
 SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wextra])
-dnl SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wconversion])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wpointer-arith])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wwrite-strings])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wunused])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wredundant-decls])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wuninitialized])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Winit-self])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wcast-qual])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wswitch])
-dnl SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Weffc++])
-dnl SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wold-style-cast])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wfloat-equal])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wshadow])
 SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wnon-virtual-dtor])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wold-style-cast])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wcast-align])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wunused])
 SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Woverloaded-virtual])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wsign-promo])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wpedantic])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wconversion])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wsign-conversion])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wnull-dereference])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wdouble-promotion])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wformat=2])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wmisleading-indentation])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wduplicated-cond])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wduplicated-branches])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wlogical-op])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wuseless-cast])
+#SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Werror])
 SCROOM_TEST_ISYSTEM
 
 # MinGW doesn't support the -z flag
 AM_COND_IF([LINUX], 
-    [LDFLAGS="$LDFLAGS -Wl,-z,defs"])
-
-AM_COND_IF([WINDOWS], 
-    [AC_DEFINE([OS_mingw], [1], [Let make know we're on Windows])]) 
+    [LDFLAGS="$LDFLAGS -Wl,-z,defs"]) 
     
 # The .pc files are at a weird place so make sure pkg-config finds them
 AM_COND_IF([WINDOWS], 
     [export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/mingw64/lib/pkgconfig])    
+    
+# This flag is used in Makefile.am and needed for properly generating DLLs on Windows
+loadflag=""
+AM_COND_IF([WINDOWS], 
+    [loadflag="-no-undefined"])
+AC_SUBST([loadflag])
 
 # Configurable features
 AC_ARG_ENABLE([doxygen-all-code],
@@ -377,6 +383,12 @@ AC_OUTPUT
 
 # There is a bug somewhere in the configure script that causes the string "none required" to be added to libraries as a compiler argument
 sed -e "s/none required//g" -i Makefile
+
+# Alright, this is nasty. I know. But I found no other way to get all the dependencies loaded as system libraries on Windows.
+# And if they're loaded as normal libraries, g++ floods the terminal with warnings during compilation, as it displays warnings for libraries then
+# So what is happening here is that I'm replacing all occurrences of the string "-I/mingw" with "-isystem /mingw" in the Makefile
+AM_COND_IF([WINDOWS], 
+    [sed -e "s+-I/mingw+-isystem /mingw+g" -i Makefile])    
 
 echo \
 "-------------------------------------------------
