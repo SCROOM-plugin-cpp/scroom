@@ -63,11 +63,11 @@ bool TiffPresentation::load(const std::string& fileName_)
     }
 
     uint16 spp_ = 0;
-    if (1 != TIFFGetField(tif, TIFFTAG_SAMPLESPERPIXEL, &spp))
+    if (1 != TIFFGetField(tif, TIFFTAG_SAMPLESPERPIXEL, &spp_))
       spp_ = 1; // Default value, according to tiff spec
     if (spp_ != 1 && spp_ != 3)
     {
-      printf("PANIC: Samples per pixel is not 1 or 3, but %d. Giving up\n", spp);
+      printf("PANIC: Samples per pixel is not 1 or 3, but %d. Giving up\n", spp_);
       return false;
     }
     this->spp = spp_;
@@ -76,7 +76,7 @@ bool TiffPresentation::load(const std::string& fileName_)
     TIFFGetFieldChecked(tif, TIFFTAG_IMAGELENGTH, &height);
 
     uint16 bps_ = 0;
-    if( 1 != TIFFGetField(tif, TIFFTAG_BITSPERSAMPLE, &bps))
+    if( 1 != TIFFGetField(tif, TIFFTAG_BITSPERSAMPLE, &bps_))
     {
       if(spp==1)
         bps_ = 1;
