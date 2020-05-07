@@ -18,6 +18,7 @@ build:
     - C:/msys64/usr/bin/bash -c "ls -l"
     - C:/msys64/usr/bin/bash -c "autoreconf -i || true"
     - C:/msys64/usr/bin/bash -c "ls -l"
+    - C:/msys64/usr/bin/bash -c "ls -l autom4te.cache"
     - C:/msys64/usr/bin/bash -c "./configure --prefix='C:/builds/$CI_PROJECT_PATH/scroom_build'"
     - C:/msys64/usr/bin/bash -c "make"
     - C:/msys64/usr/bin/bash -c "make install"
