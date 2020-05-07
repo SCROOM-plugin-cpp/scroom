@@ -8,6 +8,7 @@ build:
     - Windows
   script:
     - dir
+    - C:/msys64/usr/bin/bash -c "chown -R containeradministrator ./"
     - C:/msys64/usr/bin/bash -c "whoami"
     - C:/msys64/usr/bin/bash -c "ls -l"
     - C:/msys64/usr/bin/bash -c "autoreconf -i"
