@@ -7,8 +7,8 @@ build:
   tags:
     - Windows
   script:
-    - cd C:\
-    - dir
+    - cd C:\msys64
+    - C:/msys64/usr/bin/bash -c "ls -l"
     - cd C:\builds\sep-group-2\scroom
     - dir
     - C:/msys64/usr/bin/bash -c "whoami"
