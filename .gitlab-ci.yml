@@ -12,6 +12,7 @@ build:
     - cd C:\builds\sep-group-2\scroom
     - dir
     - C:/msys64/usr/bin/bash -c "whoami"
+    - C:/msys64/usr/bin/bash -c "chmod -R 755 ./"
     - C:/msys64/usr/bin/bash -c "ls -l"
     - C:/msys64/usr/bin/bash -c "chown -R containeradministrator:containeradministrator ./"
     - C:/msys64/usr/bin/bash -c "ls -l"
