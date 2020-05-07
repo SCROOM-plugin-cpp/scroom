@@ -16,7 +16,7 @@ build:
     - C:/msys64/usr/bin/bash -c "ls -l"
     - C:/msys64/usr/bin/bash -c "chown -R containeradministrator:containeradministrator ./"
     - C:/msys64/usr/bin/bash -c "ls -l"
-    - C:/msys64/usr/bin/bash -c "autoreconf -d -v -i --warnings=all || true"
+    - C:/msys64/usr/bin/bash -c "autoreconf -d -v -i -f --warnings=all || true"
     - C:/msys64/usr/bin/bash -c "ls -l"
     - C:/msys64/usr/bin/bash -c "ls -l autom4te.cache"
     - C:/msys64/usr/bin/bash -c "./configure --prefix='C:/builds/$CI_PROJECT_PATH/scroom_build'"
