@@ -3,8 +3,8 @@ stages:
 
 build:
   stage: build
-#  image: 192.168.2.19:4567/roan/scroom-ci:stable
-  image: mback2k/windows-buildbot-msys2:eight_1909
+  image: 192.168.2.19:4567/roan/scroom-ci:nightly
+  #image: mback2k/windows-buildbot-msys2:eight_1909
   tags:
     - Windows
   script:
