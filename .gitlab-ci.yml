@@ -7,6 +7,8 @@ build:
   tags:
     - Windows
   script:
+    - C:/msys64/usr/bin/bash -c "echo -e 'begin-language: \"Autoconf-without-aclocal-m4\"\\n args: --no-cache \\n end-language: \"Autoconf-without-aclocal-m4\"'"
+    - C:/msys64/usr/bin/bash -c "echo -e 'begin-language: \"Autoconf-without-aclocal-m4\"\\n args: --no-cache \\n end-language: \"Autoconf-without-aclocal-m4\"' > .autom4te.cfg"
     - C:/msys64/usr/bin/bash -c "autoreconf -i"
     - C:/msys64/usr/bin/bash -c "./configure --prefix='C:/builds/$CI_PROJECT_PATH/scroom_build'"
     - C:/msys64/usr/bin/bash -c "make"
