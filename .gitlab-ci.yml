@@ -10,6 +10,7 @@ build:
   tags:
     - Windows
   script:
+    - cd C:/
     - C:/msys64/usr/bin/bash -c "git clone https://gitlab.com/sep-group-2/scroom"
     - cd scroom
     - C:/msys64/usr/bin/bash -c "git checkout origin/ci"
