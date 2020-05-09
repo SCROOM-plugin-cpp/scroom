@@ -10,7 +10,7 @@ build:
   tags:
     - Windows
   script:
-    - C:/msys64/usr/bin/bash -c "git clone https://gitlab.com/sep-group-2/scroom && cd scroom"
+    - C:/msys64/usr/bin/bash -c "cd C:/ && git clone https://gitlab.com/sep-group-2/scroom && cd scroom"
     - C:/msys64/usr/bin/bash -c "git checkout $CI_COMMIT_SHA"
     - C:/msys64/usr/bin/bash -c "autoreconf -i"
     - C:/msys64/usr/bin/bash -c "./configure --prefix='C:/scroom_build'"
