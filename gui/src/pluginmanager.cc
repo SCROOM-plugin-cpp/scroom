@@ -18,7 +18,7 @@
 #include "callbacks.hh"
 
 #ifdef _WIN32
-#include <Windows.h>
+#include <boost/dll.hpp>
 #endif
 
 const std::string SCROOM_PLUGIN_DIRS = "SCROOM_PLUGIN_DIRS";
@@ -42,7 +42,6 @@ void startPluginManager(bool devMode)
 
 bool PluginManager::doWork() {
   bool retval = true;
-  GModule* plugin;
 
   gdk_threads_enter();
   switch (state)
@@ -52,31 +51,27 @@ bool PluginManager::doWork() {
     char* path = getenv(SCROOM_PLUGIN_DIRS.c_str());
     dirs.clear();
 
-#ifdef _WIN32
-    // We want to keep everything portable on windows so we look for the plugin folder in the same directory as the .exe
-    char buffer[2048];
-    GetModuleFileName(NULL, buffer, 2047);
-    std::string modulePath(buffer);
-    auto pos = modulePath.rfind("\\");
-    dirs.push_back(modulePath.substr(0, pos) + "\\plugins");
-    //dirs.push_back(modulePath.substr(0, pos));
-#else
-    if (!devMode) {
-      dirs.push_back(PLUGIN_DIR);
-    }
-#endif
+	  #ifdef _WIN32
+      // We want to keep everything portable on windows so we look for the plugin folder in the same directory as the .exe
+      std::string plugin_path = (boost::dll::program_location().parent_path() / "plugins").generic_string();
+      dirs.push_back(plugin_path);
+    #else
+      if (!devMode) {
+        dirs.push_back(PLUGIN_DIR);
+      }
+	  #endif
 
     if (path != nullptr) {
       printf("%s = %s\n", SCROOM_PLUGIN_DIRS.c_str(), path);
 
       for (char* i = path; *i != '\0'; i++) {
 
-#ifdef _WIN32
     	  // Windows uses semicolons for delimiting environment variables, Linux uses colons
-    	  const char envDelim = ';';
-#else
-    	  const char envDelim = ':';
-#endif
+		    #ifdef _WIN32
+    	    const char envDelim = ';';
+		    #else
+    	    const char envDelim = ':';
+		    #endif
           if (*i != envDelim) {
             continue;
           }
