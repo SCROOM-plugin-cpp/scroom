@@ -11,7 +11,8 @@ build:
     - Windows
   script:
     - dir
-    - C:/msys64/usr/bin/bash -c "rm -rf ./""
+    - C:/msys64/usr/bin/bash -c "rm -rf ./scroom"
+    - C:/msys64/usr/bin/bash -c "rm -rf ./scroom-build"
     - cd C:/
     - C:/msys64/usr/bin/bash -c "git clone https://gitlab.com/sep-group-2/scroom"
     - cd scroom
