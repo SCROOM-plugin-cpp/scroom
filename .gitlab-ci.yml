@@ -11,8 +11,8 @@ build:
     - Windows
   script:
     - dir
-    - Remove-Item -Recurse -Force .\scroom"
-    - Remove-Item -Recurse -Force .\scroom-build"
+    - Remove-Item -Recurse -Force C:/builds/$CI_PROJECT_PATH/scroom
+    - Remove-Item -Recurse -Force C:/builds/$CI_PROJECT_PATH/scroom_build
     - C:/msys64/usr/bin/bash -c "git clone https://gitlab.com/sep-group-2/scroom"
     - dir
     - cd scroom
