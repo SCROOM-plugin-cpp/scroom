@@ -11,7 +11,7 @@ build:
     - Windows
   script:
     - dir
-    - Remove-Item 'C:\builds\$CI_PROJECT_PATH\scroom_build' -Recurse
+    - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
     - dir
     - cd C:\
     - C:/msys64/usr/bin/bash -c "git clone https://gitlab.com/sep-group-2/scroom"
