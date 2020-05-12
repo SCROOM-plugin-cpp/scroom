@@ -1,8 +1,11 @@
 variables:
   GIT_STRATEGY: none
+include:
+  - template: Code-Quality.gitlab-ci.yml
 
 stages:
   - build
+  - test
 
 build:
   stage: build
@@ -26,3 +29,7 @@ build:
   artifacts:
     paths:
       - scroom_build/
+
+code_quality:
+  artifacts:
+    paths: [gl-code-quality-report.json]
