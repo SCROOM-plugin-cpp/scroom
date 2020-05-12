@@ -4,6 +4,9 @@
 *~
 *.log
 *.trs
+*.gcda
+*.gcno
+*.gcov
 .deps
 .libs
 .dirstamp
