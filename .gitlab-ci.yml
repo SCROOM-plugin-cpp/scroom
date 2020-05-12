@@ -1,8 +1,11 @@
 variables:
   GIT_STRATEGY: none
+include:
+  - template: Code-Quality.gitlab-ci.yml
 
 stages:
   - build
+  - test
 
 build-windows:
   stage: build
@@ -10,17 +13,23 @@ build-windows:
   tags:
     - Windows
   script:
-    - cd C:/
+    - dir
+    - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
+    - dir
+    - cd C:\
     - C:/msys64/usr/bin/bash -c "git clone https://gitlab.com/sep-group-2/scroom"
+    - dir
     - cd scroom
-    - C:/msys64/usr/bin/bash -c "git checkout origin/ci"
+    - C:/msys64/usr/bin/bash -c "git checkout $CI_COMMIT_SHA"
     - C:/msys64/usr/bin/bash -c "autoreconf -i"
     - C:/msys64/usr/bin/bash -c "./configure --prefix='C:/build'"
     - C:/msys64/usr/bin/bash -c "make"
     - C:/msys64/usr/bin/bash -c "make install"
-        # We install somewhere else and copy the dir as a workaround to
-        # Docker Windows volume mount permission issues
     - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
   artifacts:
     paths:
       - scroom_build/
+
+code_quality:
+  artifacts:
+    paths: [gl-code-quality-report.json]
