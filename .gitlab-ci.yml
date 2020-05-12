@@ -26,9 +26,29 @@ build-windows:
     - C:/msys64/usr/bin/bash -c "make"
     - C:/msys64/usr/bin/bash -c "make install"
     - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
+    - C:/msys64/usr/bin/bash -c "make check"
+    - C:/msys64/usr/bin/bash -c "gcovr -s --html -o coverage_windows.html"
+  coverage: '/lines:\ \d+\.\d+\%/'
   artifacts:
     paths:
       - scroom_build/
+      - coverage_windows.html
+
+build-linux:
+  image: gcc
+  stage: build
+  script:
+    - cp ./build_scripts/init.sh ../init.sh
+    - chmod 755 ../init.sh
+    - cd .. && ./init.sh
+      # Temp, should be moved to script
+    - apt install -y gcovr
+    - gcovr -s --html -o coverage_linux.html
+  coverage: '/lines:\ \d+\.\d+\%/'
+  artifacts:
+      paths:
+        - scroom-build/
+        - coverage_linux.html
 
 code_quality:
   artifacts:
