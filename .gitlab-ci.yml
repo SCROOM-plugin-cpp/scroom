@@ -15,7 +15,7 @@ build-windows:
   script:
     - dir
       # Prints some gcov info to confirm it is installed
-    - gcov
+    - gcov -h
     - pip install gcovr
     - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
     - dir
@@ -42,6 +42,7 @@ build-linux:
   stage: build
   script:
       # Temp, should be moved to script
+    - apt update
     - apt install -y gcovr
     - bash ./build_scripts/init.sh
     - gcovr -s --html -o coverage_linux.html
