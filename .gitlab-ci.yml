@@ -9,11 +9,14 @@ stages:
 
 build-windows:
   stage: build
-  image: 192.168.2.19:4567/roan/scroom-ci:nightly
+  image: 192.168.2.19:4567/roan/scroom-ci:latest
   tags:
     - Windows
   script:
     - dir
+      # Prints some gcov info to confirm it is installed
+    - gcov
+    - pip install gcovr
     - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
     - dir
     - cd C:\
@@ -27,7 +30,7 @@ build-windows:
     - C:/msys64/usr/bin/bash -c "make install"
     - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
     - C:/msys64/usr/bin/bash -c "make check"
-    - C:/msys64/usr/bin/bash -c "gcovr -s --html -o coverage_windows.html"
+    - gcovr -s --html -o coverage_windows.html
   coverage: '/lines:\ \d+\.\d+\%/'
   artifacts:
     paths:
@@ -38,16 +41,13 @@ build-linux:
   image: gcc
   stage: build
   script:
-    - cp ./build_scripts/init.sh ../init.sh
-    - chmod 755 ../init.sh
-    - cd .. && ./init.sh
       # Temp, should be moved to script
     - apt install -y gcovr
+    - bash ./build_scripts/init.sh
     - gcovr -s --html -o coverage_linux.html
   coverage: '/lines:\ \d+\.\d+\%/'
   artifacts:
       paths:
-        - scroom-build/
         - coverage_linux.html
 
 code_quality:
