@@ -13,36 +13,34 @@
 namespace Scroom
 {
   namespace ColormapImpl
-  {/**
-   * Register the ColormapPlugin, keep track of PresentationInterface instances
-   */
-    class ColormapPlugin: public PluginInformationInterface,
-        public PresentationObserver,
-        virtual public Scroom::Utils::Base
+  { /**
+     * Register the ColormapPlugin, keep track of PresentationInterface instances
+     */
+    class ColormapPlugin : public PluginInformationInterface,
+                           public PresentationObserver,
+                           virtual public Scroom::Utils::Base
     {
-    public:
+      public:
       typedef boost::shared_ptr<ColormapPlugin> Ptr;
 
-    private:
+      private:
       std::list<PresentationInterface::WeakPtr> presentations;
 
-    private:
+      private:
       ColormapPlugin();
 
-    public:
+      public:
       static Ptr create();
       virtual ~ColormapPlugin();
 
-    public:
+      public:
       virtual std::string getPluginName();
       virtual std::string getPluginVersion();
       virtual void registerCapabilities(ScroomPluginInterface::Ptr host);
 
       virtual void presentationAdded(PresentationInterface::Ptr p);
       virtual void presentationDeleted();
-
     };
 
-  }
-}
-
+  }  // namespace ColormapImpl
+}  // namespace Scroom

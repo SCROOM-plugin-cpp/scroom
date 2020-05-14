@@ -6,9 +6,8 @@
  */
 
 #include <boost/test/unit_test.hpp>
-
-#include <scroom/progressinterfacehelpers.hh>
 #include <scroom/assertions.hh>
+#include <scroom/progressinterfacehelpers.hh>
 
 #include "progressstateinterfacestub.hh"
 
@@ -18,14 +17,13 @@ using namespace Scroom::Utils;
 
 class ProgressInterfaceMultiplexer_Fixture
 {
-public:
+  public:
   ProgressStateInterfaceStub::Ptr stub;
   ProgressInterface::Ptr p1;
   ProgressInterface::Ptr p2;
 
-public:
+  public:
   ProgressInterfaceMultiplexer_Fixture();
-
 };
 
 ProgressInterfaceMultiplexer_Fixture::ProgressInterfaceMultiplexer_Fixture()
@@ -33,7 +31,8 @@ ProgressInterfaceMultiplexer_Fixture::ProgressInterfaceMultiplexer_Fixture()
   stub = ProgressStateInterfaceStub::create();
   BOOST_CHECK(stub);
   BOOST_CHECK_EQUAL(ProgressStateInterface::IDLE, stub->state);
-  ProgressInterface::Ptr parent = ProgressInterfaceFromProgressStateInterfaceForwarder::create(stub);
+  ProgressInterface::Ptr parent =
+      ProgressInterfaceFromProgressStateInterfaceForwarder::create(stub);
 
   ProgressInterfaceMultiplexer::Ptr multiplexer = ProgressInterfaceMultiplexer::create(parent);
   BOOST_CHECK(multiplexer);

@@ -5,11 +5,9 @@
  * SPDX-License-Identifier: LGPL-2.1
  */
 
-#include <scroom/gtk-helpers.hh>
-
 #include <boost/thread.hpp>
-
 #include <scroom/assertions.hh>
+#include <scroom/gtk-helpers.hh>
 
 typedef boost::shared_ptr<boost::function<bool()> > GtkFuncPtr;
 
@@ -21,17 +19,15 @@ namespace Scroom
     {
       class Wrapper
       {
-      public:
+        public:
         boost::function<bool()> f;
 
-      public:
+        public:
         static gpointer create(const boost::function<bool()>& f);
         Wrapper(const boost::function<bool()>& f);
       };
 
-      Wrapper::Wrapper(const boost::function<bool()>& f_)
-      :f(f_)
-      {}
+      Wrapper::Wrapper(const boost::function<bool()>& f_) : f(f_) {}
 
       gpointer Wrapper::create(const boost::function<bool()>& f)
       {
@@ -42,11 +38,11 @@ namespace Scroom
       {
         Wrapper* w = reinterpret_cast<Wrapper*>(data);
         bool result = w->f();
-        if(!result)
+        if (!result)
           delete w;
         return result;
       }
-    }
+    }  // namespace Detail
 
     Wrapper::Wrapper(const boost::function<bool()>& f_)
         : f(&Detail::gtkWrapper), data(Detail::Wrapper::create(f_))
@@ -75,7 +71,7 @@ namespace Scroom
       {
         GdkMutex().unlock();
       }
-    }
+    }  // namespace Detail
 
     void useRecursiveGdkLock()
     {
@@ -91,14 +87,10 @@ namespace Scroom
     {
       gdk_threads_leave();
     }
-  }
-}
+  }  // namespace GtkHelpers
+}  // namespace Scroom
 
 std::ostream& operator<<(std::ostream& os, GdkRectangle const& r)
 {
-  return os << "GdkRectangle("
-            << r.x << ", "
-            << r.y << ", "
-            << r.width << ", "
-            << r.height << ")";
+  return os << "GdkRectangle(" << r.x << ", " << r.y << ", " << r.width << ", " << r.height << ")";
 }

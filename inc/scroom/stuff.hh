@@ -7,10 +7,9 @@
 
 #pragma once
 
-#include <list>
-
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
+#include <list>
 
 namespace Scroom
 {
@@ -20,6 +19,5 @@ namespace Scroom
     typedef boost::shared_ptr<void> Stuff;
     typedef boost::weak_ptr<void> StuffWeak;
     typedef std::list<Stuff> StuffList;
-  }
-}
-
+  }  // namespace Utils
+}  // namespace Scroom

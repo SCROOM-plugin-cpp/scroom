@@ -8,27 +8,24 @@
 #pragma once
 
 #include <boost/shared_ptr.hpp>
-
 #include <scroom/scroominterface.hh>
 
 #define PLUGIN_API_VERSION 4
 
 class PluginInformationInterface
 {
-public:
+  public:
   typedef boost::shared_ptr<PluginInformationInterface> Ptr;
 
-public:
+  public:
   const int pluginApiVersion;
 
-public:
-  PluginInformationInterface()
-    : pluginApiVersion(PLUGIN_API_VERSION)
-  {}
+  public:
+  PluginInformationInterface() : pluginApiVersion(PLUGIN_API_VERSION) {}
 
   virtual ~PluginInformationInterface() {}
 
-  virtual std::string getPluginName()=0;
-  virtual std::string getPluginVersion()=0;
-  virtual void registerCapabilities(ScroomPluginInterface::Ptr host)=0;
+  virtual std::string getPluginName() = 0;
+  virtual std::string getPluginVersion() = 0;
+  virtual void registerCapabilities(ScroomPluginInterface::Ptr host) = 0;
 };

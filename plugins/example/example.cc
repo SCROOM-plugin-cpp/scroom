@@ -15,12 +15,8 @@
 
 ////////////////////////////////////////////////////////////////////////
 
-Example::Example()
-{
-}
-Example::~Example()
-{
-}
+Example::Example() {}
+Example::~Example() {}
 
 Example::Ptr Example::create()
 {
@@ -46,4 +42,3 @@ PresentationInterface::Ptr Example::createNew()
 {
   return PresentationInterface::Ptr(new ExamplePresentation());
 }
-

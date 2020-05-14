@@ -8,23 +8,24 @@
 #pragma once
 
 #include <boost/shared_ptr.hpp>
-
 #include <scroom/plugininformationinterface.hh>
 #include <scroom/presentationinterface.hh>
 #include <scroom/utilities.hh>
 
-class Example : public PluginInformationInterface, public NewPresentationInterface, virtual public  Scroom::Utils::Base
+class Example : public PluginInformationInterface,
+                public NewPresentationInterface,
+                virtual public Scroom::Utils::Base
 {
-public:
+  public:
   typedef boost::shared_ptr<Example> Ptr;
 
-private:
+  private:
   Example();
 
-public:
+  public:
   static Ptr create();
 
-public:
+  public:
   virtual std::string getPluginName();
   virtual std::string getPluginVersion();
   virtual void registerCapabilities(ScroomPluginInterface::Ptr host);
@@ -33,4 +34,3 @@ public:
 
   virtual ~Example();
 };
-

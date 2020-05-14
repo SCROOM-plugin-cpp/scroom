@@ -8,17 +8,16 @@
 #pragma once
 
 #include <boost/shared_ptr.hpp>
-
 #include <scroom/colormappable.hh>
 #include <scroom/point.hh>
 #include <scroom/presentationinterface.hh>
 
 class TransformationData
 {
-private:
+  private:
   Scroom::Utils::Point<double> aspectRatio;
-  
-public:
+
+  public:
   typedef boost::shared_ptr<TransformationData> Ptr;
 
   static Ptr create();
@@ -26,25 +25,27 @@ public:
   void setAspectRatio(double x, double y);
   Scroom::Utils::Point<double> getAspectRatio() const;
 
-private:
+  private:
   TransformationData();
 };
 
 class TransformPresentation : public PresentationInterface, public Colormappable
 {
-public:
+  public:
   typedef boost::shared_ptr<TransformPresentation> Ptr;
 
-private:
+  private:
   TransformationData::Ptr transformationData;
   PresentationInterface::Ptr presentation;
   Colormappable::Ptr colormappable;
 
-private:
-  TransformPresentation(PresentationInterface::Ptr const& presentation, TransformationData::Ptr const& transformationData);
+  private:
+  TransformPresentation(PresentationInterface::Ptr const& presentation,
+                        TransformationData::Ptr const& transformationData);
 
-public:
-  static Ptr create(PresentationInterface::Ptr const& presentation, TransformationData::Ptr const& transformationData);
+  public:
+  static Ptr create(PresentationInterface::Ptr const& presentation,
+                    TransformationData::Ptr const& transformationData);
 
   // Viewable
   virtual void open(ViewInterface::WeakPtr vi);
@@ -52,7 +53,8 @@ public:
 
   // PresentationInterface
   virtual Scroom::Utils::Rectangle<double> getRect();
-  virtual void redraw(ViewInterface::Ptr const& vi, cairo_t* cr, Scroom::Utils::Rectangle<double> presentationArea, int zoom);
+  virtual void redraw(ViewInterface::Ptr const& vi, cairo_t* cr,
+                      Scroom::Utils::Rectangle<double> presentationArea, int zoom);
   virtual bool getProperty(const std::string& name, std::string& value);
   virtual bool isPropertyDefined(const std::string& name);
   virtual std::string getTitle();
@@ -66,5 +68,4 @@ public:
   virtual void setTransparentBackground();
   virtual void disableTransparentBackground();
   virtual bool getTransparentBackground();
-  
 };

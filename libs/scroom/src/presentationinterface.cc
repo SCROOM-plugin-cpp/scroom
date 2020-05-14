@@ -13,7 +13,7 @@ void PresentationBase::open(ViewInterface::WeakPtr vi)
 
   std::list<Viewable::Ptr> const observers = getObservers();
 
-  for(Viewable::Ptr const& observer: observers)
+  for (Viewable::Ptr const& observer : observers)
   {
     observer->open(vi);
   }
@@ -23,7 +23,7 @@ void PresentationBase::close(ViewInterface::WeakPtr vi)
 {
   std::list<Viewable::Ptr> const observers = getObservers();
 
-  for(Viewable::Ptr const& observer: observers)
+  for (Viewable::Ptr const& observer : observers)
   {
     observer->close(vi);
   }
@@ -31,11 +31,12 @@ void PresentationBase::close(ViewInterface::WeakPtr vi)
   viewRemoved(vi);
 }
 
-void PresentationBase::observerAdded(Viewable::Ptr const& viewable, Scroom::Bookkeeping::Token const&)
+void PresentationBase::observerAdded(Viewable::Ptr const& viewable,
+                                     Scroom::Bookkeeping::Token const&)
 {
   std::set<ViewInterface::WeakPtr> views = getViews();
 
-  for(ViewInterface::WeakPtr const& view: views)
+  for (ViewInterface::WeakPtr const& view : views)
   {
     viewable->open(view);
   }

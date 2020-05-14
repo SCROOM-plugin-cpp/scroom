@@ -9,11 +9,8 @@
 
 class WorkInterface
 {
-public:
+  public:
+  virtual ~WorkInterface() {}
 
-  virtual ~WorkInterface()
-  {
-  }
-
-  virtual bool doWork()=0;
+  virtual bool doWork() = 0;
 };

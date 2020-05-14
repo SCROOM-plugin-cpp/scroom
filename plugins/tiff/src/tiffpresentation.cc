@@ -7,17 +7,15 @@
 
 #include "tiffpresentation.hh"
 
-#include <tiffio.h>
 #include <string.h>
+#include <tiffio.h>
 
+#include <iostream>
 #include <scroom/cairo-helpers.hh>
 #include <scroom/layeroperations.hh>
 #include <scroom/unused.hh>
 
-#include <iostream>
-
-TiffPresentation::TiffPresentation()
-  : tif(NULL), height(0), width(0), bps(0), spp(0)
+TiffPresentation::TiffPresentation() : tif(NULL), height(0), width(0), bps(0), spp(0)
 {
   colormapHelper = ColormapHelper::create(256);
 }
@@ -45,9 +43,9 @@ void TiffPresentation::destroy()
   tbi.reset();
 }
 
-#define TIFFGetFieldChecked(file, field, ...) \
-	if(1!=TIFFGetField(file, field, ##__VA_ARGS__)) \
-	  throw std::invalid_argument("Field not present in tiff file: " #field);
+#define TIFFGetFieldChecked(file, field, ...)        \
+  if (1 != TIFFGetField(file, field, ##__VA_ARGS__)) \
+    throw std::invalid_argument("Field not present in tiff file: " #field);
 
 bool TiffPresentation::load(const std::string& fileName_)
 {
@@ -64,7 +62,7 @@ bool TiffPresentation::load(const std::string& fileName_)
 
     uint16 spp_ = 0;
     if (1 != TIFFGetField(tif, TIFFTAG_SAMPLESPERPIXEL, &spp_))
-      spp_ = 1; // Default value, according to tiff spec
+      spp_ = 1;  // Default value, according to tiff spec
     if (spp_ != 1 && spp_ != 3)
     {
       printf("PANIC: Samples per pixel is not 1 or 3, but %d. Giving up\n", spp_);
@@ -76,18 +74,18 @@ bool TiffPresentation::load(const std::string& fileName_)
     TIFFGetFieldChecked(tif, TIFFTAG_IMAGELENGTH, &height);
 
     uint16 bps_ = 0;
-    if( 1 != TIFFGetField(tif, TIFFTAG_BITSPERSAMPLE, &bps_))
+    if (1 != TIFFGetField(tif, TIFFTAG_BITSPERSAMPLE, &bps_))
     {
-      if(spp==1)
+      if (spp == 1)
         bps_ = 1;
       else
         bps_ = 8;
     }
     else
     {
-      if(spp==3)
+      if (spp == 3)
       {
-        if(bps_!=8)
+        if (bps_ != 8)
         {
           printf("PANIC: Bits per sample is not 8, but %d. Giving up\n", bps_);
           return false;
@@ -109,8 +107,8 @@ bool TiffPresentation::load(const std::string& fileName_)
 
       for (size_t i = 0; i < count; i++)
       {
-        originalColormap->colors[i] = Color(1.0 * r[i] / 0xFFFF,
-            1.0 * g[i] / 0xFFFF, 1.0 * b[i] / 0xFFFF);
+        originalColormap->colors[i] =
+            Color(1.0 * r[i] / 0xFFFF, 1.0 * g[i] / 0xFFFF, 1.0 * b[i] / 0xFFFF);
       }
 
       colormapHelper = ColormapHelper::create(originalColormap);
@@ -166,21 +164,22 @@ bool TiffPresentation::load(const std::string& fileName_)
     float resolutionY;
     uint16 resolutionUnit;
 
-    if(TIFFGetField(tif, TIFFTAG_XRESOLUTION, &resolutionX) &&
-       TIFFGetField(tif, TIFFTAG_YRESOLUTION, &resolutionY) &&
-       TIFFGetField(tif, TIFFTAG_RESOLUTIONUNIT, &resolutionUnit) &&
-       resolutionUnit == RESUNIT_NONE)
+    if (TIFFGetField(tif, TIFFTAG_XRESOLUTION, &resolutionX) &&
+        TIFFGetField(tif, TIFFTAG_YRESOLUTION, &resolutionY) &&
+        TIFFGetField(tif, TIFFTAG_RESOLUTIONUNIT, &resolutionUnit) &&
+        resolutionUnit == RESUNIT_NONE)
     {
       transformationData = TransformationData::create();
-      transformationData->setAspectRatio(1/resolutionX, 1/resolutionY);
+      transformationData->setAspectRatio(1 / resolutionX, 1 / resolutionY);
     }
     else
     {
       resolutionX = 1;
       resolutionY = 1;
     }
-    
-    std::cout << "This bitmap has size " << width << "*" << height << ", aspect ratio " << 1 / resolutionX << "*" << 1 / resolutionY << std::endl;
+
+    std::cout << "This bitmap has size " << width << "*" << height << ", aspect ratio "
+              << 1 / resolutionX << "*" << 1 / resolutionY << std::endl;
     LayerSpec ls;
 
     if (spp == 3)
@@ -189,24 +188,18 @@ bool TiffPresentation::load(const std::string& fileName_)
     }
     else if (bps == 2 || bps == 4 || photometric == PHOTOMETRIC_PALETTE)
     {
-      ls.push_back(
-          Operations::create(colormapHelper, bps));
-      ls.push_back(
-          OperationsColormapped::create(colormapHelper,
-              bps));
+      ls.push_back(Operations::create(colormapHelper, bps));
+      ls.push_back(OperationsColormapped::create(colormapHelper, bps));
       properties[COLORMAPPABLE_PROPERTY_NAME] = "";
     }
     else if (bps == 1)
     {
-      ls.push_back(
-          Operations1bpp::create(colormapHelper));
-      ls.push_back(
-          Operations8bpp::create(colormapHelper));
+      ls.push_back(Operations1bpp::create(colormapHelper));
+      ls.push_back(Operations8bpp::create(colormapHelper));
     }
     else if (bps == 8)
     {
-      ls.push_back(
-          Operations8bpp::create(colormapHelper));
+      ls.push_back(Operations8bpp::create(colormapHelper));
     }
     else
     {
@@ -217,7 +210,8 @@ bool TiffPresentation::load(const std::string& fileName_)
     tbi = createTiledBitmap(width, height, ls);
     tbi->setSource(shared_from_this<SourcePresentation>());
     return true;
-  } catch (const std::exception& ex)
+  }
+  catch (const std::exception& ex)
   {
     printf("PANIC: %s\n", ex.what());
     return false;
@@ -274,7 +268,7 @@ std::set<ViewInterface::WeakPtr> TiffPresentation::getViews()
 }
 
 void TiffPresentation::redraw(ViewInterface::Ptr const& vi, cairo_t* cr,
-    Scroom::Utils::Rectangle<double> presentationArea, int zoom)
+                              Scroom::Utils::Rectangle<double> presentationArea, int zoom)
 {
   drawOutOfBoundsWithoutBackground(cr, presentationArea, getRect(), pixelSizeFromZoom(zoom));
 
@@ -314,8 +308,8 @@ std::string TiffPresentation::getTitle()
 // SourcePresentation
 ////////////////////////////////////////////////////////////////////////
 
-void TiffPresentation::fillTiles(int startLine, int lineCount, int tileWidth,
-    int firstTile, std::vector<Tile::Ptr>& tiles)
+void TiffPresentation::fillTiles(int startLine, int lineCount, int tileWidth, int firstTile,
+                                 std::vector<Tile::Ptr>& tiles)
 {
   // printf("Filling lines %d to %d, tile %d to %d (tileWidth = %d)\n",
   //        startLine, startLine+lineCount,
@@ -325,7 +319,7 @@ void TiffPresentation::fillTiles(int startLine, int lineCount, int tileWidth,
   const uint32 startLine_ = static_cast<uint32>(startLine);
   const size_t firstTile_ = static_cast<size_t>(firstTile);
   const size_t scanLineSize = static_cast<size_t>(TIFFScanlineSize(tif));
-  const size_t tileStride = static_cast<size_t>(tileWidth*spp*bps/8);
+  const size_t tileStride = static_cast<size_t>(tileWidth * spp * bps / 8);
   byte* row = new byte[scanLineSize];
 
   const size_t tileCount = tiles.size();
@@ -341,14 +335,11 @@ void TiffPresentation::fillTiles(int startLine, int lineCount, int tileWidth,
 
     for (size_t tile = 0; tile < tileCount - 1; tile++)
     {
-      memcpy(dataPtr[tile],
-             row + (firstTile_ + tile) * tileStride,
-             tileStride);
+      memcpy(dataPtr[tile], row + (firstTile_ + tile) * tileStride, tileStride);
       dataPtr[tile] += tileStride;
     }
-    memcpy(dataPtr[tileCount - 1],
-        row + (firstTile_ + tileCount - 1) * tileStride,
-        scanLineSize - (firstTile_ + tileCount - 1) * tileStride);
+    memcpy(dataPtr[tileCount - 1], row + (firstTile_ + tileCount - 1) * tileStride,
+           scanLineSize - (firstTile_ + tileCount - 1) * tileStride);
     dataPtr[tileCount - 1] += tileStride;
   }
 
@@ -412,10 +403,10 @@ bool TiffPresentation::getTransparentBackground()
 
 void TiffPresentation::clearCaches()
 {
-  for(const Views::value_type& p: views)
+  for (const Views::value_type& p : views)
   {
     ViewInterface::Ptr v = p.lock();
-    if(v)
+    if (v)
     {
       if (tbi)
       {
@@ -430,9 +421,7 @@ void TiffPresentation::clearCaches()
 // TiffPresentationWrapper
 ////////////////////////////////////////////////////////////////////////
 
-TiffPresentationWrapper::TiffPresentationWrapper()
-  : presentation(TiffPresentation::create())
-{}
+TiffPresentationWrapper::TiffPresentationWrapper() : presentation(TiffPresentation::create()) {}
 
 TiffPresentationWrapper::Ptr TiffPresentationWrapper::create()
 {

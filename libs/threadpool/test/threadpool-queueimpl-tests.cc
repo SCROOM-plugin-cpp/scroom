@@ -8,17 +8,16 @@
 #include <scroom/threadpool.hh>
 
 #ifdef HAVE_CONFIG_H
-#  include <config.h>
+#include <config.h>
 #endif
 
-#include <iostream>
-
-#include <boost/test/unit_test.hpp>
-#include <boost/thread.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/shared_ptr.hpp>
-
+#include <boost/test/unit_test.hpp>
+#include <boost/thread.hpp>
+#include <iostream>
 #include <scroom/semaphore.hh>
+
 #include "helpers.hh"
 
 using namespace boost::posix_time;

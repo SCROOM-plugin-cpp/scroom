@@ -7,12 +7,11 @@
 
 #pragma once
 
-#include <list>
+#include <stdint.h>
 
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
-
-#include <stdint.h>
+#include <list>
 
 namespace Scroom
 {
@@ -22,17 +21,17 @@ namespace Scroom
     {
       typedef boost::shared_ptr<uint8_t> Ptr;
       typedef boost::weak_ptr<uint8_t> WeakPtr;
-    }
+    }  // namespace RawPageData
 
     class BlockInterface;
 
     class Page
     {
-    private:
+      private:
       boost::shared_ptr<BlockInterface> bi;
       size_t id;
 
-    public:
+      public:
       Page(boost::shared_ptr<BlockInterface> bi, size_t id);
 
       RawPageData::Ptr get();
@@ -42,28 +41,28 @@ namespace Scroom
 
     class BlockInterface
     {
-    public:
+      public:
       typedef boost::shared_ptr<BlockInterface> Ptr;
       typedef boost::weak_ptr<BlockInterface> WeakPtr;
 
-    protected:
-      virtual RawPageData::Ptr get(size_t id)=0;
+      protected:
+      virtual RawPageData::Ptr get(size_t id) = 0;
 
-    public:
+      public:
       virtual ~BlockInterface() {}
 
-      virtual PageList getPages()=0;
+      virtual PageList getPages() = 0;
 
       friend class Page;
     };
 
     class BlockFactoryInterface
     {
-    public:
+      public:
       typedef boost::shared_ptr<BlockFactoryInterface> Ptr;
 
       virtual ~BlockFactoryInterface() {}
-      virtual BlockInterface::Ptr create(size_t count, size_t size)=0;
+      virtual BlockInterface::Ptr create(size_t count, size_t size) = 0;
     };
 
     BlockFactoryInterface::Ptr getBlockFactoryInterface();
@@ -71,12 +70,11 @@ namespace Scroom
     ////////////////////////////////////////////////////////////////////////
     // implementation
 
-    inline Page::Page(BlockInterface::Ptr bi_, size_t id_)
-      : bi(bi_), id(id_)
-    {}
+    inline Page::Page(BlockInterface::Ptr bi_, size_t id_) : bi(bi_), id(id_) {}
 
     inline RawPageData::Ptr Page::get()
-    { return bi->get(id); }
-  }
-}
-
+    {
+      return bi->get(id);
+    }
+  }  // namespace MemoryBlocks
+}  // namespace Scroom

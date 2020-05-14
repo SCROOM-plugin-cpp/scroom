@@ -8,16 +8,14 @@
 #include <scroom/async-deleter.hh>
 
 #ifdef HAVE_CONFIG_H
-#  include <config.h>
+#include <config.h>
 #endif
 
-#include <iostream>
-
-#include <boost/test/unit_test.hpp>
-#include <boost/thread.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/shared_ptr.hpp>
-
+#include <boost/test/unit_test.hpp>
+#include <boost/thread.hpp>
+#include <iostream>
 #include <scroom/semaphore.hh>
 
 #include "helpers.hh"
@@ -33,13 +31,17 @@ static const millisec long_timeout(2000);
 
 class A
 {
-private:
+  private:
   Semaphore* s1;
   Semaphore* s2;
 
-public:
+  public:
   A(Semaphore* s1_, Semaphore* s2_) : s1(s1_), s2(s2_) {}
-  ~A() { s1->P(); s2->V(); }
+  ~A()
+  {
+    s1->P();
+    s2->V();
+  }
 };
 
 //////////////////////////////////////////////////////////////
@@ -55,7 +57,7 @@ BOOST_AUTO_TEST_CASE(deleter_deletes_asynchronously)
 
   Semaphore barrier2;
   Semaphore signal;
-  CpuBound()->schedule(pass(&barrier2)+destroy(a)+clear(&signal));
+  CpuBound()->schedule(pass(&barrier2) + destroy(a) + clear(&signal));
   a.reset();
   barrier2.V();
   BOOST_CHECK(signal.P(long_timeout));

@@ -8,19 +8,14 @@
 #include "tiff.hh"
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+#include <config.h>
 #endif
 
 #include "scroom/transformpresentation.hh"
-
 #include "tiffpresentation.hh"
 
-Tiff::Tiff()
-{
-}
-Tiff::~Tiff()
-{
-}
+Tiff::Tiff() {}
+Tiff::~Tiff() {}
 
 Tiff::Ptr Tiff::create()
 {
@@ -65,15 +60,15 @@ std::list<GtkFileFilter*> Tiff::getFilters()
 PresentationInterface::Ptr Tiff::open(const std::string& fileName)
 {
   TiffPresentationWrapper::Ptr wrapper = TiffPresentationWrapper::create();
-  if(!wrapper->load(fileName))
+  if (!wrapper->load(fileName))
   {
     wrapper.reset();
   }
   PresentationInterface::Ptr result = wrapper;
-  if(result)
+  if (result)
   {
     TransformationData::Ptr data = wrapper->getTransformationData();
-    if(data)
+    if (data)
     {
       result = TransformPresentation::create(result, data);
     }

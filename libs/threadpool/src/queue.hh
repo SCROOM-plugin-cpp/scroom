@@ -25,7 +25,7 @@ namespace Scroom
        */
       class QueueImpl
       {
-      public:
+        public:
         typedef boost::shared_ptr<QueueImpl> Ptr;
 
         static Ptr create();
@@ -51,13 +51,13 @@ namespace Scroom
         /** Return the number of jobs currently running. Used for testing */
         int getCount();
 
-      private:
-        boost::mutex mut;                 /**< Guard internal data */
-        boost::condition_variable cond;   /**< Gets signaled when a job completes */
-        unsigned int count;               /**< Number of jobs currently running */
-        bool isDeleted;                   /**< @c true if the last reference to ThreadPool::Queue goes away */
+        private:
+        boost::mutex mut;               /**< Guard internal data */
+        boost::condition_variable cond; /**< Gets signaled when a job completes */
+        unsigned int count;             /**< Number of jobs currently running */
+        bool isDeleted; /**< @c true if the last reference to ThreadPool::Queue goes away */
 
-      private:
+        private:
         QueueImpl();
       };
 
@@ -66,18 +66,19 @@ namespace Scroom
        */
       class QueueLock
       {
-        QueueImpl::Ptr q;  /**< Reference to our QueueImpl */
-        bool isValid;      /**< @c true if there are still references to the ThreadPool::Queue associated with @c q */
+        QueueImpl::Ptr q; /**< Reference to our QueueImpl */
+        bool isValid; /**< @c true if there are still references to the ThreadPool::Queue associated
+                         with @c q */
 
-      public:
+        public:
         QueueLock(QueueImpl::Ptr queue);
         ~QueueLock();
 
-        /** Return @c true if there are still references to the ThreadPool::Queue associated with @c q */
+        /** Return @c true if there are still references to the ThreadPool::Queue associated with @c
+         * q */
         bool queueExists();
       };
 
-    }
-  }
-}
-
+    }  // namespace ThreadPool
+  }    // namespace Detail
+}  // namespace Scroom

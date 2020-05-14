@@ -9,16 +9,14 @@
 
 ////////////////////////////////////////////////////////////////////////
 
-int drawingAreaWidth=0;
-int drawingAreaHeight=0;
+int drawingAreaWidth = 0;
+int drawingAreaHeight = 0;
 
 TestData::Ptr testData;
 
 ////////////////////////////////////////////////////////////////////////
 
-DummyColormapProvider::DummyColormapProvider(Colormap::Ptr colormap_)
-  : colormap(colormap_)
-{}
+DummyColormapProvider::DummyColormapProvider(Colormap::Ptr colormap_) : colormap(colormap_) {}
 
 DummyColormapProvider::Ptr DummyColormapProvider::create(Colormap::Ptr colormap)
 {
@@ -34,7 +32,13 @@ Colormap::Ptr DummyColormapProvider::getColormap()
 
 TestData::TestData(DummyColormapProvider::Ptr colormapProvider_, const LayerSpec& ls_,
                    TiledBitmapInterface::Ptr tbi_, SourcePresentation::Ptr sp_, int zoom_)
-  : pi(ProgressInterfaceStub::create()), vi(ViewInterfaceStub::create(pi)), colormapProvider(colormapProvider_), ls(ls_), tbi(tbi_), sp(sp_), zoom(zoom_)
+    : pi(ProgressInterfaceStub::create()),
+      vi(ViewInterfaceStub::create(pi)),
+      colormapProvider(colormapProvider_),
+      ls(ls_),
+      tbi(tbi_),
+      sp(sp_),
+      zoom(zoom_)
 {
   tbi_->open(vi);
 }
@@ -62,24 +66,24 @@ TestData::~TestData()
 
 void TestData::redraw(cairo_t* cr)
 {
-  if(tbi)
+  if (tbi)
   {
     GdkRectangle rect;
-    rect.x=0;
-    rect.y=0;
-    if(zoom>=0)
+    rect.x = 0;
+    rect.y = 0;
+    if (zoom >= 0)
     {
       // Zooming in. Smallest step is 1 presentation pixel, which is more than one window-pixel
-      int pixelSize = 1<<zoom;
-      rect.width = (drawingAreaWidth+pixelSize-1)/pixelSize;
-      rect.height = (drawingAreaHeight+pixelSize-1)/pixelSize;
+      int pixelSize = 1 << zoom;
+      rect.width = (drawingAreaWidth + pixelSize - 1) / pixelSize;
+      rect.height = (drawingAreaHeight + pixelSize - 1) / pixelSize;
     }
     else
     {
       // Zooming out. Smallest step is 1 window-pixel, which is more than one presentation-pixel
-      int pixelSize = 1<<(-zoom);
-      rect.width = drawingAreaWidth*pixelSize;
-      rect.height = drawingAreaHeight*pixelSize;
+      int pixelSize = 1 << (-zoom);
+      rect.width = drawingAreaWidth * pixelSize;
+      rect.height = drawingAreaHeight * pixelSize;
     }
 
     tbi->redraw(vi, cr, rect, zoom);
@@ -88,23 +92,20 @@ void TestData::redraw(cairo_t* cr)
 
 ////////////////////////////////////////////////////////////////////////
 
-Sleep::Sleep(unsigned int secs_)
-  : secs(secs_), started(false)
-{
-}
+Sleep::Sleep(unsigned int secs_) : secs(secs_), started(false) {}
 
 bool Sleep::operator()()
 {
-  if(!started && 0==clock_gettime(CLOCK_REALTIME, &t))
+  if (!started && 0 == clock_gettime(CLOCK_REALTIME, &t))
   {
     started = true;
     return true;
   }
 
   struct timespec now;
-  if(0==clock_gettime(CLOCK_REALTIME, &now))
+  if (0 == clock_gettime(CLOCK_REALTIME, &now))
   {
-    if(now.tv_sec > t.tv_sec + secs)
+    if (now.tv_sec > t.tv_sec + secs)
       return false;
   }
 
@@ -129,7 +130,7 @@ bool reset()
 
 bool wait()
 {
-  if(testData)
+  if (testData)
     return testData->wait();
   else
     return false;

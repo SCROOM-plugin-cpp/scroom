@@ -7,21 +7,21 @@
 
 #pragma once
 
-#include <scroom/viewinterface.hh>
 #include <scroom/tiledbitmapinterface.hh>
+#include <scroom/viewinterface.hh>
 
 class ProgressInterfaceStub : public ProgressInterface
 {
-public:
+  public:
   typedef boost::shared_ptr<ProgressInterfaceStub> Ptr;
 
-private:
+  private:
   bool finished;
 
-private:
+  private:
   ProgressInterfaceStub();
 
-public:
+  public:
   static Ptr create();
 
   bool isFinished();
@@ -35,47 +35,53 @@ public:
 
 class ViewInterfaceStub : public ViewInterface
 {
-public:
+  public:
   typedef boost::shared_ptr<ViewInterfaceStub> Ptr;
-private:
+
+  private:
   ProgressInterface::Ptr pi;
-private:
+
+  private:
   ViewInterfaceStub(ProgressInterface::Ptr pi);
-public:
+
+  public:
   static Ptr create(ProgressInterface::Ptr pi);
-  virtual void invalidate()                           {}
+  virtual void invalidate() {}
   virtual ProgressInterface::Ptr getProgressInterface();
   virtual void addSideWidget(std::string, GtkWidget*) {}
-  virtual void removeSideWidget(GtkWidget*)           {}
-  virtual void addToToolbar(GtkToolItem*)             {}
-  virtual void removeFromToolbar(GtkToolItem*)        {}
+  virtual void removeSideWidget(GtkWidget*) {}
+  virtual void addToToolbar(GtkToolItem*) {}
+  virtual void removeFromToolbar(GtkToolItem*) {}
 };
 
 class Source1Bpp : public SourcePresentation
 {
-public:
-  virtual void fillTiles(int startLine, int lineCount, int tileWidth, int firstTile, std::vector<Tile::Ptr>& tiles);
-  virtual void done() {};
+  public:
+  virtual void fillTiles(int startLine, int lineCount, int tileWidth, int firstTile,
+                         std::vector<Tile::Ptr>& tiles);
+  virtual void done(){};
 };
 
 class Source2Bpp : public SourcePresentation
 {
-public:
-  virtual void fillTiles(int startLine, int lineCount, int tileWidth, int firstTile, std::vector<Tile::Ptr>& tiles);
-  virtual void done() {};
+  public:
+  virtual void fillTiles(int startLine, int lineCount, int tileWidth, int firstTile,
+                         std::vector<Tile::Ptr>& tiles);
+  virtual void done(){};
 };
 
 class Source4Bpp : public SourcePresentation
 {
-public:
-  virtual void fillTiles(int startLine, int lineCount, int tileWidth, int firstTile, std::vector<Tile::Ptr>& tiles);
-  virtual void done() {};
+  public:
+  virtual void fillTiles(int startLine, int lineCount, int tileWidth, int firstTile,
+                         std::vector<Tile::Ptr>& tiles);
+  virtual void done(){};
 };
 
 class Source8Bpp : public SourcePresentation
 {
-public:
-  virtual void fillTiles(int startLine, int lineCount, int tileWidth, int firstTile, std::vector<Tile::Ptr>& tiles);
-  virtual void done() {};
+  public:
+  virtual void fillTiles(int startLine, int lineCount, int tileWidth, int firstTile,
+                         std::vector<Tile::Ptr>& tiles);
+  virtual void done(){};
 };
-

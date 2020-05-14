@@ -8,27 +8,27 @@
 #pragma once
 
 #include <boost/shared_ptr.hpp>
-
 #include <scroom/plugininformationinterface.hh>
 #include <scroom/presentationinterface.hh>
 #include <scroom/utilities.hh>
 
-class TransparentOverlay : public PluginInformationInterface, public NewAggregateInterface, virtual public  Scroom::Utils::Base
+class TransparentOverlay : public PluginInformationInterface,
+                           public NewAggregateInterface,
+                           virtual public Scroom::Utils::Base
 {
-public:
+  public:
   typedef boost::shared_ptr<TransparentOverlay> Ptr;
 
-private:
-  TransparentOverlay() {};
+  private:
+  TransparentOverlay(){};
 
-public:
+  public:
   static Ptr create();
 
-public:
+  public:
   virtual std::string getPluginName();
   virtual std::string getPluginVersion();
   virtual void registerCapabilities(ScroomPluginInterface::Ptr host);
 
   virtual Aggregate::Ptr createNew();
 };
-

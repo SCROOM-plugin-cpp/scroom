@@ -7,14 +7,13 @@
 
 #include "transparentoverlayviewinfo.hh"
 
-#include <sstream>
-
-#include <scroom/unused.hh>
 #include <scroom/bitmap-helpers.hh>
 #include <scroom/colormappable.hh>
+#include <scroom/unused.hh>
+#include <sstream>
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+#include <config.h>
 #endif
 
 ////////////////////////////////////////////////////////////////////////
@@ -24,7 +23,7 @@ namespace
   void setToggleButtonColor(GtkWidget* w, PresentationInterface::Ptr const& p)
   {
     Colormappable::Ptr c = boost::dynamic_pointer_cast<Colormappable>(p);
-    if(c && p->isPropertyDefined(MONOCHROME_COLORMAPPABLE_PROPERTY_NAME))
+    if (c && p->isPropertyDefined(MONOCHROME_COLORMAPPABLE_PROPERTY_NAME))
     {
       Color col = c->getMonochromeColor();
       GdkColor bgCol = col.getGdkColor();
@@ -36,15 +35,16 @@ namespace
       gtk_widget_modify_fg(label, GTK_STATE_ACTIVE, &fgCol);
     }
   }
-}
+}  // namespace
 
 ////////////////////////////////////////////////////////////////////////
 // ChildView
 ////////////////////////////////////////////////////////////////////////
 
 ChildView::ChildView(TransparentOverlayViewInfo::Ptr const& parent_)
-  : parent(parent_), progressInterface(parent->getProgressInterface())
-{}
+    : parent(parent_), progressInterface(parent->getProgressInterface())
+{
+}
 
 ChildView::Ptr ChildView::create(TransparentOverlayViewInfo::Ptr const& parent)
 {
@@ -61,27 +61,26 @@ ProgressInterface::Ptr ChildView::getProgressInterface()
   return progressInterface;
 }
 
-void ChildView::addSideWidget(std::string, GtkWidget*)
-{}
+void ChildView::addSideWidget(std::string, GtkWidget*) {}
 
-void ChildView::removeSideWidget(GtkWidget*)
-{}
+void ChildView::removeSideWidget(GtkWidget*) {}
 
-void ChildView::addToToolbar(GtkToolItem*)
-{}
+void ChildView::addToToolbar(GtkToolItem*) {}
 
-void ChildView::removeFromToolbar(GtkToolItem*)
-{}
+void ChildView::removeFromToolbar(GtkToolItem*) {}
 
 ////////////////////////////////////////////////////////////////////////
 // TransparentOverlayViewInfo
 ////////////////////////////////////////////////////////////////////////
 
-TransparentOverlayViewInfo::TransparentOverlayViewInfo(const ViewInterface::WeakPtr& vi, SizeDeterminer::Ptr const& sizeDeterminer_)
-  : parentView(vi),
-    progressInterfaceMultiplexer(Scroom::Utils::ProgressInterfaceMultiplexer::create(parentView->getProgressInterface())),
-    sizeDeterminer(sizeDeterminer_)
-{}
+TransparentOverlayViewInfo::TransparentOverlayViewInfo(const ViewInterface::WeakPtr& vi,
+                                                       SizeDeterminer::Ptr const& sizeDeterminer_)
+    : parentView(vi),
+      progressInterfaceMultiplexer(
+          Scroom::Utils::ProgressInterfaceMultiplexer::create(parentView->getProgressInterface())),
+      sizeDeterminer(sizeDeterminer_)
+{
+}
 
 static void on_toggled(GtkToggleButton* button, gpointer data)
 {
@@ -90,7 +89,7 @@ static void on_toggled(GtkToggleButton* button, gpointer data)
 
 void TransparentOverlayViewInfo::createToggleToolButton(PresentationInterface::Ptr const& p)
 {
-  size_t n = buttons.size()+1;
+  size_t n = buttons.size() + 1;
   std::stringstream s;
   s << "_" << n;
 
@@ -108,15 +107,15 @@ void TransparentOverlayViewInfo::createToggleToolButton(PresentationInterface::P
   parentView->addToToolbar(button);
 }
 
-TransparentOverlayViewInfo::Ptr TransparentOverlayViewInfo::create(const ViewInterface::WeakPtr& vi, SizeDeterminer::Ptr const& sizeDeterminer)
+TransparentOverlayViewInfo::Ptr TransparentOverlayViewInfo::create(
+    const ViewInterface::WeakPtr& vi, SizeDeterminer::Ptr const& sizeDeterminer)
 {
   return Ptr(new TransparentOverlayViewInfo(vi, sizeDeterminer));
 }
 
 void TransparentOverlayViewInfo::addChildren(const std::list<PresentationInterface::Ptr>& children_)
 {
-  for(PresentationInterface::Ptr const& child: children_)
-    addChild(child);
+  for (PresentationInterface::Ptr const& child : children_) addChild(child);
 }
 
 void TransparentOverlayViewInfo::addChild(const PresentationInterface::Ptr& child)
@@ -131,7 +130,7 @@ void TransparentOverlayViewInfo::addChild(const PresentationInterface::Ptr& chil
 
 void TransparentOverlayViewInfo::close()
 {
-  for(ChildMap::value_type const& v: childViews)
+  for (ChildMap::value_type const& v : childViews)
   {
     sizeDeterminer->close(v.first, v.second);
     v.first->close(v.second);
@@ -142,46 +141,48 @@ void TransparentOverlayViewInfo::close()
   buttons.clear();
 }
 
-void TransparentOverlayViewInfo::redraw(cairo_t* cr, Scroom::Utils::Rectangle<double> const& pa, int zoom)
+void TransparentOverlayViewInfo::redraw(cairo_t* cr, Scroom::Utils::Rectangle<double> const& pa,
+                                        int zoom)
 {
   using Scroom::Bitmap::BitmapSurface;
 
   GdkRectangle presentationArea = pa.toGdkRectangle();
 
   GdkRectangle viewArea;
-  viewArea.x=0;
-  viewArea.y=0;
+  viewArea.x = 0;
+  viewArea.y = 0;
 
-  if(zoom > 0)
+  if (zoom > 0)
   {
-    const int pixelSize = 1<<zoom;
-    viewArea.width = presentationArea.width*pixelSize;
-    viewArea.height = presentationArea.height*pixelSize;
+    const int pixelSize = 1 << zoom;
+    viewArea.width = presentationArea.width * pixelSize;
+    viewArea.height = presentationArea.height * pixelSize;
   }
   else
   {
-    const int pixelSize = 1<<-zoom;
-    viewArea.width = presentationArea.width/pixelSize;
-    viewArea.height = presentationArea.height/pixelSize;
+    const int pixelSize = 1 << -zoom;
+    viewArea.width = presentationArea.width / pixelSize;
+    viewArea.height = presentationArea.height / pixelSize;
   }
 
-  BitmapSurface::Ptr s = BitmapSurface::create(viewArea.width, viewArea.height, CAIRO_FORMAT_ARGB32);
+  BitmapSurface::Ptr s =
+      BitmapSurface::create(viewArea.width, viewArea.height, CAIRO_FORMAT_ARGB32);
   cairo_surface_t* surface = s->get();
   cairo_t* cr_sub = cairo_create(surface);
 
-  int count=0;
+  int count = 0;
 
-  for(size_t i=0; i<children.size(); i++)
+  for (size_t i = 0; i < children.size(); i++)
   {
-    if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(buttons[i])))
+    if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(buttons[i])))
     {
       PresentationInterface::Ptr& p = children[i];
 
       Colormappable::Ptr c = boost::dynamic_pointer_cast<Colormappable>(p);
       bool hasTransparentBackground = false;
-      if(c && p->isPropertyDefined(TRANSPARENT_BACKGROUND_PROPERTY_NAME))
+      if (c && p->isPropertyDefined(TRANSPARENT_BACKGROUND_PROPERTY_NAME))
       {
-        if(count==0)
+        if (count == 0)
           c->disableTransparentBackground();
         else
         {
@@ -201,12 +202,12 @@ void TransparentOverlayViewInfo::redraw(cairo_t* cr, Scroom::Utils::Rectangle<do
 
       cairo_set_source_surface(cr, surface, 0, 0);
 
-      if(hasTransparentBackground)
+      if (hasTransparentBackground)
         cairo_paint(cr);
       else
-        cairo_paint_with_alpha(cr, 1.0/(count+1));
+        cairo_paint_with_alpha(cr, 1.0 / (count + 1));
 
-      if(!hasTransparentBackground)
+      if (!hasTransparentBackground)
         count++;
     }
   }

@@ -7,13 +7,12 @@
 
 #include "colormaps.hh"
 
-#include <sys/types.h>
 #include <dirent.h>
 #include <errno.h>
-#include <string.h>
-#include <stdio.h>
-
 #include <gio/gio.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/types.h>
 
 #ifdef _WIN32
 #include <Windows.h>
@@ -21,13 +20,13 @@
 
 #include <scroom/colormappable.hh>
 
-#define SCROOMDIR   ".scroom"
+#define SCROOMDIR ".scroom"
 #define COLORMAPDIR "colormaps"
 #define COLORMAPEXT ".pal"
 
-#define PAL_HEADER  "JASC-PAL"
+#define PAL_HEADER "JASC-PAL"
 #define PAL_VERSION "0100"
-#define BUFFERSIZE  256
+#define BUFFERSIZE 256
 
 namespace Scroom
 {
@@ -38,25 +37,26 @@ namespace Scroom
 
     Colormaps::Colormaps()
     {
-      #ifdef _WIN32
-        // We want to keep everything portable on windows so we look for the colormaps folder in the same directory as the .exe
-        char buffer[2048];
-        GetModuleFileName(NULL, buffer, 2047);
-        std::string modulePath(buffer);
-        auto pos = modulePath.rfind("\\");
-        char* colormapDirPath = g_build_filename(modulePath.substr(0, pos).c_str(), "\\", COLORMAPDIR, NULL);
-      #else
-        const char *homedir = g_getenv("HOME");
-        if (!homedir)
-          homedir = g_get_home_dir();
+#ifdef _WIN32
+      // We want to keep everything portable on windows so we look for the colormaps folder in the
+      // same directory as the .exe
+      char buffer[2048];
+      GetModuleFileName(NULL, buffer, 2047);
+      std::string modulePath(buffer);
+      auto pos = modulePath.rfind("\\");
+      char* colormapDirPath =
+          g_build_filename(modulePath.substr(0, pos).c_str(), "\\", COLORMAPDIR, NULL);
+#else
+      const char* homedir = g_getenv("HOME");
+      if (!homedir)
+        homedir = g_get_home_dir();
 
-        char* colormapDirPath = g_build_filename(homedir, SCROOMDIR, COLORMAPDIR, NULL);
-      #endif
+      char* colormapDirPath = g_build_filename(homedir, SCROOMDIR, COLORMAPDIR, NULL);
+#endif
       DIR* colormapDir = opendir(colormapDirPath);
       if (colormapDir)
       {
-        for (struct dirent* d = readdir(colormapDir); d;
-            d = readdir(colormapDir))
+        for (struct dirent* d = readdir(colormapDir); d; d = readdir(colormapDir))
         {
           // At this point, we're not sure if d is a regular file or a
           // directory or whatever. However, we can safely assume that in
@@ -77,15 +77,12 @@ namespace Scroom
       }
       else
       {
-        printf("Failed to open dir %s: (%d, %s)\n", colormapDirPath, errno,
-            strerror(errno));
+        printf("Failed to open dir %s: (%d, %s)\n", colormapDirPath, errno, strerror(errno));
       }
-        g_free(colormapDirPath);
+      g_free(colormapDirPath);
     }
 
-    Colormaps::~Colormaps()
-    {
-    }
+    Colormaps::~Colormaps() {}
 
     Colormaps& Colormaps::getInstance()
     {
@@ -102,12 +99,11 @@ namespace Scroom
     {
       Colormap::Ptr colormap;
 
-      const char *homedir = g_getenv("HOME");
+      const char* homedir = g_getenv("HOME");
       if (!homedir)
         homedir = g_get_home_dir();
 
-      char* fullName = g_build_filename(homedir, SCROOMDIR, COLORMAPDIR, name,
-          NULL);
+      char* fullName = g_build_filename(homedir, SCROOMDIR, COLORMAPDIR, name, NULL);
       FILE* f = fopen(fullName, "r");
       if (f)
       {
@@ -143,8 +139,8 @@ namespace Scroom
           int red = 0;
           int green = 0;
           int blue = 0;
-          while (colors.size() < count && fgets(buffer, BUFFERSIZE, f)
-              && 3 == sscanf(buffer, "%d %d %d", &red, &green, &blue))
+          while (colors.size() < count && fgets(buffer, BUFFERSIZE, f) &&
+                 3 == sscanf(buffer, "%d %d %d", &red, &green, &blue))
           {
             colors.push_back(Color(red / 255.0, green / 255.0, blue / 255.0));
           }
@@ -161,5 +157,5 @@ namespace Scroom
       g_free(fullName);
       return colormap;
     }
-  }
-}
+  }  // namespace ColormapImpl
+}  // namespace Scroom

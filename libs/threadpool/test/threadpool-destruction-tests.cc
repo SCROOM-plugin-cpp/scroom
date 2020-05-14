@@ -8,16 +8,14 @@
 #include <scroom/threadpool.hh>
 
 #ifdef HAVE_CONFIG_H
-#  include <config.h>
+#include <config.h>
 #endif
 
-#include <iostream>
-
-#include <boost/test/unit_test.hpp>
-#include <boost/thread.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/shared_ptr.hpp>
-
+#include <boost/test/unit_test.hpp>
+#include <boost/thread.hpp>
+#include <iostream>
 #include <scroom/semaphore.hh>
 
 #include "helpers.hh"
@@ -41,13 +39,13 @@ BOOST_AUTO_TEST_CASE(destroy_threadpool_with_nonempty_queue)
   Semaphore b(0);
   Semaphore c(0);
 
-  pool->schedule(clear(&a)+pass(&b));
+  pool->schedule(clear(&a) + pass(&b));
   pool->schedule(clear(&c));
 
   // Give the thread some time to start the job
   a.P();
 
-  boost::thread t(pass(&guard)+destroy(pool));
+  boost::thread t(pass(&guard) + destroy(pool));
   pool.reset();
   guard.V();
 
@@ -60,7 +58,8 @@ BOOST_AUTO_TEST_CASE(destroy_threadpool_with_nonempty_queue)
   BOOST_CHECK(!c.P(long_timeout));
 }
 
-BOOST_AUTO_TEST_CASE(destroy_threadpool_with_nonempty_queue_with_completeAllJobsBeforeDestruction_true)
+BOOST_AUTO_TEST_CASE(
+    destroy_threadpool_with_nonempty_queue_with_completeAllJobsBeforeDestruction_true)
 {
   ThreadPool::Ptr pool = ThreadPool::create(1, true);
   Semaphore guard(0);
@@ -68,13 +67,13 @@ BOOST_AUTO_TEST_CASE(destroy_threadpool_with_nonempty_queue_with_completeAllJobs
   Semaphore b(0);
   Semaphore c(0);
 
-  pool->schedule(clear(&a)+pass(&b));
+  pool->schedule(clear(&a) + pass(&b));
   pool->schedule(clear(&c));
 
   // Give the thread some time to start the job
   a.P();
 
-  boost::thread t(pass(&guard)+destroy(pool));
+  boost::thread t(pass(&guard) + destroy(pool));
   pool.reset();
   guard.V();
 

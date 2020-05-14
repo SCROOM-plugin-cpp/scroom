@@ -7,14 +7,12 @@
 
 #pragma once
 
-#include <string>
-
 #include <gtk/gtk.h>
 
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
-
 #include <scroom/progressinterface.hh>
+#include <string>
 
 /**
  * Interface provided to something Viewable
@@ -28,11 +26,11 @@
  */
 class ViewInterface
 {
-public:
+  public:
   typedef boost::shared_ptr<ViewInterface> Ptr;
   typedef boost::weak_ptr<ViewInterface> WeakPtr;
 
-public:
+  public:
   virtual ~ViewInterface() {}
 
   /**
@@ -42,7 +40,7 @@ public:
    *    (i.e. between gdk_threads_enter() and gdk_threads_leave()
    *    calls)
    */
-  virtual void invalidate()=0;
+  virtual void invalidate() = 0;
 
   /**
    * Return a pointer to the progess interface associated with the View
@@ -51,7 +49,7 @@ public:
    *    Gdk critical section (i.e. between gdk_threads_enter() and
    *    gdk_threads_leave() calls)
    */
-  virtual ProgressInterface::Ptr getProgressInterface()=0;
+  virtual ProgressInterface::Ptr getProgressInterface() = 0;
 
   /**
    * Request that the given widget be added to the sidebar.
@@ -60,7 +58,7 @@ public:
    *    (i.e. between gdk_threads_enter() and gdk_threads_leave()
    *    calls)
    */
-  virtual void addSideWidget(std::string title, GtkWidget* w)=0;
+  virtual void addSideWidget(std::string title, GtkWidget* w) = 0;
 
   /**
    * Request that the given widget be removed from the sidebar.
@@ -69,7 +67,7 @@ public:
    *    (i.e. between gdk_threads_enter() and gdk_threads_leave()
    *    calls)
    */
-  virtual void removeSideWidget(GtkWidget* w)=0;
+  virtual void removeSideWidget(GtkWidget* w) = 0;
 
   /**
    * Request that the given tool item be added to the toolbar.
@@ -78,7 +76,7 @@ public:
    *    (i.e. between gdk_threads_enter() and gdk_threads_leave()
    *    calls)
    */
-  virtual void addToToolbar(GtkToolItem* ti)=0;
+  virtual void addToToolbar(GtkToolItem* ti) = 0;
 
   /**
    * Request that the given tool item be removed from the toolbar.
@@ -87,6 +85,5 @@ public:
    *    (i.e. between gdk_threads_enter() and gdk_threads_leave()
    *    calls)
    */
-  virtual void removeFromToolbar(GtkToolItem* ti)=0;
+  virtual void removeFromToolbar(GtkToolItem* ti) = 0;
 };
-

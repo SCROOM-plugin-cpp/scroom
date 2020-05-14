@@ -25,22 +25,21 @@ namespace
   {
     p.reset();
   }
-}
+}  // namespace
 
 //////////////////////////////////////////////////////////////
 
-boost::function<void ()> pass(Semaphore* s)
+boost::function<void()> pass(Semaphore* s)
 {
   return boost::bind(passImpl, s);
 }
 
-boost::function<void ()> clear(Semaphore* s)
+boost::function<void()> clear(Semaphore* s)
 {
   return boost::bind(clearImpl, s);
 }
 
-boost::function<void ()> destroy(boost::shared_ptr<void> p)
+boost::function<void()> destroy(boost::shared_ptr<void> p)
 {
   return boost::bind(destroyImpl, p);
 }
-

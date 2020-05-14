@@ -7,11 +7,10 @@
 
 #pragma once
 
-#include <list>
-
 #include <gtk/gtk.h>
 
-#include<scroom/colormappable.hh>
+#include <list>
+#include <scroom/colormappable.hh>
 
 namespace Scroom
 {
@@ -26,17 +25,17 @@ namespace Scroom
      */
     class Colormaps
     {
-    private:
+      private:
       std::list<Colormap::ConstPtr> colormaps;
 
-    private:
+      private:
       /** Constructor */
       Colormaps();
 
       /** Destructor */
       ~Colormaps();
 
-    public:
+      public:
       /** Get a reference to the instance */
       static Colormaps& getInstance();
 
@@ -51,6 +50,5 @@ namespace Scroom
       Colormap::Ptr load(const char* name);
     };
 
-  }
-}
-
+  }  // namespace ColormapImpl
+}  // namespace Scroom

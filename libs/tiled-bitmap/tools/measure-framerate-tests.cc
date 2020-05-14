@@ -9,11 +9,9 @@
 
 #include <time.h>
 
-#include <string>
-
 #include <boost/shared_ptr.hpp>
-
 #include <scroom/unused.hh>
+#include <string>
 
 #include "measure-framerate-callbacks.hh"
 #include "measure-framerate-stubs.hh"
@@ -23,12 +21,12 @@
 
 class Invalidator
 {
-private:
+  private:
   unsigned int secs;
   bool started;
   struct timespec t;
 
-public:
+  public:
   Invalidator(unsigned int secs);
 
   bool operator()();
@@ -36,7 +34,7 @@ public:
 
 class BaseCounter
 {
-private:
+  private:
   std::string name;
   unsigned int secs;
   bool started;
@@ -45,7 +43,7 @@ private:
 
   static unsigned int columnWidth;
 
-public:
+  public:
   BaseCounter(const std::string& name, unsigned int secs);
 
   bool operator()();
@@ -53,7 +51,7 @@ public:
 
 class InvalidatingCounter : public BaseCounter
 {
-public:
+  public:
   InvalidatingCounter(const std::string& name, unsigned int secs);
   bool operator()();
 };
@@ -68,25 +66,22 @@ static bool logSizes()
 
 ////////////////////////////////////////////////////////////////////////
 
-Invalidator::Invalidator(unsigned int secs_)
-  : secs(secs_), started(false)
-{
-}
+Invalidator::Invalidator(unsigned int secs_) : secs(secs_), started(false) {}
 
 bool Invalidator::operator()()
 {
   invalidate();
 
-  if(!started && 0==clock_gettime(CLOCK_REALTIME, &t))
+  if (!started && 0 == clock_gettime(CLOCK_REALTIME, &t))
   {
     started = true;
     return true;
   }
 
   struct timespec now;
-  if(0==clock_gettime(CLOCK_REALTIME, &now))
+  if (0 == clock_gettime(CLOCK_REALTIME, &now))
   {
-    if(now.tv_sec > t.tv_sec + secs)
+    if (now.tv_sec > t.tv_sec + secs)
       return false;
   }
 
@@ -95,17 +90,17 @@ bool Invalidator::operator()()
 
 ////////////////////////////////////////////////////////////////////////
 
-unsigned int BaseCounter::columnWidth=0;
+unsigned int BaseCounter::columnWidth = 0;
 
 BaseCounter::BaseCounter(const std::string& name_, unsigned int secs_)
-  : name(name_), secs(secs_), started(false), count(0)
+    : name(name_), secs(secs_), started(false), count(0)
 {
   columnWidth = std::max(columnWidth, static_cast<unsigned int>(name_.length()));
 }
 
 bool BaseCounter::operator()()
 {
-  if(!started && 0==clock_gettime(CLOCK_REALTIME, &t))
+  if (!started && 0 == clock_gettime(CLOCK_REALTIME, &t))
   {
     started = true;
     return true;
@@ -114,14 +109,14 @@ bool BaseCounter::operator()()
   count++;
 
   struct timespec now;
-  if(0==clock_gettime(CLOCK_REALTIME, &now))
+  if (0 == clock_gettime(CLOCK_REALTIME, &now))
   {
-    if(now.tv_sec > t.tv_sec + secs)
+    if (now.tv_sec > t.tv_sec + secs)
     {
       // We're done. Compute frequency.
-      double elapsed = static_cast<double>(now.tv_nsec - t.tv_nsec)*1e-9;
+      double elapsed = static_cast<double>(now.tv_nsec - t.tv_nsec) * 1e-9;
       elapsed += static_cast<double>(now.tv_sec - t.tv_sec);
-      printf("%-*s: %10.2f Hz\n", columnWidth, name.c_str(), count/elapsed);
+      printf("%-*s: %10.2f Hz\n", columnWidth, name.c_str(), count / elapsed);
 
       return false;
     }
@@ -133,7 +128,7 @@ bool BaseCounter::operator()()
 ////////////////////////////////////////////////////////////////////////
 
 InvalidatingCounter::InvalidatingCounter(const std::string& name_, unsigned int secs_)
-  : BaseCounter(name_, secs_)
+    : BaseCounter(name_, secs_)
 {
 }
 
@@ -147,8 +142,8 @@ bool InvalidatingCounter::operator()()
 
 void init_tests()
 {
-  const int width = 2*4096;
-  const int height = 2*4096;
+  const int width = 2 * 4096;
+  const int height = 2 * 4096;
   const unsigned int testDuration = 15;
   const unsigned int sleepDuration = 2;
 

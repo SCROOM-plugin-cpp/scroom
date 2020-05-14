@@ -7,55 +7,54 @@
 
 #pragma once
 
+#include <boost/enable_shared_from_this.hpp>
+#include <boost/shared_ptr.hpp>
+#include <boost/thread/mutex.hpp>
 #include <list>
 #include <map>
-
-#include <boost/thread/mutex.hpp>
-#include <boost/shared_ptr.hpp>
-#include <boost/enable_shared_from_this.hpp>
-
-#include <scroom/scroominterface.hh>
-#include <scroom/tiledbitmapinterface.hh>
-#include "scroom/tiledbitmaplayer.hh"
-
-#include <scroom/threadpool.hh>
 #include <scroom/progressinterfacehelpers.hh>
+#include <scroom/scroominterface.hh>
+#include <scroom/threadpool.hh>
+#include <scroom/tiledbitmapinterface.hh>
 
 #include "layercoordinator.hh"
+#include "scroom/tiledbitmaplayer.hh"
 #include "tiledbitmapviewdata.hh"
 
 class TiledBitmap;
 
 class FileOperation
 {
-public:
+  public:
   typedef boost::shared_ptr<FileOperation> Ptr;
-private:
+
+  private:
   ProgressInterface::Ptr progress;
   boost::mutex waitingMutex;
   bool waiting;
 
-protected:
+  protected:
   FileOperation(ProgressInterface::Ptr progress);
 
-public:
+  public:
   virtual ~FileOperation() {}
 
   virtual void doneWaiting();
-  virtual void finished()=0;
-  virtual void operator()()=0;
-  virtual void abort()=0;
+  virtual void finished() = 0;
+  virtual void operator()() = 0;
+  virtual void abort() = 0;
 };
 
-class TiledBitmap : public TiledBitmapInterface, public TileInitialisationObserver,
+class TiledBitmap : public TiledBitmapInterface,
+                    public TileInitialisationObserver,
                     public virtual Scroom::Utils::Base
 {
-public:
+  public:
   typedef boost::shared_ptr<TiledBitmap> Ptr;
   typedef boost::weak_ptr<TiledBitmap> WeakPtr;
   typedef std::map<ViewInterface::WeakPtr, TiledBitmapViewData::Ptr> ViewDataMap;
 
-private:
+  private:
   int bitmapWidth;
   int bitmapHeight;
   LayerSpec ls;
@@ -70,30 +69,31 @@ private:
   Scroom::Utils::ProgressInterfaceBroadcaster::Ptr progressBroadcaster;
   ThreadPool::Queue::Ptr queue;
 
-public:
+  public:
   static Ptr create(int bitmapWidth, int bitmapHeight, LayerSpec const& ls);
   virtual ~TiledBitmap();
 
-private:
+  private:
   TiledBitmap(int bitmapWidth, int bitmapHeight, LayerSpec const& ls);
   void initialize();
 
-private:
-  void drawTile(cairo_t* cr, const CompressedTile::Ptr tile, const Scroom::Utils::Rectangle<double> viewArea);
+  private:
+  void drawTile(cairo_t* cr, const CompressedTile::Ptr tile,
+                const Scroom::Utils::Rectangle<double> viewArea);
   void connect(Layer::Ptr const& layer, Layer::Ptr const& prevLayer, LayerOperations::Ptr prevLo);
 
-public:
-
+  public:
   ////////////////////////////////////////////////////////////////////////
   // TiledBitmapInterface
 
-public:
+  public:
   virtual void setSource(SourcePresentation::Ptr sp);
   virtual Layer::Ptr getBottomLayer();
 
   virtual void open(ViewInterface::WeakPtr viewInterface);
   virtual void close(ViewInterface::WeakPtr vi);
-  virtual void redraw(ViewInterface::Ptr const& vi, cairo_t* cr, Scroom::Utils::Rectangle<double> const& presentationArea, int zoom);
+  virtual void redraw(ViewInterface::Ptr const& vi, cairo_t* cr,
+                      Scroom::Utils::Rectangle<double> const& presentationArea, int zoom);
   virtual void clearCaches(ViewInterface::Ptr vi);
 
   ////////////////////////////////////////////////////////////////////////
@@ -102,4 +102,3 @@ public:
   virtual void tileCreated(CompressedTile::Ptr tile);
   virtual void tileFinished(CompressedTile::Ptr tile);
 };
-

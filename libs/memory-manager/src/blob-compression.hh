@@ -17,7 +17,6 @@ namespace Scroom
     {
       PageList compressBlob(const uint8_t* in, size_t size, PageProvider::Ptr provider);
       void decompressBlob(uint8_t* out, size_t size, PageList list, PageProvider::Ptr provider);
-    }
-  }
-}
-
+    }  // namespace Detail
+  }    // namespace MemoryBlobs
+}  // namespace Scroom

@@ -13,21 +13,21 @@
 
 class ProgressBarManager : public ProgressInterface
 {
-public:
+  public:
   typedef boost::shared_ptr<ProgressBarManager> Ptr;
 
-private:
+  private:
   GtkProgressBar* progressBar;
   bool isWaiting;
 
-private:
+  private:
   ProgressBarManager(GtkProgressBar* progressBar);
 
   void stopWaiting();
   void startWaiting();
 
-public:
-  static Ptr create(GtkProgressBar* progressBar=NULL);
+  public:
+  static Ptr create(GtkProgressBar* progressBar = NULL);
 
   ~ProgressBarManager();
 
@@ -36,8 +36,7 @@ public:
   // ProgressInterface ///////////////////////////////////////////////////
 
   virtual void setIdle();
-  virtual void setWaiting(double progress=0.0);
+  virtual void setWaiting(double progress = 0.0);
   virtual void setWorking(double progress);
   virtual void setFinished();
 };
-

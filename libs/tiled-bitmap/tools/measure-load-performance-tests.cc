@@ -9,13 +9,11 @@
 
 #include <time.h>
 
-#include <string>
-
 #include <boost/shared_ptr.hpp>
-
-#include <scroom/unused.hh>
 #include <scroom/semaphore.hh>
 #include <scroom/threadpool.hh>
+#include <scroom/unused.hh>
+#include <string>
 
 #include "measure-framerate-callbacks.hh"
 #include "measure-framerate-stubs.hh"
@@ -25,36 +23,34 @@
 
 static void clear(Scroom::Semaphore& s)
 {
-	s.V();
+  s.V();
 }
 
 class WaitForAsyncOp
 {
-private:
+  private:
   std::string name;
   Scroom::Semaphore s;
   bool started;
   struct timespec t;
-public:
+
+  public:
   WaitForAsyncOp(const std::string& name);
   WaitForAsyncOp(const WaitForAsyncOp& other);
 
   bool operator()();
 };
 
-WaitForAsyncOp::WaitForAsyncOp(const std::string& name_)
-  : name(name_), started(false)
-{
-}
+WaitForAsyncOp::WaitForAsyncOp(const std::string& name_) : name(name_), started(false) {}
 
 WaitForAsyncOp::WaitForAsyncOp(const WaitForAsyncOp& other)
-: name(other.name), s(), started(other.started), t(other.t)
+    : name(other.name), s(), started(other.started), t(other.t)
 {
 }
 
 bool WaitForAsyncOp::operator()()
 {
-  if(!started && 0==clock_gettime(CLOCK_REALTIME, &t))
+  if (!started && 0 == clock_gettime(CLOCK_REALTIME, &t))
   {
     started = true;
 
@@ -66,7 +62,7 @@ bool WaitForAsyncOp::operator()()
 
   s.P();
   struct timespec now;
-  if(0==clock_gettime(CLOCK_REALTIME, &now))
+  if (0 == clock_gettime(CLOCK_REALTIME, &now))
   {
     double duration = static_cast<double>(now.tv_sec - t.tv_sec);
     duration += static_cast<double>(now.tv_nsec - t.tv_nsec) / 1E9;

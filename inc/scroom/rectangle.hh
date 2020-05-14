@@ -7,10 +7,8 @@
 
 #pragma once
 
-#include <ostream>
-
 #include <boost/operators.hpp>
-
+#include <ostream>
 #include <scroom/gtk-helpers.hh>
 #include <scroom/linearsegment.hh>
 #include <scroom/point.hh>
@@ -19,40 +17,44 @@ namespace Scroom
 {
   namespace Utils
   {
-  
-    template<typename T>
-    class Rectangle : public boost::addable2<Rectangle<T>,Point<T>>,
-                      public boost::subtractable2<Rectangle<T>,Point<T>>,
-                      public boost::multipliable2<Rectangle<T>,T>,
-                      public boost::multipliable2<Rectangle<T>,Point<T>>,
-                      public boost::dividable2<Rectangle<T>,T>,
-                      public boost::dividable2<Rectangle<T>,Point<T>>
+    template <typename T>
+    class Rectangle : public boost::addable2<Rectangle<T>, Point<T>>,
+                      public boost::subtractable2<Rectangle<T>, Point<T>>,
+                      public boost::multipliable2<Rectangle<T>, T>,
+                      public boost::multipliable2<Rectangle<T>, Point<T>>,
+                      public boost::dividable2<Rectangle<T>, T>,
+                      public boost::dividable2<Rectangle<T>, Point<T>>
     {
-    public:
+      public:
       typedef T value_type;
 
-      Rectangle()
-      {}
+      Rectangle() {}
 
       Rectangle(value_type x_, value_type y_, value_type width_, value_type height_)
-        : horizontally(x_, width_), vertically(y_, height_)
-      {}
+          : horizontally(x_, width_), vertically(y_, height_)
+      {
+      }
 
       Rectangle(const Segment<value_type>& horizontally_, const Segment<value_type>& vertically_)
-        : horizontally(horizontally_), vertically(vertically_)
-      {}
+          : horizontally(horizontally_), vertically(vertically_)
+      {
+      }
 
       Rectangle(const GdkRectangle& rect)
-        : horizontally(rect.x, rect.width), vertically(rect.y, rect.height)
-      {}
+          : horizontally(rect.x, rect.width), vertically(rect.y, rect.height)
+      {
+      }
 
       Rectangle(const Rectangle<int>& rect)
-        : horizontally(rect.getHorizontally()), vertically(rect.getVertically())
-      {}
+          : horizontally(rect.getHorizontally()), vertically(rect.getVertically())
+      {
+      }
 
       GdkRectangle toGdkRectangle() const
       {
-        return Scroom::GtkHelpers::createGdkRectangle(static_cast<int>(getLeft()), static_cast<int>(getTop()), static_cast<int>(getWidth()), static_cast<int>(getHeight()));
+        return Scroom::GtkHelpers::createGdkRectangle(
+            static_cast<int>(getLeft()), static_cast<int>(getTop()), static_cast<int>(getWidth()),
+            static_cast<int>(getHeight()));
       }
 
       Rectangle<int> toIntRectangle() const
@@ -72,23 +74,18 @@ namespace Scroom
 
       bool contains(Point<value_type> const& other) const
       {
-        return
-          horizontally.contains(other.x) &&
-          vertically.contains(other.y);
+        return horizontally.contains(other.x) && vertically.contains(other.y);
       }
 
       bool contains(const Rectangle& other) const
       {
-        return
-          horizontally.contains(other.horizontally) &&
-          vertically.contains(other.vertically);
+        return horizontally.contains(other.horizontally) && vertically.contains(other.vertically);
       }
 
       bool intersects(const Rectangle& other) const
       {
-        return
-          horizontally.intersects(other.horizontally) &&
-          vertically.intersects(other.vertically);
+        return horizontally.intersects(other.horizontally) &&
+               vertically.intersects(other.vertically);
       }
 
       void reduceSizeToMultipleOf(value_type size)
@@ -103,11 +100,11 @@ namespace Scroom
                          vertically.intersection(other.vertically));
       }
 
-      template<typename U>
-      Rectangle<typename std::common_type<T,U>::type> intersection(const Rectangle<U>& other) const
+      template <typename U>
+      Rectangle<typename std::common_type<T, U>::type> intersection(const Rectangle<U>& other) const
       {
-        typedef typename std::common_type<T,U>::type R;
-        
+        typedef typename std::common_type<T, U>::type R;
+
         return Rectangle<R>(*this).intersection(Rectangle<R>(other));
       }
 
@@ -208,7 +205,7 @@ namespace Scroom
 
       Rectangle<value_type> leftOf(Rectangle<value_type> const& r) const
       {
-        if(r.isEmpty())
+        if (r.isEmpty())
           return r;
 
         return Rectangle<value_type>(horizontally.before(r.horizontally.getStart()),
@@ -217,7 +214,7 @@ namespace Scroom
 
       Rectangle<value_type> rightOf(Rectangle<value_type> const& r) const
       {
-        if(r.isEmpty())
+        if (r.isEmpty())
           return r;
 
         return Rectangle<value_type>(horizontally.after(r.horizontally.getEnd()),
@@ -226,7 +223,7 @@ namespace Scroom
 
       Rectangle<value_type> above(Rectangle<value_type> const& r) const
       {
-        if(r.isEmpty())
+        if (r.isEmpty())
           return r;
 
         return Rectangle<value_type>(horizontally.intersection(r.horizontally),
@@ -235,7 +232,7 @@ namespace Scroom
 
       Rectangle<value_type> below(Rectangle<value_type> const& r) const
       {
-        if(r.isEmpty())
+        if (r.isEmpty())
           return r;
 
         return Rectangle<value_type>(horizontally.intersection(r.horizontally),
@@ -244,9 +241,9 @@ namespace Scroom
 
       bool operator==(const Rectangle& other) const
       {
-        if(isEmpty() != other.isEmpty())
+        if (isEmpty() != other.isEmpty())
           return false;
-        else if(isEmpty())
+        else if (isEmpty())
           return true;
         else
           return horizontally == other.horizontally && vertically == other.vertically;
@@ -254,7 +251,7 @@ namespace Scroom
 
       bool operator!=(const Rectangle& other) const
       {
-        return !(*this==other);
+        return !(*this == other);
       }
 
       Rectangle<value_type>& operator+=(Point<value_type> const& other)
@@ -318,24 +315,21 @@ namespace Scroom
         return Point<value_type>(horizontally.getSize(), vertically.getSize());
       }
 
-    private:
+      private:
       Segment<value_type> horizontally;
       Segment<value_type> vertically;
     };
 
-    template<typename T>
+    template <typename T>
     Rectangle<T> make_rect(T x, T y, T width, T height)
     {
       return Rectangle<T>(x, y, width, height);
     }
 
-    template<typename T>
+    template <typename T>
     std::ostream& operator<<(std::ostream& os, const Rectangle<T>& r)
     {
-      os << '<' << r.getLeft()
-         << ',' << r.getTop()
-         << ',' << r.getWidth()
-         << ',' << r.getHeight()
+      os << '<' << r.getLeft() << ',' << r.getTop() << ',' << r.getWidth() << ',' << r.getHeight()
          << '>';
 
       return os;
@@ -346,18 +340,18 @@ namespace Scroom
       return os << Rectangle<double>(r);
     }
 
-    template<typename T, typename U>
-    Rectangle<typename std::common_type<T,U>::type> operator*(Rectangle<T> left, U right)
+    template <typename T, typename U>
+    Rectangle<typename std::common_type<T, U>::type> operator*(Rectangle<T> left, U right)
     {
-      Rectangle<typename std::common_type<T,U>::type> result(left);
-      result *= static_cast<typename std::common_type<T,U>::type>(right);
+      Rectangle<typename std::common_type<T, U>::type> result(left);
+      result *= static_cast<typename std::common_type<T, U>::type>(right);
       return result;
     }
 
-    template<typename T, typename U>
-    Rectangle<typename std::common_type<T,U>::type> operator*(T left, Rectangle<U> right)
+    template <typename T, typename U>
+    Rectangle<typename std::common_type<T, U>::type> operator*(T left, Rectangle<U> right)
     {
-      return right*left;
+      return right * left;
     }
 
     inline Rectangle<double> operator*(GdkRectangle const& r, Point<double> const& p)
@@ -370,10 +364,10 @@ namespace Scroom
       return Rectangle<double>(r) * p;
     }
 
-    template<typename T, typename U>
-    Rectangle<typename std::common_type<T,U>::type> operator-(Rectangle<T> left, Point<U> right)
+    template <typename T, typename U>
+    Rectangle<typename std::common_type<T, U>::type> operator-(Rectangle<T> left, Point<U> right)
     {
-      typedef typename std::common_type<T,U>::type R;
+      typedef typename std::common_type<T, U>::type R;
 
       return Rectangle<R>(left) - Point<R>(right);
     }
@@ -385,9 +379,8 @@ namespace Scroom
       int width = static_cast<int>(ceil(r.getRight())) - x;
       int height = static_cast<int>(ceil(r.getBottom())) - y;
 
-      return Rectangle<int>(x,y,width,height);
+      return Rectangle<int>(x, y, width, height);
     }
 
-
-  }
-}
+  }  // namespace Utils
+}  // namespace Scroom

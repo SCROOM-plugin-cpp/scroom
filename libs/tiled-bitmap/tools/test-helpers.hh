@@ -7,12 +7,11 @@
 
 #pragma once
 
-#include <boost/shared_ptr.hpp>
-
 #include <gtk/gtk.h>
 
-#include <scroom/layeroperations.hh>
+#include <boost/shared_ptr.hpp>
 #include <scroom/colormappable.hh>
+#include <scroom/layeroperations.hh>
 
 #include "measure-framerate-stubs.hh"
 
@@ -21,30 +20,30 @@ extern int drawingAreaHeight;
 
 ////////////////////////////////////////////////////////////////////////
 
-class DummyColormapProvider: public ColormapProvider
+class DummyColormapProvider : public ColormapProvider
 {
-public:
+  public:
   typedef boost::shared_ptr<DummyColormapProvider> Ptr;
 
-private:
+  private:
   Colormap::Ptr colormap;
 
-private:
+  private:
   DummyColormapProvider(Colormap::Ptr colormap);
 
-public:
+  public:
   static Ptr create(Colormap::Ptr colormap);
 
-public:
+  public:
   virtual Colormap::Ptr getColormap();
 };
 
 class TestData
 {
-public:
+  public:
   typedef boost::shared_ptr<TestData> Ptr;
 
-private:
+  private:
   ProgressInterfaceStub::Ptr pi;
   ViewInterface::Ptr vi;
   DummyColormapProvider::Ptr colormapProvider;
@@ -53,11 +52,11 @@ private:
   SourcePresentation::Ptr sp;
   int zoom;
 
-private:
+  private:
   TestData(DummyColormapProvider::Ptr colormapProvider, const LayerSpec& ls,
            TiledBitmapInterface::Ptr tbi, SourcePresentation::Ptr sp, int zoom);
 
-public:
+  public:
   static Ptr create(DummyColormapProvider::Ptr colormapProvider, const LayerSpec& ls,
                     TiledBitmapInterface::Ptr tbi, SourcePresentation::Ptr sp, int zoom);
 
@@ -73,11 +72,12 @@ extern TestData::Ptr testData;
 
 class Sleep
 {
-private:
+  private:
   unsigned int secs;
   bool started;
   struct timespec t;
-public:
+
+  public:
   Sleep(unsigned int secs);
 
   bool operator()();

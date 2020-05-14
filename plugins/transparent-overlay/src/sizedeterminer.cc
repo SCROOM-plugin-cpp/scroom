@@ -8,20 +8,20 @@
 #include "sizedeterminer.hh"
 
 #include <algorithm>
-
-#include <scroom/gtk-helpers.hh>
 #include <scroom/assertions.hh>
+#include <scroom/gtk-helpers.hh>
 
 namespace
 {
-  Scroom::Utils::Rectangle<double> DetermineSize(std::list<PresentationInterface::Ptr> presentations)
+  Scroom::Utils::Rectangle<double> DetermineSize(
+      std::list<PresentationInterface::Ptr> presentations)
   {
     double left = std::numeric_limits<double>::max();
     double top = std::numeric_limits<double>::max();
     double right = std::numeric_limits<double>::min();
     double bottom = std::numeric_limits<double>::min();
 
-    for(PresentationInterface::Ptr const& p: presentations)
+    for (PresentationInterface::Ptr const& p : presentations)
     {
       Scroom::Utils::Rectangle<double> rect = p->getRect();
       left = std::min(left, rect.getLeft());
@@ -29,19 +29,18 @@ namespace
       right = std::max(right, rect.getRight());
       bottom = std::max(bottom, rect.getBottom());
     }
-    return Scroom::Utils::Rectangle<double>(left, top, right-left, bottom-top);
+    return Scroom::Utils::Rectangle<double>(left, top, right - left, bottom - top);
   }
 
-  template<typename K, typename V>
-  std::list<K> keys(std::map<K,V> const& m)
+  template <typename K, typename V>
+  std::list<K> keys(std::map<K, V> const& m)
   {
     std::list<K> k;
-    for(auto const& p: m)
-      k.push_back(p.first);
+    for (auto const& p : m) k.push_back(p.first);
 
     return k;
   }
-}
+}  // namespace
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -53,9 +52,11 @@ SizeDeterminer::PresentationData::PresentationData()
   defect();
 }
 
-SizeDeterminer::PresentationData::PresentationData(ResizablePresentationInterface::Ptr const& resizablePresentationInterface_)
-  : resizablePresentationInterface(resizablePresentationInterface_)
-{}
+SizeDeterminer::PresentationData::PresentationData(
+    ResizablePresentationInterface::Ptr const& resizablePresentationInterface_)
+    : resizablePresentationInterface(resizablePresentationInterface_)
+{
+}
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -64,16 +65,15 @@ SizeDeterminer::Ptr SizeDeterminer::create()
   return Ptr(new SizeDeterminer());
 }
 
-SizeDeterminer::SizeDeterminer()
-{
-}
+SizeDeterminer::SizeDeterminer() {}
 
 void SizeDeterminer::add(PresentationInterface::Ptr const& p)
 {
-  ResizablePresentationInterface::Ptr r = boost::dynamic_pointer_cast<ResizablePresentationInterface>(p);
-  if(r)
+  ResizablePresentationInterface::Ptr r =
+      boost::dynamic_pointer_cast<ResizablePresentationInterface>(p);
+  if (r)
   {
-    resizablePresentationData.insert(std::make_pair(p,PresentationData(r)));
+    resizablePresentationData.insert(std::make_pair(p, PresentationData(r)));
   }
   else
     presentations.push_back(p);
@@ -83,11 +83,11 @@ void SizeDeterminer::add(PresentationInterface::Ptr const& p)
 
 Scroom::Utils::Rectangle<double> SizeDeterminer::getRect() const
 {
-  if(!presentations.empty())
+  if (!presentations.empty())
   {
     return DetermineSize(presentations);
   }
-  if(!resizablePresentationData.empty())
+  if (!resizablePresentationData.empty())
   {
     return DetermineSize(keys(resizablePresentationData));
   }
@@ -96,7 +96,7 @@ Scroom::Utils::Rectangle<double> SizeDeterminer::getRect() const
 
 void SizeDeterminer::open(PresentationInterface::Ptr const& p, ViewInterface::WeakPtr const& vi)
 {
-  if(resizablePresentationData.count(p))
+  if (resizablePresentationData.count(p))
   {
     PresentationData& d = resizablePresentationData[p];
     require(!d.views.count(vi));
@@ -112,7 +112,7 @@ void SizeDeterminer::open(PresentationInterface::Ptr const& p, ViewInterface::We
 
 void SizeDeterminer::close(PresentationInterface::Ptr const& p, ViewInterface::WeakPtr const& vi)
 {
-  if(resizablePresentationData.count(p))
+  if (resizablePresentationData.count(p))
   {
     PresentationData& d = resizablePresentationData[p];
     require(d.views.count(vi));
@@ -128,7 +128,7 @@ void SizeDeterminer::sendUpdates()
 {
   Scroom::Utils::Rectangle<double> rect = getRect();
 
-  for(auto const& data: resizablePresentationData)
-    for(auto const& view: data.second.views)
+  for (auto const& data : resizablePresentationData)
+    for (auto const& view : data.second.views)
       data.second.resizablePresentationInterface->setRect(view, rect);
 }

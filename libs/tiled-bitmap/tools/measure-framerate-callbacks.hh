@@ -7,15 +7,13 @@
 
 #pragma once
 
-#include <vector>
-
-#include <boost/function.hpp>
-
 #include <gtk/gtk.h>
 
-extern std::vector<boost::function<bool ()> > functions;
+#include <boost/function.hpp>
+#include <vector>
+
+extern std::vector<boost::function<bool()> > functions;
 
 GtkWidget* create_window();
 void init();
 void invalidate();
-

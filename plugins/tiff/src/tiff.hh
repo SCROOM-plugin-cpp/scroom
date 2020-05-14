@@ -11,18 +11,20 @@
 #include <scroom/presentationinterface.hh>
 #include <scroom/utilities.hh>
 
-class Tiff : public PluginInformationInterface, public OpenPresentationInterface, virtual public Scroom::Utils::Base
+class Tiff : public PluginInformationInterface,
+             public OpenPresentationInterface,
+             virtual public Scroom::Utils::Base
 {
-public:
+  public:
   typedef boost::shared_ptr<Tiff> Ptr;
 
-private:
+  private:
   Tiff();
 
-public:
+  public:
   static Ptr create();
 
-public:
+  public:
   ////////////////////////////////////////////////////////////////////////
   // PluginInformationInterface
 
@@ -40,4 +42,3 @@ public:
 
   virtual ~Tiff();
 };
-

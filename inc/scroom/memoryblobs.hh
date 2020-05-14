@@ -7,14 +7,12 @@
 
 #pragma once
 
-#include <list>
-
-#include <boost/shared_ptr.hpp>
-#include <boost/weak_ptr.hpp>
-#include <boost/thread.hpp>
-
 #include <stdint.h>
 
+#include <boost/shared_ptr.hpp>
+#include <boost/thread.hpp>
+#include <boost/weak_ptr.hpp>
+#include <list>
 #include <scroom/blockallocator.hh>
 #include <scroom/utilities.hh>
 
@@ -29,7 +27,7 @@ namespace Scroom
       typedef boost::shared_ptr<uint8_t> Ptr;
       typedef boost::shared_ptr<const uint8_t> ConstPtr;
       typedef boost::weak_ptr<uint8_t> WeakPtr;
-    }
+    }  // namespace RawPageData
 
     namespace Page
     {
@@ -39,10 +37,10 @@ namespace Scroom
 
     class PageProvider : virtual public Scroom::Utils::Base
     {
-    public:
+      public:
       typedef boost::shared_ptr<PageProvider> Ptr;
 
-    private:
+      private:
       size_t blockCount;
       size_t blockSize;
       Scroom::MemoryBlocks::BlockFactoryInterface::Ptr blockFactoryInterface;
@@ -50,25 +48,25 @@ namespace Scroom
       std::list<Scroom::MemoryBlocks::Page*> freePages;
       boost::mutex mut;
 
-    private:
+      private:
       class MarkPageFree
       {
-      private:
+        private:
         PageProvider::Ptr provider;
 
-      public:
+        public:
         MarkPageFree(PageProvider::Ptr provider);
         void operator()(Scroom::MemoryBlocks::Page* page);
       };
 
       friend class MarkPageFree;
 
-    private:
+      private:
       PageProvider(size_t blockCount, size_t blockSize);
 
       void markPageFree(Scroom::MemoryBlocks::Page* page);
 
-    public:
+      public:
       static Ptr create(size_t blockCount, size_t blockSize);
       Page::Ptr getFreePage();
       size_t getPageSize();
@@ -76,31 +74,31 @@ namespace Scroom
 
     class Blob : virtual public Scroom::Utils::Base
     {
-    public:
+      public:
       typedef boost::shared_ptr<Blob> Ptr;
 
-    private:
+      private:
       enum State
-        {
-          UNINITIALIZED,
-          CLEAN,
-          DIRTY,
-          COMPRESSING
-        };
+      {
+        UNINITIALIZED,
+        CLEAN,
+        DIRTY,
+        COMPRESSING
+      };
 
       class UnloadData
       {
-      private:
+        private:
         Blob::Ptr blob;
 
-      public:
+        public:
         UnloadData(Blob::Ptr blob);
         void operator()(uint8_t* data);
       };
 
       friend class UnloadData;
 
-    private:
+      private:
       PageProvider::Ptr provider;
       size_t size;
       uint8_t* data;
@@ -109,15 +107,15 @@ namespace Scroom
       RawPageData::WeakPtr weakData;
       PageList pages;
       boost::shared_ptr<ThreadPool> cpuBound;
-      int refcount; // Yuk
+      int refcount;  // Yuk
 
-    private:
+      private:
       Blob(PageProvider::Ptr provider, size_t size);
       void unload();
       RawPageData::Ptr load();
       void compress();
 
-    public:
+      public:
       ~Blob();
 
       static Ptr create(PageProvider::Ptr provider, size_t size);
@@ -130,23 +128,23 @@ namespace Scroom
     // Implementation
 
     inline PageProvider::MarkPageFree::MarkPageFree(PageProvider::Ptr provider_)
-      : provider(provider_)
-    {}
+        : provider(provider_)
+    {
+    }
 
     inline void PageProvider::MarkPageFree::operator()(Scroom::MemoryBlocks::Page* p)
-    { provider->markPageFree(p); }
+    {
+      provider->markPageFree(p);
+    }
 
     ////////////////////////////////////////////////////////////////////////
 
-    inline Blob::UnloadData::UnloadData(Blob::Ptr blob_)
-      : blob(blob_)
-    {}
+    inline Blob::UnloadData::UnloadData(Blob::Ptr blob_) : blob(blob_) {}
 
     inline void Blob::UnloadData::operator()(uint8_t*)
     {
       blob->unload();
       blob.reset();
     }
-  }
-}
-
+  }  // namespace MemoryBlobs
+}  // namespace Scroom

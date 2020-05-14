@@ -8,16 +8,14 @@
 #include <scroom/threadpool.hh>
 
 #ifdef HAVE_CONFIG_H
-#  include <config.h>
+#include <config.h>
 #endif
 
-#include <iostream>
-
-#include <boost/test/unit_test.hpp>
-#include <boost/thread.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/shared_ptr.hpp>
-
+#include <boost/test/unit_test.hpp>
+#include <boost/thread.hpp>
+#include <iostream>
 #include <scroom/semaphore.hh>
 
 #include "helpers.hh"
@@ -33,15 +31,13 @@ const millisec long_timeout(2000);
 
 class A
 {
-private:
+  private:
   Semaphore* s;
 
-public:
+  public:
   typedef boost::shared_ptr<A> Ptr;
 
-  A(Semaphore* s_)
-    :s(s_)
-  {}
+  A(Semaphore* s_) : s(s_) {}
 
   void operator()()
   {
@@ -54,19 +50,17 @@ public:
   }
 };
 
-template<typename R>
+template <typename R>
 class B
 {
-private:
+  private:
   Semaphore* s;
   R result;
 
-public:
+  public:
   typedef boost::shared_ptr<B> Ptr;
 
-  B(Semaphore* s_, R result_)
-    :s(s_), result(result_)
-  {}
+  B(Semaphore* s_, R result_) : s(s_), result(result_) {}
 
   R operator()()
   {
@@ -80,7 +74,7 @@ public:
   }
 };
 
-template<typename R>
+template <typename R>
 R no_op(Semaphore* s, R result)
 {
   s->V();
@@ -91,34 +85,32 @@ R no_op(Semaphore* s, R result)
 
 bool has_at_least_n_threads(ThreadPool* pool, int count_)
 {
-  if(count_ <= 0)
+  if (count_ <= 0)
     return true;
   else
   {
     size_t count = static_cast<size_t>(count_);
     std::vector<Semaphore*> semaphores(count);
-    for(size_t i=0; i<count; i++)
-      semaphores[i] = new Semaphore(0);
+    for (size_t i = 0; i < count; i++) semaphores[i] = new Semaphore(0);
 
-    for(size_t i=0; i<count-1; i++)
-      pool->schedule(pass(semaphores[i+1])+clear(semaphores[i]));
+    for (size_t i = 0; i < count - 1; i++)
+      pool->schedule(pass(semaphores[i + 1]) + clear(semaphores[i]));
 
     // All tasks are blocked on semaphores[count-1]
 
-    pool->schedule(clear(semaphores[count-1]));
+    pool->schedule(clear(semaphores[count - 1]));
     // If jobs of the same priority are scheduled in order, and if
     // there are at least count threads, then this final job will get
     // scheduled on the last available thread, thus freeing all
     // others.
-    bool result=semaphores[0]->P(long_timeout);
+    bool result = semaphores[0]->P(long_timeout);
 
-    if(!result)
+    if (!result)
     {
       // If there are too few threads, then all threads are still
       // blocked. This will ultimately block the ThreadPool destructor,
       // so we have to unblock them manually here.
-      for(size_t i=1; i<count; i++)
-        semaphores[i]->V();
+      for (size_t i = 1; i < count; i++) semaphores[i]->V();
     }
     return result;
   }
@@ -126,7 +118,7 @@ bool has_at_least_n_threads(ThreadPool* pool, int count_)
 
 bool has_exactly_n_threads(ThreadPool* pool, int count)
 {
-  return has_at_least_n_threads(pool, count) && !has_at_least_n_threads(pool, count+1);
+  return has_at_least_n_threads(pool, count) && !has_at_least_n_threads(pool, count + 1);
 }
 
 //////////////////////////////////////////////////////////////
@@ -155,7 +147,7 @@ BOOST_AUTO_TEST_CASE(work_gets_done_by_prio)
   Semaphore low(0);
   ThreadPool pool(0, false);
   pool.schedule(clear(&low), PRIO_NORMAL);
-  pool.schedule(pass(&low)+clear(&high), PRIO_HIGH);
+  pool.schedule(pass(&low) + clear(&high), PRIO_HIGH);
 
   pool.add();
   // Thread is doing the high-prio tasks first, which is blocked on
@@ -185,7 +177,7 @@ BOOST_AUTO_TEST_CASE(construct_2_threads)
   ThreadPool pool(2, false);
   int expected = 2;
 #ifndef MULTITHREADING
-  expected=1;
+  expected = 1;
 #endif
   BOOST_CHECK(has_exactly_n_threads(&pool, expected));
 }
@@ -219,7 +211,7 @@ BOOST_AUTO_TEST_CASE(schedule_shared_pointer_with_future)
   ThreadPool pool(0, false);
   Semaphore a(0);
 
-  boost::unique_future<bool> result(pool.schedule<bool,B<bool> >(B<bool>::create(&a, false)));
+  boost::unique_future<bool> result(pool.schedule<bool, B<bool> >(B<bool>::create(&a, false)));
 
   BOOST_CHECK(!a.P(short_timeout));
   BOOST_CHECK(!result.is_ready());
@@ -240,7 +232,7 @@ BOOST_AUTO_TEST_CASE(verify_threadcount)
   ThreadPool::Ptr t = CpuBound();
   int expected = static_cast<int>(boost::thread::hardware_concurrency());
 #ifndef MULTITHREADING
-  expected=1;
+  expected = 1;
 #endif
   BOOST_CHECK(has_exactly_n_threads(t.get(), expected));
 }

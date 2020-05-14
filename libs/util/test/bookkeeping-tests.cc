@@ -6,7 +6,6 @@
  */
 
 #include <boost/test/unit_test.hpp>
-
 #include <scroom/bookkeeping.hh>
 
 using namespace Scroom::Bookkeeping;
@@ -19,7 +18,7 @@ BOOST_AUTO_TEST_CASE(token_arithmatic)
 {
   Token a;
   Token b;
-  Token c = a+b;
+  Token c = a + b;
   WeakToken wa(a);
   a.reset();
   BOOST_CHECK(wa.lock());
@@ -37,9 +36,9 @@ BOOST_AUTO_TEST_CASE(basic_usage)
   BOOST_REQUIRE(map);
 
   Token a = map->reserve(1);
-  map->at(1)=1;
+  map->at(1) = 1;
   Token b = map->reserve(2);
-  map->at(2)=2;
+  map->at(2) = 2;
 
   BOOST_CHECK(a);
   BOOST_CHECK(b);
@@ -54,7 +53,7 @@ BOOST_AUTO_TEST_CASE(basic_usage)
   BOOST_CHECK_EQUAL(b, map->reReserve(2));
   BOOST_CHECK_EQUAL(2, map->get(2));
   BOOST_CHECK_EQUAL(1, map->get(1));
-  map->set(2,5);
+  map->set(2, 5);
   BOOST_CHECK_EQUAL(5, map->get(2));
   BOOST_CHECK_EQUAL(2, map->keys().size());
   BOOST_CHECK_EQUAL(2, map->values().size());

@@ -1,10 +1,7 @@
+#include <scroom/rectangle.hh>
 #include <scroom/transformpresentation.hh>
 
-#include <scroom/rectangle.hh>
-
-TransformationData::TransformationData()
-  : aspectRatio(1,1)
-{}
+TransformationData::TransformationData() : aspectRatio(1, 1) {}
 
 TransformationData::Ptr TransformationData::create()
 {
@@ -13,7 +10,7 @@ TransformationData::Ptr TransformationData::create()
 
 void TransformationData::setAspectRatio(double x, double y)
 {
-  aspectRatio = Scroom::Utils::make_point(x,y);
+  aspectRatio = Scroom::Utils::make_point(x, y);
 }
 
 Scroom::Utils::Point<double> TransformationData::getAspectRatio() const
@@ -23,12 +20,17 @@ Scroom::Utils::Point<double> TransformationData::getAspectRatio() const
 
 ////////////////////////////////////////////////////////////////////////
 
-TransformPresentation::TransformPresentation(PresentationInterface::Ptr const& presentation_, TransformationData::Ptr const& transformationData_)
-  : transformationData(transformationData_), presentation(presentation_),
-    colormappable(boost::dynamic_pointer_cast<Colormappable>(presentation_))
-{}
+TransformPresentation::TransformPresentation(PresentationInterface::Ptr const& presentation_,
+                                             TransformationData::Ptr const& transformationData_)
+    : transformationData(transformationData_),
+      presentation(presentation_),
+      colormappable(boost::dynamic_pointer_cast<Colormappable>(presentation_))
+{
+}
 
-TransformPresentation::Ptr TransformPresentation::create(PresentationInterface::Ptr const& presentation, TransformationData::Ptr const& transformationData)
+TransformPresentation::Ptr TransformPresentation::create(
+    PresentationInterface::Ptr const& presentation,
+    TransformationData::Ptr const& transformationData)
 {
   return Ptr(new TransformPresentation(presentation, transformationData));
 }

@@ -21,20 +21,27 @@ TiledBitmapViewData::Ptr TiledBitmapViewData::create(ViewInterface::WeakPtr view
 }
 
 TiledBitmapViewData::TiledBitmapViewData(ViewInterface::WeakPtr viewInterface_)
-  : viewInterface(viewInterface_),
-    progressInterface(viewInterface_.lock()->getProgressInterface()),
-    layer(), imin(0), imax(0), jmin(0), jmax(0), zoom(0), layerOperations(),
-    redrawPending(false)
+    : viewInterface(viewInterface_),
+      progressInterface(viewInterface_.lock()->getProgressInterface()),
+      layer(),
+      imin(0),
+      imax(0),
+      jmin(0),
+      jmax(0),
+      zoom(0),
+      layerOperations(),
+      redrawPending(false)
 {
 }
 
-void TiledBitmapViewData::setNeededTiles(Layer::Ptr const& l, int imin_, int imax_, int jmin_, int jmax_,
-                                         int zoom_, LayerOperations::Ptr layerOperations_)
+void TiledBitmapViewData::setNeededTiles(Layer::Ptr const& l, int imin_, int imax_, int jmin_,
+                                         int jmax_, int zoom_,
+                                         LayerOperations::Ptr layerOperations_)
 {
   boost::unique_lock<boost::mutex> lock(mut);
 
-  if(this->layer == l && this->imin <= imin_ && this->imax >= imax_ &&
-      this->jmin <= jmin_ && this->jmax >= jmax_ && this->zoom == zoom_)
+  if (this->layer == l && this->imin <= imin_ && this->imax >= imax_ && this->jmin <= jmin_ &&
+      this->jmax >= jmax_ && this->zoom == zoom_)
   {
     // Nothing to do...
   }
@@ -52,7 +59,7 @@ void TiledBitmapViewData::setNeededTiles(Layer::Ptr const& l, int imin_, int ima
     //        l->getDepth(), imin, imax, jmin, jmax, zoom);
 
     // Get data for new tiles
-    redrawPending = true; // if it isn't already
+    redrawPending = true;  // if it isn't already
     // printf("setNeededTiles: redrawPending\n");
     lock.unlock();
     resetNeededTiles();
@@ -84,10 +91,10 @@ void TiledBitmapViewData::resetNeededTiles()
   // temporarily add registrations to the newStuff list, and add the newStuff to
   // stuff later.
 
-  for(int i=imin; i<imax; i++)
-    for(int j=jmin; j<jmax; j++)
+  for (int i = imin; i < imax; i++)
+    for (int j = jmin; j < jmax; j++)
     {
-      CompressedTile::Ptr tile = layer->getTile(i,j);
+      CompressedTile::Ptr tile = layer->getTile(i, j);
 
       TileViewState::Ptr tileViewState = tile->getViewState(viewInterface);
       tileViewState->setViewData(shared_from_this<TiledBitmapViewData>());
@@ -111,7 +118,7 @@ void TiledBitmapViewData::resetNeededTiles()
 static gboolean invalidate_view(ViewInterface::WeakPtr vi)
 {
   ViewInterface::Ptr v = vi.lock();
-  if(v)
+  if (v)
   {
     gdk_threads_enter();
     v->invalidate();
@@ -128,7 +135,7 @@ void TiledBitmapViewData::storeVolatileStuff(Scroom::Utils::Stuff stuff_)
 
 void TiledBitmapViewData::clearVolatileStuff()
 {
-  //printf("Erasing volatile stuff for %p\n", viewInterface);
+  // printf("Erasing volatile stuff for %p\n", viewInterface);
   std::list<boost::shared_ptr<void> > oldVolatileStuff;
   {
     boost::unique_lock<boost::mutex> lock(mut);
@@ -148,7 +155,7 @@ void TiledBitmapViewData::tileLoaded(ConstTile::Ptr tile)
 
   // printf("TiledBitmapViewData::tileLoaded: redrawPending=%d\n", redrawPending);
 
-  if(!redrawPending)
+  if (!redrawPending)
   {
     // We're not sure about whether gdk_threads_enter() has been
     // called or not, so we have no choice but to invalidate on

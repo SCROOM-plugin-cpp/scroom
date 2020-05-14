@@ -12,7 +12,7 @@
 // ColormapHelperBase
 
 ColormapHelperBase::ColormapHelperBase(Colormap::Ptr const& colormap_)
-  : colormap(colormap_), originalColormap(colormap_)
+    : colormap(colormap_), originalColormap(colormap_)
 {
 }
 
@@ -90,10 +90,7 @@ ColormapHelper::Ptr ColormapHelper::createInverted(int numberOfColors)
   return create(Colormap::createDefaultInverted(numberOfColors));
 }
 
-ColormapHelper::ColormapHelper(Colormap::Ptr const& colormap_)
-  : ColormapHelperBase(colormap_)
-{
-}
+ColormapHelper::ColormapHelper(Colormap::Ptr const& colormap_) : ColormapHelperBase(colormap_) {}
 
 ////////////////////////////////////////////////////////////////////////
 // MonochromeColormapHelper
@@ -109,15 +106,18 @@ MonochromeColormapHelper::Ptr MonochromeColormapHelper::createInverted(int numbe
 }
 
 MonochromeColormapHelper::MonochromeColormapHelper(int numberOfColors_, bool inverted_)
-  : ColormapHelperBase(generateInitialColormap(numberOfColors_, inverted_)),
-    numberOfColors(numberOfColors_), inverted(inverted_), blackish(Color(inverted_?1:0)), whitish(Color(inverted_?0:1)),
-    transparentBackground(false)
+    : ColormapHelperBase(generateInitialColormap(numberOfColors_, inverted_)),
+      numberOfColors(numberOfColors_),
+      inverted(inverted_),
+      blackish(Color(inverted_ ? 1 : 0)),
+      whitish(Color(inverted_ ? 0 : 1)),
+      transparentBackground(false)
 {
 }
 
 void MonochromeColormapHelper::setMonochromeColor(const Color& c)
 {
-  if(inverted)
+  if (inverted)
     whitish = c;
   else
     blackish = c;
@@ -127,30 +127,32 @@ void MonochromeColormapHelper::setMonochromeColor(const Color& c)
 
 Color MonochromeColormapHelper::getMonochromeColor()
 {
-  return inverted?whitish:blackish;
+  return inverted ? whitish : blackish;
 }
 
 void MonochromeColormapHelper::regenerateColormap()
 {
   Color w = whitish;
   Color b = blackish;
-  if(transparentBackground)
+  if (transparentBackground)
   {
-    if(inverted)
+    if (inverted)
       b.setAlpha(0);
     else
       w.setAlpha(0);
-
   }
 
-  for (std::size_t i=0; i<static_cast<std::size_t>(numberOfColors); i++) {
-    colormap->colors[i] = mix(w, b, static_cast<double>(i) / static_cast<double>(numberOfColors - 1));
+  for (std::size_t i = 0; i < static_cast<std::size_t>(numberOfColors); i++)
+  {
+    colormap->colors[i] =
+        mix(w, b, static_cast<double>(i) / static_cast<double>(numberOfColors - 1));
   }
 }
 
 Colormap::Ptr MonochromeColormapHelper::generateInitialColormap(int numberOfColors, bool inverted)
 {
-  return inverted?Colormap::createDefaultInverted(numberOfColors):Colormap::createDefault(numberOfColors);
+  return inverted ? Colormap::createDefaultInverted(numberOfColors)
+                  : Colormap::createDefault(numberOfColors);
 }
 
 void MonochromeColormapHelper::setTransparentBackground()

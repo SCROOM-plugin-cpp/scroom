@@ -7,48 +7,63 @@
 
 #pragma once
 
+#include <cairo.h>
+#include <gdk/gdk.h>
+#include <glade/glade.h>
+#include <gtk/gtk.h>
 #include <stdlib.h>
 
-#include <map>
-#include <string>
 #include <cmath>
-
-#include <glade/glade.h>
-#include <gdk/gdk.h>
-#include <gtk/gtk.h>
-#include <cairo.h>
-
-#include <scroom/scroominterface.hh>
-#include <scroom/viewinterface.hh>
+#include <map>
 #include <scroom/presentationinterface.hh>
+#include <scroom/scroominterface.hh>
 #include <scroom/utilities.hh>
+#include <scroom/viewinterface.hh>
+#include <string>
 
-#include "sidebarmanager.hh"
 #include "progressbarmanager.hh"
+#include "sidebarmanager.hh"
 
 struct Measurement
 {
-public:
+  public:
   GdkPoint start;
   GdkPoint end;
 
-public:
-  Measurement(int x, int y) { start.x=x; start.y=y; end=start; }
+  public:
+  Measurement(int x, int y)
+  {
+    start.x = x;
+    start.y = y;
+    end = start;
+  }
   Measurement(GdkPoint start_) : start(start_), end(start_) {}
 
-  bool endsAt(GdkPoint p) { return end.x==p.x && end.y==p.y; }
+  bool endsAt(GdkPoint p)
+  {
+    return end.x == p.x && end.y == p.y;
+  }
 
-  int width() { return abs(end.x-start.x); }
-  int height() { return abs(end.y-start.y); }
-  double length() { return std::sqrt(std::pow(double(width()),2) + std::pow(double(height()),2)); }
+  int width()
+  {
+    return abs(end.x - start.x);
+  }
+  int height()
+  {
+    return abs(end.y - start.y);
+  }
+  double length()
+  {
+    return std::sqrt(std::pow(double(width()), 2) + std::pow(double(height()), 2));
+  }
 };
 
 class View : public ViewInterface, virtual public Scroom::Utils::Base
 {
-public:
+  public:
   typedef boost::shared_ptr<View> Ptr;
 
-private:
+  private:
   GladeXML* scroomXml;
   PresentationInterface::Ptr presentation;
   SidebarManager sidebarManager;
@@ -86,20 +101,20 @@ private:
 
   ProgressBarManager::Ptr progressBarManager;
 
-  std::map<PresentationInterface::WeakPtr,GtkWidget*> presentations;
+  std::map<PresentationInterface::WeakPtr, GtkWidget*> presentations;
 
-private:
+  private:
   enum LocationChangeCause
-    {
-      SCROLLBAR,
-      TEXTBOX,
-      OTHER
-    };
+  {
+    SCROLLBAR,
+    TEXTBOX,
+    OTHER
+  };
 
-private:
+  private:
   View(GladeXML* scroomXml);
 
-public:
+  public:
   static Ptr create(GladeXML* scroomXml, PresentationInterface::Ptr presentation);
 
   virtual ~View();
@@ -110,8 +125,8 @@ public:
   void setPresentation(PresentationInterface::Ptr presentation);
   void clearPresentation();
 
-  void updateScrollbar(GtkAdjustment* adj, int zoom, double value,
-                       double presentationStart, double presentationSize, double windowSize);
+  void updateScrollbar(GtkAdjustment* adj, int zoom, double value, double presentationStart,
+                       double presentationSize, double windowSize);
   void updateScrollbars();
   void updateZoom();
   void updateRulers();
@@ -120,7 +135,8 @@ public:
   ////////////////////////////////////////////////////////////////////////
   // Scroom events
 
-  void on_newPresentationInterfaces_update(const std::map<NewPresentationInterface::Ptr, std::string>& newPresentationInterfaces);
+  void on_newPresentationInterfaces_update(
+      const std::map<NewPresentationInterface::Ptr, std::string>& newPresentationInterfaces);
   void on_presentation_created(PresentationInterface::Ptr p);
   void on_presentation_destroyed();
   void on_configure();
@@ -149,7 +165,7 @@ public:
   ////////////////////////////////////////////////////////////////////////
   // Helpers
 
-private:
+  private:
   GdkPoint windowPointToPresentationPoint(GdkPoint wp);
   GdkPoint presentationPointToWindowPoint(GdkPoint pp);
   GdkPoint eventToPoint(GdkEventButton* event);
@@ -160,4 +176,3 @@ private:
   void updateNewWindowMenu();
   void updateXY(int x, int y, LocationChangeCause source);
 };
-

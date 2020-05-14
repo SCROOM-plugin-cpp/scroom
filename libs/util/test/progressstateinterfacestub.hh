@@ -11,22 +11,21 @@
 
 class ProgressStateInterfaceStub : public Scroom::Utils::ProgressStateInterface
 {
-public:
+  public:
   typedef boost::shared_ptr<ProgressStateInterfaceStub> Ptr;
 
-public:
+  public:
   State state;
   double progress;
 
-public:
+  public:
   static Ptr create();
   virtual ~ProgressStateInterfaceStub() {}
 
-private:
+  private:
   ProgressStateInterfaceStub();
 
-public:
+  public:
   // ProgressStateInterface
   virtual void setProgress(State s, double d);
 };
-

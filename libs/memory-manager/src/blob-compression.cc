@@ -30,16 +30,15 @@ namespace Scroom
         stream.opaque = Z_NULL;
 
         int r = deflateInit(&stream, Z_BEST_SPEED);
-        if(r != Z_OK)
+        if (r != Z_OK)
         {
-          printf("PANIC: deflateInit said: %d (%s)\n",
-                 r, (stream.msg?stream.msg:""));
+          printf("PANIC: deflateInit said: %d (%s)\n", r, (stream.msg ? stream.msg : ""));
           exit(-1);
         }
 
         do
         {
-          if(stream.avail_out != 0)
+          if (stream.avail_out != 0)
             printf("PANIC! Some space available after compression finishes\n");
 
           Page::Ptr currentPage = provider->getFreePage();
@@ -52,26 +51,24 @@ namespace Scroom
 
           r = deflate(&stream, Z_FINISH);
 
-        } while(r==Z_OK);
+        } while (r == Z_OK);
 
-        if(r!=Z_STREAM_END)
+        if (r != Z_STREAM_END)
         {
-          printf("PANIC: deflate said: %d (%s)\n",
-                 r, (stream.msg?stream.msg:""));
+          printf("PANIC: deflate said: %d (%s)\n", r, (stream.msg ? stream.msg : ""));
           exit(-1);
         }
 
         r = deflateEnd(&stream);
-        if(r!=Z_OK)
+        if (r != Z_OK)
         {
-          printf("PANIC: deflateEnd said: %d (%s)\n",
-                 r, (stream.msg?stream.msg:""));
+          printf("PANIC: deflateEnd said: %d (%s)\n", r, (stream.msg ? stream.msg : ""));
           exit(-1);
         }
 
         // printf("Compression finished: Before: %ld, After: %ld (%lu*%lu=%lu) (%.2f%%, %.2f%%)\n",
-        //        stream.total_in, stream.total_out, result.size(), pageSize, result.size()*pageSize,
-        //        100.0*stream.total_out/stream.total_in,
+        //        stream.total_in, stream.total_out, result.size(), pageSize,
+        //        result.size()*pageSize, 100.0*stream.total_out/stream.total_in,
         //        100.0*result.size()*pageSize/stream.total_in);
 
         return result;
@@ -90,16 +87,15 @@ namespace Scroom
         stream.opaque = Z_NULL;
 
         int r = inflateInit(&stream);
-        if(r != Z_OK)
+        if (r != Z_OK)
         {
-          printf("PANIC: inflateInit said: %d (%s)\n",
-                 r, (stream.msg?stream.msg:""));
+          printf("PANIC: inflateInit said: %d (%s)\n", r, (stream.msg ? stream.msg : ""));
           exit(-1);
         }
 
-        while(!list.empty() && r== Z_OK)
+        while (!list.empty() && r == Z_OK)
         {
-          if(stream.avail_in != 0)
+          if (stream.avail_in != 0)
             printf("PANIC! Some data available after inflation finishes\n");
 
           Page::Ptr currentPage = list.front();
@@ -110,26 +106,23 @@ namespace Scroom
           stream.next_in = currentPageRaw.get();
           stream.avail_in = static_cast<unsigned int>(pageSize);
 
-          int flush = (list.empty()?Z_FINISH:Z_NO_FLUSH);
+          int flush = (list.empty() ? Z_FINISH : Z_NO_FLUSH);
 
           r = inflate(&stream, flush);
         }
-        if(r!=Z_OK && r!=Z_STREAM_END)
+        if (r != Z_OK && r != Z_STREAM_END)
         {
-          printf("PANIC: inflate said: %d (%s)\n",
-                 r, (stream.msg?stream.msg:""));
+          printf("PANIC: inflate said: %d (%s)\n", r, (stream.msg ? stream.msg : ""));
           exit(-1);
         }
 
         r = inflateEnd(&stream);
-        if(r!=Z_OK)
+        if (r != Z_OK)
         {
-          printf("PANIC: inflateEnd said: %d (%s)\n",
-                 r, (stream.msg?stream.msg:""));
+          printf("PANIC: inflateEnd said: %d (%s)\n", r, (stream.msg ? stream.msg : ""));
           exit(-1);
         }
       }
-    }
-  }
-}
-
+    }  // namespace Detail
+  }    // namespace MemoryBlobs
+}  // namespace Scroom

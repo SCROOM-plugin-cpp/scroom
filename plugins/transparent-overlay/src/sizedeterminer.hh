@@ -7,41 +7,40 @@
 
 #pragma once
 
-#include <list>
-#include <set>
-#include <map>
-
 #include <boost/shared_ptr.hpp>
-
+#include <list>
+#include <map>
 #include <scroom/presentationinterface.hh>
 #include <scroom/resizablepresentationinterface.hh>
+#include <set>
 
 class SizeDeterminer
 {
-public:
+  public:
   typedef boost::shared_ptr<SizeDeterminer> Ptr;
 
-private:
+  private:
   class PresentationData
   {
-  public:
+    public:
     ResizablePresentationInterface::Ptr const resizablePresentationInterface;
     std::set<ViewInterface::WeakPtr> views;
 
-  public:
-    PresentationData(); // Don't use
-    explicit PresentationData(ResizablePresentationInterface::Ptr const& resizablePresentationInterface);
+    public:
+    PresentationData();  // Don't use
+    explicit PresentationData(
+        ResizablePresentationInterface::Ptr const& resizablePresentationInterface);
   };
 
-private:
+  private:
   std::list<PresentationInterface::Ptr> presentations;
-  std::map<PresentationInterface::Ptr,PresentationData> resizablePresentationData;
+  std::map<PresentationInterface::Ptr, PresentationData> resizablePresentationData;
 
-private:
+  private:
   SizeDeterminer();
   void sendUpdates();
 
-public:
+  public:
   static Ptr create();
   void add(PresentationInterface::Ptr const& p);
   Scroom::Utils::Rectangle<double> getRect() const;
@@ -49,4 +48,3 @@ public:
   void open(PresentationInterface::Ptr const& p, ViewInterface::WeakPtr const& vi);
   void close(PresentationInterface::Ptr const& p, ViewInterface::WeakPtr const& vi);
 };
-

@@ -7,27 +7,25 @@
 
 #pragma once
 
-#include <string>
-#include <map>
 #include <list>
-#include <set>
-
+#include <map>
 #include <scroom/colormappable.hh>
 #include <scroom/observable.hh>
 #include <scroom/presentationinterface.hh>
 #include <scroom/scroominterface.hh>
 #include <scroom/tiledbitmapinterface.hh>
 #include <scroom/transformpresentation.hh>
+#include <set>
+#include <string>
 
 typedef struct tiff TIFF;
 
-class TiffPresentation : public SourcePresentation,
-                         public virtual Scroom::Utils::Base
+class TiffPresentation : public SourcePresentation, public virtual Scroom::Utils::Base
 {
-public:
+  public:
   typedef boost::shared_ptr<TiffPresentation> Ptr;
 
-private:
+  private:
   typedef std::set<ViewInterface::WeakPtr> Views;
 
   std::string fileName;
@@ -42,10 +40,10 @@ private:
   ColormapHelper::Ptr colormapHelper;
   TransformationData::Ptr transformationData;
 
-private:
+  private:
   TiffPresentation();
 
-public:
+  public:
   virtual ~TiffPresentation();
 
   static Ptr create();
@@ -67,7 +65,8 @@ public:
   ////////////////////////////////////////////////////////////////////////
 
   virtual Scroom::Utils::Rectangle<double> getRect();
-  virtual void redraw(ViewInterface::Ptr const& vi, cairo_t* cr, Scroom::Utils::Rectangle<double> presentationArea, int zoom);
+  virtual void redraw(ViewInterface::Ptr const& vi, cairo_t* cr,
+                      Scroom::Utils::Rectangle<double> presentationArea, int zoom);
   virtual bool getProperty(const std::string& name, std::string& value);
   virtual bool isPropertyDefined(const std::string& name);
   virtual std::string getTitle();
@@ -83,15 +82,16 @@ public:
   ////////////////////////////////////////////////////////////////////////
   // SourcePresentation
   ////////////////////////////////////////////////////////////////////////
-public:
-  virtual void fillTiles(int startLine, int lineCount, int tileWidth, int firstTile, std::vector<Tile::Ptr>& tiles);
+  public:
+  virtual void fillTiles(int startLine, int lineCount, int tileWidth, int firstTile,
+                         std::vector<Tile::Ptr>& tiles);
   virtual void done();
 
   ////////////////////////////////////////////////////////////////////////
   // Colormappable
   ////////////////////////////////////////////////////////////////////////
 
-public:
+  public:
   virtual void setColormap(Colormap::Ptr colormap);
   virtual Colormap::Ptr getOriginalColormap();
   virtual int getNumberOfColors();
@@ -101,22 +101,22 @@ public:
   virtual void disableTransparentBackground();
   virtual bool getTransparentBackground();
 
-private:
+  private:
   void clearCaches();
 };
 
 class TiffPresentationWrapper : public PresentationBase, public Colormappable
 {
-public:
+  public:
   typedef boost::shared_ptr<TiffPresentationWrapper> Ptr;
 
-private:
+  private:
   TiffPresentation::Ptr presentation;
 
-private:
+  private:
   TiffPresentationWrapper();
 
-public:
+  public:
   static Ptr create();
 
   virtual ~TiffPresentationWrapper();
@@ -129,7 +129,8 @@ public:
   ////////////////////////////////////////////////////////////////////////
 
   virtual Scroom::Utils::Rectangle<double> getRect();
-  virtual void redraw(ViewInterface::Ptr const& vi, cairo_t* cr, Scroom::Utils::Rectangle<double> presentationArea, int zoom);
+  virtual void redraw(ViewInterface::Ptr const& vi, cairo_t* cr,
+                      Scroom::Utils::Rectangle<double> presentationArea, int zoom);
   virtual bool getProperty(const std::string& name, std::string& value);
   virtual bool isPropertyDefined(const std::string& name);
   virtual std::string getTitle();
@@ -155,4 +156,3 @@ public:
   virtual void disableTransparentBackground();
   virtual bool getTransparentBackground();
 };
-

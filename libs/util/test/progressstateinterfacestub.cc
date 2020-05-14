@@ -1,8 +1,6 @@
 #include "progressstateinterfacestub.hh"
 
-ProgressStateInterfaceStub::ProgressStateInterfaceStub()
-: state(IDLE), progress(0.0)
-{}
+ProgressStateInterfaceStub::ProgressStateInterfaceStub() : state(IDLE), progress(0.0) {}
 
 ProgressStateInterfaceStub::Ptr ProgressStateInterfaceStub::create()
 {
@@ -14,4 +12,3 @@ void ProgressStateInterfaceStub::setProgress(State s, double d)
   state = s;
   progress = d;
 }
-

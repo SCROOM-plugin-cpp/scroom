@@ -11,14 +11,14 @@
 
 #include "local.hh"
 
-LayerCoordinator::Ptr LayerCoordinator::create(CompressedTile::Ptr targetTile, LayerOperations::Ptr lo)
+LayerCoordinator::Ptr LayerCoordinator::create(CompressedTile::Ptr targetTile,
+                                               LayerOperations::Ptr lo)
 {
   return LayerCoordinator::Ptr(new LayerCoordinator(targetTile, lo));
 }
 
-LayerCoordinator::LayerCoordinator(CompressedTile::Ptr targetTile_,
-                                   LayerOperations::Ptr lo_)
-  : targetTile(targetTile_), lo(lo_), unfinishedSourceTiles(0)
+LayerCoordinator::LayerCoordinator(CompressedTile::Ptr targetTile_, LayerOperations::Ptr lo_)
+    : targetTile(targetTile_), lo(lo_), unfinishedSourceTiles(0)
 {
 }
 
@@ -32,7 +32,7 @@ void LayerCoordinator::addSourceTile(int x, int y, CompressedTile::Ptr tile)
 {
   boost::unique_lock<boost::mutex> lock(mut);
 
-  sourceTiles[tile] = std::make_pair(x,y);
+  sourceTiles[tile] = std::make_pair(x, y);
   registrations.push_back(tile->registerObserver(shared_from_this<LayerCoordinator>()));
   unfinishedSourceTiles++;
 }
@@ -43,12 +43,14 @@ void LayerCoordinator::addSourceTile(int x, int y, CompressedTile::Ptr tile)
 void LayerCoordinator::tileFinished(CompressedTile::Ptr tile)
 {
   ConstTile::Ptr tileData = tile->getConstTileAsync();
-  if(!tileData)
+  if (!tileData)
   {
     printf("WEIRD: Tile finished but not loaded?\n");
   }
 
-  CpuBound()->schedule(boost::bind(&LayerCoordinator::reduceSourceTile, shared_from_this<LayerCoordinator>(), tile, tileData), REDUCE_PRIO);
+  CpuBound()->schedule(boost::bind(&LayerCoordinator::reduceSourceTile,
+                                   shared_from_this<LayerCoordinator>(), tile, tileData),
+                       REDUCE_PRIO);
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -64,11 +66,11 @@ void LayerCoordinator::reduceSourceTile(CompressedTile::Ptr tile, ConstTile::Ptr
   UNUSED(tileData);
 
   Scroom::Utils::Stuff s = targetTile->initialize();
-  const std::pair<int,int> location = sourceTiles[tile];
+  const std::pair<int, int> location = sourceTiles[tile];
   const int x = location.first;
   const int y = location.second;
 
-  if(!targetTileData)
+  if (!targetTileData)
     targetTileData = targetTile->getTileSync();
   ConstTile::Ptr source = tile->getConstTileSync();
 
@@ -76,7 +78,7 @@ void LayerCoordinator::reduceSourceTile(CompressedTile::Ptr tile, ConstTile::Ptr
 
   boost::unique_lock<boost::mutex> lock(mut);
   unfinishedSourceTiles--;
-  if(!unfinishedSourceTiles)
+  if (!unfinishedSourceTiles)
   {
     targetTile->reportFinished();
     targetTileData.reset();

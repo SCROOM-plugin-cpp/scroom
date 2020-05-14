@@ -11,14 +11,14 @@ namespace Scroom
 {
   namespace Bitmap
   {
-
     BitmapSurface::Ptr BitmapSurface::create(int width, int height, cairo_format_t format)
     {
       return BitmapSurface::Ptr(new BitmapSurface(width, height, format));
     }
 
     BitmapSurface::Ptr BitmapSurface::create(int width, int height, cairo_format_t format,
-                                             int stride, boost::shared_ptr<unsigned char> const& data)
+                                             int stride,
+                                             boost::shared_ptr<unsigned char> const& data)
     {
       return BitmapSurface::Ptr(new BitmapSurface(width, height, format, stride, data));
     }
@@ -34,13 +34,16 @@ namespace Scroom
     }
 
     BitmapSurface::BitmapSurface(int width, int height, cairo_format_t format)
-      : surface(cairo_image_surface_create(format, width, height))
-    {}
+        : surface(cairo_image_surface_create(format, width, height))
+    {
+    }
 
-    BitmapSurface::BitmapSurface(int width, int height, cairo_format_t format,
-                                 int stride, boost::shared_ptr<unsigned char> const& data_)
-      : surface(cairo_image_surface_create_for_data(data_.get(), format, width, height, stride)), data(data_)
-    {}
+    BitmapSurface::BitmapSurface(int width, int height, cairo_format_t format, int stride,
+                                 boost::shared_ptr<unsigned char> const& data_)
+        : surface(cairo_image_surface_create_for_data(data_.get(), format, width, height, stride)),
+          data(data_)
+    {
+    }
 
-  } // namespace Bitmap
-} // namespace Scroom
+  }  // namespace Bitmap
+}  // namespace Scroom

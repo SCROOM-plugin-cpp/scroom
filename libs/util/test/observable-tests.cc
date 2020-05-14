@@ -5,10 +5,9 @@
  * SPDX-License-Identifier: LGPL-2.1
  */
 
-#include <scroom/observable.hh>
-
-#include <boost/test/unit_test.hpp>
 #include <boost/shared_ptr.hpp>
+#include <boost/test/unit_test.hpp>
+#include <scroom/observable.hh>
 
 using namespace Scroom::Utils;
 
@@ -16,7 +15,7 @@ using namespace Scroom::Utils;
 
 class TestObserver
 {
-public:
+  public:
   typedef boost::shared_ptr<TestObserver> Ptr;
   typedef boost::weak_ptr<TestObserver> WeakPtr;
 
@@ -30,9 +29,9 @@ TestObserver::Ptr TestObserver::create()
 
 //////////////////////////////////////////////////////////////
 
-class TestObservable: public Observable<TestObserver>
+class TestObservable : public Observable<TestObserver>
 {
-public:
+  public:
   typedef boost::shared_ptr<TestObservable> Ptr;
 
   std::list<Observer> getObservers();
@@ -52,28 +51,25 @@ TestObservable::Ptr TestObservable::create()
 
 //////////////////////////////////////////////////////////////
 
-class TestRecursiveObservable: public Observable<TestObserver>
+class TestRecursiveObservable : public Observable<TestObserver>
 {
-private:
+  private:
   TestObservable::Ptr child;
 
   TestRecursiveObservable(TestObservable::Ptr child);
 
-public:
+  public:
   typedef boost::shared_ptr<TestRecursiveObservable> Ptr;
 
   std::list<Observer> getObservers();
 
   static Ptr create(TestObservable::Ptr child);
 
-protected:
+  protected:
   virtual void observerAdded(Observer const& observer, Scroom::Bookkeeping::Token const& token);
 };
 
-TestRecursiveObservable::TestRecursiveObservable(TestObservable::Ptr child_)
-  :child(child_)
-{
-}
+TestRecursiveObservable::TestRecursiveObservable(TestObservable::Ptr child_) : child(child_) {}
 
 std::list<TestRecursiveObservable::Observer> TestRecursiveObservable::getObservers()
 {
@@ -85,7 +81,8 @@ TestRecursiveObservable::Ptr TestRecursiveObservable::create(TestObservable::Ptr
   return TestRecursiveObservable::Ptr(new TestRecursiveObservable(child));
 }
 
-void TestRecursiveObservable::observerAdded(Observer const& observer, Scroom::Bookkeeping::Token const& token)
+void TestRecursiveObservable::observerAdded(Observer const& observer,
+                                            Scroom::Bookkeeping::Token const& token)
 {
   token.add(child->registerObserver(observer));
 }
@@ -160,7 +157,7 @@ BOOST_AUTO_TEST_CASE(registered_weak_observer_goes_away)
   BOOST_CHECK_EQUAL(observer, observers.front());
 
   // Observable does not have a reference to observer, so it goes away
-  observers.clear(); // don't forget this reference :-)
+  observers.clear();  // don't forget this reference :-)
   observer.reset();
   BOOST_CHECK(!observer);
   observers = observable->getObservers();

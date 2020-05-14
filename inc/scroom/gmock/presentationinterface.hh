@@ -9,22 +9,25 @@
 
 #include <gmock/gmock.h>
 
-#include <scroom/presentationinterface.hh>
-
 #include <scroom/gmock/colormappable.hh>
+#include <scroom/presentationinterface.hh>
 
 class PresentationMock : public PresentationInterface
 {
-public:
+  public:
   typedef boost::shared_ptr<PresentationMock> Ptr;
-  
-  static Ptr create() { return Ptr(new PresentationMock()); }
-  
-  MOCK_METHOD1(open, void (ViewInterface::WeakPtr));
-  MOCK_METHOD1(close, void (ViewInterface::WeakPtr));
+
+  static Ptr create()
+  {
+    return Ptr(new PresentationMock());
+  }
+
+  MOCK_METHOD1(open, void(ViewInterface::WeakPtr));
+  MOCK_METHOD1(close, void(ViewInterface::WeakPtr));
 
   MOCK_METHOD0(getRect, Scroom::Utils::Rectangle<double>());
-  MOCK_METHOD4(redraw, void(ViewInterface::Ptr const&, cairo_t*, Scroom::Utils::Rectangle<double>, int));
+  MOCK_METHOD4(redraw,
+               void(ViewInterface::Ptr const&, cairo_t*, Scroom::Utils::Rectangle<double>, int));
   MOCK_METHOD2(getProperty, bool(const std::string&, std::string&));
   MOCK_METHOD1(isPropertyDefined, bool(const std::string&));
   MOCK_METHOD0(getTitle, std::string());
@@ -32,8 +35,11 @@ public:
 
 class ColormappablePresentationMock : public PresentationMock, public ColormappableMock
 {
-public:
+  public:
   typedef boost::shared_ptr<ColormappablePresentationMock> Ptr;
 
-  static Ptr create() { return Ptr(new ColormappablePresentationMock()); }
+  static Ptr create()
+  {
+    return Ptr(new ColormappablePresentationMock());
+  }
 };

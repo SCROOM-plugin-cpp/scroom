@@ -7,13 +7,12 @@
 
 #include <gtk/gtk.h>
 
-#include <map>
 #include <list>
+#include <map>
+#include <scroom/presentationinterface.hh>
+#include <scroom/scroominterface.hh>
 #include <string>
 
-#include <scroom/scroominterface.hh>
-
-#include <scroom/presentationinterface.hh>
 #include "view.hh"
 
 typedef std::map<std::string, std::list<std::string> > FileNameMap;
@@ -47,7 +46,8 @@ void on_about_activate(GtkMenuItem* menuitem, gpointer user_data);
 
 gboolean on_drawingarea_expose_event(GtkWidget* widget, GdkEventExpose* event, gpointer user_data);
 
-gboolean on_drawingarea_configure_event(GtkWidget* widget, GdkEventConfigure* event, gpointer user_data);
+gboolean on_drawingarea_configure_event(GtkWidget* widget, GdkEventConfigure* event,
+                                        gpointer user_data);
 
 gboolean on_idle(gpointer user_data);
 
@@ -59,13 +59,14 @@ void on_scrollbar_value_changed(GtkAdjustment* adjustment, gpointer user_data);
 
 void on_textbox_value_changed(GtkEditable* editable, gpointer user_data);
 
-void on_scroom_bootstrap (const FileNameMap& newFilenames);
+void on_scroom_bootstrap(const FileNameMap& newFilenames);
 
 void find_or_create_scroom(PresentationInterface::Ptr presentation);
 
 void create_scroom(PresentationInterface::Ptr presentation);
 
-void on_newPresentationInterfaces_update(const std::map<NewPresentationInterface::Ptr, std::string>& newPresentationInterfaces);
+void on_newPresentationInterfaces_update(
+    const std::map<NewPresentationInterface::Ptr, std::string>& newPresentationInterfaces);
 
 void on_presentation_created(PresentationInterface::Ptr p);
 

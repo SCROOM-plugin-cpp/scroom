@@ -7,14 +7,11 @@
 
 #pragma once
 
-#include <vector>
-#include <map>
-
-#include <boost/thread.hpp>
-#include <boost/shared_ptr.hpp>
-#include <boost/weak_ptr.hpp>
 #include <boost/enable_shared_from_this.hpp>
-
+#include <boost/shared_ptr.hpp>
+#include <boost/thread.hpp>
+#include <boost/weak_ptr.hpp>
+#include <map>
 #include <scroom/memoryblobs.hh>
 #include <scroom/observable.hh>
 #include <scroom/presentationinterface.hh>
@@ -23,6 +20,7 @@
 #include <scroom/threadpool.hh>
 #include <scroom/tile.hh>
 #include <scroom/tiledbitmapinterface.hh>
+#include <vector>
 
 #define TILESIZE 4096
 // #define TILESIZE 1024
@@ -32,13 +30,13 @@
  * bitmap.
  */
 typedef enum
-  {
-    TSI_UNINITIALIZED,
-    TSI_NORMAL,
-    TSI_OUT_OF_BOUNDS,
-    TSI_LOADING_SYNCHRONOUSLY,
-    TSI_LOADING_ASYNCHRONOUSLY
-  } TileStateInternal;
+{
+  TSI_UNINITIALIZED,
+  TSI_NORMAL,
+  TSI_OUT_OF_BOUNDS,
+  TSI_LOADING_SYNCHRONOUSLY,
+  TSI_LOADING_ASYNCHRONOUSLY
+} TileStateInternal;
 
 class TileViewState;
 class CompressedTile;
@@ -48,7 +46,7 @@ class CompressedTile;
 /** Events related to filling a tile with data. */
 class TileInitialisationObserver
 {
-public:
+  public:
   typedef boost::shared_ptr<TileInitialisationObserver> Ptr;
   typedef boost::weak_ptr<TileInitialisationObserver> WeakPtr;
 
@@ -81,14 +79,14 @@ public:
 /** Events related to swapping tiles in/out */
 class TileLoadingObserver
 {
-public:
+  public:
   typedef boost::shared_ptr<TileLoadingObserver> Ptr;
   typedef boost::weak_ptr<TileLoadingObserver> WeakPtr;
 
-  virtual ~TileLoadingObserver() {};
+  virtual ~TileLoadingObserver(){};
 
   /** The Tile has been loaded. */
-  virtual void tileLoaded(ConstTile::Ptr tile)=0;
+  virtual void tileLoaded(ConstTile::Ptr tile) = 0;
 };
 
 ////////////////////////////////////////////////////////////////////////
@@ -107,33 +105,36 @@ class CompressedTile : public Scroom::Utils::Observable<TileInitialisationObserv
                        public Scroom::Utils::Observable<TileLoadingObserver>,
                        public Viewable
 {
-public:
+  public:
   typedef boost::shared_ptr<CompressedTile> Ptr;
 
-public:
-  const int depth;                                  /**< Layer number of this tile */
-  const int x;                                      /**< x-coordinate of this tile (i.e. number of tiles to the left of this tile) */
-  const int y;                                      /**< y-coordinate of this tile (i.e. number of tiles above this tile) */
-  const int bpp;                                    /**< Bits per pixel of this tile. Must be a divisor of 8. */
+  public:
+  const int depth; /**< Layer number of this tile */
+  const int x;     /**< x-coordinate of this tile (i.e. number of tiles to the left of this tile) */
+  const int y;     /**< y-coordinate of this tile (i.e. number of tiles above this tile) */
+  const int bpp;   /**< Bits per pixel of this tile. Must be a divisor of 8. */
 
-private:
-  TileStateInternal state;                          /**< State of this tile */
-  Tile::WeakPtr tile;                               /**< Reference to the actual Tile */
-  ConstTile::WeakPtr constTile;                     /**< Reference to the actual Tile */
-  Scroom::MemoryBlobs::PageProvider::Ptr provider;  /**< Provider of blocks of memory */
-  Scroom::MemoryBlobs::Blob::Ptr data;              /**< Data associated with the Tile */
-  boost::mutex stateData;                           /**< Mutex protecting the state field */
-  boost::mutex tileData;                            /**< Mutex protecting the data-related fields */
+  private:
+  TileStateInternal state;                         /**< State of this tile */
+  Tile::WeakPtr tile;                              /**< Reference to the actual Tile */
+  ConstTile::WeakPtr constTile;                    /**< Reference to the actual Tile */
+  Scroom::MemoryBlobs::PageProvider::Ptr provider; /**< Provider of blocks of memory */
+  Scroom::MemoryBlobs::Blob::Ptr data;             /**< Data associated with the Tile */
+  boost::mutex stateData;                          /**< Mutex protecting the state field */
+  boost::mutex tileData;                           /**< Mutex protecting the data-related fields */
 
   ThreadPool::Queue::WeakPtr queue; /**< Queue on which the load operation is executed */
 
   std::map<ViewInterface::WeakPtr, boost::weak_ptr<TileViewState> > viewStates;
 
-private:
-  CompressedTile(int depth, int x, int y, int bpp, Scroom::MemoryBlobs::PageProvider::Ptr provider, TileStateInternal state);
+  private:
+  CompressedTile(int depth, int x, int y, int bpp, Scroom::MemoryBlobs::PageProvider::Ptr provider,
+                 TileStateInternal state);
 
-public:
-  static Ptr create(int depth, int x, int y, int bpp, Scroom::MemoryBlobs::PageProvider::Ptr provider, TileStateInternal state=TSI_UNINITIALIZED);
+  public:
+  static Ptr create(int depth, int x, int y, int bpp,
+                    Scroom::MemoryBlobs::PageProvider::Ptr provider,
+                    TileStateInternal state = TSI_UNINITIALIZED);
 
   /**
    * Initializes the tile data
@@ -142,7 +143,7 @@ public:
    */
   Tile::Ptr initialize();
 
-protected:
+  protected:
   /**
    * Keep track of new TileInitialisationObserver registrations.
    *
@@ -150,23 +151,34 @@ protected:
    * TileInitialisationObserver::tileCreated() event immediately, on your
    * thread. Be careful with your mutexes :-)
    */
-  virtual void observerAdded(TileInitialisationObserver::Ptr const& observer, Scroom::Bookkeeping::Token const& token);
+  virtual void observerAdded(TileInitialisationObserver::Ptr const& observer,
+                             Scroom::Bookkeeping::Token const& token);
 
   /**
    * Keep track of new TileLoadingObserver registrations.
    */
-  virtual void observerAdded(TileLoadingObserver::Ptr const& observer, Scroom::Bookkeeping::Token const& token);
+  virtual void observerAdded(TileLoadingObserver::Ptr const& observer,
+                             Scroom::Bookkeeping::Token const& token);
 
-public:
+  public:
   // To choose between overloaded functions, the compiler needs some extra convincing
-  virtual Scroom::Utils::Stuff registerStrongObserver(TileInitialisationObserver::Ptr const& observer)
-  { return Scroom::Utils::Observable<TileInitialisationObserver>::registerStrongObserver(observer); }
+  virtual Scroom::Utils::Stuff registerStrongObserver(
+      TileInitialisationObserver::Ptr const& observer)
+  {
+    return Scroom::Utils::Observable<TileInitialisationObserver>::registerStrongObserver(observer);
+  }
   virtual Scroom::Utils::Stuff registerObserver(TileInitialisationObserver::WeakPtr const& observer)
-  { return Scroom::Utils::Observable<TileInitialisationObserver>::registerObserver(observer); }
+  {
+    return Scroom::Utils::Observable<TileInitialisationObserver>::registerObserver(observer);
+  }
   virtual Scroom::Utils::Stuff registerStrongObserver(TileLoadingObserver::Ptr const& observer)
-  { return Scroom::Utils::Observable<TileLoadingObserver>::registerStrongObserver(observer); }
+  {
+    return Scroom::Utils::Observable<TileLoadingObserver>::registerStrongObserver(observer);
+  }
   virtual Scroom::Utils::Stuff registerObserver(TileLoadingObserver::WeakPtr const& observer)
-  { return Scroom::Utils::Observable<TileLoadingObserver>::registerObserver(observer); }
+  {
+    return Scroom::Utils::Observable<TileLoadingObserver>::registerObserver(observer);
+  }
 
   /**
    * Get a reference to the Tile.
@@ -203,7 +215,7 @@ public:
 
   boost::shared_ptr<TileViewState> getViewState(ViewInterface::WeakPtr vi);
 
-private:
+  private:
   /**
    * Does some internal state maintenance.
    *
@@ -214,8 +226,7 @@ private:
   void notifyObservers(ConstTile::Ptr tile);
 
   // Viewable ////////////////////////////////////////////////////////////
-public:
-
+  public:
   virtual void open(ViewInterface::WeakPtr vi);
   virtual void close(ViewInterface::WeakPtr vi);
 };
@@ -227,10 +238,10 @@ typedef std::vector<CompressedTileLine> CompressedTileGrid;
 
 class Layer : public Viewable, public virtual Scroom::Utils::Base
 {
-public:
+  public:
   typedef boost::shared_ptr<Layer> Ptr;
 
-private:
+  private:
   int depth;
   int width;
   int height;
@@ -241,11 +252,13 @@ private:
   CompressedTile::Ptr outOfBounds;
   CompressedTileLine lineOutOfBounds;
 
-private:
-  Layer(TileInitialisationObserver::Ptr observer, int depth, int layerWidth, int layerHeight, int bpp, Scroom::MemoryBlobs::PageProvider::Ptr provider);
+  private:
+  Layer(TileInitialisationObserver::Ptr observer, int depth, int layerWidth, int layerHeight,
+        int bpp, Scroom::MemoryBlobs::PageProvider::Ptr provider);
 
-public:
-  static Ptr create(TileInitialisationObserver::Ptr observer, int depth, int layerWidth, int layerHeight, int bpp, Scroom::MemoryBlobs::PageProvider::Ptr provider);
+  public:
+  static Ptr create(TileInitialisationObserver::Ptr observer, int depth, int layerWidth,
+                    int layerHeight, int bpp, Scroom::MemoryBlobs::PageProvider::Ptr provider);
   int getHorTileCount();
   int getVerTileCount();
 
@@ -253,24 +266,29 @@ public:
   CompressedTileLine& getTileLine(int j);
   void fetchData(SourcePresentation::Ptr sp, ThreadPool::WeakQueue::Ptr queue);
 
-public:
+  public:
   int getWidth()
-  { return width; }
+  {
+    return width;
+  }
 
   int getHeight()
-  { return height; }
+  {
+    return height;
+  }
 
   int getDepth()
-  { return depth; }
+  {
+    return depth;
+  }
 
   Scroom::Utils::Rectangle<int> getRect()
   {
-    return Scroom::Utils::Rectangle<int>(0,0,width,height);
+    return Scroom::Utils::Rectangle<int>(0, 0, width, height);
   }
 
-public:
+  public:
   // Viewable ////////////////////////////////////////////////////////////
   void open(ViewInterface::WeakPtr vi);
   void close(ViewInterface::WeakPtr vi);
 };
-

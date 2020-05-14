@@ -6,23 +6,22 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#  include <config.h>
+#include <config.h>
 #endif
 
-#include <stdlib.h>
 #include <getopt.h>
-
 #include <gtk/gtk.h>
+#include <stdlib.h>
 
 #include <string>
 
 #include "measure-framerate-callbacks.hh"
 #include "measure-load-performance-tests.hh"
 
-void usage(std::string me, std::string message=std::string())
+void usage(std::string me, std::string message = std::string())
 {
-  if(message.length() != 0)
-    printf ("ERROR: %s\n\n", message.c_str());
+  if (message.length() != 0)
+    printf("ERROR: %s\n\n", message.c_str());
 
   printf("Usage: %s [options] [input files]\n\n", me.c_str());
   printf("Options:\n");
@@ -30,7 +29,7 @@ void usage(std::string me, std::string message=std::string())
   exit(-1);
 }
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
   std::string me = argv[0];
   int result;
@@ -65,14 +64,13 @@ int main (int argc, char *argv[])
   gdk_threads_init();
 
   gdk_threads_enter();
-  gtk_set_locale ();
-  gtk_init (&argc, &argv);
+  gtk_set_locale();
+  gtk_init(&argc, &argv);
 
   init_tests();
   init();
 
-  gtk_main ();
+  gtk_main();
   gdk_threads_leave();
   return 0;
 }
-

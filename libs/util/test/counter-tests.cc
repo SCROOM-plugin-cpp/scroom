@@ -5,10 +5,9 @@
  * SPDX-License-Identifier: LGPL-2.1
  */
 
-#include <scroom/utilities.hh>
-
-#include <boost/test/unit_test.hpp>
 #include <boost/shared_ptr.hpp>
+#include <boost/test/unit_test.hpp>
+#include <scroom/utilities.hh>
 
 using namespace Scroom::Utils;
 

@@ -5,13 +5,11 @@
  * SPDX-License-Identifier: LGPL-2.1
  */
 
-#include <scroom/semaphore.hh>
-
-#include <iostream>
-
+#include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/test/unit_test.hpp>
 #include <boost/thread.hpp>
-#include <boost/date_time/posix_time/posix_time.hpp>
+#include <iostream>
+#include <scroom/semaphore.hh>
 
 #include "helpers.hh"
 #include "scroom/function-additor.hh"
@@ -23,11 +21,12 @@ using namespace boost::posix_time;
 
 void test_count_equals(Semaphore* s, int i)
 {
-  for(int actual=0; actual<i; actual++)
+  for (int actual = 0; actual < i; actual++)
   {
-    BOOST_REQUIRE_MESSAGE(s->try_P(), "Could only decrement " << actual << " times, instead of " << i);
+    BOOST_REQUIRE_MESSAGE(s->try_P(),
+                          "Could only decrement " << actual << " times, instead of " << i);
   }
-  BOOST_REQUIRE_MESSAGE(!s->try_P(), "Can decrement " << (i+1) << " times, instead of " << i);
+  BOOST_REQUIRE_MESSAGE(!s->try_P(), "Can decrement " << (i + 1) << " times, instead of " << i);
 }
 
 //////////////////////////////////////////////////////////////
@@ -88,7 +87,7 @@ BOOST_AUTO_TEST_CASE(inc_count_3)
 BOOST_AUTO_TEST_CASE(pass_many)
 {
   Semaphore s(0);
-  boost::thread t(5*pass(&s));
+  boost::thread t(5 * pass(&s));
   boost::this_thread::sleep(millisec(50));
   s.V();
   boost::this_thread::sleep(millisec(100));
@@ -102,7 +101,7 @@ BOOST_AUTO_TEST_CASE(pass_many)
   t.timed_join(millisec(250));
   bool success = boost::thread::id() == t.get_id();
   BOOST_REQUIRE(success);
-  if(!success)
+  if (!success)
   {
     t.interrupt();
     t.timed_join(millisec(250));

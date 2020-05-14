@@ -7,32 +7,28 @@
 
 #pragma once
 
-#include <ostream>
-
 #include <boost/operators.hpp>
+#include <ostream>
 
 namespace Scroom
 {
   namespace Utils
   {
-    
-    template<typename T>
+    template <typename T>
     class Point : public boost::addable<Point<T>>,
                   public boost::subtractable<Point<T>>,
-                  public boost::multipliable2<Point<T>,T>,
-                  public boost::dividable2<Point<T>,T>
+                  public boost::multipliable2<Point<T>, T>,
+                  public boost::dividable2<Point<T>, T>
     {
-    public:
+      public:
       typedef T value_type;
 
-      Point(value_type x_, value_type y_)
-        : x(x_), y(y_)
-      {}
+      Point(value_type x_, value_type y_) : x(x_), y(y_) {}
 
-      template<typename U>
-      explicit Point(Point<U> other)
-        : x(other.x), y(other.y)
-      {}
+      template <typename U>
+      explicit Point(Point<U> other) : x(other.x), y(other.y)
+      {
+      }
 
       bool operator==(const Point<value_type>& other) const
       {
@@ -72,47 +68,45 @@ namespace Scroom
 
       double magnitude() const
       {
-        return sqrt(x*x+y*y);
+        return sqrt(x * x + y * y);
       }
 
-    public:
+      public:
       value_type x;
       value_type y;
     };
 
-    template<typename T>
+    template <typename T>
     Point<T> make_point(T x, T y)
     {
-      return Point<T>(x,y);
+      return Point<T>(x, y);
     }
 
-    template<typename T>
+    template <typename T>
     std::ostream& operator<<(std::ostream& os, const Point<T>& p)
     {
-      return os << '(' << p.x
-                << ',' << p.y
-                << ')';
+      return os << '(' << p.x << ',' << p.y << ')';
     }
 
-    template<typename T, typename U>
-    Point<typename std::common_type<T,U>::type> operator-(Point<T> left, Point<U> right)
+    template <typename T, typename U>
+    Point<typename std::common_type<T, U>::type> operator-(Point<T> left, Point<U> right)
     {
-      typedef typename std::common_type<T,U>::type R;
-      
+      typedef typename std::common_type<T, U>::type R;
+
       Point<R> result(left);
       result -= Point<R>(right);
       return result;
     }
 
-    template<typename T, typename U>
-    Point<typename std::common_type<T,U>::type> operator+(Point<T> left, Point<U> right)
+    template <typename T, typename U>
+    Point<typename std::common_type<T, U>::type> operator+(Point<T> left, Point<U> right)
     {
-      typedef typename std::common_type<T,U>::type R;
-      
+      typedef typename std::common_type<T, U>::type R;
+
       Point<R> result(left);
       result += Point<R>(right);
       return result;
     }
 
-  }
-}
+  }  // namespace Utils
+}  // namespace Scroom

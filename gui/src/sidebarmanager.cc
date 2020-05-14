@@ -7,10 +7,7 @@
 
 #include "sidebarmanager.hh"
 
-SidebarManager::SidebarManager()
-  : panelWindow(NULL), panel(NULL), widgets()
-{
-}
+SidebarManager::SidebarManager() : panelWindow(NULL), panel(NULL), widgets() {}
 
 void SidebarManager::setWidgets(GtkWidget* panelWindow_, GtkBox* panel_)
 {
@@ -27,7 +24,7 @@ void SidebarManager::addSideWidget(std::string title, GtkWidget* w)
   gtk_container_add(GTK_CONTAINER(e), w);
   gtk_widget_show(w);
 
-  widgets[w]=e;
+  widgets[w] = e;
 
   gtk_widget_show(panelWindow);
 }
@@ -35,7 +32,7 @@ void SidebarManager::addSideWidget(std::string title, GtkWidget* w)
 void SidebarManager::removeSideWidget(GtkWidget* w)
 {
   std::map<GtkWidget*, GtkWidget*>::iterator cur = widgets.find(w);
-  if(cur==widgets.end())
+  if (cur == widgets.end())
   {
     printf("PANIC: Can't find the widget I'm supposed to remove\n");
     gtk_widget_destroy(w);
@@ -45,7 +42,7 @@ void SidebarManager::removeSideWidget(GtkWidget* w)
     gtk_widget_destroy(cur->second);
     widgets.erase(cur);
   }
-  if(widgets.empty())
+  if (widgets.empty())
     gtk_widget_hide(panelWindow);
   else
     gtk_widget_show(panelWindow);

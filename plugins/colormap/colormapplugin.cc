@@ -17,20 +17,14 @@ namespace Scroom
 {
   namespace ColormapImpl
   {
-
-    ColormapPlugin::ColormapPlugin()
-        : presentations()
-    {
-    }
+    ColormapPlugin::ColormapPlugin() : presentations() {}
 
     ColormapPlugin::Ptr ColormapPlugin::create()
     {
       return Ptr(new ColormapPlugin());
     }
 
-    ColormapPlugin::~ColormapPlugin()
-    {
-    }
+    ColormapPlugin::~ColormapPlugin() {}
 
     std::string ColormapPlugin::getPluginName()
     {
@@ -44,8 +38,7 @@ namespace Scroom
 
     void ColormapPlugin::registerCapabilities(ScroomPluginInterface::Ptr host)
     {
-      host->registerPresentationObserver("Colormap",
-          shared_from_this<ColormapPlugin>());
+      host->registerPresentationObserver("Colormap", shared_from_this<ColormapPlugin>());
     }
 
     void ColormapPlugin::presentationAdded(PresentationInterface::Ptr p)
@@ -63,5 +56,5 @@ namespace Scroom
       printf("ColormapPlugin: A presentation may have been deleted\n");
     }
 
-  }
-}
+  }  // namespace ColormapImpl
+}  // namespace Scroom

@@ -7,11 +7,10 @@
 
 #pragma once
 
-#include <ostream>
-
 #include <gtk/gtk.h>
 
 #include <boost/function.hpp>
+#include <ostream>
 
 namespace Scroom
 {
@@ -19,19 +18,19 @@ namespace Scroom
   {
     class Wrapper
     {
-    public:
+      public:
       GtkFunction f;
       gpointer data;
 
-    public:
-      Wrapper(const boost::function<bool ()>& f);
+      public:
+      Wrapper(const boost::function<bool()>& f);
     };
 
-    Wrapper wrap(boost::function<bool ()> f);
+    Wrapper wrap(boost::function<bool()> f);
 
     class TakeGdkLock
     {
-    public:
+      public:
       TakeGdkLock();
       ~TakeGdkLock();
     };
@@ -48,16 +47,13 @@ namespace Scroom
       return rect;
     }
 
-  }
-}
+  }  // namespace GtkHelpers
+}  // namespace Scroom
 
 inline bool operator==(GdkRectangle const& left, GdkRectangle const& right)
 {
-  return
-    left.x == right.x &&
-    left.y == right.y &&
-    left.width == right.width &&
-    left.height == right.height;
+  return left.x == right.x && left.y == right.y && left.width == right.width &&
+         left.height == right.height;
 }
 
 std::ostream& operator<<(std::ostream& os, GdkRectangle const& r);

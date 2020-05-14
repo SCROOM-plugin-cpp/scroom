@@ -11,21 +11,21 @@
 
 class ExamplePresentation : public PresentationInterface
 {
-private:
+  private:
   cairo_pattern_t* pattern;
 
   void fillPattern();
 
-public:
+  public:
   ExamplePresentation();
   virtual ~ExamplePresentation();
 
   virtual Scroom::Utils::Rectangle<double> getRect();
   virtual void open(ViewInterface::WeakPtr viewInterface);
-  virtual void redraw(ViewInterface::Ptr const& vi, cairo_t* cr, Scroom::Utils::Rectangle<double> presentationArea, int zoom);
+  virtual void redraw(ViewInterface::Ptr const& vi, cairo_t* cr,
+                      Scroom::Utils::Rectangle<double> presentationArea, int zoom);
   virtual void close(ViewInterface::WeakPtr vi);
   virtual bool getProperty(const std::string& name, std::string& value);
   virtual bool isPropertyDefined(const std::string& name);
   virtual std::string getTitle();
 };
-

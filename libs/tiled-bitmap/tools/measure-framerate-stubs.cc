@@ -9,10 +9,7 @@
 
 #include <scroom/progressinterfacehelpers.hh>
 
-ProgressInterfaceStub::ProgressInterfaceStub()
-  :finished(false)
-{
-}
+ProgressInterfaceStub::ProgressInterfaceStub() : finished(false) {}
 
 ProgressInterfaceStub::Ptr ProgressInterfaceStub::create()
 {
@@ -29,9 +26,7 @@ bool ProgressInterfaceStub::isFinished()
   return finished;
 }
 
-ViewInterfaceStub::ViewInterfaceStub(ProgressInterface::Ptr pi_)
-  :pi(pi_)
-{}
+ViewInterfaceStub::ViewInterfaceStub(ProgressInterface::Ptr pi_) : pi(pi_) {}
 
 ViewInterfaceStub::Ptr ViewInterfaceStub::create(ProgressInterface::Ptr pi)
 {
@@ -45,17 +40,17 @@ ProgressInterface::Ptr ViewInterfaceStub::getProgressInterface()
 
 void Source1Bpp::fillTiles(int, int lineCount, int tileWidth, int, std::vector<Tile::Ptr>& tiles)
 {
-  for(Tile::Ptr tile: tiles)
+  for (Tile::Ptr tile : tiles)
   {
     byte* data = tile->data.get();
-    for(int y=0; y<lineCount; y+=2)
+    for (int y = 0; y < lineCount; y += 2)
     {
-      for(int x=0; x<tileWidth/8; x++)
+      for (int x = 0; x < tileWidth / 8; x++)
       {
         *data = 0xAA;
         data++;
       }
-      for(int x=0; x<tileWidth/8; x++)
+      for (int x = 0; x < tileWidth / 8; x++)
       {
         *data = 0x55;
         data++;
@@ -66,16 +61,17 @@ void Source1Bpp::fillTiles(int, int lineCount, int tileWidth, int, std::vector<T
 
 void Source2Bpp::fillTiles(int, int lineCount, int tileWidth, int, std::vector<Tile::Ptr>& tiles)
 {
-  for(Tile::Ptr tile: tiles)
+  for (Tile::Ptr tile : tiles)
   {
     byte* data = tile->data.get();
-    for(int y=0; y<lineCount; y++)
+    for (int y = 0; y < lineCount; y++)
     {
-      for(int x=0; x<tileWidth/4; x++)
+      for (int x = 0; x < tileWidth / 4; x++)
       {
-        uint32_t v = static_cast<uint32_t>(4*x+y);
+        uint32_t v = static_cast<uint32_t>(4 * x + y);
 
-        *data = static_cast<byte>(((v&0x3) << 6) | (((v+1) & 0x3) << 4) | (((v+2) & 0x3) << 2) | (((v+3) & 0x3) << 0));
+        *data = static_cast<byte>(((v & 0x3) << 6) | (((v + 1) & 0x3) << 4) |
+                                  (((v + 2) & 0x3) << 2) | (((v + 3) & 0x3) << 0));
         data++;
       }
     }
@@ -84,16 +80,16 @@ void Source2Bpp::fillTiles(int, int lineCount, int tileWidth, int, std::vector<T
 
 void Source4Bpp::fillTiles(int, int lineCount, int tileWidth, int, std::vector<Tile::Ptr>& tiles)
 {
-  for(Tile::Ptr tile: tiles)
+  for (Tile::Ptr tile : tiles)
   {
     byte* data = tile->data.get();
-    for(uint32_t y=0; y<static_cast<uint32_t>(lineCount); y++)
+    for (uint32_t y = 0; y < static_cast<uint32_t>(lineCount); y++)
     {
-      for(uint32_t x=0; x<static_cast<uint32_t>(tileWidth/2); x++)
+      for (uint32_t x = 0; x < static_cast<uint32_t>(tileWidth / 2); x++)
       {
-        uint32_t v = 2*x+y;
+        uint32_t v = 2 * x + y;
 
-        *data = static_cast<byte>(((v&0xF) << 4) | ((v+1) & 0xF));
+        *data = static_cast<byte>(((v & 0xF) << 4) | ((v + 1) & 0xF));
         data++;
       }
     }
@@ -102,17 +98,16 @@ void Source4Bpp::fillTiles(int, int lineCount, int tileWidth, int, std::vector<T
 
 void Source8Bpp::fillTiles(int, int lineCount, int tileWidth, int, std::vector<Tile::Ptr>& tiles)
 {
-  for(Tile::Ptr tile: tiles)
+  for (Tile::Ptr tile : tiles)
   {
     byte* data = tile->data.get();
-    for(int y=0; y<lineCount; y++)
+    for (int y = 0; y < lineCount; y++)
     {
-      for(int x=0; x<tileWidth; x++)
+      for (int x = 0; x < tileWidth; x++)
       {
-        *data = static_cast<byte>((x+y)&0xFF);
+        *data = static_cast<byte>((x + y) & 0xFF);
         data++;
       }
     }
   }
 }
-

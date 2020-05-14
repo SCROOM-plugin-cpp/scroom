@@ -7,13 +7,11 @@
 
 #pragma once
 
-#include <set>
-
 #include <boost/thread.hpp>
-
-#include <scroom/stuff.hh>
 #include <scroom/progressinterface.hh>
+#include <scroom/stuff.hh>
 #include <scroom/utilities.hh>
+#include <set>
 
 namespace Scroom
 {
@@ -24,77 +22,80 @@ namespace Scroom
      */
     class ProgressStateInterface
     {
-    public:
+      public:
       typedef boost::shared_ptr<ProgressStateInterface> Ptr;
       typedef boost::weak_ptr<ProgressStateInterface> WeakPtr;
 
       typedef enum
-        {
-          IDLE,
-          WAITING,
-          WORKING,
-          FINISHED
-        } State;
+      {
+        IDLE,
+        WAITING,
+        WORKING,
+        FINISHED
+      } State;
 
       virtual ~ProgressStateInterface() {}
 
-      virtual void setProgress(State s, double progress=0.0)=0;
+      virtual void setProgress(State s, double progress = 0.0) = 0;
     };
 
-    class ProgressInterfaceFromProgressStateInterface : public ProgressInterface, protected ProgressStateInterface
+    class ProgressInterfaceFromProgressStateInterface : public ProgressInterface,
+                                                        protected ProgressStateInterface
     {
-    public:
-
+      public:
       // ProgressInterface ///////////////////////////////////////////////////
 
       virtual void setIdle();
-      virtual void setWaiting(double progress=0.0);
+      virtual void setWaiting(double progress = 0.0);
       virtual void setWorking(double progress);
       virtual void setFinished();
     };
 
-    class ProgressInterfaceFromProgressStateInterfaceForwarder : public ProgressInterfaceFromProgressStateInterface
+    class ProgressInterfaceFromProgressStateInterfaceForwarder
+        : public ProgressInterfaceFromProgressStateInterface
     {
-    public:
+      public:
       typedef boost::shared_ptr<ProgressInterfaceFromProgressStateInterfaceForwarder> Ptr;
 
-    private:
+      private:
       ProgressStateInterface::Ptr child;
 
-    private:
+      private:
       ProgressInterfaceFromProgressStateInterfaceForwarder(ProgressStateInterface::Ptr child);
 
-    public:
+      public:
       static Ptr create(ProgressStateInterface::Ptr child);
 
-    protected:
+      protected:
       // ProgressStateInterface //////////////////////////////////////////////
-      virtual void setProgress(State s, double progress=0.0);
+      virtual void setProgress(State s, double progress = 0.0);
     };
 
-    class ProgressStateInterfaceFromProgressInterface : public ProgressStateInterface, protected ProgressInterface
+    class ProgressStateInterfaceFromProgressInterface : public ProgressStateInterface,
+                                                        protected ProgressInterface
     {
-    public:
-      virtual void setProgress(State s, double progress=0.0);
+      public:
+      virtual void setProgress(State s, double progress = 0.0);
     };
 
-    class ProgressStateInterfaceFromProgressInterfaceForwarder : public ProgressStateInterfaceFromProgressInterface
+    class ProgressStateInterfaceFromProgressInterfaceForwarder
+        : public ProgressStateInterfaceFromProgressInterface
     {
-    public:
+      public:
       typedef boost::shared_ptr<ProgressStateInterfaceFromProgressInterfaceForwarder> Ptr;
 
-    private:
+      private:
       ProgressInterface::Ptr child;
 
-    private:
+      private:
       ProgressStateInterfaceFromProgressInterfaceForwarder(ProgressInterface::Ptr child);
 
-    public:
+      public:
       static Ptr create(ProgressInterface::Ptr child);
 
-    protected:
+      protected:
       virtual void setIdle();
-      virtual void setWaiting(double progress=0.0);
+      virtual void setWaiting(double progress = 0.0);
       virtual void setWorking(double progress);
       virtual void setFinished();
     };
@@ -103,143 +104,144 @@ namespace Scroom
     {
       class ProgressStore : public ProgressInterfaceFromProgressStateInterface
       {
-      public:
+        public:
         typedef boost::shared_ptr<ProgressStore> Ptr;
 
-      private:
+        private:
         State state;
         double progress;
 
-      private:
+        private:
         ProgressStore();
 
-      public:
+        public:
         static Ptr create();
 
-        void init(ProgressInterface::Ptr const & i);
+        void init(ProgressInterface::Ptr const& i);
 
-      protected:
+        protected:
         // ProgressStateInterface //////////////////////////////////////////////
-        virtual void setProgress(State s, double progress=0.0);
+        virtual void setProgress(State s, double progress = 0.0);
       };
-    }
+    }  // namespace Detail
 
     class ProgressInterfaceBroadcaster : virtual public Base, public ProgressInterface
     {
-    public:
+      public:
       typedef boost::shared_ptr<ProgressInterfaceBroadcaster> Ptr;
 
-    private:
+      private:
       class Unsubscriber
       {
-      public:
+        public:
         typedef boost::shared_ptr<Unsubscriber> Ptr;
 
-      private:
+        private:
         ProgressInterfaceBroadcaster::Ptr parent;
         ProgressInterface::Ptr child;
 
-      private:
-        Unsubscriber(ProgressInterfaceBroadcaster::Ptr const& parent, ProgressInterface::Ptr const& child);
+        private:
+        Unsubscriber(ProgressInterfaceBroadcaster::Ptr const& parent,
+                     ProgressInterface::Ptr const& child);
 
-      public:
-        static Ptr create(ProgressInterfaceBroadcaster::Ptr const& parent, ProgressInterface::Ptr const& child);
+        public:
+        static Ptr create(ProgressInterfaceBroadcaster::Ptr const& parent,
+                          ProgressInterface::Ptr const& child);
         ~Unsubscriber();
       };
 
       friend class Unsubscriber;
 
-    private:
+      private:
       boost::mutex mut;
       std::set<ProgressInterface::Ptr> children;
       Detail::ProgressStore::Ptr store;
 
-    public:
+      public:
       static Ptr create();
 
-    private:
+      private:
       ProgressInterfaceBroadcaster();
 
       void unsubscribe(ProgressInterface::Ptr const& child);
 
-    public:
+      public:
       Stuff subscribe(ProgressInterface::Ptr const& child);
 
       // ProgressInterface ///////////////////////////////////////////////////
 
       virtual void setIdle();
-      virtual void setWaiting(double progress=0.0);
+      virtual void setWaiting(double progress = 0.0);
       virtual void setWorking(double progress);
       virtual void setFinished();
     };
 
     class ProgressInterfaceMultiplexer : public virtual Base
     {
-    public:
+      public:
       typedef boost::shared_ptr<ProgressInterfaceMultiplexer> Ptr;
 
-    private:
+      private:
       class ChildData : public ProgressStateInterface
       {
-      public:
+        public:
         typedef boost::shared_ptr<ChildData> Ptr;
 
-      public:
+        public:
         boost::mutex mut;
         ProgressStateInterface::State state;
         double progress;
 
-      private:
+        private:
         ChildData();
 
-      public:
+        public:
         static Ptr create();
 
         void clearFinished();
 
         // ProgressStateInterface ///////////////////////////////////////////////////
-        virtual void setProgress(State s, double progress=0.0);
+        virtual void setProgress(State s, double progress = 0.0);
       };
 
       class Child : public ProgressInterfaceFromProgressStateInterface
       {
-      public:
+        public:
         typedef boost::shared_ptr<Child> Ptr;
 
-      private:
+        private:
         ProgressInterfaceMultiplexer::Ptr parent;
         ChildData::Ptr data;
 
-      private:
+        private:
         Child(ProgressInterfaceMultiplexer::Ptr parent, ChildData::Ptr data);
 
-      public:
+        public:
         static Ptr create(ProgressInterfaceMultiplexer::Ptr parent, ChildData::Ptr data);
         ~Child();
 
         // ProgressStateInterface ///////////////////////////////////////////////////
-        virtual void setProgress(State s, double progress=0.0);
+        virtual void setProgress(State s, double progress = 0.0);
       };
 
       friend class Child;
 
-    private:
+      private:
       boost::mutex mut;
       ProgressStateInterface::Ptr parent;
       std::set<ChildData::Ptr> children;
 
-    private:
+      private:
       ProgressInterfaceMultiplexer(ProgressInterface::Ptr parent);
 
-    public:
+      public:
       static Ptr create(ProgressInterface::Ptr parent);
 
       ProgressInterface::Ptr createProgressInterface();
 
-    private:
+      private:
       void updateProgressState();
       void unsubscribe(ChildData::Ptr data);
     };
-  }
-}
-
+  }  // namespace Utils
+}  // namespace Scroom

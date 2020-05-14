@@ -17,25 +17,24 @@ namespace Scroom
   {
     class Timer
     {
-    private:
+      private:
       struct timespec t;
       std::string label;
       bool valid;
 
-    public:
-      Timer(std::string label)
-        : label(label)
+      public:
+      Timer(std::string label) : label(label)
       {
-        valid = (0==clock_gettime(CLOCK_MONOTONIC, &t));
+        valid = (0 == clock_gettime(CLOCK_MONOTONIC, &t));
       }
 
       ~Timer()
       {
         struct timespec t2;
-        bool v2 = (0==clock_gettime(CLOCK_MONOTONIC, &t2));
-        if(valid && v2)
+        bool v2 = (0 == clock_gettime(CLOCK_MONOTONIC, &t2));
+        if (valid && v2)
         {
-          double elapsed = (t2.tv_nsec - t.tv_nsec)*1e-9;
+          double elapsed = (t2.tv_nsec - t.tv_nsec) * 1e-9;
           elapsed += t2.tv_sec - t.tv_sec;
           printf("%s: %.9f\n", label.c_str(), elapsed);
         }
@@ -45,6 +44,5 @@ namespace Scroom
         }
       }
     };
-  }
-}
-
+  }  // namespace Utils
+}  // namespace Scroom
