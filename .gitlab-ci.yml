@@ -1,5 +1,5 @@
-variables:
-  GIT_STRATEGY: none
+#variables:
+#  GIT_STRATEGY: none
 include:
   - template: Code-Quality.gitlab-ci.yml
 
