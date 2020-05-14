@@ -3,9 +3,12 @@ BasedOnStyle: google
 Language: Cpp
 IndentWidth: 2
 IndentCaseLabels: false
+NamespaceIndentation: All
 BreakBeforeBraces: Allman
 AllowShortIfStatementsOnASingleLine: false
 AllowShortBlocksOnASingleLine: false
 AllowShortFunctionsOnASingleLine: Empty
 # The default of 80 often causes cut-offs
 ColumnLimit: 100
+# Disables space before "public:" tags
+AccessModifierOffset: 0
