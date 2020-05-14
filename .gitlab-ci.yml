@@ -14,9 +14,6 @@ build-windows:
     - Windows
   script:
     - dir
-      # Prints some gcov info to confirm it is installed
-    - gcov -h
-    - pip install gcovr
     - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
     - dir
     - cd C:\
@@ -29,13 +26,10 @@ build-windows:
     - C:/msys64/usr/bin/bash -c "make"
     - C:/msys64/usr/bin/bash -c "make install"
     - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
-    - C:/msys64/usr/bin/bash -c "make check"
-    - gcovr -s --html -o coverage_windows.html
   coverage: '/lines:\ \d+\.\d+\%/'
   artifacts:
     paths:
       - scroom_build/
-      - coverage_windows.html
 
 build-linux:
   image: gcc
@@ -43,8 +37,10 @@ build-linux:
   script:
       # Temp, should be moved to script
     - apt update
-    - apt install -y gcovr
-    - bash ./build_scripts/init.sh
+    - apt install -y git gawk libboost-test-dev libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev libgtest-dev google-mock libcairo2-dev libglade2-dev libglib2.0-dev libgtk2.0-dev libtiff5-dev pkg-config doxygen graphviz ccache libc6-dev gcovr
+    - autoreconf -i
+    - ./configure
+    - make check
     - gcovr -s --html -o coverage_linux.html
   coverage: '/lines:\ \d+\.\d+\%/'
   artifacts:
