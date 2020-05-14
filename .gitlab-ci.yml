@@ -40,7 +40,7 @@ build-linux:
     - apt install -y git gawk libboost-test-dev libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev libgtest-dev google-mock libcairo2-dev libglade2-dev libglib2.0-dev libgtk2.0-dev libtiff5-dev pkg-config doxygen graphviz ccache libc6-dev gcovr
     - autoreconf -i
     - ./configure
-    - make check
+    - make check 2> /dev/null
     - gcovr -s --html -o coverage_linux.html
   coverage: '/lines:\ \d+\.\d+\%/'
   artifacts:
