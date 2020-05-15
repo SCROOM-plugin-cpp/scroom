@@ -26,7 +26,6 @@ build-windows:
     - C:/msys64/usr/bin/bash -c "make"
     - C:/msys64/usr/bin/bash -c "make install"
     - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
-  coverage: '/lines:\ \d+\.\d+\%/'
   artifacts:
     paths:
       - scroom_build/
