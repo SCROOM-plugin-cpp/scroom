@@ -23,7 +23,7 @@ build-windows:
     - C:/msys64/usr/bin/bash -c "git checkout $CI_COMMIT_SHA"
     - C:/msys64/usr/bin/bash -c "autoreconf -i"
     - C:/msys64/usr/bin/bash -c "./configure --prefix='C:/build'"
-    - C:/msys64/usr/bin/bash -c "make"
+    - C:/msys64/usr/bin/bash -c "make 2> /dev/null"
     - C:/msys64/usr/bin/bash -c "make install"
     # Finally, we copy the build into the shared volume, so gitlab can upload it
     - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
