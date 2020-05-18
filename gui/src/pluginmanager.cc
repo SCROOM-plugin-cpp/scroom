@@ -198,7 +198,7 @@ void PluginManager::setStatusBarMessage(const char*)
 void PluginManager::addHook(bool devMode_)
 {
   this->devMode = devMode_;
-  while (this->doWork());
+  gtk_idle_add(on_idle, static_cast<WorkInterface*>(this));
   // progressbar = GTK_PROGRESS_BAR(lookup_widget(scroom, "progressbar"));
   // statusbar = GTK_STATUSBAR(lookup_widget(scroom, "statusbar"));
   //
