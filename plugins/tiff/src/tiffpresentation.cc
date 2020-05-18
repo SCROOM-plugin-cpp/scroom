@@ -83,6 +83,15 @@ bool TiffPresentation::load(const std::string& fileName_)
     }
     else
     {
+      this->bps = bps[0];
+      if(spp>1)
+        for(auto current : bps)
+          if(current != this->bps)
+          {
+            printf("PANIC: All samples must have the same bps value (%u != %u)", this->bps, current);
+            return false;
+          }
+
       if(spp==3)
       {
         if(bps_!=8)
@@ -122,10 +131,10 @@ bool TiffPresentation::load(const std::string& fileName_)
       if (originalColormap)
         printf("WEIRD: Tiff contains a colormap, but photometric isn't palette\n");
 
-      if (bps == 1 || bps == 8)
+      if (this->bps == 1 || this->bps == 8)
         colormapHelper = MonochromeColormapHelper::create(2);
       else
-        colormapHelper = MonochromeColormapHelper::create(1 << bps);
+        colormapHelper = MonochromeColormapHelper::create(1 << this->bps);
 
       properties[MONOCHROME_COLORMAPPABLE_PROPERTY_NAME] = "";
       break;
@@ -134,10 +143,10 @@ bool TiffPresentation::load(const std::string& fileName_)
       if (originalColormap)
         printf("WEIRD: Tiff contains a colormap, but photometric isn't palette\n");
 
-      if (bps == 1 || bps == 8)
+      if (this->bps == 1 || this->bps == 8)
         colormapHelper = MonochromeColormapHelper::createInverted(2);
       else
-        colormapHelper = MonochromeColormapHelper::createInverted(1 << bps);
+        colormapHelper = MonochromeColormapHelper::createInverted(1 << this->bps);
 
       properties[MONOCHROME_COLORMAPPABLE_PROPERTY_NAME] = "";
       break;
@@ -146,7 +155,7 @@ bool TiffPresentation::load(const std::string& fileName_)
       if (!originalColormap)
       {
         printf("WEIRD: Photometric is palette, but tiff doesn't contain a colormap\n");
-        colormapHelper = ColormapHelper::create(1 << bps);
+        colormapHelper = ColormapHelper::create(1 << this->bps);
       }
       break;
 
@@ -166,9 +175,16 @@ bool TiffPresentation::load(const std::string& fileName_)
 
     if(TIFFGetField(tif, TIFFTAG_XRESOLUTION, &resolutionX) &&
        TIFFGetField(tif, TIFFTAG_YRESOLUTION, &resolutionY) &&
-       TIFFGetField(tif, TIFFTAG_RESOLUTIONUNIT, &resolutionUnit) &&
-       resolutionUnit == RESUNIT_NONE)
+       TIFFGetField(tif, TIFFTAG_RESOLUTIONUNIT, &resolutionUnit))
     {
+      if(resolutionUnit != RESUNIT_NONE)
+      {
+        // Fix aspect ratio only
+        float base = std::max(resolutionX, resolutionY);
+        resolutionX = resolutionX/base;
+        resolutionY = resolutionY/base;
+      }
+
       transformationData = TransformationData::create();
       transformationData->setAspectRatio(1/resolutionX, 1/resolutionY);
     }
@@ -177,7 +193,6 @@ bool TiffPresentation::load(const std::string& fileName_)
       resolutionX = 1;
       resolutionY = 1;
     }
-    
     printf("This bitmap has size %d*%d, aspect ratio %.1f*%.1f\n",
            width, height, 1/resolutionX, 1/resolutionY);
 
@@ -187,30 +202,30 @@ bool TiffPresentation::load(const std::string& fileName_)
     {
       ls.push_back(Operations24bpp::create());
     }
-    else if (bps == 2 || bps == 4 || photometric == PHOTOMETRIC_PALETTE)
+    else if (this->bps == 2 || this->bps == 4 || photometric == PHOTOMETRIC_PALETTE)
     {
       ls.push_back(
-          Operations::create(colormapHelper, bps));
+          Operations::create(colormapHelper, this->bps));
       ls.push_back(
           OperationsColormapped::create(colormapHelper,
-              bps));
+                                        this->bps));
       properties[COLORMAPPABLE_PROPERTY_NAME] = "";
     }
-    else if (bps == 1)
+    else if (this->bps == 1)
     {
       ls.push_back(
           Operations1bpp::create(colormapHelper));
       ls.push_back(
           Operations8bpp::create(colormapHelper));
     }
-    else if (bps == 8)
+    else if (this->bps == 8)
     {
       ls.push_back(
           Operations8bpp::create(colormapHelper));
     }
     else
     {
-      printf("PANIC: %d bits per pixel not supported\n", bps);
+      printf("PANIC: %d bits per pixel not supported\n", this->bps);
       return false;
     }
 
