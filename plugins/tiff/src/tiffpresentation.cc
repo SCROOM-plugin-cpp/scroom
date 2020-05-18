@@ -73,26 +73,26 @@ bool TiffPresentation::load(const std::string& fileName_)
     TIFFGetFieldChecked(tif, TIFFTAG_IMAGEWIDTH, &width);
     TIFFGetFieldChecked(tif, TIFFTAG_IMAGELENGTH, &height);
 
-    uint16 bps_ = 0;
-    if( 1 != TIFFGetField(tif, TIFFTAG_BITSPERSAMPLE, &bps_))
+    uint16 bps_[spp];
+    if( 1 != TIFFGetField(tif, TIFFTAG_BITSPERSAMPLE, bps_))
     {
       if(spp==1)
-        bps_ = 1;
+        this->bps = 1;
       else
-        bps_ = 8;
+        this->bps = 8;
     }
     else
     {
+      this->bps = bps_[0];
       if(spp==3)
       {
-        if(bps_!=8)
+        if(this->bps!=8)
         {
-          printf("PANIC: Bits per sample is not 8, but %d. Giving up\n", bps_);
+          printf("PANIC: Bits per sample is not 8, but %d. Giving up\n", bps);
           return false;
         }
       }
     }
-    this->bps = bps_;
 
     Colormap::Ptr originalColormap;
 
@@ -102,7 +102,7 @@ bool TiffPresentation::load(const std::string& fileName_)
     {
       originalColormap = Colormap::create();
       originalColormap->name = "Original";
-      size_t count = 1UL << bps_;
+      size_t count = 1UL << bps;
       originalColormap->colors.resize(count);
 
       for (size_t i = 0; i < count; i++)
@@ -187,9 +187,9 @@ bool TiffPresentation::load(const std::string& fileName_)
            width, height, 1/resolutionX, 1/resolutionY);
 
     LayerSpec ls;
-    if (spp == 4 && bps == 8)
+    if (spp == 4 && (bps == 8 || bps == 4 || bps == 2 || bps == 1))
     {
-        ls.push_back(OperationsCMYK::create());
+        ls.push_back(OperationsCMYK::create(bps));
     }
     else if (spp == 3 && bps == 8)
     {
