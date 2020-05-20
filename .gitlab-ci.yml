@@ -55,7 +55,7 @@ windows-portable:
 
 windows-dev:
   stage: install
-  image: image: 192.168.2.19:4567/roan/scroom-ci:latest
+  image: 192.168.2.19:4567/roan/scroom-ci:latest
   tags:
     - Windows
   script:
