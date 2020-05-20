@@ -1,8 +1,7 @@
-
 # Due to windows docker issues, we can't configure/build in the volume mount.
-# As a workaround, we clone the repo to C:\scroom manually
-variables:
-  GIT_STRATEGY: none
+# As a workaround, we clone the repo to C:\scroom manually for Windows jobs
+# The image used for windows jobs is a windows server core docker image with 
+# an msys2 install. It includes all required msys packages
 
 stages:
   - build
@@ -10,9 +9,9 @@ stages:
 
 build-windows:
   stage: build
-  # This is a windows server core docker image with an msys2 install.
-  # It includes all required msys packages
   image: 192.168.2.19:4567/roan/scroom-ci:latest
+  variables:
+    GIT_STRATEGY: none
   tags:
     - Windows
   script:
@@ -39,6 +38,8 @@ build-windows:
 windows-portable:
   stage: install
   image: 192.168.2.19:4567/roan/scroom-ci:latest
+  variables:
+    GIT_STRATEGY: none
   tags:
     - Windows
   script:
@@ -58,6 +59,8 @@ windows-portable:
 windows-dev:
   stage: install
   image: 192.168.2.19:4567/roan/scroom-ci:latest
+  variables:
+    GIT_STRATEGY: none
   tags:
     - Windows
   script:
