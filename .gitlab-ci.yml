@@ -27,6 +27,8 @@ build-windows:
     - C:/msys64/usr/bin/bash -c "autoreconf -i"
     - C:/msys64/usr/bin/bash -c "./configure --prefix='C:/build'"
     - C:/msys64/usr/bin/bash -c "make 2> /dev/null"
+    # Finally, we copy the build into the shared volume, so gitlab can upload it
+    - cp -r "C:/scroom" "C:/builds/$CI_PROJECT_PATH/scroom"
   retry:
     max: 2
     when: runner_system_failure
