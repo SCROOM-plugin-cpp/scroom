@@ -32,9 +32,7 @@ AM_CONDITIONAL([WINDOWS], [test "$build_windows" = "yes"])
 AM_COND_IF([WINDOWS], 
     [export PATH=$PATH:/c/msys64/mingw64/bin]) 
     
-# The configure.ac from Kees-Jan also contained the serial-tests flag for using the serial test harness
-# That one seems to be deprecated though and it seems to work without it
-AM_INIT_AUTOMAKE([-Wall -Werror foreign silent-rules subdir-objects])
+AM_INIT_AUTOMAKE([-Wall -Werror foreign silent-rules subdir-objects serial-tests])
 AM_SILENT_RULES([yes])
 AM_PROG_AR
 LT_PREREQ([2.2])
@@ -57,25 +55,24 @@ AC_CHECK_PROG([CMAKE], [cmake], [yes], [no])
 AC_LANG([C++])
 SCROOM_COMPILE_STDCXX_0X
 SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wall])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-W])
 SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wextra])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wshadow])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wnon-virtual-dtor])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wold-style-cast])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wcast-align])
+dnl SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wconversion])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wpointer-arith])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wwrite-strings])
 SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wunused])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wredundant-decls])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wuninitialized])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Winit-self])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wcast-qual])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wswitch])
+dnl SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Weffc++])
+dnl SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wold-style-cast])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wfloat-equal])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wnon-virtual-dtor])
 SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Woverloaded-virtual])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wpedantic])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wconversion])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wsign-conversion])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wnull-dereference])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wdouble-promotion])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wformat=2])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wmisleading-indentation])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wduplicated-cond])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wduplicated-branches])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wlogical-op])
-SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wuseless-cast])
-dnl SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Werror])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wsign-promo])
+SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-Wshadow])
 dnl SCROOM_ADD_CXXFLAGS_IF_SUPPORTED([-mwindows])
 SCROOM_TEST_ISYSTEM
 
@@ -371,6 +368,11 @@ dnl
 dnl dnl Add the languages which your application supports here.
 dnl ALL_LINGUAS=""
 dnl AM_GLIB_GNU_GETTEXT
+
+# Execute a script after 'make install' on Windows
+post_install_hook='${top_srcdir}'/build_scripts/windows/post-install-hook.sh\ '${prefix}'
+AM_COND_IF([LINUX], [post_install_hook=":"]) 
+AC_SUBST([POST_INSTALL_HOOK], [$post_install_hook])
 
 
 AC_CONFIG_FILES([Makefile
