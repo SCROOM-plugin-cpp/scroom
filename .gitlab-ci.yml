@@ -68,6 +68,5 @@ windows-dev:
     max: 2
     when: runner_system_failure
   artifacts:
-    name: "Scroom Portable"
     paths:
       - scroom_build
