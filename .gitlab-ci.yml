@@ -1,11 +1,14 @@
+
+# Due to windows docker issues, we can't configure/build in the volume mount.
+# As a workaround, we clone the repo to C:\scroom manually
+variables:
+  GIT_STRATEGY: none
+
 stages:
   - build
+  - install
 
 build-windows:
-  # Due to windows docker issues, we can't configure/build in the volume mount.
-  # As a workaround, we clone the repo to C:\scroom manually
-  variables:
-    GIT_STRATEGY: none
   stage: build
   # This is a windows server core docker image with an msys2 install.
   # It includes all required msys packages
@@ -24,6 +27,21 @@ build-windows:
     - C:/msys64/usr/bin/bash -c "autoreconf -i"
     - C:/msys64/usr/bin/bash -c "./configure --prefix='C:/build'"
     - C:/msys64/usr/bin/bash -c "make 2> /dev/null"
+  retry:
+    max: 2
+    when: runner_system_failure
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - scroom/
+
+windows-portable:
+  stage: install
+  image: image: 192.168.2.19:4567/roan/scroom-ci:latest
+  tags:
+    - Windows
+  script:
+    - cd scroom
     - C:/msys64/usr/bin/bash -c "make install-win-portable"
     # Finally, we copy the build into the shared volume, so gitlab can upload it
     - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
@@ -31,6 +49,24 @@ build-windows:
     max: 2
     when: runner_system_failure
   artifacts:
+    name: "Scroom Portable"
     paths:
-      - scroom_build/
+      - scroom_build
 
+windows-dev:
+  stage: install
+  image: image: 192.168.2.19:4567/roan/scroom-ci:latest
+  tags:
+    - Windows
+  script:
+    - cd scroom
+    - C:/msys64/usr/bin/bash -c "make install"
+    # Finally, we copy the build into the shared volume, so gitlab can upload it
+    - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
+  retry:
+    max: 2
+    when: runner_system_failure
+  artifacts:
+    name: "Scroom Portable"
+    paths:
+      - scroom_build
