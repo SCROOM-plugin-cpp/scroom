@@ -16,9 +16,6 @@ build-windows:
   tags:
     - Windows
   script:
-    - dir
-    - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
-    - dir
     - cd C:\
     - C:/msys64/usr/bin/bash -c "git clone https://gitlab.com/sep-group-2/scroom"
     - dir
@@ -43,6 +40,7 @@ windows-portable:
   tags:
     - Windows
   script:
+    - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
     - cd scroom
     - C:/msys64/usr/bin/bash -c "make install-win-portable"
     # Finally, we copy the build into the shared volume, so gitlab can upload it
@@ -61,6 +59,7 @@ windows-dev:
   tags:
     - Windows
   script:
+    - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
     - cd scroom
     - C:/msys64/usr/bin/bash -c "make install"
     # Finally, we copy the build into the shared volume, so gitlab can upload it
