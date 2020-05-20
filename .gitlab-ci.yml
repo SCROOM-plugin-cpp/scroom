@@ -16,6 +16,7 @@ build-windows:
   tags:
     - Windows
   script:
+    - if (Test-Path '.\scroom') { Remove-Item '.\scroom' -Recurse -Force; }
     - cd C:\
     - if (Test-Path '.\scroom') { Remove-Item '.\scroom' -Recurse -Force; }
     - C:/msys64/usr/bin/bash -c "git clone https://gitlab.com/sep-group-2/scroom"
