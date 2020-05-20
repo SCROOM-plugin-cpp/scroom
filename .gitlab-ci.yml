@@ -87,7 +87,6 @@ linux-portable:
     - mkdir scroom-build
     - cd scroom-build
     - ../configure --prefix $path
-    - cd ..
     - make -k -j2 install
   artifacts:
     name: "Scroom Linux Portable"
