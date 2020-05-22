@@ -76,7 +76,7 @@ windows-dev:
     paths:
       - scroom_build
 
-linux-portable:
+linux-dev:
   stage: install
   image: registry.gitlab.com/sep-group-2/scroom-ci:latest
   script:
