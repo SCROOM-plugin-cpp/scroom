@@ -33,15 +33,14 @@ namespace
   {
     return boost::shared_ptr<unsigned char>(static_cast<unsigned char*>(malloc(size)), free);
   }
-
 }
 
 ////////////////////////////////////////////////////////////////////////
 // OperationsCMYK
 
-LayerOperations::Ptr OperationsCMYK::create(uint16_t bps)
+LayerOperations::Ptr OperationsCMYK::create(int bps)
 {
-  return Ptr(new OperationsCMYK(bps));
+  return Ptr(new OperationsCMYK(static_cast<uint16_t>(bps)));
 }
 
 OperationsCMYK::OperationsCMYK(uint16_t bps_)
@@ -80,7 +79,7 @@ Scroom::Utils::Stuff OperationsCMYK::cache(const ConstTile::Ptr tile)
     for (int i = 0; i < 4 * tile->height * tile->width; i += 4)
     {
       // Convert CMYK to ARGB, because cairo doesn't know how to render CMYK.
-      uint8_t C_i = static_cast<uint8_t>(255 - cur[i + 0]);
+      uint8_t C_i = static_cast<uint8_t>(255 - cur[i    ]);
       uint8_t M_i = static_cast<uint8_t>(255 - cur[i + 1]);
       uint8_t Y_i = static_cast<uint8_t>(255 - cur[i + 2]);
       uint8_t K_i = static_cast<uint8_t>(255 - cur[i + 3]);
@@ -96,8 +95,8 @@ Scroom::Utils::Stuff OperationsCMYK::cache(const ConstTile::Ptr tile)
     for (int i = 0; i < 2 * tile->height * tile->width; i += 2)
     {
       // Convert CMYK to ARGB, because cairo doesn't know how to render CMYK.
-      uint8_t C_i = static_cast<uint8_t>(255 - ((cur[i + 0]       ) >> 4) * 17); // 17 == 255/15
-      uint8_t M_i = static_cast<uint8_t>(255 - ((cur[i + 0] & 0x0F)     ) * 17);
+      uint8_t C_i = static_cast<uint8_t>(255 - ((cur[i    ]       ) >> 4) * 17); // 17 == 255/15
+      uint8_t M_i = static_cast<uint8_t>(255 - ((cur[i    ] & 0x0F)     ) * 17);
       uint8_t Y_i = static_cast<uint8_t>(255 - ((cur[i + 1]       ) >> 4) * 17);
       uint8_t K_i = static_cast<uint8_t>(255 - ((cur[i + 1] & 0x0F)     ) * 17);
 
@@ -141,25 +140,16 @@ Scroom::Utils::Stuff OperationsCMYK::cache(const ConstTile::Ptr tile)
         K_i = static_cast<uint8_t>(((cur[i / 2] & 0x01)     ) - 1);
       }
 
-      uint32_t R_1 = static_cast<uint8_t>(DivideBy255(static_cast<uint16_t>(C_i * K_i)));
-      uint32_t G_1 = static_cast<uint8_t>(DivideBy255(static_cast<uint16_t>(M_i * K_i)));
-      uint32_t B_1 = static_cast<uint8_t>(DivideBy255(static_cast<uint16_t>(Y_i * K_i)));
+      uint32_t R = static_cast<uint8_t>(DivideBy255(static_cast<uint16_t>(C_i * K_i)));
+      uint32_t G = static_cast<uint8_t>(DivideBy255(static_cast<uint16_t>(M_i * K_i)));
+      uint32_t B = static_cast<uint8_t>(DivideBy255(static_cast<uint16_t>(Y_i * K_i)));
 
       // Write 255 as alpha (fully opaque)
-      row[i] = 255u << 24 | R_1 << 16 | G_1 << 8 | B_1;
+      row[i] = 255u << 24 | R << 16 | G << 8 | B;
     }
   }
 
   return Scroom::Bitmap::BitmapSurface::create(tile->width, tile->height, CAIRO_FORMAT_ARGB32, stride, data);
-}
-
-// http://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetParallel
-uint8_t bitcount(uint32_t c) {
-  c = c - ((c >> 1) & 0x55555555);
-  c = ((c >> 2) & 0x33333333) + (c & 0x33333333);
-  c = ((c >> 4) + c) & 0x0F0F0F0F;
-  c = ((c >> 8) + c) & 0x00FF00FF;
-  return ((c >> 16) + c) & 0x0000FFFF;
 }
 
 void OperationsCMYK::reduce(Tile::Ptr target, const ConstTile::Ptr source, int top_left_x, int top_left_y)
@@ -172,99 +162,165 @@ void OperationsCMYK::reduce(Tile::Ptr target, const ConstTile::Ptr source, int t
   byte* targetBase = target->data.get() +
       (target->height * top_left_y + top_left_x) * targetStride / 8;
   
-  if (this->bps > 1) {
+  if (this->bps == 8)
+  {
     for (int y = 0; y < source->height / 8; y++)
     {
-      const byte* sourcePtr = sourceBase;
       byte* targetPtr = targetBase;
 
       for (int x = 0; x < source->width / 8; x++)
       {
         // We want to store the average colour of the 8*8 pixel image
         // with (x, y) as its top-left corner into targetPtr.
-        const byte* base = sourcePtr;
+        const byte* base = sourceBase + 8 * 4 * x; // start of the row
+        const byte* end = base + 8 * sourceStride; // end of the row
+
         int sum_c = 0;
         int sum_m = 0;
         int sum_y = 0;
         int sum_k = 0;
-        for (int k = 0; k < 8; k++, base += sourceStride)
+        for (const byte* row = base; row < end; row += sourceStride)
         {
-          size_t current = 0;
-          for (int l = 0; l < 8; l++)
+          for (size_t current = 0; current < 8 * 4; current += 4)
           {
-            if (this->bps == 8) {
-              sum_c += base[current + 0];
-              sum_m += base[current + 1];
-              sum_y += base[current + 2];
-              sum_k += base[current + 3];
-              current += 4;
-            } else if (this->bps == 4) {
-              sum_c += base[current + 0] >> 4;
-              sum_m += base[current + 0] & 15;
-              sum_y += base[current + 1] >> 4;
-              sum_k += base[current + 1] & 15;
-              current += 2;
-            } else if (this->bps == 2) {
-              sum_c +=  base[current] >> 6;
-              sum_m += (base[current] & 0x30) >> 4;
-              sum_y += (base[current] & 0x0C) >> 2;
-              sum_k +=  base[current] & 0x03;
-              current++;
-            }
+            sum_c += row[current    ];
+            sum_m += row[current + 1];
+            sum_y += row[current + 2];
+            sum_k += row[current + 3];
           }
         }
 
-        if (this->bps == 8) {
-          targetPtr[0] = static_cast<byte>(sum_c / 64);
-          targetPtr[1] = static_cast<byte>(sum_m / 64);
-          targetPtr[2] = static_cast<byte>(sum_y / 64);
-          targetPtr[3] = static_cast<byte>(sum_k / 64);
-        } else if (this->bps == 4) {
-          targetPtr[0] = static_cast<byte>(sum_c / 64) << 4 | static_cast<byte>((sum_m / 64) & 0xF);
-          targetPtr[1] = static_cast<byte>(sum_y / 64) << 4 | static_cast<byte>((sum_k / 64) & 0xF);
-        } else if (this->bps == 2) {
-          targetPtr[0] = static_cast<byte>(sum_c / 64) << 6 | 
-                        static_cast<byte>(((sum_m / 64) & 0x3) << 4) |
-                        static_cast<byte>(((sum_y / 64) & 0x3) << 2) |
-                        static_cast<byte>((sum_k / 64) & 0x3);
-        }
+        targetPtr[0] = static_cast<byte>(sum_c / 64);
+        targetPtr[1] = static_cast<byte>(sum_m / 64);
+        targetPtr[2] = static_cast<byte>(sum_y / 64);
+        targetPtr[3] = static_cast<byte>(sum_k / 64);
 
-        sourcePtr += 4 * this->bps;
-        targetPtr += this->bps / 2;
+        targetPtr += 4;
       }
 
       targetBase += targetStride;
       sourceBase += sourceStride * 8;
     }
-  } else {
-    // 1 bps
+  }
+  else if (this->bps == 4)
+  {
     for (int y = 0; y < source->height / 8; y++)
     {
-      const uint32_t* sourcePtr = reinterpret_cast<const uint32_t*>(sourceBase);
+      byte* targetPtr = targetBase;
 
       for (int x = 0; x < source->width / 8; x++)
       {
-        // Find average of 8x8 pixel area
-        // We don't care about the order of pixels, because
-        // addition is associative.
-        uint32_t row = sourcePtr[x];
-        uint8_t sum_c = bitcount(row & 0b10001000100010001000100010001000);
-        uint8_t sum_m = bitcount(row & 0b01000100010001000100010001000100);
-        uint8_t sum_y = bitcount(row & 0b00100010001000100010001000100010);
-        uint8_t sum_k = bitcount(row & 0b00010001000100010001000100010001);
+        // We want to store the average colour of the 8*8 pixel image
+        // with (x, y) as its top-left corner into targetPtr.
+        const byte* base = sourceBase + 4 * 4 * x; // start of the row
+        const byte* end = base + 8 * sourceStride; // end of the row
 
-        // Since a single pixel takes up half a byte, we need to do some
-        // bitshifts to get the bits in the right positions.
+        int sum_c = 0;
+        int sum_m = 0;
+        int sum_y = 0;
+        int sum_k = 0;
+        for (const byte* row = base; row < end; row += sourceStride)
+        {
+          for (size_t current = 0; current < 8 * 2; current += 2)
+          {
+            sum_c += row[current    ] >> 4;
+            sum_m += row[current    ] & 15;
+            sum_y += row[current + 1] >> 4;
+            sum_k += row[current + 1] & 15;
+          }
+        }
+
+        targetPtr[2*x   ] = static_cast<byte>( sum_c == 15 * 64 ? 0xF0 : (sum_c / 60) << 4)
+                          | static_cast<byte>((sum_m == 15 * 64 ? 0x0F : sum_m / 60));
+        targetPtr[2*x +1] = static_cast<byte>( sum_y == 15 * 64 ? 0xF0 : (sum_y / 60) << 4)
+                          | static_cast<byte>((sum_k == 15 * 64 ? 0x0F : sum_k / 60));
+
+        targetPtr += 2;
+      }
+
+      targetBase += targetStride;
+      sourceBase += sourceStride * 8;
+    }
+  }
+  else if (this->bps == 2)
+  {
+    for (int y = 0; y < source->height / 8; y++)
+    {
+      for (int x = 0; x < source->width / 8; x++)
+      {
+        // We want to store the average colour of the 8*8 pixel image
+        // with (x, y) as its top-left corner into targetPtr.
+        const byte* base = sourceBase + 2 * 4 * x; // start of the row
+        const byte* end = base + 8 * sourceStride; // end of the row
+
+        int sum_c = 0;
+        int sum_m = 0;
+        int sum_y = 0;
+        int sum_k = 0;
+        for (const byte* row = base; row < end; row += sourceStride)
+        {
+          for (size_t current = 0; current < 8; current++)
+          {
+            sum_c +=  row[current]         >> 6;
+            sum_m += (row[current] & 0x30) >> 4;
+            sum_y += (row[current] & 0x0C) >> 2;
+            sum_k +=  row[current] & 0x03;
+          }
+        }
+
+        targetBase[x] = static_cast<byte>(((sum_c == 192 ? 191 : sum_c) / 48) << 6)
+                     | static_cast<byte>(((sum_m == 192 ? 191 : sum_m) / 48) << 4)
+                     | static_cast<byte>(((sum_y == 192 ? 191 : sum_y) / 48) << 2)
+                     | static_cast<byte>(((sum_k == 192 ? 191 : sum_k) / 48)     );
+      }
+
+      targetBase += targetStride;
+      sourceBase += sourceStride * 8;
+    }
+  }
+  else if (this->bps == 1)
+  {
+    for (int y = 0; y < source->height / 8; y++)
+    {
+      for (int x = 0; x < source->width / 8; x++)
+      {
+        // We want to store the average colour of the 8*8 pixel image
+        // with (x, y) as its top-left corner into targetPtr.
+        const byte* base = sourceBase + 4 * x; // start of the row
+        const byte* end = base + 8 * sourceStride; // end of the row
+
+        int sum_c = 0;
+        int sum_m = 0;
+        int sum_y = 0;
+        int sum_k = 0;
+        for (const byte* row = base; row < end; row += sourceStride)
+        {
+          for (size_t current = 0; current < 8; current++)
+          {
+            if ((current & 1) == 0) {
+              sum_c +=  row[current/2]         >> 7;
+              sum_m += (row[current/2] & 0x40) >> 6;
+              sum_y += (row[current/2] & 0x20) >> 5;
+              sum_k += (row[current/2] & 0x10) >> 4;
+            } else {
+              sum_c += (row[current/2] & 0x08) >> 3;
+              sum_m += (row[current/2] & 0x04) >> 2;
+              sum_y += (row[current/2] & 0x02) >> 1;
+              sum_k +=  row[current/2] & 0x01;
+            }
+          }
+        }
+
+        uint8_t colour = static_cast<uint8_t>(
+                         (sum_c >= 32 ? 8 : 0)
+                       | (sum_m >= 32 ? 4 : 0)
+                       | (sum_y >= 32 ? 2 : 0)
+                       | (sum_k >= 32 ? 1 : 0));
+
         if ((x & 1) == 0) {
-          targetBase[x/2] = ((sum_c >= 4 ? 4 : 0) << 5) \
-                       | ((sum_m >= 4 ? 4 : 0) << 4) \
-                       | ((sum_y >= 4 ? 4 : 0) << 3) \
-                       | ((sum_k >= 4 ? 4 : 0) << 2);
+          targetBase[x/2] = static_cast<uint8_t>(colour << 4);
         } else {
-          targetBase[x/2] |= ((sum_c >= 4 ? 4 : 0) << 1) \
-                       | ((sum_m >= 4 ? 4 : 0)     ) \
-                       | ((sum_y >= 4 ? 4 : 0) >> 1) \
-                       | ((sum_k >= 4 ? 4 : 0) >> 2);
+          targetBase[x/2] |= colour;
         }
       }
 
