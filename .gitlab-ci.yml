@@ -19,14 +19,14 @@ build-windows:
     - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
     - dir
     - cd C:\
-    - $env:SHELL "git clone https://gitlab.com/sep-group-2/scroom"
+    - Invoke-Expression $env:SHELL "git clone https://gitlab.com/sep-group-2/scroom"
     - dir
     - cd scroom
-    - $env:SHELL "git checkout $CI_COMMIT_SHA"
-    - $env:SHELL "autoreconf -i"
-    - $env:SHELL "./configure --prefix='C:/build'"
-    - $env:SHELL "make 2> /dev/null"
-    - $env:SHELL "make install-win-portable"
+    - Invoke-Expression $env:SHELL "git checkout $CI_COMMIT_SHA"
+    - Invoke-Expression $env:SHELL "autoreconf -i"
+    - Invoke-Expression $env:SHELL "./configure --prefix='C:/build'"
+    - Invoke-Expression $env:SHELL "make 2> /dev/null"
+    - Invoke-Expression $env:SHELL "make install-win-portable"
     # Finally, we copy the build into the shared volume, so gitlab can upload it
     - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
   retry:
