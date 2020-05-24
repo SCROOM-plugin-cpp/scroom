@@ -38,20 +38,7 @@ namespace Scroom
 
     Colormaps::Colormaps()
     {
-      #ifdef _WIN32
-        // We want to keep everything portable on windows so we look for the colormaps folder in the same directory as the .exe
-        char buffer[2048];
-        GetModuleFileName(NULL, buffer, 2047);
-        std::string modulePath(buffer);
-        auto pos = modulePath.rfind("\\");
-        char* colormapDirPath = g_build_filename(modulePath.substr(0, pos).c_str(), "\\", COLORMAPDIR, NULL);
-      #else
-        const char *homedir = g_getenv("HOME");
-        if (!homedir)
-          homedir = g_get_home_dir();
-
-        char* colormapDirPath = g_build_filename(homedir, SCROOMDIR, COLORMAPDIR, NULL);
-      #endif
+      char* colormapDirPath = getColormapDirPath();
       DIR* colormapDir = opendir(colormapDirPath);
       if (colormapDir)
       {
@@ -63,7 +50,7 @@ namespace Scroom
           // all bad cases, the load() will fail :-)
 
           char* name = d->d_name;
-          size_t len = strlen(name);
+          int len = strlen(name);
           if (!strcmp(name + len - strlen(COLORMAPEXT), COLORMAPEXT))
           {
             Colormap::Ptr c = load(name);
@@ -93,6 +80,24 @@ namespace Scroom
       return instance;
     }
 
+    char* Colormaps::getColormapDirPath()
+    {
+      #ifdef _WIN32
+        // We want to keep everything portable on windows so we look for the colormaps folder in the same directory as the .exe
+        char buffer[2048];
+        GetModuleFileName(NULL, buffer, 2047);
+        std::string modulePath(buffer);
+        auto pos = modulePath.rfind("\\");
+        return g_build_filename(modulePath.substr(0, pos).c_str(), "\\", COLORMAPDIR, NULL);
+      #else
+        const char *homedir = g_getenv("HOME");
+        if (!homedir)
+          homedir = g_get_home_dir();
+
+        return g_build_filename(homedir, SCROOMDIR, COLORMAPDIR, NULL);
+      #endif
+    }
+
     std::list<Colormap::ConstPtr> Colormaps::getColormaps()
     {
       return colormaps;
@@ -102,12 +107,7 @@ namespace Scroom
     {
       Colormap::Ptr colormap;
 
-      const char *homedir = g_getenv("HOME");
-      if (!homedir)
-        homedir = g_get_home_dir();
-
-      char* fullName = g_build_filename(homedir, SCROOMDIR, COLORMAPDIR, name,
-          NULL);
+      char* fullName = g_build_filename(getColormapDirPath(), name, NULL);
       FILE* f = fopen(fullName, "r");
       if (f)
       {
@@ -133,7 +133,7 @@ namespace Scroom
           result = fgets(buffer, BUFFERSIZE, f);
           if (!result)
             throw std::exception();
-          size_t count = strtoul(result, nullptr, 10);
+          unsigned int count = atoi(result);
           if (count == 0)
             throw std::exception();
 

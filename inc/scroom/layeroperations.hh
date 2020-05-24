@@ -142,3 +142,18 @@ public:
   virtual void reduce(Tile::Ptr target, const ConstTile::Ptr source, int x, int y);
 };
 
+class OperationsCMYK : public CommonOperations
+{
+public:
+  static Ptr create(int bps);
+  OperationsCMYK(uint16_t bps);
+  virtual ~OperationsCMYK()
+  {}
+
+  virtual int getBpp();
+  virtual Scroom::Utils::Stuff cache(const ConstTile::Ptr tile);
+  virtual void reduce(Tile::Ptr target, const ConstTile::Ptr source, int x, int y);
+private:
+  uint16_t bps;
+};
+
