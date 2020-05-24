@@ -16,10 +16,11 @@ build-windows:
     - dir
     - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
     - dir
-    - cd C:\
+      # Mingw doesn't inherit the Powershell working directory, so we can either:
+      #  * in-line all steps / script them
+      #  * Move to the correct directory in each step.
+      #  The second option allows us to split commands, so we are sticking with that for now.
     - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/ && git clone https://gitlab.com/sep-group-2/scroom"
-    - dir
-    - cd scroom
     - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && git checkout $CI_COMMIT_SHA"
     - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && autoreconf -i"
     - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && ./configure --prefix='C:/build'"
