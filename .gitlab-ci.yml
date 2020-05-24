@@ -6,7 +6,7 @@ build-windows:
   # As a workaround, we clone the repo to C:\scroom manually
   variables:
     GIT_STRATEGY: none
-    SHELL: C:/msys64/mingw64.exe -c
+    SHELL: "C:/msys64/mingw64.exe -c"
   stage: build
   # This is a windows server core docker image with an msys2 install.
   # It includes all required msys packages
@@ -19,14 +19,14 @@ build-windows:
     - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
     - dir
     - cd C:\
-    - Invoke-Expression $env:SHELL "git clone https://gitlab.com/sep-group-2/scroom"
+    - & $env:SHELL "git clone https://gitlab.com/sep-group-2/scroom"
     - dir
     - cd scroom
-    - Invoke-Expression $env:SHELL "git checkout $CI_COMMIT_SHA"
-    - Invoke-Expression $env:SHELL "autoreconf -i"
-    - Invoke-Expression $env:SHELL "./configure --prefix='C:/build'"
-    - Invoke-Expression $env:SHELL "make 2> /dev/null"
-    - Invoke-Expression $env:SHELL "make install-win-portable"
+    - & $env:SHELL "git checkout $CI_COMMIT_SHA"
+    - & $env:SHELL "autoreconf -i"
+    - & $env:SHELL "./configure --prefix='C:/build'"
+    - & $env:SHELL "make 2> /dev/null"
+    - & $env:SHELL "make install-win-portable"
     # Finally, we copy the build into the shared volume, so gitlab can upload it
     - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
   retry:
