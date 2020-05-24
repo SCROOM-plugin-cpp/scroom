@@ -15,6 +15,8 @@ build-windows:
   tags:
     - Windows
   script:
+      # Verify CI vars work in mingw TODO; remove
+    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "ls /c/builds/$CI_PROJECT_PATH/"
     - if (Test-Path '.\scroom') { Remove-Item '.\scroom' -Recurse -Force; }
     - cd C:\
     - if (Test-Path '.\scroom') { Remove-Item '.\scroom' -Recurse -Force; }
@@ -46,7 +48,7 @@ windows-portable:
     - Windows
   script:
     - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
-    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && make install-win-portable"
+    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/builds/$CI_PROJECT_PATH/scroom && make install-win-portable"
     # Finally, we copy the build into the shared volume, so gitlab can upload it
     - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
   retry:
@@ -66,7 +68,7 @@ windows-dev:
     - Windows
   script:
     - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
-    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && make install"
+    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/builds/$CI_PROJECT_PATH/scroom && make install"
     # Finally, we copy the build into the shared volume, so gitlab can upload it
     - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
   retry:
