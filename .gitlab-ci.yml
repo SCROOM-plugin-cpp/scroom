@@ -79,7 +79,7 @@ windows-dev:
       - scroom_build
 
 linux-dev:
-  stage: install
+  stage: build
   image: registry.gitlab.com/sep-group-2/scroom-ci:latest
   script:
     - ls -l
