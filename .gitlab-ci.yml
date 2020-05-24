@@ -17,14 +17,14 @@ build-windows:
     - if (Test-Path '.\scroom_build') { Remove-Item '.\scroom_build' -Recurse -Force; }
     - dir
     - cd C:\
-    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "git clone https://gitlab.com/sep-group-2/scroom"
+    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/ && git clone https://gitlab.com/sep-group-2/scroom"
     - dir
     - cd scroom
-    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "git checkout $CI_COMMIT_SHA"
-    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "autoreconf -i"
-    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "./configure --prefix='C:/build'"
-    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "make 2> /dev/null"
-    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "make install-win-portable"
+    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && git checkout $CI_COMMIT_SHA"
+    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && autoreconf -i"
+    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && ./configure --prefix='C:/build'"
+    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && make 2> /dev/null"
+    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && make install-win-portable"
     # Finally, we copy the build into the shared volume, so gitlab can upload it
     - cp -r "C:/build" "C:/builds/$CI_PROJECT_PATH/scroom_build"
   retry:
