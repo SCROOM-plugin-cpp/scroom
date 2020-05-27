@@ -66,7 +66,7 @@ int main (int argc, char *argv[])
   desc.add_options()
     ("help,h", "Show this help message")
     ("load,l", po::value<std::vector<std::string> >(), "Load given filenames")
-    ("transparent-overlay", po::value<std::vector<std::string> >()->multitoken(), "Show given files in transparent overlay");
+    ("transparent-overlay", po::value<std::vector<std::string> >()->multitoken(), "Show given files in transparent overlay")
     ////////////////////////////////// varnish patch work; TODO//////////////////////////
     ("varnish", po::value<std::vector<std::string> >()->multitoken(), "Set a varnish base image and a mask.");
     ////////////////////////////////// varnish patch work; TODO//////////////////////////
