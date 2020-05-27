@@ -67,6 +67,9 @@ int main (int argc, char *argv[])
     ("help,h", "Show this help message")
     ("load,l", po::value<std::vector<std::string> >(), "Load given filenames")
     ("transparent-overlay", po::value<std::vector<std::string> >()->multitoken(), "Show given files in transparent overlay");
+    ////////////////////////////////// varnish patch work; TODO//////////////////////////
+    ("varnish", po::value<std::vector<std::string> >()->multitoken(), "Set a varnish base image and a mask.");
+    ////////////////////////////////// varnish patch work; TODO//////////////////////////
 
   po::positional_options_description p;
   p.add("load", -1);
@@ -92,6 +95,14 @@ int main (int argc, char *argv[])
       const std::vector<std::string>& names = vm["transparent-overlay"].as<std::vector<std::string> >();
       filenames["Transparent Overlay"].assign(names.begin(), names.end());
     }
+
+    ////////////////////////////////// varnish patch work; TODO//////////////////////////
+    if(vm.count("varnish"))
+    {
+      const std::vector<std::string>& names = vm["varnish"].as<std::vector<std::string> >();
+      filenames["varnish"].assign(names.begin(), names.end());
+    }
+    ////////////////////////////////// varnish patch work; TODO//////////////////////////
   }
   catch(std::exception& ex)
   {
