@@ -117,6 +117,35 @@ void OperationsCMYK32::reduce(Tile::Ptr target, const ConstTile::Ptr source, int
   }
 }
 
+/* Returns the sum of pixel values in the rectangle
+  Assumes that the rectangle is fully contained inside the tile
+  Also assumes that the rectangle is scaled on a scale of 4096 x 4096.
+*/
+PipetteLayerOperations::PipetteColor OperationsCMYK32::sumPixelValues(Scroom::Utils::Rectangle<int> area, const ConstTile::Ptr tile)
+{ 
+  const uint8_t* data = tile->data.get();
+
+  size_t C = 0;
+  size_t M = 0;
+  size_t Y = 0;
+  size_t K = 0;
+  
+  //naive implementation of summing the components up
+  for(int y = area.getTopLeft().y; y < area.getBottomRight().y; y++)
+  {
+    for(int x = area.getTopLeft().x; x < area.getBottomRight().x; x++)
+    {
+      int pos = 4 * x * y;
+      C += data[pos];
+      M += data[pos + 1];
+      Y += data[pos + 2];
+      K += data[pos + 3];
+    }
+  }
+
+  PipetteLayerOperations::PipetteColor values = { {"C", C}, {"M", M}, {"Y", Y}, {"K", K} };
+  return values;
+}
 ////////////////////////////////////////////////////////////////////////
 // OperationsCMYK16
 
@@ -216,6 +245,31 @@ void OperationsCMYK16::reduce(Tile::Ptr target, const ConstTile::Ptr source, int
   }
 }
 
+PipetteLayerOperations::PipetteColor OperationsCMYK16::sumPixelValues(Scroom::Utils::Rectangle<int> area, const ConstTile::Ptr tile)
+{
+  const uint8_t* data = tile->data.get();
+
+  size_t C = 0;
+  size_t M = 0;
+  size_t Y = 0;
+  size_t K = 0;
+  
+  //naive implementation of summing the components up
+  for(int y = area.getTopLeft().y; y < area.getBottomRight().y; y++)
+  {
+    for(int x = area.getTopLeft().x; x < area.getBottomRight().x; x++)
+    {
+      int pos = 2 * x * y;
+      C += data[pos] >> 4;
+      M += data[pos] & 0x0F;
+      Y += data[pos + 1] >> 4;
+      K += data[pos + 1] & 0x0F;
+    }
+  }
+
+  PipetteLayerOperations::PipetteColor values = { {"C", C}, {"M", M}, {"Y", Y}, {"K", K} };
+  return values;
+}
 ////////////////////////////////////////////////////////////////////////
 // OperationsCMYK8
 
@@ -310,6 +364,31 @@ void OperationsCMYK8::reduce(Tile::Ptr target, const ConstTile::Ptr source, int 
     targetBase += targetStride;
     sourceBase += sourceStride * 8;
   }
+}
+
+PipetteLayerOperations::PipetteColor OperationsCMYK8::sumPixelValues(Scroom::Utils::Rectangle<int> area, const ConstTile::Ptr tile)
+{
+  const uint8_t* data = tile->data.get();
+
+  size_t C = 0;
+  size_t M = 0;
+  size_t Y = 0;
+  size_t K = 0;
+  
+  //naive implementation of summing the components up
+  for(int y = area.getTopLeft().y; y < area.getBottomRight().y; y++)
+  {
+    for(int x = area.getTopLeft().x; x < area.getBottomRight().x; x++)
+    {
+      int pos = x * y;
+      C += data[pos] >> 6;
+      M += (data[pos] >> 4) & 3;
+      Y += (data[pos] >> 2) & 3;
+      K += data[pos] & 3;
+    }
+  }
+  PipetteLayerOperations::PipetteColor values = { {"C", C}, {"M", M}, {"Y", Y}, {"K", K} };
+  return values;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -415,4 +494,38 @@ void OperationsCMYK4::reduce(Tile::Ptr target, const ConstTile::Ptr source, int 
     targetBase += targetStride;
     sourceBase += sourceStride * 8;
   }
+}
+
+PipetteLayerOperations::PipetteColor OperationsCMYK4::sumPixelValues(Scroom::Utils::Rectangle<int> area, const ConstTile::Ptr tile)
+{
+  const uint8_t* data = tile->data.get();
+
+  size_t C = 0;
+  size_t M = 0;
+  size_t Y = 0;
+  size_t K = 0;
+  
+  //naive implementation of summing the components up
+  for(int y = area.getTopLeft().y; y < area.getBottomRight().y; y++)
+  {
+    for(int x = area.getTopLeft().x; x < area.getBottomRight().x; x++)
+    {
+      int pos = x * y / 2;
+      if ( x * y % 2 == 0)
+      {
+        C += (data[pos] >> 3) & 1;
+        M += (data[pos] >> 2) & 1;
+        Y += (data[pos] >> 1) & 1;
+        K += data[pos] & 1;
+      }
+      else {
+        C += data[pos] >> 7;
+        M += (data[pos] >> 6) & 1;
+        Y += (data[pos] >> 5) & 1;
+        K += (data[pos] >> 4) & 1;
+      }
+    }
+  }
+  PipetteLayerOperations::PipetteColor values = { {"C", C}, {"M", M}, {"Y", Y}, {"K", K} };
+  return values;
 }
