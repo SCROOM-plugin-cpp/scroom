@@ -28,7 +28,7 @@ build-windows:
     - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && git checkout $CI_COMMIT_SHA"
     - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && autoreconf -i"
     - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && ./configure --prefix='C:/build'"
-    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && make 2> /dev/null"
+    - C:/msys64/usr/bin/env MSYSTEM=MINGW64 c:/msys64/usr/bin/bash -l -c "cd /c/scroom && make"
     # Finally, we copy the build into the shared volume, so gitlab can upload it
     - cp -r "C:/scroom" "C:/builds/$CI_PROJECT_PATH/scroom"
   retry:
