@@ -194,9 +194,24 @@ bool TiffPresentation::load(const std::string& fileName_)
            width, height, 1/resolutionX, 1/resolutionY);
 
     LayerSpec ls;
-    if (spp == 4 && (bps == 8 || bps == 4 || bps == 2 || bps == 1))
+    if (spp == 4 && bps == 8)
     {
-        ls.push_back(OperationsCMYK::create(bps));
+      ls.push_back(OperationsCMYK32::create());
+    }
+    else if (spp == 4 && bps == 4)
+    {
+      ls.push_back(OperationsCMYK16::create());
+      ls.push_back(OperationsCMYK32::create());
+    }
+    else if (spp == 4 && bps == 2)
+    {
+      ls.push_back(OperationsCMYK8::create());
+      ls.push_back(OperationsCMYK32::create());
+    }
+    else if (spp == 4 && bps == 1)
+    {
+      ls.push_back(OperationsCMYK4::create());
+      ls.push_back(OperationsCMYK32::create());
     }
     else if (spp == 3 && bps == 8)
     {
