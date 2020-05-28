@@ -7,7 +7,10 @@
 
 #pragma once
 
+#include <stdlib.h>
+
 #include <string>
+#include <cmath>
 
 #include <gtk/gtk.h>
 
@@ -15,6 +18,56 @@
 #include <boost/weak_ptr.hpp>
 
 #include <scroom/progressinterface.hh>
+#include <scroom/stuff.hh>
+
+struct Selection
+{
+public:
+  GdkPoint start;
+  GdkPoint end;
+
+public:
+  Selection(int x, int y) { start.x=x; start.y=y; end=start; }
+  Selection(GdkPoint point) : start(point), end(point) {}
+
+  bool endsAt(GdkPoint p) { return end.x==p.x && end.y==p.y; }
+
+  int width() { return abs(end.x-start.x); }
+  int height() { return abs(end.y-start.y); }
+  double length() { return std::sqrt(std::pow(double(width()),2) + std::pow(double(height()),2)); }
+};
+
+class PostRenderer
+{
+public:
+  typedef boost::shared_ptr<PostRenderer> Ptr;
+
+public:
+  virtual ~PostRenderer() {}
+
+  virtual void render(cairo_t* cr)=0;
+};
+
+class SelectionListener
+{
+public:
+  typedef boost::shared_ptr<SelectionListener> Ptr;
+
+public:
+  virtual ~SelectionListener() {}
+
+  virtual void onSelectionStart(GdkPoint start)=0;
+  virtual void onSelectionUpdate(Selection* selection)=0;
+  virtual void onSelectionEnd(Selection* selection)=0;
+};
+
+// There is no documentation on values 4 and 5, so
+// they are not included here.
+enum class MouseButton : uint {
+  PRIMARY = 1,
+  MIDDLE = 2,
+  SECONDARY = 3
+};
 
 /**
  * Interface provided to something Viewable
@@ -88,5 +141,67 @@ public:
    *    calls)
    */
   virtual void removeFromToolbar(GtkToolItem* ti)=0;
+
+  /**
+   * Enable panning the view.
+   */
+  virtual void setPanning()
+  {
+  }
+
+  /**
+   * Disable panning the view.
+   */
+  virtual void unsetPanning()
+  {
+  }
+
+  /**
+   * Register a SelectionListener to be updated whenever the
+   * user selects a region using the given mouse button. When
+   * the user changes the selection, the function
+   * 'onSelection(Selection* selection)' is called on the
+   * given object.
+   * 
+   * @see SelectionListener
+   */
+  virtual void registerSelectionListener(SelectionListener::Ptr, MouseButton)
+  {
+  }
+
+  /**
+   * Register a postrenderer.
+   */
+  virtual void registerPostRenderer(PostRenderer::Ptr)
+  {
+  }
+
+  /**
+   * Sets the status message in the status bar of the application.
+   */
+  virtual void setStatusMessage(const std::string&)
+  {
+  }
+
+  /**
+   * Converts a point on screen to a presentation pixel.
+   */
+  virtual GdkPoint presentationPointToWindowPoint(GdkPoint)
+  {
+    return {0, 0};
+  }
+
+  /**
+   * Returns a shared pointer to the current presentation.
+   *
+   * The actual return type should be PresentationInterface::Ptr,
+   * but including the required header file causes a cyclic include.
+   * This workaround means that you have to explicitly cast
+   * the result of this function to PresentationInterface::Ptr.
+   */
+  virtual Scroom::Utils::Stuff getCurrentPresentation()
+  {
+    return nullptr;
+  }
 };
 

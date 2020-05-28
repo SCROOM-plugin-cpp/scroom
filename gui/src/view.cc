@@ -92,7 +92,7 @@ static void on_newWindow_activate(GtkMenuItem*, gpointer user_data)
 View::View(GladeXML* scroomXml_)
   : scroomXml(scroomXml_), presentation(), sidebarManager(),
     drawingAreaWidth(0), drawingAreaHeight(0),
-    zoom(0), x(0), y(0), measurement(NULL), modifiermove(0)
+    zoom(0), x(0), y(0), modifiermove(0)
 {
   PluginManager::Ptr pluginManager = PluginManager::getInstance();
   window = GTK_WINDOW(glade_xml_get_widget(scroomXml_, "scroom"));
@@ -136,6 +136,7 @@ View::View(GladeXML* scroomXml_)
 
   cachedPoint.x=0;
   cachedPoint.y=0;
+  panning = true;
 
   on_newPresentationInterfaces_update(pluginManager->getNewPresentationInterfaces());
   updateNewWindowMenu();
@@ -189,19 +190,9 @@ void View::redraw(cairo_t* cr)
 
     presentation->redraw(shared_from_this<View>(), cr, rect, zoom);
 
-    if(measurement)
+    for (auto renderer : postRenderers)
     {
-      GdkPoint start = presentationPointToWindowPoint(measurement->start);
-      GdkPoint end = presentationPointToWindowPoint(measurement->end);
-      cairo_set_line_width(cr, 1);
-      cairo_set_source_rgb(cr, 0.75, 0, 0); // Dark Red
-      drawCross(cr, start);
-      drawCross(cr, end);
-      cairo_stroke(cr);
-      cairo_set_source_rgb(cr, 1, 0, 0); // Red
-      cairo_move_to(cr, start.x, start.y);
-      cairo_line_to(cr, end.x, end.y);
-      cairo_stroke(cr);
+      renderer->render(cr);
     }
   }
   else
@@ -631,16 +622,18 @@ void View::on_buttonPress(GdkEventButton* event)
     modifiermove = GDK_BUTTON1_MASK;
     cachedPoint = eventToPoint(event);
   }
-  else if(event->button==3 && modifiermove==0)
+
+  // Start selection for the event button
+  Selection* sel = selections[event->button];
+  if(sel)
   {
-    // Begin measuring distance
-    modifiermove = GDK_BUTTON3_MASK;
-    if(measurement)
-    {
-      delete measurement;
-    }
-    cachedPoint = windowPointToPresentationPoint(eventToPoint(event));
-    measurement = new Measurement(cachedPoint);
+    delete sel;
+  }
+  GdkPoint point = windowPointToPresentationPoint(eventToPoint(event));
+  selections[event->button] = new Selection(point);
+  for (auto listener : selectionListeners[static_cast<MouseButton>(event->button)])
+  {
+    listener->onSelectionStart(point);
   }
 }
 
@@ -653,22 +646,23 @@ void View::on_buttonRelease(GdkEventButton* event)
     cachedPoint.x=0;
     cachedPoint.y=0;
   }
-  else if(event->button==3 && modifiermove==GDK_BUTTON3_MASK)
+
+  // End selection for the event button
+  Selection* sel = selections[event->button];
+  if(sel)
   {
-    // End measuring distance
-    modifiermove = 0;
-    if(measurement)
+    sel->end = windowPointToPresentationPoint(eventToPoint(event));
+    for (auto listener : selectionListeners[static_cast<MouseButton>(event->button)])
     {
-      measurement->end = windowPointToPresentationPoint(eventToPoint(event));
+      listener->onSelectionEnd(sel);
     }
-    cachedPoint.x=0;
-    cachedPoint.y=0;
+    invalidate();
   }
 }
 
 void View::on_motion_notify(GdkEventMotion* event)
 {
-  if((event->state & GDK_BUTTON1_MASK) && modifiermove == GDK_BUTTON1_MASK)
+  if((event->state & GDK_BUTTON1_MASK) && modifiermove == GDK_BUTTON1_MASK && panning)
   {
     int newx = x;
     int newy = y;
@@ -699,21 +693,23 @@ void View::on_motion_notify(GdkEventMotion* event)
 
     updateXY(newx, newy, OTHER);
   }
-  else if((event->state & GDK_BUTTON3_MASK) && modifiermove == GDK_BUTTON3_MASK)
+
+  // There should be a cleaner way to do this...
+  for (int button = 0; button < 3; button++)
   {
-    bool moved=false;
-
-    cachedPoint = windowPointToPresentationPoint(eventToPoint(event));
-    if(measurement && !measurement->endsAt(cachedPoint))
+    if((event->state & (GDK_BUTTON1_MASK << button)))
     {
-      measurement->end = cachedPoint;
-      moved = true;
-    }
-
-    if(moved)
-    {
-      invalidate();
-      displayMeasurement();
+      // Update selection listeners for the event button
+      Selection* sel = selections[button + 1];
+      if(sel)
+      {
+        sel->end = windowPointToPresentationPoint(eventToPoint(event));
+        for (auto listener : selectionListeners[static_cast<MouseButton>(button + 1)])
+        {
+          listener->onSelectionUpdate(sel);
+        }
+        invalidate();
+      }
     }
   }
 }
@@ -785,6 +781,37 @@ void View::removeFromToolbar(GtkToolItem* ti)
   }
 }
 
+void View::setPanning()
+{
+  panning = true;
+}
+
+void View::unsetPanning()
+{
+  panning = false;
+}
+
+void View::registerSelectionListener(SelectionListener::Ptr listener, MouseButton button)
+{
+  selectionListeners[button].push_back(listener);
+}
+
+void View::registerPostRenderer(PostRenderer::Ptr renderer)
+{
+  postRenderers.push_back(renderer);
+}
+
+void View::setStatusMessage(const std::string& message)
+{
+  gtk_statusbar_pop(statusBar, statusBarContextId);
+  gtk_statusbar_push(statusBar, statusBarContextId, message.c_str());
+}
+
+Scroom::Utils::Stuff View::getCurrentPresentation()
+{
+  return presentation;
+}
+
 ////////////////////////////////////////////////////////////////////////
 // Helpers
 
@@ -845,30 +872,6 @@ void View::drawCross(cairo_t* cr, GdkPoint p)
   cairo_line_to(cr, p.x+size, p.y);
   cairo_move_to(cr, p.x, p.y-size);
   cairo_line_to(cr, p.x, p.y+size);
-}
-
-void View::setStatusMessage(const std::string& message)
-{
-  gtk_statusbar_pop(statusBar, statusBarContextId);
-  gtk_statusbar_push(statusBar, statusBarContextId, message.c_str());
-}
-
-void View::displayMeasurement()
-{
-  std::ostringstream s;
-  s.precision(1);
-  fixed(s);
-
-  if(measurement)
-  {
-    s << "l: " << measurement->length()
-      << ", dx: " << measurement->width()
-      << ", dy: " << measurement->height()
-      << ", from: ("<< measurement->start.x << "," << measurement->start.y << ")"
-      << ", to: ("<< measurement->end.x << "," << measurement->end.y << ")";
-  }
-
-  setStatusMessage(s.str());
 }
 
 void View::updateNewWindowMenu()
