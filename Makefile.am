@@ -570,6 +570,24 @@ plugins_measure_src_libspmeasure_la_LIBADD = @MEASUREPLUGIN_LIBS@ @BOOSTTHREADLI
 plugins_measure_src_libspmeasure_la_LDFLAGS = $(loadflag)
 
 ########################################################################
+### plugins/pipette
+########################################################################
+
+pipette_plugin_libs = \
+	plugins/pipette/src/libsppipette.la
+
+plugins_pipette_src_libsppipette_la_CPPFLAGS = @PIPETTEPLUGIN_CFLAGS@ -I $(top_srcdir)/inc
+
+plugins_pipette_src_libsppipette_la_SOURCES = \
+	plugins/pipette/src/pipette.cc \
+	plugins/pipette/src/pipette.hh \
+	plugins/pipette/src/main.cc
+
+plugins_pipette_src_libsppipette_la_LIBADD = @PIPETTEPLUGIN_LIBS@ @BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@
+
+plugins_pipette_src_libsppipette_la_LDFLAGS = $(loadflag)
+
+########################################################################
 ### gui
 ########################################################################
 
@@ -624,7 +642,7 @@ root_extra_dist = \
 ########################################################################
 
 ### Plugins
-plugin_LTLIBRARIES = $(example_plugin_libs) $(transparent_overlay_plugin_libs) $(tiff_plugin_libs) $(colormap_plugin_libs) $(measure_plugin_libs)
+plugin_LTLIBRARIES = $(example_plugin_libs) $(transparent_overlay_plugin_libs) $(tiff_plugin_libs) $(colormap_plugin_libs) $(measure_plugin_libs) $(pipette_plugin_libs)
 plugins_check_programs = $(transparent_overlay_plugin_check_programs)
 plugins_tests = $(transparent_overlay_plugin_tests)
 
