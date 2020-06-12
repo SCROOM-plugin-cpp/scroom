@@ -379,7 +379,8 @@ libs_tiled_bitmap_test_tiled_bitmap_tests_CPPFLAGS = @TILEDBITMAP_CFLAGS@ -I $(t
 
 libs_tiled_bitmap_test_tiled_bitmap_tests_SOURCES = \
 	libs/tiled-bitmap/test/main.cc \
-	libs/tiled-bitmap/test/tiledbitmap-tests.cc
+	libs/tiled-bitmap/test/tiledbitmap-tests.cc \
+	libs/tiled-bitmap/test/sampleiterator-tests.cc
 
 libs_tiled_bitmap_test_tiled_bitmap_tests_LDADD = \
 	@BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@ \
@@ -550,6 +551,24 @@ plugins_colormap_libspcolormap_la_LIBADD = @COLORMAPPLUGIN_LIBS@ @BOOSTTHREADLIB
 plugins_colormap_libspcolormap_la_LDFLAGS = $(loadflag)
 
 ########################################################################
+### plugins/measure
+########################################################################
+
+measure_plugin_libs = \
+	plugins/measure/src/libspmeasure.la
+
+plugins_measure_src_libspmeasure_la_CPPFLAGS = @MEASUREPLUGIN_CFLAGS@ -I $(top_srcdir)/inc
+
+plugins_measure_src_libspmeasure_la_SOURCES = \
+	plugins/measure/src/main.cc \
+	plugins/measure/src/measure.cc \
+	plugins/measure/src/measure.hh
+
+plugins_measure_src_libspmeasure_la_LIBADD = @MEASUREPLUGIN_LIBS@ @BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@
+	
+plugins_measure_src_libspmeasure_la_LDFLAGS = $(loadflag)
+
+########################################################################
 ### gui
 ########################################################################
 
@@ -571,6 +590,10 @@ gui_src_scroom_SOURCES = \
 	gui/src/progressbarmanager.hh \
 	gui/src/workinterface.hh
 
+if HAVE_WINDRES
+gui_src_scroom_SOURCES += build_scripts/windows/icon.rc
+endif
+
 gui_src_scroom_CPPFLAGS = -I $(top_srcdir)/inc \
 	-DPACKAGE_DATA_DIR=\""$(pkgdatadir)"\" \
 	-DPLUGIN_DIR=\""$(plugindir)"\" \
@@ -583,7 +606,9 @@ gui_src_scroom_LDADD = @GUI_LIBS@ @BOOSTTHREADLIB@ @BOOSTSYSTEMLIB@ @BOOSTPROGRA
 
 gui_extra_dist = \
 	gui/scroom.glade \
-	gui/ENVIRONMENT
+	gui/ENVIRONMENT \
+	build_scripts/windows/icon.ico \
+	build_scripts/windows/icon.rc
 
 gui_pkgdata_data = \
 	gui/scroom.glade
@@ -604,7 +629,7 @@ root_extra_dist = \
 ########################################################################
 
 ### Plugins
-plugin_LTLIBRARIES = $(example_plugin_libs) $(transparent_overlay_plugin_libs) $(tiff_plugin_libs) $(colormap_plugin_libs)
+plugin_LTLIBRARIES = $(example_plugin_libs) $(transparent_overlay_plugin_libs) $(tiff_plugin_libs) $(colormap_plugin_libs) $(measure_plugin_libs)
 plugins_check_programs = $(transparent_overlay_plugin_check_programs)
 plugins_tests = $(transparent_overlay_plugin_tests)
 
@@ -666,4 +691,6 @@ silent-doxygen:
 install-win-portable: install
 	@POST_INSTALL_HOOK@
 
-	
+# Define how the .rc file for the icon on Windows has to be compiled
+.rc.o:
+	windres $< -O coff -o $@
