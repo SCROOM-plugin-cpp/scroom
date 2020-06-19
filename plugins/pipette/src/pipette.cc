@@ -30,23 +30,55 @@ std::string Pipette::getPluginVersion()
 
 void Pipette::registerCapabilities(ScroomPluginInterface::Ptr host)
 {
-  host->registerViewObserver("Pipette", shared_from_this<Pipette>());
+  host->registerPresentationObserver("Pipette", shared_from_this<Pipette>());
 }
 
 ////////////////////////////////////////////////////////////////////////
 // ViewObserver
 ////////////////////////////////////////////////////////////////////////
 
-Scroom::Bookkeeping::Token Pipette::viewAdded(ViewInterface::Ptr view)
+void Pipette::presentationAdded(PresentationInterface::Ptr p)
 {
-  PipetteHandler::Ptr handler = PipetteHandler::create();
-  view->registerSelectionListener(handler);
-  view->registerPostRenderer(handler);
+  printf("Presentation added, registering strong observer\n");
+  //PipetteHandler::Ptr handler = PipetteHandler::create();
 
-  view->addToolButton(GTK_TOGGLE_BUTTON(gtk_toggle_button_new_with_label("Pipette")), handler);
+  //Scroom::Utils::Stuff r = p->registerStrongObserver(handler);
+  //handler->registration = r;
 
-  return Scroom::Bookkeeping::Token();
+  PipetteHandler::Ptr handler = PipetteHandler::create(p);
 }
+
+void Pipette::presentationDeleted()
+{
+
+}
+
+void PipetteHandler::open(ViewInterface::WeakPtr vi)
+{
+  printf("Original view added\n");
+  ViewInterface::Ptr view(vi);
+  //PipetteHandler::Ptr handler = PipetteHandler::create();
+  view->registerSelectionListener(shared_from_this<PipetteHandler>());
+  view->registerPostRenderer(shared_from_this<PipetteHandler>());
+
+  view->addToolButton(GTK_TOGGLE_BUTTON(gtk_toggle_button_new_with_label("Pipette")), shared_from_this<PipetteHandler>());
+}
+
+void PipetteHandler::close(ViewInterface::WeakPtr vi){
+  printf("Original view delete\n");
+}
+
+//Scroom::Bookkeeping::Token Pipette::viewAdded(ViewInterface::WeakPtr view)
+//{
+//  printf("Original view added")
+//  //PipetteHandler::Ptr handler = PipetteHandler::create();
+//  view->registerSelectionListener(handler);
+//  view->registerPostRenderer(handler);
+//
+//  view->addToolButton(GTK_TOGGLE_BUTTON(gtk_toggle_button_new_with_label("Pipette")), handler);
+//
+//  return Scroom::Bookkeeping::Token();
+//}
 
 ////////////////////////////////////////////////////////////////////////
 // PipetteHandler
@@ -56,14 +88,29 @@ PipetteHandler::PipetteHandler()
   : selection(nullptr), enabled(false), jobRunning(false),
     currentJob(ThreadPool::Queue::createAsync())
 {
+  printf("Handler contructor\n");
 }
 PipetteHandler::~PipetteHandler()
 {
+  printf("PipetteHandler destructor\n");
 }
 
-PipetteHandler::Ptr PipetteHandler::create()
+PipetteHandler::Ptr PipetteHandler::create(PresentationInterface::Ptr p)
 {
-  return Ptr(new PipetteHandler());
+  printf("registration start..................\n");
+  PipetteHandler::Ptr handler = PipetteHandler::Ptr(new PipetteHandler());
+
+  Scroom::Utils::Stuff r = p->registerStrongObserver(handler);
+  handler->registration = r;
+  if(r){
+    printf("r is not null\n");
+
+    //printf("Observer count: %d\n", p->getObservers().size());
+  }
+
+
+  printf("finished registration...................\n");
+  return handler;
 }
 
 void PipetteHandler::computeValues(ViewInterface::Ptr view)
