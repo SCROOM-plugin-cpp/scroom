@@ -197,10 +197,10 @@ void PipetteHandler::render(ViewInterface::Ptr const& vi, cairo_t* cr, Scroom::U
     else
     {
       const int pixelSize=1<<-zoom;
+      start *= aspectRatio;
       start /= pixelSize;
-      start /= aspectRatio;
+      end *= aspectRatio;
       end /= pixelSize;
-      end /= aspectRatio;
     }
 
     cairo_set_line_width(cr, 1);
